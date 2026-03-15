@@ -412,8 +412,8 @@ const ChinaTour = () => {
                   <img src={guideImg} alt="Гид-переводчик" className="w-full h-full object-cover" />
                 </div>
                 <div className="p-8 md:p-10 flex flex-col justify-center">
-                  <h3 className="text-xl md:text-2xl text-foreground mb-3">Гид-переводчик на всём маршруте</h3>
-                  <p className="text-base text-muted-foreground font-normal normal-case leading-relaxed">
+                  <h3 className="text-lg md:text-xl text-foreground mb-3">Гид-переводчик на всём маршруте</h3>
+                  <p className="text-sm md:text-base text-muted-foreground font-normal normal-case leading-relaxed">
                     Человек, который объясняет не только что смотреть, но и что это значит. Профессиональный переводчик сопровождает группу на протяжении всей поездки — от Пекина до Ханчжоу.
                   </p>
                 </div>
