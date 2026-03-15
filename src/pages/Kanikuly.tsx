@@ -5,7 +5,6 @@ import AnimatedSection from "@/components/AnimatedSection";
 import heroBg from "@/assets/kanikuly-hero.jpg";
 import illustChina from "@/assets/illust-china.png";
 import illustSea from "@/assets/illust-sea.png";
-import illustStarfish from "@/assets/illust-starfish.png";
 import illustAltai from "@/assets/illust-altai.png";
 import illustUae from "@/assets/illust-uae.png";
 import illustH1 from "@/assets/illust-hilderstone1.png";
@@ -18,6 +17,14 @@ import kidsImg from "@/assets/kids-tour.jpg";
 import partnershipImg from "@/assets/partnership.jpg";
 import teachersImg from "@/assets/teachers-workshop.jpg";
 import russiaMap from "@/assets/russia-map.png";
+import whyConfidence from "@/assets/why-confidence.png";
+import whyWorld from "@/assets/why-world.png";
+import whyFriends from "@/assets/why-friends.png";
+import safetyGuides from "@/assets/safety-guides.png";
+import safetyContact from "@/assets/safety-contact.png";
+import safetyMedical from "@/assets/safety-medical.png";
+import safetyPlaces from "@/assets/safety-places.png";
+import safetyDocs from "@/assets/safety-docs.png";
 
 /* ─── data ─── */
 
@@ -76,7 +83,7 @@ const programs: ProgramCard[] = [
   {
     bgColor: "bg-program-sea",
     textColor: "text-white",
-    illustration: illustStarfish,
+    illustration: illustSea,
     dates: "23.06 — 15.07",
     price: "от 134 000 руб*",
     title: "Лагерь на море",
@@ -135,9 +142,9 @@ const programs: ProgramCard[] = [
 ];
 
 const whyItems = [
-  { title: "Уверенность", text: "Новая среда и новые задачи — ребёнок справляется сам. Этот опыт остаётся с ним." },
-  { title: "Понимание мира", text: "Другие страны, другие люди, другой уклад — горизонт расширяется и уже не сужается обратно." },
-  { title: "Друзья", text: "Дружба, которая завязывается в поездке, обычно оказывается крепче школьной. Многие ребята общаются годами." },
+  { title: "Уверенность", text: "Новая среда и новые задачи — ребёнок справляется сам. Этот опыт остаётся с ним.", image: whyConfidence },
+  { title: "Понимание мира", text: "Другие страны, другие люди, другой уклад — горизонт расширяется и уже не сужается обратно.", image: whyWorld },
+  { title: "Друзья", text: "Дружба, которая завязывается в поездке, обычно оказывается крепче школьной. Многие ребята общаются годами.", image: whyFriends },
 ];
 
 const testimonials = [
@@ -149,11 +156,11 @@ const testimonials = [
 ];
 
 const safety = [
-  { title: "Сопровождающие", text: "С каждой группой едут педагоги с опытом работы с детьми в нестандартных ситуациях." },
-  { title: "Связь с родителями", text: "Ежедневные фото и сообщения в родительский чат. Вы всегда знаете где ребёнок и как у него дела." },
-  { title: "Медицинская поддержка", text: "В лагерях — круглосуточный медпункт. В турах — страховка и чёткий протокол на любой случай." },
-  { title: "Проверенные места", text: "Все отели, базы и кампусы мы проверяем до того как включить в программу." },
-  { title: "Документы", text: "Визы, страховки, разрешения — помогаем оформить всё. Вам не нужно разбираться в этом самостоятельно." },
+  { title: "Сопровождающие", text: "С каждой группой едут педагоги с опытом работы с детьми в нестандартных ситуациях.", image: safetyGuides },
+  { title: "Связь с родителями", text: "Ежедневные фото и сообщения в родительский чат. Вы всегда знаете где ребёнок и как у него дела.", image: safetyContact },
+  { title: "Медицинская поддержка", text: "В лагерях — круглосуточный медпункт. В турах — страховка и чёткий протокол на любой случай.", image: safetyMedical },
+  { title: "Проверенные места", text: "Все отели, базы и кампусы мы проверяем до того как включить в программу.", image: safetyPlaces },
+  { title: "Документы", text: "Визы, страховки, разрешения — помогаем оформить всё. Вам не нужно разбираться в этом самостоятельно.", image: safetyDocs },
 ];
 
 const carouselImages = [meetingsImg, kidsImg, partnershipImg, teachersImg];
@@ -228,6 +235,73 @@ const Kanikuly = () => {
         </div>
       </section>
 
+      {/* ── Program cards — MOVED TO 2ND POSITION ── */}
+      <section id="programs" className="section-padding">
+        <div className="fluid-container">
+          <AnimatedSection>
+            <h2 className="text-4xl md:text-6xl text-foreground mb-4">
+              Что есть <span className="text-accent">в этом году</span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mb-14 font-normal normal-case">
+              Шесть программ — выбирайте по возрасту, датам и тому, что откликается вашему ребёнку.
+            </p>
+          </AnimatedSection>
+
+          <div className="grid md:grid-cols-2 gap-5">
+            {programs.map((p, i) => (
+              <AnimatedSection key={p.title + i} delay={i * 0.08}>
+                <a
+                  href={p.href}
+                  className={`group block rounded-[1.5rem] overflow-hidden transition-all duration-500 hover:shadow-2xl h-full ${p.dimmed ? "opacity-70 hover:opacity-100" : ""}`}
+                >
+                  <div className={`${p.bgColor} ${p.textColor} p-6 md:p-8 h-full flex flex-row items-center gap-4 relative overflow-hidden min-h-[220px]`}>
+                    {/* Text content */}
+                    <div className="flex-1 relative z-10">
+                      <h3 className="text-2xl md:text-3xl font-black uppercase mb-1 leading-tight">{p.title}</h3>
+                      <p className="text-sm uppercase tracking-wide opacity-80 mb-3 font-bold">{p.subtitle}</p>
+                      {p.tag && (
+                        <span className="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-white/20 mb-3">
+                          {p.tag}
+                        </span>
+                      )}
+                      {p.notice && (
+                        <p className="text-sm font-medium opacity-80 mb-2 normal-case italic">{p.notice}</p>
+                      )}
+                      <p className="text-sm opacity-90 normal-case font-normal leading-relaxed mb-4 max-w-xs italic">
+                        {p.text}
+                      </p>
+                      <div className="flex flex-wrap items-center gap-3 mb-4">
+                        {p.dates && (
+                          <span className="text-lg md:text-xl font-black">{p.dates}</span>
+                        )}
+                        {p.price && (
+                          <span className="inline-block bg-white text-foreground text-xs font-bold px-3 py-1.5 rounded-lg uppercase">
+                            {p.price}
+                          </span>
+                        )}
+                      </div>
+                      <span className="inline-block btn-gold px-5 py-2.5 rounded-xl text-xs tracking-widest">
+                        Подробнее →
+                      </span>
+                    </div>
+                    {/* Illustration — full opacity, centered right */}
+                    <img
+                      src={p.illustration}
+                      alt=""
+                      className="w-32 md:w-44 lg:w-52 h-auto object-contain shrink-0 relative z-10 group-hover:scale-105 transition-transform duration-500 pointer-events-none"
+                    />
+                  </div>
+                </a>
+              </AnimatedSection>
+            ))}
+          </div>
+
+          <p className="text-xs text-muted-foreground mt-8 normal-case font-normal">
+            *Авиабилеты и страховка для туров и лагерей оплачиваются отдельно. Для большинства программ доступна рассрочка.
+          </p>
+        </div>
+      </section>
+
       {/* ── FAQ — alternating image blocks ── */}
       {faq.map((item, i) => {
         const imageFirst = i % 2 === 1;
@@ -235,8 +309,7 @@ const Kanikuly = () => {
           <section key={item.q} className="section-padding">
             <div className="fluid-container">
               <AnimatedSection delay={0.1}>
-                <div className={`grid md:grid-cols-2 gap-10 md:gap-16 items-center ${imageFirst ? "" : ""}`}>
-                  {/* Text */}
+                <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
                   <div className={imageFirst ? "md:order-2" : ""}>
                     <h2 className="text-3xl md:text-5xl text-foreground mb-6">
                       {item.q}
@@ -245,7 +318,6 @@ const Kanikuly = () => {
                       {item.a}
                     </p>
                   </div>
-                  {/* Image */}
                   <div className={imageFirst ? "md:order-1" : ""}>
                     <div className="rounded-[2rem] overflow-hidden aspect-[4/3]">
                       <img src={item.image} alt={item.q} className="w-full h-full object-cover" />
@@ -279,79 +351,7 @@ const Kanikuly = () => {
         </div>
       </section>
 
-      {/* ── Program cards — saturated colors with illustrations ── */}
-      <section id="programs" className="section-padding">
-        <div className="fluid-container">
-          <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl text-foreground mb-4">
-              Что есть <span className="text-accent">в этом году</span>
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mb-14 font-normal normal-case">
-              Шесть программ — выбирайте по возрасту, датам и тому, что откликается вашему ребёнку.
-            </p>
-          </AnimatedSection>
-
-          <div className="grid md:grid-cols-2 gap-5">
-            {programs.map((p, i) => (
-              <AnimatedSection key={p.title + i} delay={i * 0.08}>
-                <a
-                  href={p.href}
-                  className={`group block rounded-[1.5rem] overflow-hidden transition-all duration-500 hover:shadow-2xl h-full ${p.dimmed ? "opacity-70 hover:opacity-100" : ""}`}
-                >
-                  <div className={`${p.bgColor} ${p.textColor} p-6 md:p-8 h-full flex flex-col md:flex-row items-start gap-4 relative overflow-hidden min-h-[220px]`}>
-                    {/* Text content */}
-                    <div className="flex-1 relative z-10">
-                      <h3 className="text-2xl md:text-3xl font-black uppercase mb-1 leading-tight">{p.title}</h3>
-                      <p className="text-sm uppercase tracking-wide opacity-80 mb-3 font-bold">{p.subtitle}</p>
-                      {p.tag && (
-                        <span className="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-white/20 mb-3">
-                          {p.tag}
-                        </span>
-                      )}
-                      {p.notice && (
-                        <p className="text-sm font-medium opacity-80 mb-2 normal-case italic">{p.notice}</p>
-                      )}
-                      <p className="text-sm opacity-90 normal-case font-normal leading-relaxed mb-4 max-w-xs italic">
-                        {p.text}
-                      </p>
-                      <a className="inline-block btn-gold px-5 py-2.5 rounded-xl text-xs tracking-widest">
-                        Подробнее →
-                      </a>
-                    </div>
-                    {/* Right side: dates + price + illustration */}
-                    <div className="flex flex-col items-end text-right relative z-10 shrink-0">
-                      {p.dates && (
-                        <p className="text-3xl md:text-4xl font-black leading-tight mb-3 whitespace-nowrap">
-                          {p.dates.split(" — ").map((d, j) => (
-                            <span key={j} className="block">{d}</span>
-                          ))}
-                        </p>
-                      )}
-                      {p.price && (
-                        <span className="inline-block bg-white text-foreground text-sm font-bold px-4 py-2 rounded-lg uppercase">
-                          {p.price}
-                        </span>
-                      )}
-                    </div>
-                    {/* Illustration */}
-                    <img
-                      src={p.illustration}
-                      alt=""
-                      className="absolute right-4 bottom-0 w-28 md:w-36 h-auto object-contain opacity-60 group-hover:opacity-80 transition-opacity pointer-events-none"
-                    />
-                  </div>
-                </a>
-              </AnimatedSection>
-            ))}
-          </div>
-
-          <p className="text-xs text-muted-foreground mt-8 normal-case font-normal">
-            *Авиабилеты и страховка для туров и лагерей оплачиваются отдельно. Для большинства программ доступна рассрочка.
-          </p>
-        </div>
-      </section>
-
-      {/* ── Why it works — no background ── */}
+      {/* ── Why it works — no background, with illustrations ── */}
       <section className="section-padding">
         <div className="fluid-container">
           <AnimatedSection>
@@ -369,24 +369,27 @@ const Kanikuly = () => {
           <div className="grid md:grid-cols-3 gap-10">
             {whyItems.map((w, i) => (
               <AnimatedSection key={w.title} delay={i * 0.1}>
-                <h3 className="text-base text-foreground mb-2">{w.title}</h3>
-                <p className="text-muted-foreground text-[15px] font-normal normal-case leading-relaxed">{w.text}</p>
+                <div className="flex flex-col items-center text-center">
+                  <img src={w.image} alt={w.title} className="w-28 h-28 object-contain mb-5" />
+                  <h3 className="text-base text-foreground mb-2">{w.title}</h3>
+                  <p className="text-muted-foreground text-[15px] font-normal normal-case leading-relaxed">{w.text}</p>
+                </div>
               </AnimatedSection>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Testimonials — green carousel ── */}
+      {/* ── Testimonials — green carousel, white text ── */}
       <section className="px-3 md:px-6 xl:px-10">
         <div className="bg-accent rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-accent-foreground mb-4">
-                Что говорят <span className="text-primary-foreground/70">родители</span>
+              <h2 className="text-4xl md:text-6xl text-white mb-4">
+                Что говорят <span className="text-white/70">родители и дети</span>
               </h2>
-              <p className="text-accent-foreground/70 text-lg mb-12 max-w-xl font-normal normal-case">
-                Что говорят участники, родители и преподаватели о наших программах.
+              <p className="text-white/70 text-lg mb-12 max-w-xl font-normal normal-case">
+                Отзывы участников, родителей и преподавателей о наших программах.
               </p>
             </AnimatedSection>
 
@@ -427,8 +430,8 @@ const Kanikuly = () => {
                             animate={{ opacity: offset === 0 ? 1 : 0 }}
                             transition={{ duration: 0.3 }}
                           >
-                            <p className="text-accent-foreground font-bold text-base">{item.name}</p>
-                            <p className="text-accent-foreground/60 text-sm">{item.role}</p>
+                            <p className="text-white font-bold text-base">{item.name}</p>
+                            <p className="text-white/60 text-sm">{item.role}</p>
                           </motion.div>
                         </div>
                       </motion.div>
@@ -441,7 +444,7 @@ const Kanikuly = () => {
         </div>
       </section>
 
-      {/* ── Safety ── */}
+      {/* ── Safety — with illustrations ── */}
       <section className="section-padding">
         <div className="fluid-container">
           <AnimatedSection>
@@ -456,15 +459,18 @@ const Kanikuly = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
             {safety.map((s, i) => (
               <AnimatedSection key={s.title} delay={i * 0.08}>
-                <h3 className="text-sm text-foreground mb-2">{s.title}</h3>
-                <p className="text-[13px] text-muted-foreground font-normal normal-case leading-relaxed">{s.text}</p>
+                <div className="flex flex-col items-center text-center">
+                  <img src={s.image} alt={s.title} className="w-20 h-20 object-contain mb-4" />
+                  <h3 className="text-sm text-foreground mb-2">{s.title}</h3>
+                  <p className="text-[13px] text-muted-foreground font-normal normal-case leading-relaxed">{s.text}</p>
+                </div>
               </AnimatedSection>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── About association — dark blue bg like HistorySection ── */}
+      {/* ── About association — dark blue bg ── */}
       <section className="px-3 md:px-6 xl:px-10">
         <div className="bg-foreground rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
@@ -474,7 +480,6 @@ const Kanikuly = () => {
               </h2>
             </AnimatedSection>
 
-            {/* Block 1: Stacked photos left, text right */}
             <AnimatedSection>
               <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center mb-20">
                 <div className="relative h-[350px] md:h-[420px]">
@@ -512,7 +517,6 @@ const Kanikuly = () => {
               </div>
             </AnimatedSection>
 
-            {/* Block 2: Text left, map right */}
             <AnimatedSection delay={0.1}>
               <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
                 <div>
