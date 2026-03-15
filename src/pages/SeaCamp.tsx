@@ -252,7 +252,9 @@ const SeaCamp = () => {
               В начале смены каждый ребёнок выбирает один проект. Занятия, дружба и финальный день выстраиваются вокруг этого выбора.
             </p>
           </AnimatedSection>
+        </div>
 
+        <div className="px-3 md:px-6 xl:px-10">
           <div className="grid sm:grid-cols-2 gap-5">
             {projects.map((p, i) => (
               <AnimatedSection key={p.name} delay={i * 0.1}>
