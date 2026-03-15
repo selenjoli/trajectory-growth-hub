@@ -185,12 +185,12 @@ const SeaCamp = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-6">
-                Лагерь — это не <span className="text-program-sea">«сдать ребёнка на лето»</span>
+                Лагерь — это <span className="text-program-sea">не «сдать ребёнка на лето»</span>
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
               <div className="flex flex-col lg:flex-row gap-10 items-start">
-                <div className="max-w-2xl space-y-6 lg:shrink-0">
+                <div className="max-w-lg space-y-6 lg:shrink-0">
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
                     Многие родители слышат слово «лагерь» и представляют одно и то же: скучные мероприятия по расписанию, безликие корпуса, тихий час. Мы понимаем это ощущение.
                   </p>
@@ -200,9 +200,9 @@ const SeaCamp = () => {
                 </div>
 
                 {/* Stacked photo carousel */}
-                <div className="flex justify-center lg:justify-start">
+                <div className="flex-1 flex justify-center lg:justify-start">
                   <div
-                    className="relative w-[340px] h-[460px]"
+                    className="relative w-full max-w-[500px] h-[460px]"
                     onMouseEnter={() => setWhyPaused(true)}
                     onMouseLeave={() => setWhyPaused(false)}
                   >
