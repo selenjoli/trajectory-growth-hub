@@ -130,7 +130,7 @@ const programs: ProgramCard[] = [
   {
     bgColor: "bg-program-hilderstone2",
     illustration: illustH2,
-    illustClass: "absolute right-8 bottom-4 h-[95%] w-auto object-contain",
+    illustClass: "absolute right-2 bottom-2 h-[95%] w-auto object-contain",
     tag: "Смена 2",
     dates: "15.06 — 26.06",
     price: "28 500 руб",
