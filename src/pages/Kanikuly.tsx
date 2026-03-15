@@ -83,7 +83,7 @@ const programs: ProgramCard[] = [
   {
     bgColor: "bg-program-sea",
     illustration: illustSea,
-    illustClass: "absolute right-4 bottom-2 h-[70%] w-auto object-contain",
+    illustClass: "absolute right-4 top-1/2 -translate-y-1/2 h-[85%] w-auto object-contain",
     dates: "23.06 — 15.07",
     price: "от 134 000 руб*",
     title: "Лагерь на\u00A0море",
