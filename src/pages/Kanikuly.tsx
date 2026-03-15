@@ -72,7 +72,7 @@ const programs: ProgramCard[] = [
   {
     bgColor: "bg-program-china",
     illustration: illustChina,
-    illustClass: "absolute right-1/2 translate-x-1/2 top-1/2 -translate-y-1/2 h-[75%] w-auto object-contain",
+    illustClass: "absolute right-8 top-1/2 -translate-y-1/2 h-[75%] w-auto object-contain",
     dates: "03.06 — 12.06",
     price: "от 165 000 руб*",
     title: "Поездка в\u00A0Китай",
