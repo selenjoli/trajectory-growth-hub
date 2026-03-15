@@ -28,7 +28,7 @@ const ActivitiesSection = () => {
   return (
     <section id="activities" className="section-padding">
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-10">
+        <h2 className="text-3xl md:text-4xl text-foreground mb-10">
           Чем мы занимаемся
         </h2>
         <div className="grid md:grid-cols-3 gap-6">
@@ -38,8 +38,8 @@ const ActivitiesSection = () => {
               className="border border-border rounded-lg p-8 hover:shadow-lg transition-shadow bg-card"
             >
               <card.icon className="w-8 h-8 text-primary mb-5" strokeWidth={1.5} />
-              <h3 className="text-xl font-bold text-foreground mb-3">{card.title}</h3>
-              <p className="text-muted-foreground font-body text-[15px] leading-relaxed mb-5">
+              <h3 className="text-lg text-foreground mb-3">{card.title}</h3>
+              <p className="text-muted-foreground text-[15px] leading-relaxed mb-5 normal-case font-normal">
                 {card.text}
               </p>
               <a

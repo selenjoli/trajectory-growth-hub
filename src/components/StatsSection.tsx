@@ -9,16 +9,16 @@ const StatsSection = () => {
   return (
     <section className="section-padding">
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-10">
+        <h2 className="text-3xl md:text-4xl text-foreground mb-10">
           Ассоциация сегодня
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {stats.map((s) => (
             <div key={s.label} className="p-6">
-              <p className="text-4xl md:text-5xl font-bold text-primary font-display mb-2">
+              <p className="text-4xl md:text-5xl font-black text-primary mb-2">
                 {s.number}
               </p>
-              <p className="text-sm text-muted-foreground font-body">{s.label}</p>
+              <p className="text-sm text-muted-foreground font-normal normal-case">{s.label}</p>
             </div>
           ))}
         </div>
