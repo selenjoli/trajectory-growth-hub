@@ -26,7 +26,7 @@ const doors = [
     title: "Руководите центром?",
     text: "Узнайте как работает партнёрство в ассоциации.",
     link: "О партнёрстве →",
-    href: "/partnership",
+    href: "/partnerstvo",
   },
 ];
 
