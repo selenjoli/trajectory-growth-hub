@@ -21,7 +21,7 @@ const HeroSection = () => {
             <p className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60">
               Ассоциация центров дополнительного образования
             </p>
-            <span className="btn-gold text-[10px] sm:text-xs tracking-wider px-3 py-1 rounded-full whitespace-nowrap">
+            <span className="bg-accent text-accent-foreground text-[10px] sm:text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full whitespace-nowrap">
               с 2021 года
             </span>
           </motion.div>
