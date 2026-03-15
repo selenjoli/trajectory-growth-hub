@@ -158,30 +158,31 @@ const ChinaTour = () => {
           <img src={heroBg} alt="Великая Китайская стена" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/45" />
           <div className="relative z-10 w-full px-6 md:px-16 pb-12 md:pb-20">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex flex-wrap items-center justify-between mb-6 w-fit min-w-full lg:min-w-0"
-              style={{ maxWidth: "fit-content" }}
-            >
-              <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-sm md:text-base font-semibold uppercase tracking-wider px-5 py-2 rounded-full">
-                Познавательный тур
-              </span>
-              <span className="inline-block bg-program-china text-white text-sm md:text-base font-bold uppercase tracking-wider px-5 py-2 rounded-full">
-                3 — 12 июня 2026
-              </span>
-            </motion.div>
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95] mb-4 w-fit"
-            >
-              <span className="text-program-china">Китай:</span> когда история
-              <br />
-              смотрит тебе в&nbsp;глаза
-            </motion.h1>
+            <div className="w-fit">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="flex flex-wrap items-center justify-between gap-3 mb-6"
+              >
+                <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-sm md:text-base font-semibold uppercase tracking-wider px-5 py-2 rounded-full">
+                  Познавательный тур
+                </span>
+                <span className="inline-block bg-program-china text-white text-sm md:text-base font-bold uppercase tracking-wider px-5 py-2 rounded-full">
+                  3 — 12 июня 2026
+                </span>
+              </motion.div>
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95] mb-4"
+              >
+                <span className="text-program-china">Китай:</span> когда история
+                <br />
+                смотрит тебе в&nbsp;глаза
+              </motion.h1>
+            </div>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
