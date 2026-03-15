@@ -1,3 +1,4 @@
+import AnimatedSection from "./AnimatedSection";
 import kidsTour from "@/assets/kids-tour.jpg";
 import teachersWorkshop from "@/assets/teachers-workshop.jpg";
 import partnership from "@/assets/partnership.jpg";
@@ -33,33 +34,42 @@ const ActivitiesSection = () => {
   return (
     <section id="activities" className="section-padding">
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl text-foreground mb-10">
-          Чем мы занимаемся
-        </h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {cards.map((card) => (
-            <div
-              key={card.title}
-              className="rounded-2xl overflow-hidden bg-card border border-border hover:shadow-lg transition-shadow"
-            >
-              <img
-                src={card.image}
-                alt={card.imageAlt}
-                className="w-full h-52 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-lg text-foreground mb-3">{card.title}</h3>
-                <p className="text-muted-foreground text-[15px] leading-relaxed mb-5 normal-case font-normal">
-                  {card.text}
-                </p>
-                <a
-                  href={card.href}
-                  className="text-sm font-bold uppercase tracking-wide text-primary hover:text-primary/80 transition-colors"
-                >
-                  {card.link}
-                </a>
-              </div>
-            </div>
+        <AnimatedSection>
+          <h2 className="text-4xl md:text-6xl text-foreground mb-4">
+            Чем мы
+            <br />
+            занимаемся
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-xl mb-14 font-normal normal-case">
+            Три направления — для детей, педагогов и руководителей центров.
+          </p>
+        </AnimatedSection>
+
+        <div className="grid md:grid-cols-3 gap-4">
+          {cards.map((card, i) => (
+            <AnimatedSection key={card.title} delay={i * 0.12}>
+              <a
+                href={card.href}
+                className="group block rounded-[1.5rem] overflow-hidden bg-card border border-border hover:border-primary/30 transition-all duration-500 hover:shadow-xl h-full"
+              >
+                <div className="relative overflow-hidden">
+                  <img
+                    src={card.image}
+                    alt={card.imageAlt}
+                    className="w-full h-60 object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-7">
+                  <h3 className="text-base text-foreground mb-3">{card.title}</h3>
+                  <p className="text-muted-foreground text-[15px] leading-relaxed mb-6 normal-case font-normal">
+                    {card.text}
+                  </p>
+                  <span className="text-sm font-bold uppercase tracking-wide text-primary group-hover:tracking-widest transition-all duration-300">
+                    {card.link}
+                  </span>
+                </div>
+              </a>
+            </AnimatedSection>
           ))}
         </div>
       </div>

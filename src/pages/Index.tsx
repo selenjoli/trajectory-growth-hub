@@ -7,7 +7,7 @@ import CTASection from "@/components/CTASection";
 
 const Index = () => {
   return (
-    <main>
+    <main className="space-y-4">
       <HeroSection />
       <ActivitiesSection />
       <HistorySection />
