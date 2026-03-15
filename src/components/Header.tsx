@@ -251,7 +251,7 @@ const Header = () => {
           <img
             src={logoDark}
             alt="Траектория Роста"
-            className="h-10 md:h-12 w-auto"
+            className="h-14 md:h-[72px] w-auto"
           />
         </a>
 
