@@ -7,20 +7,24 @@ const stats = [
 
 const StatsSection = () => {
   return (
-    <section className="section-padding">
+    <section className="px-4">
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl text-foreground mb-10">
-          Ассоциация сегодня
-        </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          {stats.map((s) => (
-            <div key={s.label} className="p-6">
-              <p className="text-4xl md:text-5xl font-black text-primary mb-2">
-                {s.number}
-              </p>
-              <p className="text-sm text-muted-foreground font-normal normal-case">{s.label}</p>
-            </div>
-          ))}
+        <div className="bg-primary rounded-2xl p-10 md:p-14">
+          <h2 className="text-2xl md:text-3xl text-primary-foreground mb-8">
+            Ассоциация сегодня
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            {stats.map((s) => (
+              <div key={s.label} className="p-4">
+                <p className="text-4xl md:text-5xl font-black text-primary-foreground mb-2">
+                  {s.number}
+                </p>
+                <p className="text-sm text-primary-foreground/80 font-normal normal-case">
+                  {s.label}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
