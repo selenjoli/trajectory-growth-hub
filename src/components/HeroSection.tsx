@@ -8,7 +8,7 @@ const HeroSection = () => {
         <img
           src={heroBg}
           alt="Образовательный центр — дети за совместной работой"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-[center_30%]"
         />
         <div className="absolute inset-0 bg-foreground/50" />
         <div className="relative z-10 w-full px-8 md:px-16 pb-16 md:pb-20">
