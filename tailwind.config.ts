@@ -51,6 +51,7 @@ export default {
         "program-uae": "hsl(var(--program-uae))",
         "program-sea": "hsl(var(--program-sea))",
         "program-online": "hsl(var(--program-online))",
+        "program-hilderstone2": "hsl(var(--program-hilderstone2))",
         "surface-alt": "hsl(var(--surface-alt))",
         popover: {
           DEFAULT: "hsl(var(--popover))",
