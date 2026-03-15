@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import AnimatedSection from "@/components/AnimatedSection";
 
@@ -11,6 +10,12 @@ import seaProjects from "@/assets/sea-projects.jpg";
 import seaPsychology from "@/assets/sea-psychology.jpg";
 import seaResort from "@/assets/sea-resort.jpg";
 import seaMap from "@/assets/sea-map.png";
+import facilityRooms from "@/assets/facility-rooms.jpg";
+import facilityDining from "@/assets/facility-dining.jpg";
+import facilityBeach from "@/assets/facility-beach.jpg";
+import facilityForest from "@/assets/facility-forest.jpg";
+import facilityMedical from "@/assets/facility-medical.jpg";
+import facilityGuide from "@/assets/facility-guide.jpg";
 import illustUae from "@/assets/illust-uae.svg";
 import illustChina from "@/assets/illust-china.png";
 import illustAltai from "@/assets/illust-altai.png";
@@ -54,12 +59,12 @@ const projects = [
 ];
 
 const facilities = [
-  { icon: "🏠", text: "Новые корпуса с видом на море" },
-  { icon: "🍽️", text: "5-разовое питание, шведский стол" },
-  { icon: "🏖️", text: "Собственный песчаный пляж 145 метров" },
-  { icon: "🌿", text: "Охраняемая территория в субтропическом лесу" },
-  { icon: "🏥", text: "Круглосуточный медпункт" },
-  { icon: "👩‍⚕️", text: "Сопровождающий от ассоциации 24/7" },
+  { image: facilityRooms, text: "Новые корпуса с видом на\u00a0море" },
+  { image: facilityDining, text: "5-разовое питание, шведский стол" },
+  { image: facilityBeach, text: "Собственный песчаный пляж 145\u00a0метров" },
+  { image: facilityForest, text: "Охраняемая территория в\u00a0субтропическом лесу" },
+  { image: facilityMedical, text: "Круглосуточный медпункт" },
+  { image: facilityGuide, text: "Сопровождающий от\u00a0ассоциации 24/7" },
 ];
 
 const testimonials = [
@@ -82,8 +87,6 @@ const SeaCamp = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [zoomed, setZoomed] = useState<number | null>(null);
-  const [currentProject, setCurrentProject] = useState(0);
-  const [projectPaused, setProjectPaused] = useState(false);
   const [whySlide, setWhySlide] = useState(0);
   const [whyPaused, setWhyPaused] = useState(false);
 
@@ -99,13 +102,6 @@ const SeaCamp = () => {
     return () => clearInterval(interval);
   }, [isPaused, zoomed, nextSlide]);
 
-  useEffect(() => {
-    if (projectPaused) return;
-    const interval = setInterval(() => {
-      setCurrentProject((prev) => (prev + 1) % projects.length);
-    }, 6000);
-    return () => clearInterval(interval);
-  }, [projectPaused]);
 
   useEffect(() => {
     if (whyPaused) return;
@@ -245,7 +241,7 @@ const SeaCamp = () => {
         </div>
       </section>
 
-      {/* ── Projects carousel — on teal bg ── */}
+      {/* ── Projects — 4 static cards on teal bg ── */}
       <section className="section-padding overflow-hidden">
         <div className="fluid-container">
           <AnimatedSection>
@@ -257,70 +253,28 @@ const SeaCamp = () => {
             </p>
           </AnimatedSection>
 
-          <AnimatedSection delay={0.1}>
-            <div
-              className="relative"
-              onMouseEnter={() => setProjectPaused(true)}
-              onMouseLeave={() => setProjectPaused(false)}
-            >
-              <div className="relative z-10 flex items-center gap-8">
-                <div className="w-full lg:w-[55%] shrink-0">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={currentProject}
-                      initial={{ opacity: 0, x: -30 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: 30 }}
-                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                      className="bg-white/10 backdrop-blur-sm rounded-[1.5rem] overflow-hidden"
-                    >
-                      <div className="aspect-[3/2] overflow-hidden">
-                        <img src={projects[currentProject].image} alt={projects[currentProject].name} className="w-full h-full object-cover" />
-                      </div>
-                      <div className="p-6 md:p-8">
-                        <p className="text-white/50 text-xs uppercase tracking-widest mb-2">
-                          {projects[currentProject].emoji} {projects[currentProject].subtitle}
-                        </p>
-                        <h3 className="text-xl md:text-2xl text-white mb-3">{projects[currentProject].name}</h3>
-                        <p className="text-sm md:text-base text-white/80 font-normal normal-case leading-relaxed mb-3">{projects[currentProject].text}</p>
-                        <p className="text-sm text-white/60 italic font-normal normal-case">{projects[currentProject].fit}</p>
-                      </div>
-                    </motion.div>
-                  </AnimatePresence>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {projects.map((p, i) => (
+              <AnimatedSection key={p.name} delay={i * 0.1}>
+                <div className="bg-white/10 backdrop-blur-sm rounded-[1.5rem] overflow-hidden h-full flex flex-col">
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
+                    <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-lg">
+                      <span className="text-white font-black text-lg">{i + 1}</span>
+                    </div>
+                  </div>
+                  <div className="p-5 md:p-6 flex flex-col flex-1">
+                    <p className="text-white/50 text-xs uppercase tracking-widest mb-2">
+                      {p.emoji} {p.subtitle}
+                    </p>
+                    <h3 className="text-lg md:text-xl text-white mb-3">{p.name}</h3>
+                    <p className="text-sm text-white/80 font-normal normal-case leading-relaxed mb-3 flex-1">{p.text}</p>
+                    <p className="text-xs text-white/60 italic font-normal normal-case">{p.fit}</p>
+                  </div>
                 </div>
-
-                <div className="hidden lg:flex flex-col gap-4">
-                  <button
-                    onClick={() => setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length)}
-                    className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
-                  >
-                    <ArrowLeft className="w-5 h-5 text-program-sea" />
-                  </button>
-                  <button
-                    onClick={() => setCurrentProject((prev) => (prev + 1) % projects.length)}
-                    className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
-                  >
-                    <ArrowRight className="w-5 h-5 text-program-sea" />
-                  </button>
-                </div>
-              </div>
-
-              <div className="flex lg:hidden items-center justify-center gap-4 mt-6">
-                <button
-                  onClick={() => setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length)}
-                  className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
-                >
-                  <ArrowLeft className="w-4 h-4 text-program-sea" />
-                </button>
-                <button
-                  onClick={() => setCurrentProject((prev) => (prev + 1) % projects.length)}
-                  className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
-                >
-                  <ArrowRight className="w-4 h-4 text-program-sea" />
-                </button>
-              </div>
-            </div>
-          </AnimatedSection>
+              </AnimatedSection>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -334,16 +288,18 @@ const SeaCamp = () => {
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
-              <div className="grid lg:grid-cols-2 gap-10 items-start">
+              <div className="grid lg:grid-cols-2 gap-10 items-center">
                 <div>
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed mb-8">
                     «Морская звезда» получила звание лучшей детской здравницы на Чёрном море — и это чувствуется в деталях: новые корпуса, большая охраняемая территория, собственный пляж в субтропическом лесу.
                   </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                     {facilities.map((f, i) => (
-                      <div key={i} className="flex items-start gap-3">
-                        <span className="text-2xl shrink-0">{f.icon}</span>
-                        <p className="text-sm md:text-base text-foreground font-normal normal-case leading-snug">{f.text}</p>
+                      <div key={i} className="rounded-xl overflow-hidden bg-card shadow-sm">
+                        <div className="aspect-square overflow-hidden">
+                          <img src={f.image} alt={f.text} className="w-full h-full object-cover" />
+                        </div>
+                        <p className="text-xs md:text-sm text-foreground font-medium normal-case leading-snug p-3">{f.text}</p>
                       </div>
                     ))}
                   </div>
