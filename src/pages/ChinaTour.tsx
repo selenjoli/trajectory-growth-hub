@@ -135,7 +135,7 @@ const ChinaTour = () => {
     if (cityPaused) return;
     const interval = setInterval(() => {
       setCurrentCity((prev) => (prev + 1) % cities.length);
-    }, 3000);
+    }, 6000);
     return () => clearInterval(interval);
   }, [cityPaused]);
 
@@ -290,8 +290,8 @@ const ChinaTour = () => {
         </div>
       </section>
 
-      {/* ── Route — 5 cities with interactive map (desktop) / cards (mobile) ── */}
-      <section className="section-padding">
+      {/* ── Route — 5 cities: map background, carousel left, arrows right ── */}
+      <section className="section-padding overflow-hidden">
         <div className="fluid-container">
           <AnimatedSection>
             <h2 className="text-4xl md:text-6xl text-white mb-4">
@@ -302,15 +302,20 @@ const ChinaTour = () => {
             </p>
           </AnimatedSection>
 
-
           <AnimatedSection delay={0.1}>
-            <div className="grid lg:grid-cols-2 gap-8 items-start">
-              {/* Carousel on the left */}
-              <div
-                onMouseEnter={() => setCityPaused(true)}
-                onMouseLeave={() => setCityPaused(false)}
-              >
-                <div className="relative">
+            <div
+              className="relative"
+              onMouseEnter={() => setCityPaused(true)}
+              onMouseLeave={() => setCityPaused(false)}
+            >
+              {/* Map as background — desktop only */}
+              <div className="hidden lg:block absolute top-1/2 -translate-y-1/2 -right-10 w-[65%] opacity-40 pointer-events-none">
+                <img src={chinaMap} alt="Карта маршрута" className="w-full h-auto" />
+              </div>
+
+              <div className="relative z-10 flex items-center gap-8">
+                {/* Carousel card — takes ~55% on desktop */}
+                <div className="w-full lg:w-[55%] shrink-0">
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={currentCity}
@@ -330,37 +335,39 @@ const ChinaTour = () => {
                       </div>
                     </motion.div>
                   </AnimatePresence>
+                </div>
 
-                  {/* Navigation arrows — centered bottom */}
-                  <div className="flex items-center justify-center gap-4 mt-6">
-                    <button
-                      onClick={() => setCurrentCity((prev) => (prev - 1 + cities.length) % cities.length)}
-                      className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
-                    >
-                      <ArrowLeft className="w-4 h-4 text-program-china" />
-                    </button>
-                    <div className="flex gap-2">
-                      {cities.map((_, i) => (
-                        <button
-                          key={i}
-                          onClick={() => setCurrentCity(i)}
-                          className={`w-2 h-2 rounded-full transition-all ${i === currentCity ? "bg-white scale-125" : "bg-white/40"}`}
-                        />
-                      ))}
-                    </div>
-                    <button
-                      onClick={() => setCurrentCity((prev) => (prev + 1) % cities.length)}
-                      className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
-                    >
-                      <ArrowRight className="w-4 h-4 text-program-china" />
-                    </button>
-                  </div>
+                {/* Arrows — to the right of the card */}
+                <div className="hidden lg:flex flex-col gap-4">
+                  <button
+                    onClick={() => setCurrentCity((prev) => (prev - 1 + cities.length) % cities.length)}
+                    className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+                  >
+                    <ArrowLeft className="w-5 h-5 text-program-china" />
+                  </button>
+                  <button
+                    onClick={() => setCurrentCity((prev) => (prev + 1) % cities.length)}
+                    className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+                  >
+                    <ArrowRight className="w-5 h-5 text-program-china" />
+                  </button>
                 </div>
               </div>
 
-              {/* Map on the right — desktop only */}
-              <div className="hidden lg:flex items-center justify-center">
-                <img src={chinaMap} alt="Карта маршрута" className="w-full h-auto max-w-md" />
+              {/* Mobile arrows — below card */}
+              <div className="flex lg:hidden items-center justify-center gap-4 mt-6">
+                <button
+                  onClick={() => setCurrentCity((prev) => (prev - 1 + cities.length) % cities.length)}
+                  className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+                >
+                  <ArrowLeft className="w-4 h-4 text-program-china" />
+                </button>
+                <button
+                  onClick={() => setCurrentCity((prev) => (prev + 1) % cities.length)}
+                  className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+                >
+                  <ArrowRight className="w-4 h-4 text-program-china" />
+                </button>
               </div>
             </div>
           </AnimatedSection>
@@ -443,16 +450,17 @@ const ChinaTour = () => {
               </div>
 
               {/* Fine print */}
-              <p className="text-muted-foreground text-xs mt-4 font-normal normal-case leading-relaxed">
+              <p className="text-muted-foreground text-xs mt-4 font-normal normal-case leading-relaxed mb-6">
                 Авиабилеты, страховка, Диснейленд и дополнительные экскурсии оплачиваются отдельно.
               </p>
 
-              {/* Decorative receipt tear */}
-              <div className="absolute -bottom-3 left-0 right-0 h-6 overflow-hidden">
-                <svg className="w-full" viewBox="0 0 400 20" preserveAspectRatio="none">
-                  <path d="M0,0 Q5,20 10,0 Q15,20 20,0 Q25,20 30,0 Q35,20 40,0 Q45,20 50,0 Q55,20 60,0 Q65,20 70,0 Q75,20 80,0 Q85,20 90,0 Q95,20 100,0 Q105,20 110,0 Q115,20 120,0 Q125,20 130,0 Q135,20 140,0 Q145,20 150,0 Q155,20 160,0 Q165,20 170,0 Q175,20 180,0 Q185,20 190,0 Q195,20 200,0 Q205,20 210,0 Q215,20 220,0 Q225,20 230,0 Q235,20 240,0 Q245,20 250,0 Q255,20 260,0 Q265,20 270,0 Q275,20 280,0 Q285,20 290,0 Q295,20 300,0 Q305,20 310,0 Q315,20 320,0 Q325,20 330,0 Q335,20 340,0 Q345,20 350,0 Q355,20 360,0 Q365,20 370,0 Q375,20 380,0 Q385,20 390,0 Q395,20 400,0" fill="white" />
-                </svg>
-              </div>
+              {/* CTA */}
+              <a
+                href="#forma"
+                className="block w-full text-center btn-gold px-6 py-4 rounded-2xl text-sm tracking-widest"
+              >
+                Присоединиться
+              </a>
             </div>
           </AnimatedSection>
         </div>
