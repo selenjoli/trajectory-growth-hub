@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logoDark from "@/assets/logo-dark.svg";
+import logoLight from "@/assets/logo-light.svg";
 
 interface DropdownItem {
   label: string;
@@ -72,7 +73,7 @@ const DropdownMenu = ({
   </AnimatePresence>
 );
 
-const NavItem = ({ item }: { item: MenuItem }) => {
+const NavItem = ({ item, light = false }: { item: MenuItem; light?: boolean }) => {
   const [open, setOpen] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
 
@@ -106,7 +107,7 @@ const NavItem = ({ item }: { item: MenuItem }) => {
     >
       <a
         href={item.href}
-        className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors py-2 flex items-center gap-1"
+        className={`text-sm font-medium transition-colors py-2 flex items-center gap-1 ${light ? "text-white/70 hover:text-white" : "text-foreground/70 hover:text-foreground"}`}
       >
         {item.label}
         {item.children && (
@@ -233,23 +234,24 @@ const MobileMenu = ({
   );
 };
 
-const Header = () => {
+const Header = ({ variant = "dark" }: { variant?: "dark" | "light" }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const isLight = variant === "light";
 
   return (
-    <header className="w-full bg-background relative z-30">
+    <header className={`w-full relative z-30 ${isLight ? "bg-transparent absolute top-0 left-0 right-0" : "bg-background"}`}>
       <div className="fluid-container flex items-center justify-between px-5 md:px-10 xl:px-20 py-5">
         {/* Left nav — desktop */}
         <nav className="hidden lg:flex items-center gap-6 flex-1">
           {leftMenu.map((item) => (
-            <NavItem key={item.href} item={item} />
+            <NavItem key={item.href} item={item} light={isLight} />
           ))}
         </nav>
 
         {/* Logo */}
         <a href="/" className="flex-shrink-0 lg:mx-8">
           <img
-            src={logoDark}
+            src={isLight ? logoLight : logoDark}
             alt="Траектория Роста"
             className="h-8 sm:h-10 lg:h-14 xl:h-[72px] w-auto"
           />
@@ -258,13 +260,13 @@ const Header = () => {
         {/* Right nav — desktop */}
         <nav className="hidden lg:flex items-center justify-end gap-6 flex-1">
           {rightMenu.map((item) => (
-            <NavItem key={item.href} item={item} />
+            <NavItem key={item.href} item={item} light={isLight} />
           ))}
         </nav>
 
         {/* Mobile burger */}
         <button
-          className="lg:hidden text-foreground/70 hover:text-foreground"
+          className={`lg:hidden ${isLight ? "text-white/70 hover:text-white" : "text-foreground/70 hover:text-foreground"}`}
           onClick={() => setMobileOpen(true)}
         >
           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
