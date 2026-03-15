@@ -97,8 +97,8 @@ const HistorySection = () => {
                       alt={item.word}
                       className="w-full h-44 object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-foreground/20" />
-                    <span className="absolute bottom-3 left-4 text-5xl font-black text-primary-foreground/30">
+                    <div className="absolute inset-0 bg-foreground/50" />
+                    <span className="absolute bottom-3 left-4 text-5xl font-black text-primary-foreground">
                       {item.letter}
                     </span>
                   </div>
