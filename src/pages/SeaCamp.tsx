@@ -254,29 +254,27 @@ const SeaCamp = () => {
           </AnimatedSection>
         </div>
 
-        <div className="px-3 md:px-6 xl:px-10">
-          <div className="grid sm:grid-cols-2 gap-5">
-            {projects.map((p, i) => (
-              <AnimatedSection key={p.name} delay={i * 0.1}>
-                <div className="bg-white rounded-[1.5rem] overflow-hidden h-full flex flex-col">
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
-                    <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg">
-                      <span className="bg-gradient-to-br from-amber-400 to-amber-600 bg-clip-text text-transparent font-black text-lg">{i + 1}</span>
-                    </div>
-                  </div>
-                  <div className="p-5 md:p-6 flex flex-col flex-1">
-                    <p className="text-foreground/50 text-xs uppercase tracking-widest mb-2">
-                      {p.subtitle}
-                    </p>
-                    <h3 className="text-lg md:text-xl text-foreground mb-3">{p.name}</h3>
-                    <p className="text-sm text-foreground/80 font-normal normal-case leading-relaxed mb-3 flex-1">{p.text}</p>
-                    <p className="text-xs text-foreground/60 italic font-normal normal-case">{p.fit}</p>
+        <div className="grid sm:grid-cols-2 gap-5">
+          {projects.map((p, i) => (
+            <AnimatedSection key={p.name} delay={i * 0.1}>
+              <div className="bg-white rounded-[1.5rem] overflow-hidden h-full flex flex-col">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
+                  <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg">
+                    <span className="bg-gradient-to-br from-amber-400 to-amber-600 bg-clip-text text-transparent font-black text-lg">{i + 1}</span>
                   </div>
                 </div>
-              </AnimatedSection>
-            ))}
-          </div>
+                <div className="p-5 md:p-6 flex flex-col flex-1">
+                  <p className="text-foreground/50 text-xs uppercase tracking-widest mb-2">
+                    {p.subtitle}
+                  </p>
+                  <h3 className="text-lg md:text-xl text-foreground mb-3">{p.name}</h3>
+                  <p className="text-sm text-foreground/80 font-normal normal-case leading-relaxed mb-3 flex-1">{p.text}</p>
+                  <p className="text-xs text-foreground/60 italic font-normal normal-case">{p.fit}</p>
+                </div>
+              </div>
+            </AnimatedSection>
+          ))}
         </div>
       </section>
 
