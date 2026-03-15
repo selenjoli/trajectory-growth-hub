@@ -56,6 +56,7 @@ const stats = [
 interface ProgramCard {
   bgColor: string;
   illustration: string;
+  illustClass?: string;
   dates: string;
   price: string;
   title: string;
@@ -71,6 +72,7 @@ const programs: ProgramCard[] = [
   {
     bgColor: "bg-program-china",
     illustration: illustChina,
+    illustClass: "absolute right-1/2 translate-x-1/2 top-1/2 -translate-y-1/2 h-[75%] w-auto object-contain",
     dates: "03.06 — 12.06",
     price: "от 165 000 руб*",
     title: "Поездка в\u00A0Китай",
@@ -81,6 +83,7 @@ const programs: ProgramCard[] = [
   {
     bgColor: "bg-program-sea",
     illustration: illustSea,
+    illustClass: "absolute right-4 bottom-2 h-[70%] w-auto object-contain",
     dates: "23.06 — 15.07",
     price: "от 134 000 руб*",
     title: "Лагерь на\u00A0море",
@@ -91,6 +94,7 @@ const programs: ProgramCard[] = [
   {
     bgColor: "bg-program-altai",
     illustration: illustAltai,
+    illustClass: "absolute right-0 bottom-0 h-[80%] w-auto object-contain",
     dates: "10.07 — 25.07",
     price: "от 95 000 руб*",
     title: "Лагерь на\u00A0Алтае",
@@ -101,6 +105,7 @@ const programs: ProgramCard[] = [
   {
     bgColor: "bg-program-uae",
     illustration: illustUae,
+    illustClass: "absolute right-4 bottom-2 h-[70%] w-auto object-contain",
     dates: "Даты уточняются",
     price: "",
     title: "Поездка в\u00A0ОАЭ",
@@ -113,6 +118,7 @@ const programs: ProgramCard[] = [
   {
     bgColor: "bg-program-online",
     illustration: illustH1,
+    illustClass: "absolute right-6 top-1/2 -translate-y-[45%] h-[65%] w-auto object-contain",
     tag: "Смена 1",
     dates: "01.06 — 12.06",
     price: "28 500 руб",
@@ -124,6 +130,7 @@ const programs: ProgramCard[] = [
   {
     bgColor: "bg-program-hilderstone2",
     illustration: illustH2,
+    illustClass: "absolute right-6 top-1/2 -translate-y-[45%] h-[65%] w-auto object-contain",
     tag: "Смена 2",
     dates: "15.06 — 26.06",
     price: "28 500 руб",
@@ -252,7 +259,7 @@ const Kanikuly = () => {
                     <img
                       src={p.illustration}
                       alt=""
-                      className="absolute right-0 bottom-0 h-[85%] w-auto object-contain opacity-100 group-hover:scale-105 transition-transform duration-500 pointer-events-none"
+                      className={`${p.illustClass || "absolute right-0 bottom-0 h-[85%] w-auto object-contain"} opacity-100 group-hover:scale-105 transition-transform duration-500 pointer-events-none`}
                     />
                     {/* Text content */}
                     <div className="relative z-10 h-full flex flex-col justify-between p-6 md:p-8">
@@ -363,7 +370,7 @@ const Kanikuly = () => {
             {whyItems.map((w, i) => (
               <AnimatedSection key={w.title} delay={i * 0.1}>
                 <div className="flex flex-col items-center text-center">
-                  <img src={w.image} alt={w.title} className="w-28 h-28 object-contain mb-5" />
+                  <img src={w.image} alt={w.title} className="w-40 h-40 object-contain mb-5" />
                   <h3 className="text-base text-foreground mb-2">{w.title}</h3>
                   <p className="text-muted-foreground text-[15px] font-normal normal-case leading-relaxed">{w.text}</p>
                 </div>
@@ -453,7 +460,7 @@ const Kanikuly = () => {
             {safety.map((s, i) => (
               <AnimatedSection key={s.title} delay={i * 0.08}>
                 <div className="flex flex-col items-center text-center">
-                  <img src={s.image} alt={s.title} className="w-20 h-20 object-contain mb-4" />
+                  <img src={s.image} alt={s.title} className="w-28 h-28 object-contain mb-4" />
                   <h3 className="text-sm text-foreground mb-2">{s.title}</h3>
                   <p className="text-[13px] text-muted-foreground font-normal normal-case leading-relaxed">{s.text}</p>
                 </div>
