@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import Kanikuly from "./pages/Kanikuly.tsx";
 import ChinaTour from "./pages/ChinaTour.tsx";
+import SeaCamp from "./pages/SeaCamp.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -20,6 +21,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/kanikuly" element={<Kanikuly />} />
           <Route path="/kanikuly/china" element={<ChinaTour />} />
+          <Route path="/kanikuly/more" element={<SeaCamp />} />
           <Route path="/kanikuly/:program" element={<Index />} />
           <Route path="/uchitelya" element={<Index />} />
           <Route path="/uchitelya/:course" element={<Index />} />
