@@ -436,7 +436,7 @@ const ChinaTour = () => {
               </div>
 
               {/* Receipt */}
-              <div className="bg-white rounded-[1.5rem] max-w-lg w-full px-8 py-10 shadow-2xl">
+              <div className="bg-white rounded-[1.5rem] w-full lg:w-[480px] shrink-0 px-8 py-10 shadow-2xl">
                 <div className="text-center border-b-2 border-dashed border-foreground/20 pb-6 mb-6">
                   <h2 className="text-2xl md:text-3xl text-foreground mb-1">Что входит в стоимость</h2>
                   <p className="text-sm text-muted-foreground font-normal normal-case">Тур «Китай» · 3–12 июня 2026</p>
