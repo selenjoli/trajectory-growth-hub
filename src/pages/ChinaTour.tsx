@@ -427,9 +427,9 @@ const ChinaTour = () => {
       <section className="section-padding">
         <div className="fluid-container">
           <AnimatedSection>
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-6">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
               {/* Left photo */}
-              <div className="hidden lg:block w-[260px] shrink-0">
+              <div className="hidden lg:block flex-1 max-w-[300px]">
                 <div className="rounded-[1.5rem] overflow-hidden aspect-[3/4]">
                   <img src={beijing} alt="Фото из поездки" className="w-full h-full object-cover" />
                 </div>
@@ -469,7 +469,7 @@ const ChinaTour = () => {
               </div>
 
               {/* Right photo */}
-              <div className="hidden lg:block w-[260px] shrink-0">
+              <div className="hidden lg:block flex-1 max-w-[300px]">
                 <div className="rounded-[1.5rem] overflow-hidden aspect-[3/4]">
                   <img src={hangzhou} alt="Фото из поездки" className="w-full h-full object-cover" />
                 </div>
