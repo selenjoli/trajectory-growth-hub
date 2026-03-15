@@ -226,7 +226,7 @@ const ChinaTour = () => {
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
-              <div className="grid md:grid-cols-2 gap-10 items-start">
+              <div className="grid md:grid-cols-[1fr_auto] gap-6 items-start">
                 <div className="max-w-xl space-y-6">
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
                     Есть страны, после которых смотришь на мир немного иначе. Китай — одна из них.
