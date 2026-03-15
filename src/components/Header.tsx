@@ -234,23 +234,24 @@ const MobileMenu = ({
   );
 };
 
-const Header = () => {
+const Header = ({ variant = "dark" }: { variant?: "dark" | "light" }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const isLight = variant === "light";
 
   return (
-    <header className="w-full bg-background relative z-30">
+    <header className={`w-full relative z-30 ${isLight ? "bg-transparent absolute top-0 left-0 right-0" : "bg-background"}`}>
       <div className="fluid-container flex items-center justify-between px-5 md:px-10 xl:px-20 py-5">
         {/* Left nav — desktop */}
         <nav className="hidden lg:flex items-center gap-6 flex-1">
           {leftMenu.map((item) => (
-            <NavItem key={item.href} item={item} />
+            <NavItem key={item.href} item={item} light={isLight} />
           ))}
         </nav>
 
         {/* Logo */}
         <a href="/" className="flex-shrink-0 lg:mx-8">
           <img
-            src={logoDark}
+            src={isLight ? logoLight : logoDark}
             alt="Траектория Роста"
             className="h-8 sm:h-10 lg:h-14 xl:h-[72px] w-auto"
           />
