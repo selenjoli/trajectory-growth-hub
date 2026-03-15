@@ -72,7 +72,7 @@ const programs: ProgramCard[] = [
   {
     bgColor: "bg-program-china",
     illustration: illustChina,
-    illustClass: "absolute right-1/2 translate-x-1/2 top-1/2 -translate-y-1/2 h-[75%] w-auto object-contain",
+    illustClass: "absolute right-8 top-1/2 -translate-y-1/2 h-[75%] w-auto object-contain",
     dates: "03.06 — 12.06",
     price: "от 165 000 руб*",
     title: "Поездка в\u00A0Китай",
@@ -83,7 +83,7 @@ const programs: ProgramCard[] = [
   {
     bgColor: "bg-program-sea",
     illustration: illustSea,
-    illustClass: "absolute right-4 bottom-2 h-[70%] w-auto object-contain",
+    illustClass: "absolute right-4 top-1/2 -translate-y-1/2 h-[85%] w-auto object-contain",
     dates: "23.06 — 15.07",
     price: "от 134 000 руб*",
     title: "Лагерь на\u00A0море",
@@ -94,7 +94,7 @@ const programs: ProgramCard[] = [
   {
     bgColor: "bg-program-altai",
     illustration: illustAltai,
-    illustClass: "absolute right-0 bottom-0 h-[80%] w-auto object-contain",
+    illustClass: "absolute right-0 top-1/2 -translate-y-[45%] h-[85%] w-auto object-contain",
     dates: "10.07 — 25.07",
     price: "от 95 000 руб*",
     title: "Лагерь на\u00A0Алтае",
@@ -105,7 +105,7 @@ const programs: ProgramCard[] = [
   {
     bgColor: "bg-program-uae",
     illustration: illustUae,
-    illustClass: "absolute right-4 bottom-2 h-[70%] w-auto object-contain",
+    illustClass: "absolute right-4 top-1/2 -translate-y-1/2 h-[75%] w-auto object-contain",
     dates: "Даты уточняются",
     price: "",
     title: "Поездка в\u00A0ОАЭ",
@@ -118,7 +118,7 @@ const programs: ProgramCard[] = [
   {
     bgColor: "bg-program-online",
     illustration: illustH1,
-    illustClass: "absolute right-6 top-1/2 -translate-y-[45%] h-[65%] w-auto object-contain",
+    illustClass: "absolute right-6 top-1/2 -translate-y-1/2 h-[60%] w-auto object-contain",
     tag: "Смена 1",
     dates: "01.06 — 12.06",
     price: "28 500 руб",
@@ -130,7 +130,7 @@ const programs: ProgramCard[] = [
   {
     bgColor: "bg-program-hilderstone2",
     illustration: illustH2,
-    illustClass: "absolute right-6 top-1/2 -translate-y-[45%] h-[65%] w-auto object-contain",
+    illustClass: "absolute right-6 top-1/2 -translate-y-1/2 h-[75%] w-auto object-contain",
     tag: "Смена 2",
     dates: "15.06 — 26.06",
     price: "28 500 руб",
