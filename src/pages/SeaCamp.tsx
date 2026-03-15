@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Header from "@/components/Header";
-import Header from "@/components/Header";
 import AnimatedSection from "@/components/AnimatedSection";
 
 import heroBg from "@/assets/sea-hero.jpg";
