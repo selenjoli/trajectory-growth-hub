@@ -31,12 +31,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-primary-foreground leading-[0.9] mb-8 max-w-4xl"
           >
-            <span className="relative inline-block">
-              Траектория
-              <span className="absolute -right-1 -top-5 sm:-top-6 md:-top-8 bg-accent text-accent-foreground text-[10px] sm:text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full whitespace-nowrap">
-                с 2021 года
-              </span>
-            </span>
+            Траектория
             <br />
             <span className="text-accent">Роста</span>
           </motion.h1>
