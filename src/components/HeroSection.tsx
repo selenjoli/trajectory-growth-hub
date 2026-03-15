@@ -46,7 +46,7 @@ const HeroSection = () => {
             </p>
             <a
               href="#activities"
-              className="inline-block bg-action text-action-foreground font-bold uppercase px-8 py-4 rounded-2xl hover:brightness-110 transition-all text-sm tracking-widest shrink-0"
+              className="inline-block btn-gold px-8 py-4 rounded-2xl transition-all text-sm tracking-widest shrink-0"
             >
               Узнать больше ↓
             </a>
