@@ -424,7 +424,7 @@ const ChinaTour = () => {
       </section>
 
       {/* ── What's included — receipt style with side photos ── */}
-      <section className="section-padding">
+      <section className="py-20 px-3 md:px-6 xl:px-10">
         <div className="fluid-container">
           <AnimatedSection>
             <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
