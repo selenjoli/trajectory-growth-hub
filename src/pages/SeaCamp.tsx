@@ -288,30 +288,27 @@ const SeaCamp = () => {
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
-              <div className="grid lg:grid-cols-2 gap-10 items-center">
+              <div className="grid lg:grid-cols-2 gap-10 items-center mb-10">
                 <div>
-                  <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed mb-8">
+                  <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
                     «Морская звезда» получила звание лучшей детской здравницы на Чёрном море — и это чувствуется в деталях: новые корпуса, большая охраняемая территория, собственный пляж в субтропическом лесу.
                   </p>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                    {facilities.map((f, i) => (
-                      <div key={i} className="rounded-xl overflow-hidden bg-card shadow-sm">
-                        <div className="aspect-square overflow-hidden">
-                          <img src={f.image} alt={f.text} className="w-full h-full object-cover" />
-                        </div>
-                        <p className="text-xs md:text-sm text-foreground font-medium normal-case leading-snug p-3">{f.text}</p>
-                      </div>
-                    ))}
-                  </div>
                 </div>
-                <div className="space-y-6">
+                <div>
                   <div className="rounded-[1.5rem] overflow-hidden aspect-[16/10]">
                     <img src={seaResort} alt="База лагеря" className="w-full h-full object-cover" />
                   </div>
-                  <div className="hidden lg:block">
-                    <img src={seaMap} alt="Расположение лагеря на карте" className="w-full h-auto max-w-sm mx-auto opacity-70" />
-                  </div>
                 </div>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {facilities.map((f, i) => (
+                  <div key={i} className="rounded-xl overflow-hidden bg-card shadow-sm">
+                    <div className="aspect-square overflow-hidden">
+                      <img src={f.image} alt={f.text} className="w-full h-full object-cover" />
+                    </div>
+                    <p className="text-xs md:text-sm text-foreground font-medium normal-case leading-snug p-3">{f.text}</p>
+                  </div>
+                ))}
               </div>
             </AnimatedSection>
           </div>
