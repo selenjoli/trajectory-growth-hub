@@ -10,7 +10,7 @@ const doors = [
     title: "Ищете программу для ребёнка?",
     text: "Туры, лагеря и онлайн языковая практика для детей от 8 до 17 лет.",
     link: "Программы 2026 →",
-    href: "/programs",
+    href: "/kanikuly",
   },
   {
     image: ctaTeachers,
@@ -18,7 +18,7 @@ const doors = [
     title: "Вы преподаватель?",
     text: "Онлайн-курс с британскими педагогами и ProSkill Fest.",
     link: "Для учителей →",
-    href: "/teachers",
+    href: "/uchitelya",
   },
   {
     image: ctaPartnership,
@@ -26,7 +26,7 @@ const doors = [
     title: "Руководите центром?",
     text: "Узнайте как работает партнёрство в ассоциации.",
     link: "О партнёрстве →",
-    href: "/partnership",
+    href: "/partnerstvo",
   },
 ];
 
