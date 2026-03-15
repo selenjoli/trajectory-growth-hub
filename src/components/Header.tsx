@@ -39,7 +39,7 @@ const leftMenu: MenuItem[] = [
 const rightMenu: MenuItem[] = [
   { label: "Партнерство", href: "/partnerstvo" },
   { label: "Об ассоциации", href: "/" },
-  { label: "Записаться", href: "#forma", isButton: true },
+  { label: "Написать нам", href: "#forma", isButton: true },
 ];
 
 const DropdownMenu = ({
