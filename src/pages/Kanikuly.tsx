@@ -476,12 +476,9 @@ const Kanikuly = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-primary-foreground mb-16">
-                Ассоциация{" "}
-                <span className="text-accent">
-                  «Траектория
-                  <br />
-                  Роста»
-                </span>
+                Ассоциация
+                <br />
+                <span className="text-accent">«Траектория Роста»</span>
               </h2>
             </AnimatedSection>
 
