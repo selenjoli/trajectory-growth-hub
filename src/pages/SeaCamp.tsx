@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import Header from "@/components/Header";
 import Header from "@/components/Header";
 import AnimatedSection from "@/components/AnimatedSection";
 
