@@ -460,7 +460,7 @@ const Kanikuly = () => {
             {safety.map((s, i) => (
               <AnimatedSection key={s.title} delay={i * 0.08}>
                 <div className="flex flex-col items-center text-center">
-                  <img src={s.image} alt={s.title} className="w-20 h-20 object-contain mb-4" />
+                  <img src={s.image} alt={s.title} className="w-28 h-28 object-contain mb-4" />
                   <h3 className="text-sm text-foreground mb-2">{s.title}</h3>
                   <p className="text-[13px] text-muted-foreground font-normal normal-case leading-relaxed">{s.text}</p>
                 </div>
