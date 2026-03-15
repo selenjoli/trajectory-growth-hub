@@ -423,49 +423,57 @@ const ChinaTour = () => {
         </div>
       </section>
 
-      {/* ── What's included — receipt style on red ── */}
+      {/* ── What's included — receipt style with side photos ── */}
       <section className="section-padding">
-        <div className="fluid-container flex justify-center">
+        <div className="fluid-container">
           <AnimatedSection>
-            <div className="bg-white rounded-[1.5rem] max-w-lg w-full px-8 py-10 shadow-2xl relative">
-              {/* Receipt header */}
-              <div className="text-center border-b-2 border-dashed border-foreground/20 pb-6 mb-6">
-                <h2 className="text-2xl md:text-3xl text-foreground mb-1">Что входит в стоимость</h2>
-                <p className="text-sm text-muted-foreground font-normal normal-case">Тур «Китай» · 3–12 июня 2026</p>
-              </div>
-
-              {/* Items */}
-              <div className="space-y-4 mb-8">
-                {included.map((item, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <span className="mt-1 w-5 h-5 rounded-full border-2 border-program-china bg-program-china/10 flex items-center justify-center shrink-0">
-                      <span className="w-2 h-2 rounded-full bg-program-china" />
-                    </span>
-                    <p className="text-foreground text-base font-normal normal-case leading-snug">{item}</p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Divider */}
-              <div className="border-t-2 border-dashed border-foreground/20 pt-6">
-                <div className="flex items-end justify-between">
-                  <span className="text-muted-foreground text-sm font-normal normal-case">Стоимость</span>
-                  <span className="text-3xl md:text-4xl font-bold text-foreground">от 165 000 ₽</span>
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-6">
+              {/* Left photo */}
+              <div className="hidden lg:block w-[260px] shrink-0">
+                <div className="rounded-[1.5rem] overflow-hidden aspect-[3/4]">
+                  <img src={beijing} alt="Фото из поездки" className="w-full h-full object-cover" />
                 </div>
               </div>
 
-              {/* Fine print */}
-              <p className="text-muted-foreground text-xs mt-4 font-normal normal-case leading-relaxed mb-6">
-                Авиабилеты, страховка, Диснейленд и дополнительные экскурсии оплачиваются отдельно.
-              </p>
+              {/* Receipt */}
+              <div className="bg-white rounded-[1.5rem] max-w-lg w-full px-8 py-10 shadow-2xl">
+                <div className="text-center border-b-2 border-dashed border-foreground/20 pb-6 mb-6">
+                  <h2 className="text-2xl md:text-3xl text-foreground mb-1">Что входит в стоимость</h2>
+                  <p className="text-sm text-muted-foreground font-normal normal-case">Тур «Китай» · 3–12 июня 2026</p>
+                </div>
+                <div className="space-y-4 mb-8">
+                  {included.map((item, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <span className="mt-1 w-5 h-5 rounded-full border-2 border-program-china bg-program-china/10 flex items-center justify-center shrink-0">
+                        <span className="w-2 h-2 rounded-full bg-program-china" />
+                      </span>
+                      <p className="text-foreground text-base font-normal normal-case leading-snug">{item}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="border-t-2 border-dashed border-foreground/20 pt-6">
+                  <div className="flex items-end justify-between">
+                    <span className="text-muted-foreground text-sm font-normal normal-case">Стоимость</span>
+                    <span className="text-3xl md:text-4xl font-bold text-foreground">от 165 000 ₽</span>
+                  </div>
+                </div>
+                <p className="text-muted-foreground text-xs mt-4 font-normal normal-case leading-relaxed mb-6">
+                  Авиабилеты, страховка, Диснейленд и дополнительные экскурсии оплачиваются отдельно.
+                </p>
+                <a
+                  href="#forma"
+                  className="block w-full text-center btn-gold px-6 py-4 rounded-2xl text-sm tracking-widest"
+                >
+                  Присоединиться
+                </a>
+              </div>
 
-              {/* CTA */}
-              <a
-                href="#forma"
-                className="block w-full text-center btn-gold px-6 py-4 rounded-2xl text-sm tracking-widest"
-              >
-                Присоединиться
-              </a>
+              {/* Right photo */}
+              <div className="hidden lg:block w-[260px] shrink-0">
+                <div className="rounded-[1.5rem] overflow-hidden aspect-[3/4]">
+                  <img src={hangzhou} alt="Фото из поездки" className="w-full h-full object-cover" />
+                </div>
+              </div>
             </div>
           </AnimatedSection>
         </div>
