@@ -56,6 +56,7 @@ const stats = [
 interface ProgramCard {
   bgColor: string;
   illustration: string;
+  illustClass?: string;
   dates: string;
   price: string;
   title: string;
