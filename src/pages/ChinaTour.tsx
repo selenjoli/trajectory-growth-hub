@@ -302,89 +302,68 @@ const ChinaTour = () => {
             </p>
           </AnimatedSection>
 
-          {/* Desktop: interactive map */}
-          <div className="hidden lg:block">
-            <AnimatedSection>
-              <div className="relative">
-                {/* Map image on the right */}
-                <div className="relative ml-auto w-[60%]">
-                  <img src={chinaMap} alt="Карта маршрута" className="w-full h-auto" />
 
-                  {/* City hover circles overlaid on map */}
-                  {cities.map((city, i) => (
-                    <div
-                      key={city.name}
-                      className="absolute"
-                      style={{ top: city.mapPos.top, left: city.mapPos.left }}
-                      onMouseEnter={() => setHoveredCity(i)}
-                      onMouseLeave={() => setHoveredCity(null)}
-                    >
-                      <motion.div
-                        className="w-5 h-5 rounded-full bg-white border-2 border-program-china cursor-pointer shadow-lg"
-                        animate={{
-                          scale: hoveredCity === i ? 1.5 : 1,
-                          boxShadow: hoveredCity === i ? "0 0 20px rgba(239,62,51,0.6)" : "0 2px 8px rgba(0,0,0,0.3)",
-                        }}
-                        transition={{ duration: 0.2 }}
-                      />
-                    </div>
-                  ))}
-                </div>
-
-                {/* City card — appears on hover, positioned on the left */}
-                <div className="absolute top-0 left-0 w-[45%] h-full flex items-center">
+          <AnimatedSection delay={0.1}>
+            <div className="grid lg:grid-cols-2 gap-8 items-start">
+              {/* Carousel on the left */}
+              <div
+                onMouseEnter={() => setCityPaused(true)}
+                onMouseLeave={() => setCityPaused(false)}
+              >
+                <div className="relative">
                   <AnimatePresence mode="wait">
-                    {hoveredCity !== null ? (
-                      <motion.div
-                        key={cities[hoveredCity].name}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -20 }}
-                        transition={{ duration: 0.3 }}
-                        className="bg-white/10 backdrop-blur-md rounded-[1.5rem] overflow-hidden w-full"
-                      >
-                        <div className="aspect-[16/10] overflow-hidden">
-                          <img src={cities[hoveredCity].image} alt={cities[hoveredCity].name} className="w-full h-full object-cover" />
-                        </div>
-                        <div className="p-8">
-                          <p className="text-white/50 text-xs uppercase tracking-widest mb-2">{cities[hoveredCity].subtitle}</p>
-                          <h3 className="text-3xl text-white mb-3">{cities[hoveredCity].name}</h3>
-                          <p className="text-white/80 text-base font-normal normal-case leading-relaxed">{cities[hoveredCity].text}</p>
-                        </div>
-                      </motion.div>
-                    ) : (
-                      <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="text-white/40 text-lg font-normal normal-case"
-                      >
-                        Наведите на город на карте, чтобы узнать подробнее
-                      </motion.div>
-                    )}
+                    <motion.div
+                      key={currentCity}
+                      initial={{ opacity: 0, x: -30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: 30 }}
+                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                      className="bg-white/10 backdrop-blur-sm rounded-[1.5rem] overflow-hidden"
+                    >
+                      <div className="aspect-[16/10] overflow-hidden">
+                        <img src={cities[currentCity].image} alt={cities[currentCity].name} className="w-full h-full object-cover" />
+                      </div>
+                      <div className="p-6 md:p-8">
+                        <p className="text-white/50 text-xs uppercase tracking-widest mb-2">{cities[currentCity].subtitle}</p>
+                        <h3 className="text-2xl md:text-3xl text-white mb-3">{cities[currentCity].name}</h3>
+                        <p className="text-white/80 text-base font-normal normal-case leading-relaxed">{cities[currentCity].text}</p>
+                      </div>
+                    </motion.div>
                   </AnimatePresence>
+
+                  {/* Navigation arrows — centered bottom */}
+                  <div className="flex items-center justify-center gap-4 mt-6">
+                    <button
+                      onClick={() => setCurrentCity((prev) => (prev - 1 + cities.length) % cities.length)}
+                      className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+                    >
+                      <ArrowLeft className="w-4 h-4 text-program-china" />
+                    </button>
+                    <div className="flex gap-2">
+                      {cities.map((_, i) => (
+                        <button
+                          key={i}
+                          onClick={() => setCurrentCity(i)}
+                          className={`w-2 h-2 rounded-full transition-all ${i === currentCity ? "bg-white scale-125" : "bg-white/40"}`}
+                        />
+                      ))}
+                    </div>
+                    <button
+                      onClick={() => setCurrentCity((prev) => (prev + 1) % cities.length)}
+                      className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+                    >
+                      <ArrowRight className="w-4 h-4 text-program-china" />
+                    </button>
+                  </div>
                 </div>
               </div>
-            </AnimatedSection>
-          </div>
 
-          {/* Mobile/Tablet: plain cards */}
-          <div className="lg:hidden space-y-5">
-            {cities.map((city, i) => (
-              <AnimatedSection key={city.name} delay={i * 0.08}>
-                <div className="bg-white/10 backdrop-blur-sm rounded-[1.5rem] overflow-hidden">
-                  <div className="aspect-[16/10]">
-                    <img src={city.image} alt={city.name} className="w-full h-full object-cover" />
-                  </div>
-                  <div className="p-6 md:p-8">
-                    <p className="text-white/50 text-xs uppercase tracking-widest mb-2">{city.subtitle}</p>
-                    <h3 className="text-2xl md:text-3xl text-white mb-3">{city.name}</h3>
-                    <p className="text-white/80 text-base font-normal normal-case leading-relaxed">{city.text}</p>
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
+              {/* Map on the right — desktop only */}
+              <div className="hidden lg:flex items-center justify-center">
+                <img src={chinaMap} alt="Карта маршрута" className="w-full h-auto max-w-md" />
+              </div>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
