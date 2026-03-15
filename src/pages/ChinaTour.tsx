@@ -302,7 +302,7 @@ const ChinaTour = () => {
             <h2 className="text-4xl md:text-6xl text-white mb-4">
               5 городов — 5 характеров
             </h2>
-            <p className="text-white/70 text-lg mb-14 max-w-2xl font-normal normal-case">
+            <p className="text-white/70 text-base md:text-lg mb-14 max-w-2xl font-normal normal-case">
               Каждый город открывает свою грань Китая.
             </p>
           </AnimatedSection>
@@ -335,8 +335,8 @@ const ChinaTour = () => {
                       </div>
                       <div className="p-6 md:p-8">
                         <p className="text-white/50 text-xs uppercase tracking-widest mb-2">{cities[currentCity].subtitle}</p>
-                        <h3 className="text-2xl md:text-3xl text-white mb-3">{cities[currentCity].name}</h3>
-                        <p className="text-white/80 text-base font-normal normal-case leading-relaxed">{cities[currentCity].text}</p>
+                        <h3 className="text-xl md:text-2xl text-white mb-3">{cities[currentCity].name}</h3>
+                        <p className="text-sm md:text-base text-white/80 font-normal normal-case leading-relaxed">{cities[currentCity].text}</p>
                       </div>
                     </motion.div>
                   </AnimatePresence>
@@ -393,12 +393,12 @@ const ChinaTour = () => {
               {memories.map((m, i) => (
                 <AnimatedSection key={m.title} delay={i * 0.08}>
                   <div className="group rounded-[1.5rem] overflow-hidden bg-surface-alt">
-                    <div className="aspect-[16/10] overflow-hidden">
+                    <div className="aspect-[3/2] overflow-hidden">
                       <img src={m.image} alt={m.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     </div>
-                    <div className="p-6">
-                      <h3 className="text-base text-foreground mb-2">{m.title}</h3>
-                      <p className="text-sm text-muted-foreground font-normal normal-case leading-relaxed">{m.text}</p>
+                    <div className="p-6 md:p-8">
+                      <h3 className="text-lg md:text-xl text-foreground mb-2">{m.title}</h3>
+                      <p className="text-sm md:text-base text-muted-foreground font-normal normal-case leading-relaxed">{m.text}</p>
                     </div>
                   </div>
                 </AnimatedSection>
@@ -412,8 +412,8 @@ const ChinaTour = () => {
                   <img src={guideImg} alt="Гид-переводчик" className="w-full h-full object-cover" />
                 </div>
                 <div className="p-8 md:p-10 flex flex-col justify-center">
-                  <h3 className="text-xl md:text-2xl text-foreground mb-3">Гид-переводчик на всём маршруте</h3>
-                  <p className="text-base text-muted-foreground font-normal normal-case leading-relaxed">
+                  <h3 className="text-lg md:text-xl text-foreground mb-3">Гид-переводчик на всём маршруте</h3>
+                  <p className="text-sm md:text-base text-muted-foreground font-normal normal-case leading-relaxed">
                     Человек, который объясняет не только что смотреть, но и что это значит. Профессиональный переводчик сопровождает группу на протяжении всей поездки — от Пекина до Ханчжоу.
                   </p>
                 </div>
@@ -562,7 +562,7 @@ const ChinaTour = () => {
                     className="group block rounded-[1.5rem] border border-border hover:border-program-china/30 p-8 transition-all duration-500 hover:shadow-lg bg-card h-full text-center"
                   >
                     <img src={p.illustration} alt={p.title} className={`${p.illustClass} mx-auto mb-4 object-contain`} />
-                    <h3 className="text-xl text-foreground mb-2">{p.title}</h3>
+                    <h3 className="text-lg md:text-xl text-foreground mb-2">{p.title}</h3>
                     <p className="text-sm text-muted-foreground font-normal normal-case mb-2">{p.dates}</p>
                     <p className="text-base font-bold text-foreground mb-4">{p.price}</p>
                     <span className="inline-block btn-gold px-5 py-2.5 rounded-xl text-xs tracking-widest">
@@ -582,7 +582,7 @@ const ChinaTour = () => {
                 <div className="flex items-center gap-6">
                   <img src={illustHilderstone} alt="Hilderstone College" className="h-28 w-auto object-contain shrink-0" />
                   <div>
-                    <h3 className="text-base text-foreground mb-2">
+                    <h3 className="text-lg md:text-xl text-foreground mb-2">
                       Онлайн языковая практика с Hilderstone College
                     </h3>
                     <p className="text-sm text-muted-foreground font-normal normal-case leading-relaxed mb-4">
