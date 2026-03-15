@@ -162,9 +162,9 @@ const ChinaTour = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex flex-wrap items-center gap-3 mb-6"
+              className="flex flex-wrap items-center justify-between mb-6 max-w-4xl"
             >
-              <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-xs font-semibold uppercase tracking-wider px-4 py-1.5 rounded-full">
+              <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-sm md:text-base font-semibold uppercase tracking-wider px-5 py-2 rounded-full">
                 Познавательный тур
               </span>
               <span className="inline-block bg-program-china text-white text-sm md:text-base font-bold uppercase tracking-wider px-5 py-2 rounded-full">
