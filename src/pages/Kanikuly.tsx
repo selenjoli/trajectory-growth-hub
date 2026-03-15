@@ -94,7 +94,7 @@ const programs: ProgramCard[] = [
   {
     bgColor: "bg-program-altai",
     illustration: illustAltai,
-    illustClass: "absolute right-0 bottom-0 h-[80%] w-auto object-contain",
+    illustClass: "absolute right-0 top-1/2 -translate-y-[45%] h-[85%] w-auto object-contain",
     dates: "10.07 — 25.07",
     price: "от 95 000 руб*",
     title: "Лагерь на\u00A0Алтае",
