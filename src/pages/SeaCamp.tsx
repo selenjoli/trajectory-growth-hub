@@ -251,7 +251,7 @@ const SeaCamp = () => {
         </div>
       </section>
 
-      {/* ── Projects carousel — on teal bg ── */}
+      {/* ── Projects — 4 static cards on teal bg ── */}
       <section className="section-padding overflow-hidden">
         <div className="fluid-container">
           <AnimatedSection>
@@ -263,70 +263,28 @@ const SeaCamp = () => {
             </p>
           </AnimatedSection>
 
-          <AnimatedSection delay={0.1}>
-            <div
-              className="relative"
-              onMouseEnter={() => setProjectPaused(true)}
-              onMouseLeave={() => setProjectPaused(false)}
-            >
-              <div className="relative z-10 flex items-center gap-8">
-                <div className="w-full lg:w-[55%] shrink-0">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={currentProject}
-                      initial={{ opacity: 0, x: -30 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: 30 }}
-                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                      className="bg-white/10 backdrop-blur-sm rounded-[1.5rem] overflow-hidden"
-                    >
-                      <div className="aspect-[3/2] overflow-hidden">
-                        <img src={projects[currentProject].image} alt={projects[currentProject].name} className="w-full h-full object-cover" />
-                      </div>
-                      <div className="p-6 md:p-8">
-                        <p className="text-white/50 text-xs uppercase tracking-widest mb-2">
-                          {projects[currentProject].emoji} {projects[currentProject].subtitle}
-                        </p>
-                        <h3 className="text-xl md:text-2xl text-white mb-3">{projects[currentProject].name}</h3>
-                        <p className="text-sm md:text-base text-white/80 font-normal normal-case leading-relaxed mb-3">{projects[currentProject].text}</p>
-                        <p className="text-sm text-white/60 italic font-normal normal-case">{projects[currentProject].fit}</p>
-                      </div>
-                    </motion.div>
-                  </AnimatePresence>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {projects.map((p, i) => (
+              <AnimatedSection key={p.name} delay={i * 0.1}>
+                <div className="bg-white/10 backdrop-blur-sm rounded-[1.5rem] overflow-hidden h-full flex flex-col">
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
+                    <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-lg">
+                      <span className="text-white font-black text-lg">{i + 1}</span>
+                    </div>
+                  </div>
+                  <div className="p-5 md:p-6 flex flex-col flex-1">
+                    <p className="text-white/50 text-xs uppercase tracking-widest mb-2">
+                      {p.emoji} {p.subtitle}
+                    </p>
+                    <h3 className="text-lg md:text-xl text-white mb-3">{p.name}</h3>
+                    <p className="text-sm text-white/80 font-normal normal-case leading-relaxed mb-3 flex-1">{p.text}</p>
+                    <p className="text-xs text-white/60 italic font-normal normal-case">{p.fit}</p>
+                  </div>
                 </div>
-
-                <div className="hidden lg:flex flex-col gap-4">
-                  <button
-                    onClick={() => setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length)}
-                    className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
-                  >
-                    <ArrowLeft className="w-5 h-5 text-program-sea" />
-                  </button>
-                  <button
-                    onClick={() => setCurrentProject((prev) => (prev + 1) % projects.length)}
-                    className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
-                  >
-                    <ArrowRight className="w-5 h-5 text-program-sea" />
-                  </button>
-                </div>
-              </div>
-
-              <div className="flex lg:hidden items-center justify-center gap-4 mt-6">
-                <button
-                  onClick={() => setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length)}
-                  className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
-                >
-                  <ArrowLeft className="w-4 h-4 text-program-sea" />
-                </button>
-                <button
-                  onClick={() => setCurrentProject((prev) => (prev + 1) % projects.length)}
-                  className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
-                >
-                  <ArrowRight className="w-4 h-4 text-program-sea" />
-                </button>
-              </div>
-            </div>
-          </AnimatedSection>
+              </AnimatedSection>
+            ))}
+          </div>
         </div>
       </section>
 
