@@ -27,7 +27,7 @@ const leftMenu: MenuItem[] = [
     ],
   },
   {
-    label: "Учителям",
+    label: "Программы для учителей",
     href: "/uchitelya",
     children: [
       { label: "Онлайн-курс Hilderstone", href: "/uchitelya/kurs" },
