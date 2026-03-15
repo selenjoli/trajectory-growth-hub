@@ -3,8 +3,8 @@ import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="px-3 md:px-6 xl:px-10 pt-3">
-      <div className="relative min-h-[95vh] flex items-end rounded-[2rem] overflow-hidden">
+    <section className="px-3 md:px-6 xl:px-10">
+      <div className="relative min-h-[90vh] flex items-end rounded-[2rem] overflow-hidden">
         <img
           src={heroBg}
           alt="Образовательный центр — дети за совместной работой"
