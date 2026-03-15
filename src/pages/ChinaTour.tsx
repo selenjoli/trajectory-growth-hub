@@ -302,7 +302,7 @@ const ChinaTour = () => {
             <h2 className="text-4xl md:text-6xl text-white mb-4">
               5 городов — 5 характеров
             </h2>
-            <p className="text-white/70 text-lg mb-14 max-w-2xl font-normal normal-case">
+            <p className="text-white/70 text-base md:text-lg mb-14 max-w-2xl font-normal normal-case">
               Каждый город открывает свою грань Китая.
             </p>
           </AnimatedSection>
