@@ -33,12 +33,12 @@ const MemberCard = ({ member }: { member: Member }) => {
 
   return (
     <div className="border border-border rounded-lg p-5 bg-card">
-      <div className="w-14 h-14 rounded-full bg-primary/10 text-primary font-display font-bold flex items-center justify-center text-lg mb-3">
+      <div className="w-14 h-14 rounded-full bg-primary/10 text-primary font-bold flex items-center justify-center text-lg mb-3">
         {initials}
       </div>
-      <p className="font-semibold text-[15px] text-foreground">{member.name}</p>
-      <p className="text-sm text-muted-foreground">{member.school}</p>
-      <p className="text-xs text-muted-foreground/70">{member.city}</p>
+      <p className="font-semibold text-[15px] text-foreground normal-case">{member.name}</p>
+      <p className="text-sm text-muted-foreground normal-case">{member.school}</p>
+      <p className="text-xs text-muted-foreground/70 normal-case">{member.city}</p>
     </div>
   );
 };
@@ -47,15 +47,15 @@ const MembersSection = () => {
   return (
     <section className="section-padding section-alt">
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
+        <h2 className="text-3xl md:text-4xl text-foreground mb-3">
           Кто входит в ассоциацию
         </h2>
-        <p className="text-muted-foreground font-body mb-10 max-w-2xl">
+        <p className="text-muted-foreground mb-10 max-w-2xl font-normal normal-case">
           15 школ и центров дополнительного образования — Москва, Подмосковье, Белгород, Курск, Воронеж, Чебоксары, Тамбов, Кисловодск.
         </p>
 
         <div className="mb-10">
-          <p className="text-xs uppercase tracking-widest text-muted-foreground font-semibold mb-5">
+          <p className="text-xs uppercase tracking-widest text-muted-foreground font-bold mb-5">
             Учредители
           </p>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -66,7 +66,7 @@ const MembersSection = () => {
         </div>
 
         <div>
-          <p className="text-xs uppercase tracking-widest text-muted-foreground font-semibold mb-5">
+          <p className="text-xs uppercase tracking-widest text-muted-foreground font-bold mb-5">
             Участники
           </p>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">

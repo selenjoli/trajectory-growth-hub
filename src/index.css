@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -26,6 +26,12 @@
 
     --accent: 160 84% 39%;
     --accent-foreground: 0 0% 100%;
+
+    /* Program destination colors (reserved for program pages) */
+    --program-china: 4 85% 57%;
+    --program-altai: 147 75% 33%;
+    --program-uae: 283 55% 35%;
+    --program-sea: 184 100% 39%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
@@ -87,10 +93,16 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-body;
+    @apply bg-background text-foreground font-sans;
   }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-display;
+  h1 {
+    @apply font-black uppercase;
+  }
+  h2 {
+    @apply font-black uppercase;
+  }
+  h3 {
+    @apply font-bold uppercase;
   }
 }
 
