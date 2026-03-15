@@ -62,7 +62,7 @@ const CTASection = () => {
                   <p className="text-[15px] text-muted-foreground mb-6 normal-case font-normal leading-relaxed">
                     {d.text}
                   </p>
-                  <span className="inline-block bg-action text-action-foreground font-bold uppercase px-6 py-3 rounded-xl text-sm tracking-wide group-hover:brightness-110 transition-all">
+                  <span className="inline-block btn-gold px-6 py-3 rounded-xl text-sm tracking-wide transition-all">
                     {d.link}
                   </span>
                 </div>

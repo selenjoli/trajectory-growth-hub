@@ -91,7 +91,7 @@ const NavItem = ({ item }: { item: MenuItem }) => {
     return (
       <a
         href={item.href}
-        className="bg-action text-action-foreground font-bold uppercase text-xs tracking-widest px-6 py-3 rounded-xl hover:brightness-110 transition-all"
+        className="btn-gold text-xs tracking-widest px-6 py-3 rounded-xl transition-all"
       >
         {item.label}
       </a>
@@ -169,7 +169,7 @@ const MobileMenu = ({
                     <a
                       href={item.href}
                       onClick={onClose}
-                      className="block mt-4 bg-action text-action-foreground font-bold uppercase text-sm tracking-widest px-6 py-4 rounded-xl text-center"
+                      className="block mt-4 btn-gold text-sm tracking-widest px-6 py-4 rounded-xl text-center"
                     >
                       {item.label}
                     </a>

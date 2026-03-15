@@ -15,7 +15,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 28% 17%;
 
-    --primary: 221 72% 40%;
+    --primary: 345 60% 30%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96%;
@@ -24,7 +24,7 @@
     --muted: 210 40% 96%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: 160 84% 39%;
+    --accent: 345 60% 30%;
     --accent-foreground: 0 0% 100%;
 
     /* Program destination colors (reserved for program pages) */
@@ -43,7 +43,7 @@
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 221 72% 40%;
+    --ring: 345 60% 30%;
 
     --radius: 0.5rem;
 
@@ -64,19 +64,19 @@
     --card-foreground: 210 40% 98%;
     --popover: 215 28% 12%;
     --popover-foreground: 210 40% 98%;
-    --primary: 221 72% 50%;
+    --primary: 345 55% 40%;
     --primary-foreground: 210 40% 98%;
     --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
-    --accent: 160 84% 39%;
+    --accent: 345 55% 40%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
     --border: 217 33% 17%;
     --input: 217 33% 17%;
-    --ring: 221 72% 50%;
+    --ring: 345 55% 40%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -116,4 +116,21 @@
   .fluid-container {
     @apply w-full max-w-[1600px] mx-auto;
   }
+  .btn-gold {
+    background: linear-gradient(135deg, #b8860b, #daa520, #f5d76e, #daa520, #b8860b);
+    background-size: 300% 300%;
+    animation: gold-shimmer 4s ease infinite;
+    color: hsl(var(--foreground));
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .btn-gold:hover {
+    filter: brightness(1.1);
+  }
+}
+
+@keyframes gold-shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }

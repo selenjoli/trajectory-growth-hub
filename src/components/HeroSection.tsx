@@ -21,7 +21,7 @@ const HeroSection = () => {
             <p className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60">
               Ассоциация центров дополнительного образования
             </p>
-            <span className="bg-accent text-accent-foreground text-[10px] sm:text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full whitespace-nowrap">
+            <span className="btn-gold text-[10px] sm:text-xs tracking-wider px-3 py-1 rounded-full whitespace-nowrap">
               с 2021 года
             </span>
           </motion.div>
@@ -46,7 +46,7 @@ const HeroSection = () => {
             </p>
             <a
               href="#activities"
-              className="inline-block bg-action text-action-foreground font-bold uppercase px-8 py-4 rounded-2xl hover:brightness-110 transition-all text-sm tracking-widest shrink-0"
+              className="inline-block btn-gold px-8 py-4 rounded-2xl transition-all text-sm tracking-widest shrink-0"
             >
               Узнать больше ↓
             </a>
