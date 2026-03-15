@@ -335,8 +335,8 @@ const ChinaTour = () => {
                       </div>
                       <div className="p-6 md:p-8">
                         <p className="text-white/50 text-xs uppercase tracking-widest mb-2">{cities[currentCity].subtitle}</p>
-                        <h3 className="text-2xl md:text-3xl text-white mb-3">{cities[currentCity].name}</h3>
-                        <p className="text-white/80 text-base font-normal normal-case leading-relaxed">{cities[currentCity].text}</p>
+                        <h3 className="text-xl md:text-2xl text-white mb-3">{cities[currentCity].name}</h3>
+                        <p className="text-sm md:text-base text-white/80 font-normal normal-case leading-relaxed">{cities[currentCity].text}</p>
                       </div>
                     </motion.div>
                   </AnimatePresence>
