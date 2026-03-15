@@ -246,12 +246,12 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* Logo — center */}
+        {/* Logo */}
         <a href="/" className="flex-shrink-0 lg:mx-8">
           <img
             src={logoDark}
             alt="Траектория Роста"
-            className="h-14 md:h-[72px] w-auto"
+            className="h-8 sm:h-10 lg:h-14 xl:h-[72px] w-auto"
           />
         </a>
 
