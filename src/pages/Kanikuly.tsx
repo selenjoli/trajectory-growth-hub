@@ -259,7 +259,7 @@ const Kanikuly = () => {
                     <img
                       src={p.illustration}
                       alt=""
-                      className="absolute right-0 bottom-0 h-[85%] w-auto object-contain opacity-100 group-hover:scale-105 transition-transform duration-500 pointer-events-none"
+                      className={`${p.illustClass || "absolute right-0 bottom-0 h-[85%] w-auto object-contain"} opacity-100 group-hover:scale-105 transition-transform duration-500 pointer-events-none`}
                     />
                     {/* Text content */}
                     <div className="relative z-10 h-full flex flex-col justify-between p-6 md:p-8">
