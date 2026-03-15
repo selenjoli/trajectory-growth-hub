@@ -312,7 +312,7 @@ const ChinaTour = () => {
               onMouseLeave={() => setCityPaused(false)}
             >
               {/* Map as background — desktop only */}
-              <div className="hidden lg:block absolute top-1/2 -translate-y-1/2 -right-10 w-[65%] opacity-40 pointer-events-none">
+              <div className="hidden lg:block absolute top-1/2 -translate-y-1/2 -right-10 w-[65%] pointer-events-none">
                 <img src={chinaMap} alt="Карта маршрута" className="w-full h-auto" />
               </div>
 
