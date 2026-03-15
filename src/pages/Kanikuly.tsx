@@ -118,7 +118,7 @@ const programs: ProgramCard[] = [
   {
     bgColor: "bg-program-online",
     illustration: illustH1,
-    illustClass: "absolute right-6 top-1/2 -translate-y-[45%] h-[65%] w-auto object-contain",
+    illustClass: "absolute right-6 top-1/2 -translate-y-1/2 h-[60%] w-auto object-contain",
     tag: "Смена 1",
     dates: "01.06 — 12.06",
     price: "28 500 руб",
