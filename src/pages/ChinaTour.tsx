@@ -256,7 +256,7 @@ const ChinaTour = () => {
                 {/* Stacked photo carousel */}
                 <div className="hidden md:block">
                   <div
-                    className="relative mx-auto w-[280px] h-[380px]"
+                    className="relative w-[340px] h-[460px]"
                     onMouseEnter={() => setWhyPaused(true)}
                     onMouseLeave={() => setWhyPaused(false)}
                   >
