@@ -32,7 +32,7 @@ const MemberCard = ({ member }: { member: Member }) => {
     .join("");
 
   return (
-    <div className="border border-border rounded-lg p-5 bg-card">
+    <div className="rounded-2xl border border-border p-5 bg-card">
       <div className="w-14 h-14 rounded-full bg-primary/10 text-primary font-bold flex items-center justify-center text-lg mb-3">
         {initials}
       </div>
@@ -45,7 +45,7 @@ const MemberCard = ({ member }: { member: Member }) => {
 
 const MembersSection = () => {
   return (
-    <section className="section-padding section-alt">
+    <section className="section-padding">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl text-foreground mb-3">
           Кто входит в ассоциацию
