@@ -113,7 +113,12 @@ const ChinaTour = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [zoomed, setZoomed] = useState<number | null>(null);
-  const [hoveredCity, setHoveredCity] = useState<number | null>(null);
+  const [currentCity, setCurrentCity] = useState(0);
+  const [cityPaused, setCityPaused] = useState(false);
+  const [whySlide, setWhySlide] = useState(0);
+  const [whyPaused, setWhyPaused] = useState(false);
+
+  const whyPhotos = [beijing, shanghai, suzhou, hangzhou, nanjing];
 
   const nextSlide = useCallback(() => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
