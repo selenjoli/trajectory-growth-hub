@@ -107,7 +107,7 @@ const NavItem = ({ item, light = false }: { item: MenuItem; light?: boolean }) =
     >
       <a
         href={item.href}
-        className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors py-2 flex items-center gap-1"
+        className={`text-sm font-medium transition-colors py-2 flex items-center gap-1 ${light ? "text-white/70 hover:text-white" : "text-foreground/70 hover:text-foreground"}`}
       >
         {item.label}
         {item.children && (
