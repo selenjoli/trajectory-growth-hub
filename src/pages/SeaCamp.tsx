@@ -185,12 +185,12 @@ const SeaCamp = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-6">
-                Лагерь — это не <span className="text-program-sea">«сдать ребёнка на лето»</span>
+                Лагерь — это <span className="text-program-sea">не «сдать ребёнка на лето»</span>
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
               <div className="flex flex-col lg:flex-row gap-10 items-start">
-                <div className="max-w-2xl space-y-6 lg:shrink-0">
+                <div className="max-w-lg space-y-6 lg:shrink-0">
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
                     Многие родители слышат слово «лагерь» и представляют одно и то же: скучные мероприятия по расписанию, безликие корпуса, тихий час. Мы понимаем это ощущение.
                   </p>
@@ -200,9 +200,9 @@ const SeaCamp = () => {
                 </div>
 
                 {/* Stacked photo carousel */}
-                <div className="flex justify-center lg:justify-start">
+                <div className="flex-1 flex justify-center lg:justify-start">
                   <div
-                    className="relative w-[340px] h-[460px]"
+                    className="relative w-full max-w-[500px] h-[460px]"
                     onMouseEnter={() => setWhyPaused(true)}
                     onMouseLeave={() => setWhyPaused(false)}
                   >
@@ -246,30 +246,30 @@ const SeaCamp = () => {
         <div className="fluid-container">
           <AnimatedSection>
             <h2 className="text-4xl md:text-6xl text-white mb-4">
-              Выбери своё лето
+              Выбери <span className="bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">своё</span> лето
             </h2>
             <p className="text-white/70 text-base md:text-lg mb-14 max-w-2xl font-normal normal-case">
               В начале смены каждый ребёнок выбирает один проект. Занятия, дружба и финальный день выстраиваются вокруг этого выбора.
             </p>
           </AnimatedSection>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid sm:grid-cols-2 gap-5">
             {projects.map((p, i) => (
               <AnimatedSection key={p.name} delay={i * 0.1}>
-                <div className="bg-white/10 backdrop-blur-sm rounded-[1.5rem] overflow-hidden h-full flex flex-col">
+                <div className="bg-white rounded-[1.5rem] overflow-hidden h-full flex flex-col">
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
-                    <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-lg">
-                      <span className="text-white font-black text-lg">{i + 1}</span>
+                    <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg">
+                      <span className="bg-gradient-to-br from-amber-400 to-amber-600 bg-clip-text text-transparent font-black text-lg">{i + 1}</span>
                     </div>
                   </div>
                   <div className="p-5 md:p-6 flex flex-col flex-1">
-                    <p className="text-white/50 text-xs uppercase tracking-widest mb-2">
-                      {p.emoji} {p.subtitle}
+                    <p className="text-foreground/50 text-xs uppercase tracking-widest mb-2">
+                      {p.subtitle}
                     </p>
-                    <h3 className="text-lg md:text-xl text-white mb-3">{p.name}</h3>
-                    <p className="text-sm text-white/80 font-normal normal-case leading-relaxed mb-3 flex-1">{p.text}</p>
-                    <p className="text-xs text-white/60 italic font-normal normal-case">{p.fit}</p>
+                    <h3 className="text-lg md:text-xl text-foreground mb-3">{p.name}</h3>
+                    <p className="text-sm text-foreground/80 font-normal normal-case leading-relaxed mb-3 flex-1">{p.text}</p>
+                    <p className="text-xs text-foreground/60 italic font-normal normal-case">{p.fit}</p>
                   </div>
                 </div>
               </AnimatedSection>
@@ -288,30 +288,27 @@ const SeaCamp = () => {
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
-              <div className="grid lg:grid-cols-2 gap-10 items-center">
+              <div className="grid lg:grid-cols-2 gap-10 items-center mb-10">
                 <div>
-                  <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed mb-8">
+                  <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
                     «Морская звезда» получила звание лучшей детской здравницы на Чёрном море — и это чувствуется в деталях: новые корпуса, большая охраняемая территория, собственный пляж в субтропическом лесу.
                   </p>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                    {facilities.map((f, i) => (
-                      <div key={i} className="rounded-xl overflow-hidden bg-card shadow-sm">
-                        <div className="aspect-square overflow-hidden">
-                          <img src={f.image} alt={f.text} className="w-full h-full object-cover" />
-                        </div>
-                        <p className="text-xs md:text-sm text-foreground font-medium normal-case leading-snug p-3">{f.text}</p>
-                      </div>
-                    ))}
-                  </div>
                 </div>
-                <div className="space-y-6">
+                <div>
                   <div className="rounded-[1.5rem] overflow-hidden aspect-[16/10]">
                     <img src={seaResort} alt="База лагеря" className="w-full h-full object-cover" />
                   </div>
-                  <div className="hidden lg:block">
-                    <img src={seaMap} alt="Расположение лагеря на карте" className="w-full h-auto max-w-sm mx-auto opacity-70" />
-                  </div>
                 </div>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {facilities.map((f, i) => (
+                  <div key={i} className="rounded-xl overflow-hidden bg-card shadow-sm">
+                    <div className="aspect-square overflow-hidden">
+                      <img src={f.image} alt={f.text} className="w-full h-full object-cover" />
+                    </div>
+                    <p className="text-xs md:text-sm text-foreground font-medium normal-case leading-snug p-3">{f.text}</p>
+                  </div>
+                ))}
               </div>
             </AnimatedSection>
           </div>
