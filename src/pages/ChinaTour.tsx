@@ -254,7 +254,7 @@ const ChinaTour = () => {
                 </div>
 
                 {/* Stacked photo carousel */}
-                <div className="hidden lg:flex justify-start">
+                <div className="flex justify-center lg:justify-start">
                   <div
                     className="relative w-[340px] h-[460px]"
                     onMouseEnter={() => setWhyPaused(true)}
