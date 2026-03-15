@@ -135,7 +135,7 @@ const ChinaTour = () => {
     if (cityPaused) return;
     const interval = setInterval(() => {
       setCurrentCity((prev) => (prev + 1) % cities.length);
-    }, 3000);
+    }, 6000);
     return () => clearInterval(interval);
   }, [cityPaused]);
 
