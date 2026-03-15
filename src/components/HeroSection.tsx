@@ -16,11 +16,14 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-6"
+            className="flex items-center gap-3 mb-6 flex-wrap"
           >
             <p className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60">
               Ассоциация центров дополнительного образования
             </p>
+            <span className="bg-accent text-accent-foreground text-[10px] sm:text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full whitespace-nowrap">
+              с 2021 года
+            </span>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
