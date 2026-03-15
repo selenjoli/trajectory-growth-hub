@@ -1,3 +1,5 @@
+import AnimatedSection from "./AnimatedSection";
+
 interface Member {
   name: string;
   school: string;
@@ -25,54 +27,62 @@ const members: Member[] = [
   { name: "Вера Романова", school: "SPU", city: "Тамбов" },
 ];
 
-const MemberCard = ({ member }: { member: Member }) => {
+const MemberCard = ({ member, index }: { member: Member; index: number }) => {
   const initials = member.name
     .split(" ")
     .map((w) => w[0])
     .join("");
 
   return (
-    <div className="rounded-2xl border border-border p-5 bg-card">
-      <div className="w-14 h-14 rounded-full bg-primary/10 text-primary font-bold flex items-center justify-center text-lg mb-3">
-        {initials}
+    <AnimatedSection delay={index * 0.05}>
+      <div className="rounded-[1.5rem] border border-border p-6 bg-card hover:border-primary/30 transition-all duration-300 group h-full">
+        <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold flex items-center justify-center text-sm mb-4 group-hover:scale-110 transition-transform duration-300">
+          {initials}
+        </div>
+        <p className="font-semibold text-foreground normal-case">{member.name}</p>
+        <p className="text-sm text-muted-foreground normal-case">{member.school}</p>
+        <p className="text-xs text-muted-foreground/60 normal-case mt-1">{member.city}</p>
       </div>
-      <p className="font-semibold text-[15px] text-foreground normal-case">{member.name}</p>
-      <p className="text-sm text-muted-foreground normal-case">{member.school}</p>
-      <p className="text-xs text-muted-foreground/70 normal-case">{member.city}</p>
-    </div>
+    </AnimatedSection>
   );
 };
 
 const MembersSection = () => {
   return (
-    <section className="section-padding">
-      <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl text-foreground mb-3">
-          Кто входит в ассоциацию
-        </h2>
-        <p className="text-muted-foreground mb-10 max-w-2xl font-normal normal-case">
-          15 школ и центров дополнительного образования — Москва, Подмосковье, Белгород, Курск, Воронеж, Чебоксары, Тамбов, Кисловодск.
-        </p>
+    <section className="px-3">
+      <div className="section-alt rounded-[2rem] py-20 px-6 md:px-16">
+        <div className="container mx-auto">
+          <AnimatedSection>
+            <h2 className="text-4xl md:text-6xl text-foreground mb-4">
+              Кто входит
+              <br />
+              в ассоциацию
+            </h2>
+            <p className="text-muted-foreground mb-14 max-w-2xl text-lg font-normal normal-case">
+              15 школ и центров дополнительного образования — Москва, Подмосковье, Белгород, Курск, Воронеж, Чебоксары, Тамбов, Кисловодск.
+            </p>
+          </AnimatedSection>
 
-        <div className="mb-10">
-          <p className="text-xs uppercase tracking-widest text-muted-foreground font-bold mb-5">
-            Учредители
-          </p>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {founders.map((m) => (
-              <MemberCard key={m.name} member={m} />
-            ))}
+          <div className="mb-12">
+            <p className="text-xs uppercase tracking-[0.15em] text-primary font-bold mb-6">
+              Учредители
+            </p>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
+              {founders.map((m, i) => (
+                <MemberCard key={m.name} member={m} index={i} />
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div>
-          <p className="text-xs uppercase tracking-widest text-muted-foreground font-bold mb-5">
-            Участники
-          </p>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {members.map((m) => (
-              <MemberCard key={m.name} member={m} />
-            ))}
+          <div>
+            <p className="text-xs uppercase tracking-[0.15em] text-primary font-bold mb-6">
+              Участники
+            </p>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
+              {members.map((m, i) => (
+                <MemberCard key={m.name} member={m} index={i} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
