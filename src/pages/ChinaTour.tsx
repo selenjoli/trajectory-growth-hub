@@ -176,7 +176,7 @@ const ChinaTour = () => {
             >
               Китай: когда история
               <br />
-              смотрит тебе <span className="text-accent">в&nbsp;глаза</span>
+              смотрит тебе <span className="text-program-china">в&nbsp;глаза</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
