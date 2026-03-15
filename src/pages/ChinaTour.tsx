@@ -290,8 +290,8 @@ const ChinaTour = () => {
         </div>
       </section>
 
-      {/* ── Route — 5 cities with interactive map (desktop) / cards (mobile) ── */}
-      <section className="section-padding">
+      {/* ── Route — 5 cities: map background, carousel left, arrows right ── */}
+      <section className="section-padding overflow-hidden">
         <div className="fluid-container">
           <AnimatedSection>
             <h2 className="text-4xl md:text-6xl text-white mb-4">
@@ -302,15 +302,20 @@ const ChinaTour = () => {
             </p>
           </AnimatedSection>
 
-
           <AnimatedSection delay={0.1}>
-            <div className="grid lg:grid-cols-2 gap-8 items-start">
-              {/* Carousel on the left */}
-              <div
-                onMouseEnter={() => setCityPaused(true)}
-                onMouseLeave={() => setCityPaused(false)}
-              >
-                <div className="relative">
+            <div
+              className="relative"
+              onMouseEnter={() => setCityPaused(true)}
+              onMouseLeave={() => setCityPaused(false)}
+            >
+              {/* Map as background — desktop only */}
+              <div className="hidden lg:block absolute top-1/2 -translate-y-1/2 -right-10 w-[65%] opacity-40 pointer-events-none">
+                <img src={chinaMap} alt="Карта маршрута" className="w-full h-auto" />
+              </div>
+
+              <div className="relative z-10 flex items-center gap-8">
+                {/* Carousel card — takes ~55% on desktop */}
+                <div className="w-full lg:w-[55%] shrink-0">
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={currentCity}
@@ -330,37 +335,39 @@ const ChinaTour = () => {
                       </div>
                     </motion.div>
                   </AnimatePresence>
+                </div>
 
-                  {/* Navigation arrows — centered bottom */}
-                  <div className="flex items-center justify-center gap-4 mt-6">
-                    <button
-                      onClick={() => setCurrentCity((prev) => (prev - 1 + cities.length) % cities.length)}
-                      className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
-                    >
-                      <ArrowLeft className="w-4 h-4 text-program-china" />
-                    </button>
-                    <div className="flex gap-2">
-                      {cities.map((_, i) => (
-                        <button
-                          key={i}
-                          onClick={() => setCurrentCity(i)}
-                          className={`w-2 h-2 rounded-full transition-all ${i === currentCity ? "bg-white scale-125" : "bg-white/40"}`}
-                        />
-                      ))}
-                    </div>
-                    <button
-                      onClick={() => setCurrentCity((prev) => (prev + 1) % cities.length)}
-                      className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
-                    >
-                      <ArrowRight className="w-4 h-4 text-program-china" />
-                    </button>
-                  </div>
+                {/* Arrows — to the right of the card */}
+                <div className="hidden lg:flex flex-col gap-4">
+                  <button
+                    onClick={() => setCurrentCity((prev) => (prev - 1 + cities.length) % cities.length)}
+                    className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+                  >
+                    <ArrowLeft className="w-5 h-5 text-program-china" />
+                  </button>
+                  <button
+                    onClick={() => setCurrentCity((prev) => (prev + 1) % cities.length)}
+                    className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+                  >
+                    <ArrowRight className="w-5 h-5 text-program-china" />
+                  </button>
                 </div>
               </div>
 
-              {/* Map on the right — desktop only */}
-              <div className="hidden lg:flex items-center justify-center">
-                <img src={chinaMap} alt="Карта маршрута" className="w-full h-auto max-w-md" />
+              {/* Mobile arrows — below card */}
+              <div className="flex lg:hidden items-center justify-center gap-4 mt-6">
+                <button
+                  onClick={() => setCurrentCity((prev) => (prev - 1 + cities.length) % cities.length)}
+                  className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+                >
+                  <ArrowLeft className="w-4 h-4 text-program-china" />
+                </button>
+                <button
+                  onClick={() => setCurrentCity((prev) => (prev + 1) % cities.length)}
+                  className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+                >
+                  <ArrowRight className="w-4 h-4 text-program-china" />
+                </button>
               </div>
             </div>
           </AnimatedSection>
