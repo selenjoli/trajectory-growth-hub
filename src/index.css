@@ -27,6 +27,12 @@
     --accent: 160 84% 39%;
     --accent-foreground: 0 0% 100%;
 
+    /* Program destination colors (reserved for program pages) */
+    --program-china: 4 85% 57%;
+    --program-altai: 147 75% 33%;
+    --program-uae: 283 55% 35%;
+    --program-sea: 184 100% 39%;
+
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
