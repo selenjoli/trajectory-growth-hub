@@ -51,9 +51,9 @@ const HistorySection = () => {
   }, []);
 
   return (
-    <section className="px-3">
+    <section className="px-3 md:px-6 xl:px-10">
       <div className="bg-foreground rounded-[2rem] py-20 px-6 md:px-16">
-        <div className="container mx-auto">
+        <div className="fluid-container">
           <AnimatedSection>
             <h2 className="text-4xl md:text-6xl text-primary-foreground mb-16">
               Как это

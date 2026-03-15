@@ -5,31 +5,31 @@ import AnimatedSection from "./AnimatedSection";
 const testimonials = [
   {
     id: 1,
-    image: "https://placehold.co/400x700/e8e0d4/1a1a1a?text=Отзыв+1",
+    image: "https://placehold.co/400x700/1a7a4a/ffffff?text=Отзыв+1",
     name: "Анна Петрова",
     role: "Родитель",
   },
   {
     id: 2,
-    image: "https://placehold.co/400x700/e8e0d4/1a1a1a?text=Отзыв+2",
+    image: "https://placehold.co/400x700/1a7a4a/ffffff?text=Отзыв+2",
     name: "Мария Иванова",
     role: "Преподаватель",
   },
   {
     id: 3,
-    image: "https://placehold.co/400x700/e8e0d4/1a1a1a?text=Отзыв+3",
+    image: "https://placehold.co/400x700/1a7a4a/ffffff?text=Отзыв+3",
     name: "Дмитрий Козлов",
     role: "Руководитель центра",
   },
   {
     id: 4,
-    image: "https://placehold.co/400x700/e8e0d4/1a1a1a?text=Отзыв+4",
+    image: "https://placehold.co/400x700/1a7a4a/ffffff?text=Отзыв+4",
     name: "Елена Смирнова",
     role: "Родитель",
   },
   {
     id: 5,
-    image: "https://placehold.co/400x700/e8e0d4/1a1a1a?text=Отзыв+5",
+    image: "https://placehold.co/400x700/1a7a4a/ffffff?text=Отзыв+5",
     name: "Ольга Новикова",
     role: "Преподаватель",
   },
@@ -51,20 +51,19 @@ const TestimonialsSection = () => {
   }, [isPaused, zoomed, nextSlide]);
 
   return (
-    <section className="px-3">
-      <div className="bg-muted rounded-[2rem] py-20 px-6 md:px-16">
-        <div className="container mx-auto">
+    <section className="px-3 md:px-6 xl:px-10">
+      <div className="bg-accent rounded-[2rem] py-20 px-6 md:px-16">
+        <div className="fluid-container">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl text-foreground mb-4">
+            <h2 className="text-4xl md:text-6xl text-accent-foreground mb-4">
               Отзывы
             </h2>
-            <p className="text-muted-foreground text-lg mb-12 max-w-xl">
+            <p className="text-accent-foreground/70 text-lg mb-12 max-w-xl">
               Что говорят участники, родители и преподаватели о программах ассоциации.
             </p>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            {/* Stacked carousel — centered vertical cards */}
             <div
               className="relative mx-auto w-[280px] md:w-[340px] h-[560px] md:h-[640px]"
               onMouseEnter={() => setIsPaused(true)}
@@ -104,7 +103,6 @@ const TestimonialsSection = () => {
                         offset === 0 && setZoomed(isZoomed ? null : item.id)
                       }
                     >
-                      {/* Vertical screenshot-style card */}
                       <div className="w-full h-full flex flex-col">
                         <div className="flex-1 rounded-[1.2rem] overflow-hidden shadow-2xl bg-background">
                           <img
@@ -113,16 +111,15 @@ const TestimonialsSection = () => {
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        {/* Name below the card — only visible on front card */}
                         <motion.div
                           className="mt-4 text-center"
                           animate={{ opacity: offset === 0 ? 1 : 0 }}
                           transition={{ duration: 0.3 }}
                         >
-                          <p className="text-foreground font-bold text-base">
+                          <p className="text-accent-foreground font-bold text-base">
                             {item.name}
                           </p>
-                          <p className="text-muted-foreground text-sm">
+                          <p className="text-accent-foreground/60 text-sm">
                             {item.role}
                           </p>
                         </motion.div>
