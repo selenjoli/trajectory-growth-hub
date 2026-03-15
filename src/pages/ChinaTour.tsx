@@ -16,7 +16,6 @@ import teaImg from "@/assets/china-tea.jpg";
 import disneyImg from "@/assets/china-disney.jpg";
 import guideImg from "@/assets/china-guide.jpg";
 import chinaMap from "@/assets/china-map-circles.png";
-import chinaMap from "@/assets/china-map-circles.png";
 import illustUae from "@/assets/illust-uae.svg";
 import illustSea from "@/assets/illust-starfish.png";
 import illustAltai from "@/assets/illust-altai.png";
