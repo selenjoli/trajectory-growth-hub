@@ -260,13 +260,13 @@ const Header = ({ variant = "dark" }: { variant?: "dark" | "light" }) => {
         {/* Right nav — desktop */}
         <nav className="hidden lg:flex items-center justify-end gap-6 flex-1">
           {rightMenu.map((item) => (
-            <NavItem key={item.href} item={item} />
+            <NavItem key={item.href} item={item} light={isLight} />
           ))}
         </nav>
 
         {/* Mobile burger */}
         <button
-          className="lg:hidden text-foreground/70 hover:text-foreground"
+          className={`lg:hidden ${isLight ? "text-white/70 hover:text-white" : "text-foreground/70 hover:text-foreground"}`}
           onClick={() => setMobileOpen(true)}
         >
           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
