@@ -46,6 +46,10 @@ export default {
           DEFAULT: "hsl(var(--action))",
           foreground: "hsl(var(--action-foreground))",
         },
+        "program-china": "hsl(var(--program-china))",
+        "program-altai": "hsl(var(--program-altai))",
+        "program-uae": "hsl(var(--program-uae))",
+        "program-sea": "hsl(var(--program-sea))",
         "surface-alt": "hsl(var(--surface-alt))",
         popover: {
           DEFAULT: "hsl(var(--popover))",
