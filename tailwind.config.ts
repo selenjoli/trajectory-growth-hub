@@ -50,6 +50,7 @@ export default {
         "program-altai": "hsl(var(--program-altai))",
         "program-uae": "hsl(var(--program-uae))",
         "program-sea": "hsl(var(--program-sea))",
+        "program-online": "hsl(var(--program-online))",
         "surface-alt": "hsl(var(--surface-alt))",
         popover: {
           DEFAULT: "hsl(var(--popover))",
