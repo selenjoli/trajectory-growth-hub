@@ -6,8 +6,8 @@ import heroBg from "@/assets/kanikuly-hero.jpg";
 import illustChina from "@/assets/illust-china.png";
 import illustSea from "@/assets/illust-starfish.png";
 import illustAltai from "@/assets/illust-altai.png";
-import illustUae from "@/assets/illust-uae.png";
-import illustH1 from "@/assets/illust-hilderstone1.svg";
+import illustUae from "@/assets/illust-uae.svg";
+import illustH1 from "@/assets/illust-hilderstone1.png";
 import illustH2 from "@/assets/illust-hilderstone2.png";
 import faqSafety from "@/assets/faq-safety.jpg";
 import faqResult from "@/assets/faq-result.jpg";
@@ -130,7 +130,7 @@ const programs: ProgramCard[] = [
   {
     bgColor: "bg-program-hilderstone2",
     illustration: illustH2,
-    illustClass: "absolute right-6 top-1/2 -translate-y-1/2 h-[75%] w-auto object-contain",
+    illustClass: "absolute right-6 top-1/2 -translate-y-1/2 h-[85%] w-auto object-contain",
     tag: "Смена 2",
     dates: "15.06 — 26.06",
     price: "28 500 руб",
