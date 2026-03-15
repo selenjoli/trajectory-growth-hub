@@ -130,6 +130,24 @@ const ChinaTour = () => {
     return () => clearInterval(interval);
   }, [isPaused, zoomed, nextSlide]);
 
+  // City carousel auto-play
+  useEffect(() => {
+    if (cityPaused) return;
+    const interval = setInterval(() => {
+      setCurrentCity((prev) => (prev + 1) % cities.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [cityPaused]);
+
+  // Why carousel auto-play
+  useEffect(() => {
+    if (whyPaused) return;
+    const interval = setInterval(() => {
+      setWhySlide((prev) => (prev + 1) % whyPhotos.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, [whyPaused, whyPhotos.length]);
+
   return (
     <main className="bg-program-china">
       <Header variant="light" />
