@@ -105,7 +105,7 @@ const programs: ProgramCard[] = [
   {
     bgColor: "bg-program-uae",
     illustration: illustUae,
-    illustClass: "absolute right-4 top-1/2 -translate-y-1/2 h-[75%] w-auto object-contain",
+    illustClass: "absolute right-10 top-1/2 -translate-y-[55%] h-[85%] w-auto object-contain",
     dates: "Даты уточняются",
     price: "",
     title: "Поездка в\u00A0ОАЭ",
