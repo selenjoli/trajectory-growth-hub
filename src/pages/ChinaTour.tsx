@@ -221,16 +221,69 @@ const ChinaTour = () => {
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
-              <div className="max-w-3xl space-y-6">
-                <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
-                  Есть страны, после которых смотришь на мир немного иначе. Китай — одна из них.
-                </p>
-                <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
-                  За один день здесь можно подняться на стену, которой две тысячи лет, а вечером сесть в поезд, идущий 350 км/ч. Иероглифы, которые казались загадкой, начинают обретать смысл. Дети понимают, что история — это не параграф в учебнике, а место где можно стоять, дышать и чувствовать.
-                </p>
-                <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
-                  Маршрут составлен так, чтобы каждый город открывал что-то своё: Пекин — имперское величие, Нанкин — мудрость, Сучжоу — красоту, Шанхай — скорость, Ханчжоу — покой.
-                </p>
+              <div className="grid md:grid-cols-2 gap-10 items-start">
+                <div className="max-w-xl space-y-6">
+                  <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
+                    Есть страны, после которых смотришь на мир немного иначе. Китай — одна из них.
+                  </p>
+                  <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
+                    За один день здесь можно подняться на стену, которой две тысячи лет, а вечером сесть в поезд, идущий 350 км/ч. Иероглифы, которые казались загадкой, начинают обретать смысл. Дети понимают, что история — это не параграф в учебнике, а место где можно стоять, дышать и чувствовать.
+                  </p>
+                  <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed mb-2">
+                    Маршрут составлен так, чтобы каждый город открывал что-то своё:
+                  </p>
+                  <ul className="space-y-2">
+                    {[
+                      { city: "Пекин", desc: "имперское величие" },
+                      { city: "Нанкин", desc: "мудрость" },
+                      { city: "Сучжоу", desc: "красоту" },
+                      { city: "Шанхай", desc: "скорость" },
+                      { city: "Ханчжоу", desc: "покой" },
+                    ].map((item) => (
+                      <li key={item.city} className="flex items-center gap-3 text-muted-foreground text-base md:text-lg font-normal normal-case">
+                        <span className="w-2 h-2 rounded-full bg-program-china shrink-0" />
+                        <span><strong className="text-foreground">{item.city}</strong> — {item.desc}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Stacked photo carousel */}
+                <div className="hidden md:block">
+                  <div
+                    className="relative mx-auto w-[280px] h-[380px]"
+                    onMouseEnter={() => setWhyPaused(true)}
+                    onMouseLeave={() => setWhyPaused(false)}
+                  >
+                    <AnimatePresence>
+                      {whyPhotos.map((photo, i) => {
+                        const offset = (i - whySlide + whyPhotos.length) % whyPhotos.length;
+                        if (offset > 3) return null;
+                        return (
+                          <motion.div
+                            key={i}
+                            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                            animate={{
+                              opacity: offset === 0 ? 1 : 0.55 - offset * 0.12,
+                              scale: 1 - offset * 0.05,
+                              y: offset * 16,
+                              x: offset * 8,
+                              zIndex: whyPhotos.length - offset,
+                              rotateZ: offset * -2,
+                            }}
+                            exit={{ opacity: 0, scale: 0.9, y: -20 }}
+                            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                            className="absolute inset-0"
+                          >
+                            <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl">
+                              <img src={photo} alt="Китай" className="w-full h-full object-cover" />
+                            </div>
+                          </motion.div>
+                        );
+                      })}
+                    </AnimatePresence>
+                  </div>
+                </div>
               </div>
             </AnimatedSection>
           </div>
