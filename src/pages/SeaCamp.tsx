@@ -308,7 +308,7 @@ const SeaCamp = () => {
                     <div className="aspect-square overflow-hidden">
                       <img src={f.image} alt={f.text} className="w-full h-full object-cover" />
                     </div>
-                    <p className="text-xs md:text-sm text-foreground font-medium normal-case leading-snug p-3">{f.text}</p>
+                    <p className="text-sm md:text-base text-foreground font-medium normal-case leading-snug p-3">{f.text}</p>
                   </div>
                 ))}
               </div>
