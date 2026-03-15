@@ -407,11 +407,11 @@ const ChinaTour = () => {
 
             {/* Guide — horizontal block with photo */}
             <AnimatedSection delay={0.4}>
-              <div className="mt-6 rounded-[1.5rem] bg-surface-alt overflow-hidden grid md:grid-cols-[1fr_1.5fr] gap-0">
+              <div className="mt-6 rounded-[1.5rem] bg-surface-alt overflow-hidden grid md:grid-cols-2 gap-0 md:gap-6">
                 <div className="aspect-[4/3] md:aspect-auto">
                   <img src={guideImg} alt="Гид-переводчик" className="w-full h-full object-cover" />
                 </div>
-                <div className="p-8 md:p-10 flex flex-col justify-center">
+                <div className="p-6 md:p-8 flex flex-col justify-center">
                   <h3 className="text-lg md:text-xl text-foreground mb-3">Гид-переводчик на всём маршруте</h3>
                   <p className="text-sm md:text-base text-muted-foreground font-normal normal-case leading-relaxed">
                     Человек, который объясняет не только что смотреть, но и что это значит. Профессиональный переводчик сопровождает группу на протяжении всей поездки — от Пекина до Ханчжоу.
