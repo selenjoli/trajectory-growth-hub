@@ -226,8 +226,8 @@ const ChinaTour = () => {
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
-              <div className="flex flex-col md:flex-row gap-10 items-start">
-                <div className="max-w-2xl space-y-6 shrink-0">
+              <div className="flex flex-col lg:flex-row gap-10 items-start">
+                <div className="max-w-2xl space-y-6 lg:shrink-0">
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
                     Есть страны, после которых смотришь на мир немного иначе. Китай — одна из них.
                   </p>
@@ -254,7 +254,7 @@ const ChinaTour = () => {
                 </div>
 
                 {/* Stacked photo carousel */}
-                <div className="hidden md:flex justify-start">
+                <div className="hidden lg:flex justify-start">
                   <div
                     className="relative w-[340px] h-[460px]"
                     onMouseEnter={() => setWhyPaused(true)}
