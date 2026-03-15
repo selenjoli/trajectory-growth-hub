@@ -162,7 +162,8 @@ const ChinaTour = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex flex-wrap items-center justify-between mb-6 max-w-4xl"
+              className="flex flex-wrap items-center justify-between mb-6 w-fit min-w-full lg:min-w-0"
+              style={{ maxWidth: "fit-content" }}
             >
               <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-sm md:text-base font-semibold uppercase tracking-wider px-5 py-2 rounded-full">
                 Познавательный тур
@@ -175,7 +176,7 @@ const ChinaTour = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95] mb-4 max-w-4xl"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95] mb-4 w-fit"
             >
               <span className="text-program-china">Китай:</span> когда история
               <br />
