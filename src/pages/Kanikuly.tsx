@@ -370,7 +370,7 @@ const Kanikuly = () => {
             {whyItems.map((w, i) => (
               <AnimatedSection key={w.title} delay={i * 0.1}>
                 <div className="flex flex-col items-center text-center">
-                  <img src={w.image} alt={w.title} className="w-28 h-28 object-contain mb-5" />
+                  <img src={w.image} alt={w.title} className="w-40 h-40 object-contain mb-5" />
                   <h3 className="text-base text-foreground mb-2">{w.title}</h3>
                   <p className="text-muted-foreground text-[15px] font-normal normal-case leading-relaxed">{w.text}</p>
                 </div>
