@@ -393,12 +393,12 @@ const ChinaTour = () => {
               {memories.map((m, i) => (
                 <AnimatedSection key={m.title} delay={i * 0.08}>
                   <div className="group rounded-[1.5rem] overflow-hidden bg-surface-alt">
-                    <div className="aspect-[16/10] overflow-hidden">
+                    <div className="aspect-[3/2] overflow-hidden">
                       <img src={m.image} alt={m.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     </div>
-                    <div className="p-6">
-                      <h3 className="text-base text-foreground mb-2">{m.title}</h3>
-                      <p className="text-sm text-muted-foreground font-normal normal-case leading-relaxed">{m.text}</p>
+                    <div className="p-6 md:p-8">
+                      <h3 className="text-lg md:text-xl text-foreground mb-2">{m.title}</h3>
+                      <p className="text-sm md:text-base text-muted-foreground font-normal normal-case leading-relaxed">{m.text}</p>
                     </div>
                   </div>
                 </AnimatedSection>
