@@ -103,13 +103,6 @@ const SeaCamp = () => {
     return () => clearInterval(interval);
   }, [isPaused, zoomed, nextSlide]);
 
-  useEffect(() => {
-    if (projectPaused) return;
-    const interval = setInterval(() => {
-      setCurrentProject((prev) => (prev + 1) % projects.length);
-    }, 6000);
-    return () => clearInterval(interval);
-  }, [projectPaused]);
 
   useEffect(() => {
     if (whyPaused) return;
