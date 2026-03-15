@@ -18,7 +18,7 @@ const cards = [
     title: "Программы для педагогов",
     text: "Онлайн-курс повышения квалификации с преподавателями Hilderstone College и ежегодный ProSkill Fest — фестиваль для учителей, который вдохновляет.",
     link: "Программы для педагогов →",
-    href: "/teachers",
+    href: "/uchitelya",
   },
   {
     image: partnership,
