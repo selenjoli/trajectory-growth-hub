@@ -10,7 +10,7 @@ const doors = [
     title: "Ищете программу для ребёнка?",
     text: "Туры, лагеря и онлайн языковая практика для детей от 8 до 17 лет.",
     link: "Программы 2026 →",
-    href: "/programs",
+    href: "/kanikuly",
   },
   {
     image: ctaTeachers,
