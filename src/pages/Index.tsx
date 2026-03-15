@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ActivitiesSection from "@/components/ActivitiesSection";
 import HistorySection from "@/components/HistorySection";
@@ -9,6 +10,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 const Index = () => {
   return (
     <main className="space-y-4">
+      <Header />
       <HeroSection />
       <ActivitiesSection />
       <HistorySection />
