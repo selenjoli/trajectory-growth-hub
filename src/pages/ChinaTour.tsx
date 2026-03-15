@@ -469,7 +469,7 @@ const ChinaTour = () => {
               </div>
 
               {/* Right photo */}
-              <div className="hidden lg:block flex-1 max-w-[300px]">
+              <div className="hidden lg:block flex-1">
                 <div className="rounded-[1.5rem] overflow-hidden aspect-[3/4]">
                   <img src={hangzhou} alt="Фото из поездки" className="w-full h-full object-cover" />
                 </div>
