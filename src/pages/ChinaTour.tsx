@@ -532,17 +532,6 @@ const ChinaTour = () => {
               </div>
             </AnimatedSection>
 
-            {/* Featured quote */}
-            <AnimatedSection delay={0.2}>
-              <blockquote className="mt-16 max-w-2xl mx-auto text-center">
-                <p className="text-foreground/80 text-lg md:text-xl italic font-normal normal-case leading-relaxed mb-4">
-                  «Дочка до поездки говорила, что история — скучный предмет. После Великой стены пересмотрела своё отношение. Теперь сама читает про Китай — я не ожидала такого.»
-                </p>
-                <footer className="text-foreground/60 text-sm font-normal normal-case">
-                  — Марина, мама Сони (13 лет), Санкт-Петербург
-                </footer>
-              </blockquote>
-            </AnimatedSection>
           </div>
         </div>
       </section>
