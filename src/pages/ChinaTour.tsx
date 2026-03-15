@@ -162,10 +162,13 @@ const ChinaTour = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mb-6"
+              className="flex flex-wrap items-center gap-3 mb-6"
             >
               <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-xs font-semibold uppercase tracking-wider px-4 py-1.5 rounded-full">
-                Познавательный тур · Июнь 2026
+                Познавательный тур
+              </span>
+              <span className="inline-block bg-program-china text-white text-sm md:text-base font-bold uppercase tracking-wider px-5 py-2 rounded-full">
+                3 — 12 июня 2026
               </span>
             </motion.div>
             <motion.h1
@@ -174,9 +177,9 @@ const ChinaTour = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95] mb-4 max-w-4xl"
             >
-              Китай: когда история
+              <span className="text-program-china">Китай:</span> когда история
               <br />
-              смотрит тебе <span className="text-program-china">в&nbsp;глаза</span>
+              смотрит тебе в&nbsp;глаза
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -192,7 +195,7 @@ const ChinaTour = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="flex flex-wrap items-center gap-3 mb-8"
             >
-              {["3 — 12 июня 2026", "10 дней", "Для всей семьи"].map((chip) => (
+              {["10 дней", "Для всей семьи"].map((chip) => (
                 <span key={chip} className="bg-white/15 backdrop-blur-sm text-white text-xs font-medium px-4 py-2 rounded-full">
                   {chip}
                 </span>
