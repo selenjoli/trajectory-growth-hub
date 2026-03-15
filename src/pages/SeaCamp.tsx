@@ -88,8 +88,6 @@ const SeaCamp = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [zoomed, setZoomed] = useState<number | null>(null);
-  const [currentProject, setCurrentProject] = useState(0);
-  const [projectPaused, setProjectPaused] = useState(false);
   const [whySlide, setWhySlide] = useState(0);
   const [whyPaused, setWhyPaused] = useState(false);
 
