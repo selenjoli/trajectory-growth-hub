@@ -450,16 +450,17 @@ const ChinaTour = () => {
               </div>
 
               {/* Fine print */}
-              <p className="text-muted-foreground text-xs mt-4 font-normal normal-case leading-relaxed">
+              <p className="text-muted-foreground text-xs mt-4 font-normal normal-case leading-relaxed mb-6">
                 Авиабилеты, страховка, Диснейленд и дополнительные экскурсии оплачиваются отдельно.
               </p>
 
-              {/* Decorative receipt tear */}
-              <div className="absolute -bottom-3 left-0 right-0 h-6 overflow-hidden">
-                <svg className="w-full" viewBox="0 0 400 20" preserveAspectRatio="none">
-                  <path d="M0,0 Q5,20 10,0 Q15,20 20,0 Q25,20 30,0 Q35,20 40,0 Q45,20 50,0 Q55,20 60,0 Q65,20 70,0 Q75,20 80,0 Q85,20 90,0 Q95,20 100,0 Q105,20 110,0 Q115,20 120,0 Q125,20 130,0 Q135,20 140,0 Q145,20 150,0 Q155,20 160,0 Q165,20 170,0 Q175,20 180,0 Q185,20 190,0 Q195,20 200,0 Q205,20 210,0 Q215,20 220,0 Q225,20 230,0 Q235,20 240,0 Q245,20 250,0 Q255,20 260,0 Q265,20 270,0 Q275,20 280,0 Q285,20 290,0 Q295,20 300,0 Q305,20 310,0 Q315,20 320,0 Q325,20 330,0 Q335,20 340,0 Q345,20 350,0 Q355,20 360,0 Q365,20 370,0 Q375,20 380,0 Q385,20 390,0 Q395,20 400,0" fill="white" />
-                </svg>
-              </div>
+              {/* CTA */}
+              <a
+                href="#forma"
+                className="block w-full text-center btn-gold px-6 py-4 rounded-2xl text-sm tracking-widest"
+              >
+                Присоединиться
+              </a>
             </div>
           </AnimatedSection>
         </div>
