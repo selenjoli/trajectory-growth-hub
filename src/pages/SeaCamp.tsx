@@ -298,16 +298,18 @@ const SeaCamp = () => {
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
-              <div className="grid lg:grid-cols-2 gap-10 items-start">
+              <div className="grid lg:grid-cols-2 gap-10 items-center">
                 <div>
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed mb-8">
                     «Морская звезда» получила звание лучшей детской здравницы на Чёрном море — и это чувствуется в деталях: новые корпуса, большая охраняемая территория, собственный пляж в субтропическом лесу.
                   </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                     {facilities.map((f, i) => (
-                      <div key={i} className="flex items-start gap-3">
-                        <span className="text-2xl shrink-0">{f.icon}</span>
-                        <p className="text-sm md:text-base text-foreground font-normal normal-case leading-snug">{f.text}</p>
+                      <div key={i} className="rounded-xl overflow-hidden bg-card shadow-sm">
+                        <div className="aspect-square overflow-hidden">
+                          <img src={f.image} alt={f.text} className="w-full h-full object-cover" />
+                        </div>
+                        <p className="text-xs md:text-sm text-foreground font-medium normal-case leading-snug p-3">{f.text}</p>
                       </div>
                     ))}
                   </div>
