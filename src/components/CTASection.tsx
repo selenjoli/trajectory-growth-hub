@@ -18,7 +18,7 @@ const doors = [
     title: "Вы преподаватель?",
     text: "Онлайн-курс с британскими педагогами и ProSkill Fest.",
     link: "Для учителей →",
-    href: "/teachers",
+    href: "/uchitelya",
   },
   {
     image: ctaPartnership,
