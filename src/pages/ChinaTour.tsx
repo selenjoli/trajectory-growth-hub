@@ -582,7 +582,7 @@ const ChinaTour = () => {
                 <div className="flex items-center gap-6">
                   <img src={illustHilderstone} alt="Hilderstone College" className="h-28 w-auto object-contain shrink-0" />
                   <div>
-                    <h3 className="text-base text-foreground mb-2">
+                    <h3 className="text-lg md:text-xl text-foreground mb-2">
                       Онлайн языковая практика с Hilderstone College
                     </h3>
                     <p className="text-sm text-muted-foreground font-normal normal-case leading-relaxed mb-4">
