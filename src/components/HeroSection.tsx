@@ -16,7 +16,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex items-center gap-3 mb-6 flex-wrap"
+            className="flex items-center justify-between mb-6 max-w-4xl"
           >
             <p className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60">
               Ассоциация центров дополнительного образования
