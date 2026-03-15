@@ -1,10 +1,17 @@
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import meetingsImg from "@/assets/meetings.jpg";
-import russiaMap from "@/assets/russia-map.jpg";
+import kidsImg from "@/assets/kids-tour.jpg";
+import partnershipImg from "@/assets/partnership.jpg";
+import teachersImg from "@/assets/teachers-workshop.jpg";
+import russiaMap from "@/assets/russia-map.png";
 import rostRazvitie from "@/assets/rost-razvitie.jpg";
 import rostObrazovanie from "@/assets/rost-obrazovanie.jpg";
 import rostSotrudnichestvo from "@/assets/rost-sotrudnichestvo.jpg";
 import rostTurizm from "@/assets/rost-turizm.jpg";
+
+const carouselImages = [meetingsImg, kidsImg, partnershipImg, teachersImg];
 
 const rostItems = [
   {
@@ -34,50 +41,92 @@ const rostItems = [
 ];
 
 const HistorySection = () => {
+  const [currentImg, setCurrentImg] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImg((prev) => (prev + 1) % carouselImages.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="px-3">
       <div className="bg-foreground rounded-[2rem] py-20 px-6 md:px-16">
         <div className="container mx-auto">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl text-primary-foreground mb-6">
+            <h2 className="text-4xl md:text-6xl text-primary-foreground mb-16">
               Как это
               <br />
               начиналось
             </h2>
           </AnimatedSection>
 
-          {/* Two story blocks */}
-          <div className="grid md:grid-cols-2 gap-4 mb-16">
-            <AnimatedSection delay={0.1}>
-              <div className="rounded-[1.5rem] overflow-hidden bg-primary-foreground/10 backdrop-blur-sm h-full">
-                <img
-                  src={meetingsImg}
-                  alt="Встреча руководителей на конференции"
-                  className="w-full h-64 object-cover"
-                />
-                <div className="p-7">
-                  <p className="text-primary-foreground/80 leading-relaxed font-normal normal-case">
-                    В 2021 году руководители нескольких языковых школ начали регулярно встречаться на профессиональных конференциях. Постепенно деловое общение переросло в дружбу, а дружба — в желание делать что-то вместе.
-                  </p>
-                </div>
+          {/* Block 1: Stacked photos left, text right */}
+          <AnimatedSection>
+            <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center mb-20">
+              {/* Stacked photo carousel */}
+              <div className="relative h-[400px] md:h-[480px]">
+                <AnimatePresence>
+                  {carouselImages.map((img, i) => {
+                    const offset = (i - currentImg + carouselImages.length) % carouselImages.length;
+                    if (offset > 3) return null;
+                    return (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                        animate={{
+                          opacity: offset === 0 ? 1 : 0.6 - offset * 0.15,
+                          scale: 1 - offset * 0.05,
+                          y: offset * 16,
+                          x: offset * 8,
+                          zIndex: carouselImages.length - offset,
+                          rotateZ: offset * -1.5,
+                        }}
+                        exit={{ opacity: 0, scale: 0.9, y: -20 }}
+                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                        className="absolute inset-0"
+                      >
+                        <img
+                          src={img}
+                          alt="Встречи ассоциации"
+                          className="w-full h-full object-cover rounded-[1.5rem] shadow-2xl"
+                        />
+                      </motion.div>
+                    );
+                  })}
+                </AnimatePresence>
               </div>
-            </AnimatedSection>
 
-            <AnimatedSection delay={0.2}>
-              <div className="rounded-[1.5rem] overflow-hidden bg-primary-foreground/10 backdrop-blur-sm h-full">
+              {/* Text right */}
+              <div>
+                <p className="text-primary-foreground/80 text-lg md:text-xl leading-relaxed font-normal normal-case">
+                  В 2021 году руководители нескольких языковых школ начали регулярно встречаться на профессиональных конференциях. Постепенно деловое общение переросло в дружбу, а дружба — в желание делать что-то вместе.
+                </p>
+              </div>
+            </div>
+          </AnimatedSection>
+
+          {/* Block 2: Text left, map right */}
+          <AnimatedSection delay={0.1}>
+            <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center mb-20">
+              {/* Text left */}
+              <div>
+                <p className="text-primary-foreground/80 text-lg md:text-xl leading-relaxed font-normal normal-case">
+                  Сегодня в ассоциации 15 центров из Москвы, Подмосковья, Белгорода, Курска, Воронежа, Чебоксар, Тамбова и Кисловодска. За четыре года мы провели совместные туры для детей в нескольких странах.
+                </p>
+              </div>
+
+              {/* Map right */}
+              <div className="flex justify-center">
                 <img
                   src={russiaMap}
-                  alt="Карта России с отмеченными городами ассоциации"
-                  className="w-full h-64 object-cover"
+                  alt="Карта России с городами ассоциации"
+                  className="w-full max-w-lg h-auto object-contain"
                 />
-                <div className="p-7">
-                  <p className="text-primary-foreground/80 leading-relaxed font-normal normal-case">
-                    Сегодня в ассоциации 15 центров из Москвы, Подмосковья, Белгорода, Курска, Воронежа, Чебоксар, Тамбова и Кисловодска. За четыре года мы провели совместные туры для детей в нескольких странах.
-                  </p>
-                </div>
               </div>
-            </AnimatedSection>
-          </div>
+            </div>
+          </AnimatedSection>
 
           {/* РОСТ */}
           <AnimatedSection>
