@@ -260,12 +260,12 @@ const HilderstoneCourse = () => {
             </h2>
           </AnimatedSection>
 
-          <div className="flex flex-col lg:flex-row gap-10 items-start">
-            <AnimatedSection delay={0.2} className="w-full lg:w-1/2">
-              <div className="rounded-[1.5rem] overflow-hidden max-h-[500px] mx-auto" style={{ position: 'relative', paddingTop: 'min(177.78%, 500px)', width: '100%', maxWidth: '280px' }}>
+          <div className="flex flex-col lg:flex-row gap-10 items-center">
+            <AnimatedSection delay={0.2} className="w-full lg:w-1/2 flex justify-center">
+              <div className="rounded-[1.5rem] overflow-hidden mx-auto" style={{ position: 'relative', paddingTop: '177.78%', width: '100%', maxWidth: '300px' }}>
                 <iframe
-                  src="https://kinescope.io/embed/my6qHzv5AXLiPmktJFqVJn"
-                  allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
+                  src="https://kinescope.io/embed/my6qHzv5AXLiPmktJFqVJn?autoplay=0&muted=0"
+                  allow="fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
                   frameBorder="0"
                   allowFullScreen
                   style={{ position: 'absolute', width: '100%', height: '100%', top: 0, left: 0 }}
@@ -284,7 +284,6 @@ const HilderstoneCourse = () => {
               </div>
             </AnimatedSection>
 
-          </div>
         </div>
       </section>
 
