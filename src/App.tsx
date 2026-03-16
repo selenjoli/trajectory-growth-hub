@@ -9,6 +9,7 @@ import ChinaTour from "./pages/ChinaTour.tsx";
 import SeaCamp from "./pages/SeaCamp.tsx";
 import AltaiCamp from "./pages/AltaiCamp.tsx";
 import UaeTour from "./pages/UaeTour.tsx";
+import HilderstoneCourse from "./pages/HilderstoneCourse.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/kanikuly/more" element={<SeaCamp />} />
           <Route path="/kanikuly/altai" element={<AltaiCamp />} />
           <Route path="/kanikuly/uae" element={<UaeTour />} />
+          <Route path="/kanikuly/online" element={<HilderstoneCourse />} />
           <Route path="/kanikuly/:program" element={<Index />} />
           <Route path="/uchitelya" element={<Index />} />
           <Route path="/uchitelya/:course" element={<Index />} />
