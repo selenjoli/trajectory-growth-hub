@@ -413,8 +413,17 @@ const AltaiCamp = () => {
           animate={{ backgroundColor: daySchedule[currentDay].bgColor }}
           transition={{ duration: 1.5, ease: "easeInOut" }}
         >
+          {/* Spacer top */}
+          <div className="h-32 md:h-48" />
+
+          {/* Content fades in when section is in view */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: dayInView ? 1 : 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
           {/* Title — white, on the colored bg */}
-          <div className="px-6 md:px-16 pt-16 pb-6">
+          <div className="px-6 md:px-16 pb-6">
             <div className="fluid-container">
               <h2 className="text-4xl md:text-6xl text-white">
                 День в лагере — <span className="text-white/70">как это выглядит</span>
@@ -509,6 +518,11 @@ const AltaiCamp = () => {
               <ArrowRight className="w-5 h-5 text-white" />
             </button>
           </div>
+
+          </motion.div>
+
+          {/* Spacer bottom */}
+          <div className="h-32 md:h-48" />
         </motion.div>
       </section>
 
