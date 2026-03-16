@@ -52,6 +52,7 @@ export default {
         "program-sea": "hsl(var(--program-sea))",
         "program-online": "hsl(var(--program-online))",
         "program-hilderstone2": "hsl(var(--program-hilderstone2))",
+        "program-teachers": "hsl(var(--program-teachers))",
         "testimonial-yellow": "hsl(var(--testimonial-yellow))",
         "surface-alt": "hsl(var(--surface-alt))",
         popover: {
