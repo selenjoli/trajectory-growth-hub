@@ -308,7 +308,7 @@ const HilderstoneCourse = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-10">
-                Официальный сертификат <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">британского колледжа</span>
+                Официальный сертификат <span className="bg-gradient-to-r from-amber-400 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">британского колледжа</span>
               </h2>
             </AnimatedSection>
 
