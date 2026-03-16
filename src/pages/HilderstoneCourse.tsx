@@ -22,10 +22,10 @@ const testimonials = [
 ];
 
 const otherPrograms = [
-  { title: "Китай", illustration: illustChina, illustClass: "h-24 w-auto", dates: "3\u201312\u00a0июня", price: "от\u00a0165\u00a0000\u00a0руб.", href: "/kanikuly/china" },
-  { title: "Море", illustration: illustSea, illustClass: "h-20 w-auto", dates: "24\u00a0июня\u00a0\u2014 14\u00a0июля", price: "от\u00a0134\u00a0000\u00a0руб.", href: "/kanikuly/more" },
-  { title: "Алтай", illustration: illustAltai, illustClass: "h-24 w-auto", dates: "10\u201325\u00a0июля", price: "от\u00a095\u00a0000\u00a0руб.", href: "/kanikuly/altai" },
-  { title: "Дубай", illustration: illustUae, illustClass: "h-24 w-auto", dates: "Даты уточняются", price: "от\u00a0145\u00a0000\u00a0руб.", href: "/kanikuly/uae" },
+  { title: "Китай", illustration: illustChina, dates: "3\u201312\u00a0июня", price: "от\u00a0165\u00a0000\u00a0руб.", href: "/kanikuly/china" },
+  { title: "Море", illustration: illustSea, dates: "24\u00a0июня\u00a0\u2014 14\u00a0июля", price: "от\u00a0134\u00a0000\u00a0руб.", href: "/kanikuly/more" },
+  { title: "Алтай", illustration: illustAltai, dates: "10\u201325\u00a0июля", price: "от\u00a095\u00a0000\u00a0руб.", href: "/kanikuly/altai" },
+  { title: "Дубай", illustration: illustUae, dates: "Даты уточняются", price: "от\u00a0145\u00a0000\u00a0руб.", href: "/kanikuly/uae" },
 ];
 
 const whyPhotos = [collegePic, teacherPic, lessonPic];
@@ -130,24 +130,31 @@ const HilderstoneCourse = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-14">
-                Два способа провести лето <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">с&nbsp;пользой</span>
+                Два способа провести лето <span className="bg-gradient-to-r from-amber-400 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">с&nbsp;пользой</span>
               </h2>
             </AnimatedSection>
 
             <div className="grid md:grid-cols-2 gap-6">
               {/* Shift 1 */}
               <AnimatedSection delay={0.1}>
-                <div className="bg-program-online/10 rounded-[1.5rem] overflow-hidden h-full flex flex-col">
-                  <div className="aspect-[16/9] overflow-hidden">
+                <div className="rounded-[1.5rem] overflow-hidden h-full flex flex-col bg-card border border-border">
+                  <div className="relative aspect-[16/9] overflow-hidden">
                     <img src={collegePic} alt="Hilderstone College" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="p-8 md:p-10 flex flex-col flex-1">
-                    <div className="bg-white rounded-xl px-5 py-4 mb-6">
-                      <p className="text-foreground font-bold text-lg uppercase tracking-wider mb-1">Смена&nbsp;1</p>
-                      <p className="text-foreground text-base font-medium normal-case">1&nbsp;&mdash; 12&nbsp;июня · 11:15&nbsp;&mdash; 12:45 ежедневно (кроме выходных)</p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 flex items-end justify-between gap-4">
+                      <h3 className="text-2xl md:text-3xl text-white">Смена&nbsp;1</h3>
+                      <span className="bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-4 py-2 rounded-full whitespace-nowrap">
+                        1&nbsp;&mdash; 12&nbsp;июня
+                      </span>
                     </div>
-                    <h3 className="text-lg md:text-xl text-foreground mb-3">Едете в&nbsp;поездку&nbsp;&mdash; готовьтесь заранее</h3>
-                    <p className="text-muted-foreground text-base font-normal normal-case leading-relaxed">
+                  </div>
+                  <div className="p-6 md:p-8 flex flex-col flex-1">
+                    <p className="text-foreground text-sm font-medium mb-4 flex items-center gap-2">
+                      <span className="text-muted-foreground">Ежедневно (кроме выходных)</span>
+                      <span className="font-bold">11:15&nbsp;&mdash; 12:45</span>
+                    </p>
+                    <h4 className="text-base md:text-lg font-bold text-foreground normal-case mb-2">Едете в&nbsp;поездку&nbsp;&mdash; готовьтесь заранее</h4>
+                    <p className="text-muted-foreground text-sm font-normal normal-case leading-relaxed">
                       Записались в&nbsp;тур в&nbsp;Китай или лагерь? Первая смена проходит в&nbsp;начале июня&nbsp;&mdash; как раз до&nbsp;отъезда. Ребёнок приедет уже разогретым: с&nbsp;живым языком в&nbsp;голове, а&nbsp;не&nbsp;школьными правилами.
                     </p>
                   </div>
@@ -156,17 +163,24 @@ const HilderstoneCourse = () => {
 
               {/* Shift 2 */}
               <AnimatedSection delay={0.2}>
-                <div className="bg-program-online/10 rounded-[1.5rem] overflow-hidden h-full flex flex-col">
-                  <div className="aspect-[16/9] overflow-hidden">
+                <div className="rounded-[1.5rem] overflow-hidden h-full flex flex-col bg-card border border-border">
+                  <div className="relative aspect-[16/9] overflow-hidden">
                     <img src={teacherPic} alt="Преподаватель Hilderstone" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="p-8 md:p-10 flex flex-col flex-1">
-                    <div className="bg-white rounded-xl px-5 py-4 mb-6">
-                      <p className="text-foreground font-bold text-lg uppercase tracking-wider mb-1">Смена&nbsp;2</p>
-                      <p className="text-foreground text-base font-medium normal-case">15&nbsp;&mdash; 26&nbsp;июня · 11:15&nbsp;&mdash; 12:45 ежедневно (кроме выходных)</p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 flex items-end justify-between gap-4">
+                      <h3 className="text-2xl md:text-3xl text-white">Смена&nbsp;2</h3>
+                      <span className="bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-4 py-2 rounded-full whitespace-nowrap">
+                        15&nbsp;&mdash; 26&nbsp;июня
+                      </span>
                     </div>
-                    <h3 className="text-lg md:text-xl text-foreground mb-3">Остаётесь дома&nbsp;&mdash; проводите лето с&nbsp;результатом</h3>
-                    <p className="text-muted-foreground text-base font-normal normal-case leading-relaxed">
+                  </div>
+                  <div className="p-6 md:p-8 flex flex-col flex-1">
+                    <p className="text-foreground text-sm font-medium mb-4 flex items-center gap-2">
+                      <span className="text-muted-foreground">Ежедневно (кроме выходных)</span>
+                      <span className="font-bold">11:15&nbsp;&mdash; 12:45</span>
+                    </p>
+                    <h4 className="text-base md:text-lg font-bold text-foreground normal-case mb-2">Остаётесь дома&nbsp;&mdash; проводите лето с&nbsp;результатом</h4>
+                    <p className="text-muted-foreground text-sm font-normal normal-case leading-relaxed">
                       Не&nbsp;получается поехать в&nbsp;этом году? Две недели с&nbsp;британским преподавателем&nbsp;&mdash; реальная языковая среда, живая группа и&nbsp;официальный сертификат. Не&nbsp;просто «позанимались онлайн».
                     </p>
                   </div>
@@ -183,7 +197,7 @@ const HilderstoneCourse = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-10">
-                <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">Hilderstone College</span>&nbsp;&mdash; это не&nbsp;просто название
+                <span className="bg-gradient-to-r from-amber-400 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">Hilderstone College</span>&nbsp;&mdash; это не&nbsp;просто название
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
@@ -294,7 +308,7 @@ const HilderstoneCourse = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-10">
-                Официальный сертификат <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">британского колледжа</span>
+                Официальный сертификат <span className="bg-gradient-to-r from-amber-400 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">британского колледжа</span>
               </h2>
             </AnimatedSection>
 
@@ -481,15 +495,19 @@ const HilderstoneCourse = () => {
                 <AnimatedSection key={p.title} delay={i * 0.08}>
                   <a
                     href={p.href}
-                    className="group block rounded-[1.5rem] border border-border hover:border-program-online/30 p-8 transition-all duration-500 hover:shadow-lg bg-card h-full text-center"
+                    className="group flex flex-col rounded-[1.5rem] border border-border hover:border-program-online/30 p-8 transition-all duration-500 hover:shadow-lg bg-card h-full text-center"
                   >
-                    <img src={p.illustration} alt={p.title} className={`${p.illustClass} mx-auto mb-4 object-contain`} />
+                    <div className="h-24 flex items-center justify-center mb-4">
+                      <img src={p.illustration} alt={p.title} className="h-full w-auto object-contain" />
+                    </div>
                     <h3 className="text-lg md:text-xl text-foreground mb-2">{p.title}</h3>
                     <p className="text-sm text-muted-foreground font-normal normal-case mb-2">{p.dates}</p>
                     <p className="text-base font-bold text-foreground mb-4">{p.price}</p>
-                    <span className="inline-block btn-gold px-5 py-2.5 rounded-xl text-xs tracking-widest">
-                      Подробнее
-                    </span>
+                    <div className="mt-auto">
+                      <span className="inline-block btn-gold px-5 py-2.5 rounded-xl text-xs tracking-widest">
+                        Подробнее
+                      </span>
+                    </div>
                   </a>
                 </AnimatedSection>
               ))}
