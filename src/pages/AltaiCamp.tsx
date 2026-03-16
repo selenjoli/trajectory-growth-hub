@@ -56,25 +56,25 @@ const daySchedule = [
     time: "Утро",
     text: "Завтрак, зарядка, первый блок английского — игровой формат, командные задачи.",
     image: altaiMorning,
-    bgColor: "#d4a44a",
+    bgColor: "hsl(40 61% 56%)",
   },
   {
     time: "День",
     text: "Мастер-классы, творческие студии, спортивные игры или экскурсия.",
     image: altaiDay,
-    bgColor: "#4a9b6e",
+    bgColor: "hsl(145 35% 45%)",
   },
   {
     time: "Вечер",
     text: "Квест, дискотека под открытым небом или «свечи» — вечерний круг, где каждый говорит о своём дне.",
     image: altaiEvening,
-    bgColor: "#3b2d5e",
+    bgColor: "hsl(255 35% 27%)",
   },
   {
     time: "Ночь",
     text: "Костёр по расписанию, разговоры, тишина гор.",
     image: altaiNight,
-    bgColor: "#1a2744",
+    bgColor: "hsl(220 45% 18%)",
   },
 ];
 
