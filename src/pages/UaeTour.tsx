@@ -103,7 +103,8 @@ const UaeTour = () => {
   const getVisibleDays = () => {
     const items: { index: number; offset: number }[] = [];
     for (let offset = -1; offset <= 3; offset++) {
-      const index = (currentDay + offset + daySchedule.length) % daySchedule.length;
+      const index = currentDay + offset;
+      if (index < 0 || index >= daySchedule.length) continue;
       items.push({ index, offset });
     }
     return items;
