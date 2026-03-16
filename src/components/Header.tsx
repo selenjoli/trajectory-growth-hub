@@ -73,7 +73,7 @@ const DropdownMenu = ({
   </AnimatePresence>
 );
 
-const NavItem = ({ item, light = false }: { item: MenuItem; light?: boolean }) => {
+const NavItem = ({ item, light = false, buttonStyle = "gold" }: { item: MenuItem; light?: boolean; buttonStyle?: "gold" | "silver" }) => {
   const [open, setOpen] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
 
@@ -92,7 +92,7 @@ const NavItem = ({ item, light = false }: { item: MenuItem; light?: boolean }) =
     return (
       <a
         href={item.href}
-        className="btn-gold text-xs tracking-widest px-6 py-3 rounded-xl transition-all"
+        className={`${light && buttonStyle === "silver" ? "btn-silver" : "btn-gold"} text-xs tracking-widest px-6 py-3 rounded-xl transition-all`}
       >
         {item.label}
       </a>
@@ -234,7 +234,7 @@ const MobileMenu = ({
   );
 };
 
-const Header = ({ variant = "dark" }: { variant?: "dark" | "light" }) => {
+const Header = ({ variant = "dark", buttonStyle = "gold" }: { variant?: "dark" | "light"; buttonStyle?: "gold" | "silver" }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const isLight = variant === "light";
 
@@ -244,7 +244,7 @@ const Header = ({ variant = "dark" }: { variant?: "dark" | "light" }) => {
         {/* Left nav — desktop */}
         <nav className="hidden lg:flex items-center gap-6 flex-1">
           {leftMenu.map((item) => (
-            <NavItem key={item.href} item={item} light={isLight} />
+            <NavItem key={item.href} item={item} light={isLight} buttonStyle={buttonStyle} />
           ))}
         </nav>
 
@@ -260,7 +260,7 @@ const Header = ({ variant = "dark" }: { variant?: "dark" | "light" }) => {
         {/* Right nav — desktop */}
         <nav className="hidden lg:flex items-center justify-end gap-6 flex-1">
           {rightMenu.map((item) => (
-            <NavItem key={item.href} item={item} light={isLight} />
+            <NavItem key={item.href} item={item} light={isLight} buttonStyle={buttonStyle} />
           ))}
         </nav>
 

@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, Clock, Users, Monitor, GraduationCap, BookOpen } from "lucide-react";
 import Header from "@/components/Header";
 import AnimatedSection from "@/components/AnimatedSection";
 
@@ -16,26 +15,17 @@ import illustUae from "@/assets/illust-uae.png";
 
 /* ---- data ---- */
 
-const formatFeatures = [
-  { icon: Calendar, text: "10 занятий за две недели, каждый день кроме выходных" },
-  { icon: Clock, text: "11:15 - 12:45 по московскому времени" },
-  { icon: Users, text: "Группа до 12 человек - живое общение, не лекция" },
-  { icon: Monitor, text: "Zoom" },
-  { icon: GraduationCap, text: "Дипломированный преподаватель из Великобритании" },
-  { icon: BookOpen, text: "Официальный сертификат Hilderstone College по окончании" },
-];
-
 const testimonials = [
-  { id: 1, image: "https://placehold.co/400x700/d4a017/ffffff?text=Отзыв+1", name: "Татьяна, Воронеж", role: "мама Лизы (10 лет)" },
-  { id: 2, image: "https://placehold.co/400x700/d4a017/ffffff?text=Отзыв+2", name: "Елена, Москва", role: "мама Миши (13 лет)" },
-  { id: 3, image: "https://placehold.co/400x700/d4a017/ffffff?text=Отзыв+3", name: "Артём, 14 лет", role: "Участник курса" },
+  { id: 1, image: "https://placehold.co/400x700/d4a017/ffffff?text=Отзыв+1", name: "Татьяна, Воронеж", role: "мама Лизы (10\u00a0лет)" },
+  { id: 2, image: "https://placehold.co/400x700/d4a017/ffffff?text=Отзыв+2", name: "Елена, Москва", role: "мама Миши (13\u00a0лет)" },
+  { id: 3, image: "https://placehold.co/400x700/d4a017/ffffff?text=Отзыв+3", name: "Артём, 14\u00a0лет", role: "Участник курса" },
 ];
 
 const otherPrograms = [
-  { title: "Китай", illustration: illustChina, illustClass: "h-24 w-auto", dates: "3-12 июня", price: "от 165 000 руб.", href: "/kanikuly/china" },
-  { title: "Море", illustration: illustSea, illustClass: "h-20 w-auto", dates: "24 июня - 14 июля", price: "от 134 000 руб.", href: "/kanikuly/more" },
-  { title: "Алтай", illustration: illustAltai, illustClass: "h-24 w-auto", dates: "10-25 июля", price: "от 95 000 руб.", href: "/kanikuly/altai" },
-  { title: "Дубай", illustration: illustUae, illustClass: "h-24 w-auto", dates: "Даты уточняются", price: "от 145 000 руб.", href: "/kanikuly/uae" },
+  { title: "Китай", illustration: illustChina, illustClass: "h-24 w-auto", dates: "3\u201312\u00a0июня", price: "от\u00a0165\u00a0000\u00a0руб.", href: "/kanikuly/china" },
+  { title: "Море", illustration: illustSea, illustClass: "h-20 w-auto", dates: "24\u00a0июня\u00a0\u2014 14\u00a0июля", price: "от\u00a0134\u00a0000\u00a0руб.", href: "/kanikuly/more" },
+  { title: "Алтай", illustration: illustAltai, illustClass: "h-24 w-auto", dates: "10\u201325\u00a0июля", price: "от\u00a095\u00a0000\u00a0руб.", href: "/kanikuly/altai" },
+  { title: "Дубай", illustration: illustUae, illustClass: "h-24 w-auto", dates: "Даты уточняются", price: "от\u00a0145\u00a0000\u00a0руб.", href: "/kanikuly/uae" },
 ];
 
 const whyPhotos = [collegePic, teacherPic, lessonPic];
@@ -69,7 +59,7 @@ const HilderstoneCourse = () => {
 
   return (
     <main className="bg-program-online">
-      <Header variant="light" />
+      <Header variant="light" buttonStyle="silver" />
 
       {/* ── HERO ── */}
       <section className="px-3 md:px-6 xl:px-10 pt-20 lg:pt-0">
@@ -97,7 +87,7 @@ const HilderstoneCourse = () => {
                     <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">Британский преподаватель.</span>
                   </span>
                 </span>
-                <span className="block">Из дома.</span>
+                <span className="block">Из&nbsp;дома.</span>
               </h1>
             </motion.div>
 
@@ -107,7 +97,7 @@ const HilderstoneCourse = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-base md:text-lg text-white/85 max-w-2xl font-normal normal-case leading-relaxed mb-8"
             >
-              Эксклюзивная языковая практика в партнёрстве с престижным британским колледжем Hilderstone — для детей и подростков от 11 лет. Тот самый английский, ради которого едут в Англию.
+              Эксклюзивная языковая практика в&nbsp;партнёрстве с&nbsp;престижным британским колледжем Hilderstone&nbsp;&mdash; для детей и&nbsp;подростков от&nbsp;11&nbsp;лет. Тот самый английский, ради которого едут в&nbsp;Англию.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -115,7 +105,7 @@ const HilderstoneCourse = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="flex flex-wrap items-center gap-3 mb-8"
             >
-              {["Июнь 2026", "10 занятий", "Группа до 12 человек", "От 11 лет"].map((chip) => (
+              {["10\u00a0занятий", "Группа до\u00a012\u00a0человек", "От\u00a011\u00a0лет"].map((chip) => (
                 <span key={chip} className="bg-white/15 backdrop-blur-sm text-white text-xs font-medium px-4 py-2 rounded-full">
                   {chip}
                 </span>
@@ -128,7 +118,7 @@ const HilderstoneCourse = () => {
               transition={{ duration: 0.6, delay: 1 }}
               className="inline-block btn-gold px-8 py-4 rounded-2xl text-sm tracking-widest"
             >
-              Записаться — 28 500 руб.
+              Записаться&nbsp;&mdash; 28&nbsp;500&nbsp;руб.
             </motion.a>
           </div>
         </div>
@@ -140,35 +130,45 @@ const HilderstoneCourse = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-14">
-                Два способа провести лето <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">с пользой</span>
+                Два способа провести лето <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">с&nbsp;пользой</span>
               </h2>
             </AnimatedSection>
 
             <div className="grid md:grid-cols-2 gap-6">
+              {/* Shift 1 */}
               <AnimatedSection delay={0.1}>
-                <div className="bg-program-online/10 rounded-[1.5rem] p-8 md:p-10 h-full">
-                  <span className="text-3xl mb-4 block">📚</span>
-                  <h3 className="text-xl md:text-2xl text-foreground mb-4">Едете в поездку — готовьтесь заранее</h3>
-                  <p className="text-muted-foreground text-base font-normal normal-case leading-relaxed mb-6">
-                    Записались в тур в Китай или лагерь? Первая смена проходит в начале июня — как раз до отъезда. Ребёнок приедет уже разогретым: с живым языком в голове, а не школьными правилами.
-                  </p>
-                  <div className="bg-white rounded-xl px-5 py-4">
-                    <p className="text-foreground font-bold text-sm uppercase tracking-wider mb-1">Смена 1</p>
-                    <p className="text-muted-foreground text-sm font-normal normal-case">1 - 12 июня · 11:15 - 12:45 ежедневно (кроме выходных)</p>
+                <div className="bg-program-online/10 rounded-[1.5rem] overflow-hidden h-full flex flex-col">
+                  <div className="aspect-[16/9] overflow-hidden">
+                    <img src={collegePic} alt="Hilderstone College" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="p-8 md:p-10 flex flex-col flex-1">
+                    <div className="bg-white rounded-xl px-5 py-4 mb-6">
+                      <p className="text-foreground font-bold text-lg uppercase tracking-wider mb-1">Смена&nbsp;1</p>
+                      <p className="text-foreground text-base font-medium normal-case">1&nbsp;&mdash; 12&nbsp;июня · 11:15&nbsp;&mdash; 12:45 ежедневно (кроме выходных)</p>
+                    </div>
+                    <h3 className="text-lg md:text-xl text-foreground mb-3">Едете в&nbsp;поездку&nbsp;&mdash; готовьтесь заранее</h3>
+                    <p className="text-muted-foreground text-base font-normal normal-case leading-relaxed">
+                      Записались в&nbsp;тур в&nbsp;Китай или лагерь? Первая смена проходит в&nbsp;начале июня&nbsp;&mdash; как раз до&nbsp;отъезда. Ребёнок приедет уже разогретым: с&nbsp;живым языком в&nbsp;голове, а&nbsp;не&nbsp;школьными правилами.
+                    </p>
                   </div>
                 </div>
               </AnimatedSection>
 
+              {/* Shift 2 */}
               <AnimatedSection delay={0.2}>
-                <div className="bg-program-online/10 rounded-[1.5rem] p-8 md:p-10 h-full">
-                  <span className="text-3xl mb-4 block">🏠</span>
-                  <h3 className="text-xl md:text-2xl text-foreground mb-4">Остаётесь дома — проводите лето с результатом</h3>
-                  <p className="text-muted-foreground text-base font-normal normal-case leading-relaxed mb-6">
-                    Не получается поехать в этом году? Две недели с британским преподавателем — реальная языковая среда, живая группа и официальный сертификат. Не просто «позанимались онлайн».
-                  </p>
-                  <div className="bg-white rounded-xl px-5 py-4">
-                    <p className="text-foreground font-bold text-sm uppercase tracking-wider mb-1">Смена 2</p>
-                    <p className="text-muted-foreground text-sm font-normal normal-case">15 - 26 июня · 11:15 - 12:45 ежедневно (кроме выходных)</p>
+                <div className="bg-program-online/10 rounded-[1.5rem] overflow-hidden h-full flex flex-col">
+                  <div className="aspect-[16/9] overflow-hidden">
+                    <img src={teacherPic} alt="Преподаватель Hilderstone" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="p-8 md:p-10 flex flex-col flex-1">
+                    <div className="bg-white rounded-xl px-5 py-4 mb-6">
+                      <p className="text-foreground font-bold text-lg uppercase tracking-wider mb-1">Смена&nbsp;2</p>
+                      <p className="text-foreground text-base font-medium normal-case">15&nbsp;&mdash; 26&nbsp;июня · 11:15&nbsp;&mdash; 12:45 ежедневно (кроме выходных)</p>
+                    </div>
+                    <h3 className="text-lg md:text-xl text-foreground mb-3">Остаётесь дома&nbsp;&mdash; проводите лето с&nbsp;результатом</h3>
+                    <p className="text-muted-foreground text-base font-normal normal-case leading-relaxed">
+                      Не&nbsp;получается поехать в&nbsp;этом году? Две недели с&nbsp;британским преподавателем&nbsp;&mdash; реальная языковая среда, живая группа и&nbsp;официальный сертификат. Не&nbsp;просто «позанимались онлайн».
+                    </p>
                   </div>
                 </div>
               </AnimatedSection>
@@ -183,17 +183,17 @@ const HilderstoneCourse = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-10">
-                Hilderstone College — это не просто <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">красивое название</span>
+                <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">Hilderstone College</span>&nbsp;&mdash; это не&nbsp;просто название
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
               <div className="flex flex-col lg:flex-row gap-10 items-center">
                 <div className="lg:w-1/2 space-y-6">
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
-                    Hilderstone College — британский колледж с многолетней историей преподавания английского как иностранного. Преподаватели колледжа работают с учениками со всего мира, и этот курс — не адаптация для галочки, а полноценная языковая практика по британским стандартам.
+                    Hilderstone College&nbsp;&mdash; британский колледж с&nbsp;многолетней историей преподавания английского как иностранного. Преподаватели колледжа работают с&nbsp;учениками со&nbsp;всего мира, и&nbsp;этот курс&nbsp;&mdash; не&nbsp;адаптация для галочки, а&nbsp;полноценная языковая практика по&nbsp;британским стандартам.
                   </p>
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
-                    Ребёнок занимается с дипломированным специалистом из Великобритании в живой группе — не смотрит записанные видео и не проходит тесты в приложении. 90 минут каждый день, десять дней подряд. Это работает иначе, чем один урок в неделю.
+                    Ребёнок занимается с&nbsp;дипломированным специалистом из&nbsp;Великобритании в&nbsp;живой группе&nbsp;&mdash; не&nbsp;смотрит записанные видео и&nbsp;не&nbsp;проходит тесты в&nbsp;приложении. 90&nbsp;минут каждый день, десять дней подряд. Это работает иначе, чем один урок в&nbsp;неделю.
                   </p>
                 </div>
 
@@ -239,35 +239,49 @@ const HilderstoneCourse = () => {
         </div>
       </section>
 
-      {/* ── Format and program ── */}
+      {/* ── What happens in lessons + Kinescope video ── */}
       <section className="section-padding">
         <div className="fluid-container">
           <AnimatedSection>
             <h2 className="text-4xl md:text-6xl text-white mb-14">
-              Как устроены <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">занятия</span>
+              Что происходит на&nbsp;занятиях
             </h2>
           </AnimatedSection>
 
-          <div className="grid lg:grid-cols-2 gap-10 items-start">
+          <div className="flex flex-col lg:flex-row gap-10 items-start">
             <AnimatedSection delay={0.1}>
-              <div className="space-y-5">
-                {formatFeatures.map((f, i) => (
-                  <div key={i} className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-white/15 flex items-center justify-center shrink-0">
-                      <f.icon className="w-5 h-5 text-white" />
-                    </div>
-                    <p className="text-white/90 text-base md:text-lg font-normal normal-case leading-relaxed pt-1.5">{f.text}</p>
-                  </div>
-                ))}
+              <div className="lg:w-1/2 space-y-6">
+                <p className="text-white/90 text-base md:text-lg font-normal normal-case leading-relaxed">
+                  Программа строится на&nbsp;живом общении&nbsp;&mdash; не&nbsp;на&nbsp;переводе и&nbsp;зубрёжке. Ребята расширяют словарный запас, учатся говорить уверенно и&nbsp;получают настоящее погружение в&nbsp;языковую среду.
+                </p>
+                <p className="text-white/90 text-base md:text-lg font-normal normal-case leading-relaxed">
+                  Каждое занятие&nbsp;&mdash; новая тема, новые слова в&nbsp;контексте, практика в&nbsp;разговоре. 90&nbsp;минут каждый день, десять дней подряд&nbsp;&mdash; это не&nbsp;«позанимались онлайн», а&nbsp;реальный интенсив.
+                </p>
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
-              <div className="bg-white/10 backdrop-blur-sm rounded-[1.5rem] p-8 md:p-10">
-                <h3 className="text-xl md:text-2xl text-white mb-4">Что происходит на занятиях</h3>
-                <p className="text-white/80 text-base font-normal normal-case leading-relaxed">
-                  Программа строится на живом общении — не на переводе и зубрёжке. Ребята расширяют словарный запас, учатся говорить уверенно и получают настоящее погружение в языковую среду. Каждое занятие — новая тема, новые слова в контексте, практика в разговоре.
-                </p>
+              <div className="lg:w-1/2">
+                {/* Kinescope player placeholder — replace src with real Kinescope embed URL */}
+                <div className="rounded-[1.5rem] overflow-hidden bg-black/30 aspect-video">
+                  <div className="w-full h-full flex items-center justify-center text-white/40 text-sm">
+                    <div className="text-center space-y-3">
+                      <svg className="w-16 h-16 mx-auto opacity-40" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                      <p className="font-normal normal-case">Видео будет добавлено</p>
+                    </div>
+                  </div>
+                  {/* When ready, replace the div above with:
+                  <iframe
+                    src="https://kinescope.io/embed/YOUR_VIDEO_ID"
+                    className="w-full h-full"
+                    frameBorder="0"
+                    allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+                    allowFullScreen
+                  />
+                  */}
+                </div>
               </div>
             </AnimatedSection>
           </div>
@@ -288,10 +302,10 @@ const HilderstoneCourse = () => {
               <div className="flex flex-col lg:flex-row gap-10 items-center">
                 <div className="lg:w-1/2 space-y-6">
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
-                    По окончании курса каждый участник пишет онлайн-тест по пройденным темам и получает официальный сертификат Hilderstone College. Это не бумажка для мамы на холодильник — это реальный документ британского учебного заведения, который можно добавить в портфолио.
+                    По&nbsp;окончании курса каждый участник пишет онлайн-тест по&nbsp;пройденным темам и&nbsp;получает официальный сертификат Hilderstone College. Это не&nbsp;бумажка для мамы на&nbsp;холодильник&nbsp;&mdash; это реальный документ британского учебного заведения, который можно добавить в&nbsp;портфолио.
                   </p>
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
-                    Для подростков, которые думают о поступлении или хотят выделиться — это весомо.
+                    Для подростков, которые думают о&nbsp;поступлении или хотят выделиться&nbsp;&mdash; это весомо.
                   </p>
                 </div>
                 <div className="lg:w-1/2">
@@ -314,7 +328,7 @@ const HilderstoneCourse = () => {
                 Что говорят <span className="text-program-online">участники</span>
               </h2>
               <p className="text-foreground/60 text-lg mb-12 max-w-xl font-normal normal-case">
-                Отзывы семей, чьи дети прошли курс с Hilderstone College.
+                Отзывы семей, чьи дети прошли курс с&nbsp;Hilderstone College.
               </p>
             </AnimatedSection>
 
@@ -384,20 +398,49 @@ const HilderstoneCourse = () => {
               {/* Receipt */}
               <div className="bg-white rounded-[1.5rem] w-full lg:w-[480px] shrink-0 px-8 py-10 shadow-2xl">
                 <div className="text-center border-b-2 border-dashed border-foreground/20 pb-6 mb-6">
-                  <h2 className="text-2xl md:text-3xl text-foreground mb-1">Британское лето начинается в июне</h2>
+                  <h2 className="text-2xl md:text-3xl text-foreground mb-1">Британское лето начинается в&nbsp;июне</h2>
                   <p className="text-sm text-muted-foreground font-normal normal-case">Hilderstone College · Июнь 2026</p>
                 </div>
+
+                {/* Format details moved here */}
+                <div className="space-y-3 mb-6 border-b-2 border-dashed border-foreground/20 pb-6">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground font-normal normal-case">Занятий</span>
+                    <span className="text-foreground font-medium">10</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground font-normal normal-case">Время</span>
+                    <span className="text-foreground font-medium">11:15&nbsp;&mdash; 12:45 (мск)</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground font-normal normal-case">Группа</span>
+                    <span className="text-foreground font-medium">до&nbsp;12&nbsp;человек</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground font-normal normal-case">Платформа</span>
+                    <span className="text-foreground font-medium">Zoom</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground font-normal normal-case">Преподаватель</span>
+                    <span className="text-foreground font-medium">из&nbsp;Великобритании</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground font-normal normal-case">Сертификат</span>
+                    <span className="text-foreground font-medium">Hilderstone College</span>
+                  </div>
+                </div>
+
                 <div className="space-y-4 mb-8">
                   <div className="flex items-end justify-between">
                     <span className="text-muted-foreground text-sm font-normal normal-case">Стоимость</span>
-                    <span className="text-3xl md:text-4xl font-bold text-foreground">28 500 руб.</span>
+                    <span className="text-3xl md:text-4xl font-bold text-foreground">28&nbsp;500&nbsp;руб.</span>
                   </div>
                   <p className="text-muted-foreground text-sm font-normal normal-case leading-relaxed">
-                    За одну смену на выбор
+                    За&nbsp;одну смену на&nbsp;выбор
                   </p>
                 </div>
                 <p className="text-muted-foreground text-xs font-normal normal-case leading-relaxed mb-6">
-                  Оставьте заявку — менеджер свяжется, уточнит уровень ребёнка и поможет выбрать подходящую смену.
+                  Оставьте заявку&nbsp;&mdash; менеджер свяжется, уточнит уровень ребёнка и&nbsp;поможет выбрать подходящую смену.
                 </p>
                 <div className="border-t-2 border-dashed border-foreground/20 pt-6">
                   <a
@@ -429,7 +472,7 @@ const HilderstoneCourse = () => {
                 Хотите больше чем <span className="text-program-online">онлайн?</span>
               </h2>
               <p className="text-foreground/60 text-lg mb-14 max-w-2xl font-normal normal-case">
-                Языковая практика — хорошее начало или отличное дополнение. Но живое погружение работает иначе.
+                Языковая практика&nbsp;&mdash; хорошее начало или отличное дополнение. Но&nbsp;живое погружение работает иначе.
               </p>
             </AnimatedSection>
 
