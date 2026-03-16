@@ -32,6 +32,7 @@ const App = () => (
           <Route path="/kanikuly/online" element={<HilderstoneCourse />} />
           <Route path="/kanikuly/:program" element={<Index />} />
           <Route path="/uchitelya" element={<Uchitelya />} />
+          <Route path="/uchitelya/kurs" element={<TeachersCourse />} />
           <Route path="/uchitelya/:course" element={<Index />} />
           <Route path="/partnerstvo" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
