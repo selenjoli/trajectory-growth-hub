@@ -518,6 +518,11 @@ const AltaiCamp = () => {
               <ArrowRight className="w-5 h-5 text-white" />
             </button>
           </div>
+
+          </motion.div>
+
+          {/* Spacer bottom */}
+          <div className="h-32 md:h-48" />
         </motion.div>
       </section>
 
