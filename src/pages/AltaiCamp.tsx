@@ -122,11 +122,27 @@ const AltaiCamp = () => {
   const [currentDay, setCurrentDay] = useState(0);
   const [dayPaused, setDayPaused] = useState(false);
   const [dayUserPaused, setDayUserPaused] = useState(false);
+  const [dayInView, setDayInView] = useState(false);
 
   const hookPhotos = [altaiPatmos, altaiWaterfall, altaiSwimming, altaiCampfire, altaiWorkshop];
 
-  const dayRef = useVisibilityPause(setDayPaused);
+  const dayRef = useRef<HTMLDivElement>(null);
   const spotRef = useVisibilityPause(setSpotPaused);
+
+  // Pause day carousel when off-screen + track visibility for page bg
+  useEffect(() => {
+    const el = dayRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        setDayPaused(!entry.isIntersecting);
+        setDayInView(entry.isIntersecting);
+      },
+      { threshold: 0.15 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   const nextSlide = useCallback(() => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
