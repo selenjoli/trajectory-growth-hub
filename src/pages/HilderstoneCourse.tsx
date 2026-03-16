@@ -137,17 +137,24 @@ const HilderstoneCourse = () => {
             <div className="grid md:grid-cols-2 gap-6">
               {/* Shift 1 */}
               <AnimatedSection delay={0.1}>
-                <div className="bg-program-online/10 rounded-[1.5rem] overflow-hidden h-full flex flex-col">
-                  <div className="aspect-[16/9] overflow-hidden">
+                <div className="rounded-[1.5rem] overflow-hidden h-full flex flex-col bg-card border border-border">
+                  <div className="relative aspect-[16/9] overflow-hidden">
                     <img src={collegePic} alt="Hilderstone College" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="p-8 md:p-10 flex flex-col flex-1">
-                    <div className="bg-white rounded-xl px-5 py-4 mb-6">
-                      <p className="text-foreground font-bold text-lg uppercase tracking-wider mb-1">Смена&nbsp;1</p>
-                      <p className="text-foreground text-base font-medium normal-case">1&nbsp;&mdash; 12&nbsp;июня · 11:15&nbsp;&mdash; 12:45 ежедневно (кроме выходных)</p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 flex items-end justify-between gap-4">
+                      <h3 className="text-2xl md:text-3xl text-white">Смена&nbsp;1</h3>
+                      <span className="bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-4 py-2 rounded-full whitespace-nowrap">
+                        1&nbsp;&mdash; 12&nbsp;июня
+                      </span>
                     </div>
-                    <h3 className="text-lg md:text-xl text-foreground mb-3">Едете в&nbsp;поездку&nbsp;&mdash; готовьтесь заранее</h3>
-                    <p className="text-muted-foreground text-base font-normal normal-case leading-relaxed">
+                  </div>
+                  <div className="p-6 md:p-8 flex flex-col flex-1">
+                    <p className="text-foreground text-sm font-medium mb-4 flex items-center gap-2">
+                      <span className="text-muted-foreground">Ежедневно (кроме выходных)</span>
+                      <span className="font-bold">11:15&nbsp;&mdash; 12:45</span>
+                    </p>
+                    <h4 className="text-base md:text-lg font-bold text-foreground normal-case mb-2">Едете в&nbsp;поездку&nbsp;&mdash; готовьтесь заранее</h4>
+                    <p className="text-muted-foreground text-sm font-normal normal-case leading-relaxed">
                       Записались в&nbsp;тур в&nbsp;Китай или лагерь? Первая смена проходит в&nbsp;начале июня&nbsp;&mdash; как раз до&nbsp;отъезда. Ребёнок приедет уже разогретым: с&nbsp;живым языком в&nbsp;голове, а&nbsp;не&nbsp;школьными правилами.
                     </p>
                   </div>
@@ -156,17 +163,24 @@ const HilderstoneCourse = () => {
 
               {/* Shift 2 */}
               <AnimatedSection delay={0.2}>
-                <div className="bg-program-online/10 rounded-[1.5rem] overflow-hidden h-full flex flex-col">
-                  <div className="aspect-[16/9] overflow-hidden">
+                <div className="rounded-[1.5rem] overflow-hidden h-full flex flex-col bg-card border border-border">
+                  <div className="relative aspect-[16/9] overflow-hidden">
                     <img src={teacherPic} alt="Преподаватель Hilderstone" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="p-8 md:p-10 flex flex-col flex-1">
-                    <div className="bg-white rounded-xl px-5 py-4 mb-6">
-                      <p className="text-foreground font-bold text-lg uppercase tracking-wider mb-1">Смена&nbsp;2</p>
-                      <p className="text-foreground text-base font-medium normal-case">15&nbsp;&mdash; 26&nbsp;июня · 11:15&nbsp;&mdash; 12:45 ежедневно (кроме выходных)</p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 flex items-end justify-between gap-4">
+                      <h3 className="text-2xl md:text-3xl text-white">Смена&nbsp;2</h3>
+                      <span className="bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-4 py-2 rounded-full whitespace-nowrap">
+                        15&nbsp;&mdash; 26&nbsp;июня
+                      </span>
                     </div>
-                    <h3 className="text-lg md:text-xl text-foreground mb-3">Остаётесь дома&nbsp;&mdash; проводите лето с&nbsp;результатом</h3>
-                    <p className="text-muted-foreground text-base font-normal normal-case leading-relaxed">
+                  </div>
+                  <div className="p-6 md:p-8 flex flex-col flex-1">
+                    <p className="text-foreground text-sm font-medium mb-4 flex items-center gap-2">
+                      <span className="text-muted-foreground">Ежедневно (кроме выходных)</span>
+                      <span className="font-bold">11:15&nbsp;&mdash; 12:45</span>
+                    </p>
+                    <h4 className="text-base md:text-lg font-bold text-foreground normal-case mb-2">Остаётесь дома&nbsp;&mdash; проводите лето с&nbsp;результатом</h4>
+                    <p className="text-muted-foreground text-sm font-normal normal-case leading-relaxed">
                       Не&nbsp;получается поехать в&nbsp;этом году? Две недели с&nbsp;британским преподавателем&nbsp;&mdash; реальная языковая среда, живая группа и&nbsp;официальный сертификат. Не&nbsp;просто «позанимались онлайн».
                     </p>
                   </div>
