@@ -261,22 +261,20 @@ const HilderstoneCourse = () => {
           </AnimatedSection>
 
           <div className="flex flex-col lg:flex-row gap-10 items-start">
-            <AnimatedSection delay={0.2}>
-              <div className="lg:w-1/2">
-                <div className="rounded-[1.5rem] overflow-hidden" style={{ position: 'relative', paddingTop: '177.78%', width: '100%' }}>
-                  <iframe
-                    src="https://kinescope.io/embed/my6qHzv5AXLiPmktJFqVJn"
-                    allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
-                    frameBorder="0"
-                    allowFullScreen
-                    style={{ position: 'absolute', width: '100%', height: '100%', top: 0, left: 0 }}
-                  />
-                </div>
+            <AnimatedSection delay={0.2} className="w-full lg:w-1/2">
+              <div className="rounded-[1.5rem] overflow-hidden max-h-[500px] mx-auto" style={{ position: 'relative', paddingTop: 'min(177.78%, 500px)', width: '100%', maxWidth: '280px' }}>
+                <iframe
+                  src="https://kinescope.io/embed/my6qHzv5AXLiPmktJFqVJn"
+                  allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
+                  frameBorder="0"
+                  allowFullScreen
+                  style={{ position: 'absolute', width: '100%', height: '100%', top: 0, left: 0 }}
+                />
               </div>
             </AnimatedSection>
 
-            <AnimatedSection delay={0.1}>
-              <div className="lg:w-1/2 space-y-6">
+            <AnimatedSection delay={0.1} className="w-full lg:w-1/2">
+              <div className="space-y-6">
                 <p className="text-white/90 text-base md:text-lg font-normal normal-case leading-relaxed">
                   Программа строится на&nbsp;живом общении&nbsp;&mdash; не&nbsp;на&nbsp;переводе и&nbsp;зубрёжке. Ребята расширяют словарный запас, учатся говорить уверенно и&nbsp;получают настоящее погружение в&nbsp;языковую среду.
                 </p>
