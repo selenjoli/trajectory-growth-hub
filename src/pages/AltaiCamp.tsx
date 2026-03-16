@@ -186,7 +186,7 @@ const AltaiCamp = () => {
   return (
     <motion.main
       className="bg-program-altai"
-      animate={{ backgroundColor: pageBgColor || "hsl(var(--program-altai))" }}
+      animate={{ backgroundColor: pageBgColor || "hsl(147, 75%, 33%)" }}
       transition={{ duration: 1.2, ease: "easeInOut" }}
     >
       <Header variant="light" />
