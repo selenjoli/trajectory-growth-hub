@@ -269,7 +269,7 @@ const UaeTour = () => {
             >
               {/* Desktop carousel — center card + side cards */}
               <div className="hidden md:block">
-                <div className="relative flex items-center justify-center gap-4 h-[420px]">
+                <div className="relative flex items-center gap-4 h-[420px] overflow-hidden">
                   {getVisibleDays().map(({ index, offset }) => {
                     const isCenter = offset === 0;
                     const absOffset = Math.abs(offset);
