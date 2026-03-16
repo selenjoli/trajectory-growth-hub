@@ -301,7 +301,7 @@ const AltaiCamp = () => {
       </section>
 
       {/* ── Nature spots — map background with carousel (like China) ── */}
-      <section className="section-padding overflow-hidden">
+      <section className="section-padding overflow-hidden" ref={spotRef}>
         <div className="fluid-container">
           <AnimatedSection>
             <h2 className="text-4xl md:text-6xl text-white mb-4">
@@ -313,14 +313,10 @@ const AltaiCamp = () => {
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            <div
-              className="relative"
-              onMouseEnter={() => setSpotPaused(true)}
-              onMouseLeave={() => setSpotPaused(false)}
-            >
+            <div className="relative">
               {/* Map as background — desktop only */}
               <div className="hidden lg:block absolute top-1/2 -translate-y-1/2 -right-10 w-[65%] pointer-events-none">
-                <img src={altaiMap} alt="Карта Алтая" className="w-full h-auto rounded-[1.5rem] opacity-80" />
+                <img src={altaiMap} alt="Карта Алтая" className="w-full h-auto opacity-80" />
               </div>
 
               <div className="relative z-10 flex items-center gap-8">
