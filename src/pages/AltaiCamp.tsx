@@ -409,20 +409,15 @@ const AltaiCamp = () => {
       </section>
 
       {/* ── Day schedule — immersive full-screen carousel ── */}
-      <section ref={dayRef}>
-        <motion.div
-          className="relative"
-          animate={{ backgroundColor: daySchedule[currentDay].bgColor }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-        >
+      <section ref={dayRef} className="py-20 md:py-28 lg:py-36">
+        <div className="relative">
           {/* Spacer top */}
-          <div className="h-32 md:h-48" />
+          <div className="h-40 md:h-56 lg:h-64" />
 
           {/* Content fades in when section is in view */}
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: dayScrollFactor }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            style={{ opacity: dayContentOpacity }}
           >
           {/* Title — white, on the colored bg */}
           <div className="px-6 md:px-16 pb-6">
