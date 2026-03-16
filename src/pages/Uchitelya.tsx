@@ -220,6 +220,10 @@ const Uchitelya = () => {
             </h2>
           </AnimatedSection>
 
+          <div className="mb-10 rounded-[1.5rem] overflow-hidden max-h-80">
+            <img src={whyImg} alt="Преподаватели на воркшопе" className="w-full h-full object-cover" />
+          </div>
+
           <div className="grid md:grid-cols-2 gap-10 md:gap-20 items-start">
             {/* Problem */}
             <AnimatedSection delay={0.05}>
