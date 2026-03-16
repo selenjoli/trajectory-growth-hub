@@ -174,31 +174,34 @@ const AltaiCamp = () => {
           <img src={heroBg} alt="Дети в горах Алтая" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/40" />
           <div className="relative z-10 w-full px-6 md:px-16 pb-12 md:pb-20">
-            <div className="w-fit">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex flex-wrap items-center justify-between gap-3 mb-6"
-              >
-                <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-sm md:text-base font-semibold uppercase tracking-wider px-5 py-2 rounded-full">
-                  Языковой лагерь · Горный Алтай
-                </span>
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-block bg-white/20 backdrop-blur-sm text-white text-sm md:text-base font-semibold uppercase tracking-wider px-5 py-2 rounded-full mb-6"
+            >
+              Языковой лагерь · Горный Алтай
+            </motion.span>
+
+            {/* Title wrapper — w-fit so date chip aligns to its right edge */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="w-fit mb-4"
+            >
+              <div className="flex justify-end mb-3">
                 <span className="inline-block bg-program-altai text-white text-sm md:text-base font-bold uppercase tracking-wider px-5 py-2 rounded-full">
                   10–25 июля 2026
                 </span>
-              </motion.div>
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95] mb-4"
-              >
+              </div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95]">
                 <span className="text-program-altai">Алтай:</span> здесь английский
                 <br />
                 становится частью приключения
-              </motion.h1>
-            </div>
+              </h1>
+            </motion.div>
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
