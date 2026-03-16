@@ -169,7 +169,7 @@ const HilderstoneCourse = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 flex items-end justify-between gap-4">
                       <h3 className="text-2xl md:text-3xl text-white">Смена&nbsp;2</h3>
-                      <span className="bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-4 py-2 rounded-full whitespace-nowrap">
+                      <span className="bg-gradient-to-r from-amber-400 via-amber-200 via-40% to-amber-500 text-foreground text-sm font-bold px-4 py-2 rounded-full whitespace-nowrap">
                         15&nbsp;&mdash; 26&nbsp;июня
                       </span>
                     </div>
