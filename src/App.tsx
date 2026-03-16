@@ -27,6 +27,7 @@ const App = () => (
           <Route path="/kanikuly/more" element={<SeaCamp />} />
           <Route path="/kanikuly/altai" element={<AltaiCamp />} />
           <Route path="/kanikuly/uae" element={<UaeTour />} />
+          <Route path="/kanikuly/online" element={<HilderstoneCourse />} />
           <Route path="/kanikuly/:program" element={<Index />} />
           <Route path="/uchitelya" element={<Index />} />
           <Route path="/uchitelya/:course" element={<Index />} />
