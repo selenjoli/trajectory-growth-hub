@@ -244,7 +244,7 @@ const Header = ({ variant = "dark", buttonStyle = "gold" }: { variant?: "dark" |
         {/* Left nav — desktop */}
         <nav className="hidden lg:flex items-center gap-6 flex-1">
           {leftMenu.map((item) => (
-            <NavItem key={item.href} item={item} light={isLight} />
+            <NavItem key={item.href} item={item} light={isLight} buttonStyle={buttonStyle} />
           ))}
         </nav>
 
