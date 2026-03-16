@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
@@ -12,7 +12,7 @@ import altaiCampfire from "@/assets/altai-campfire.jpg";
 import altaiCottages from "@/assets/altai-cottages.jpg";
 import altaiWorkshop from "@/assets/altai-workshop.jpg";
 import altaiDining from "@/assets/altai-dining.jpg";
-import altaiMap from "@/assets/altai-map.jpg";
+import altaiMap from "@/assets/altai-map.png";
 import altaiMorning from "@/assets/altai-morning.jpg";
 import altaiDay from "@/assets/altai-day.jpg";
 import altaiEvening from "@/assets/altai-evening.jpg";
