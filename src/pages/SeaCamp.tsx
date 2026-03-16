@@ -365,7 +365,7 @@ const SeaCamp = () => {
                 </a>
               </div>
 
-              <div className="hidden lg:block flex-1">
+              <div className="hidden lg:block">
                 <div className="rounded-[1.5rem] overflow-hidden aspect-[3/4]">
                   <img src={seaPsychology} alt="Фото из лагеря" className="w-full h-full object-cover" />
                 </div>
