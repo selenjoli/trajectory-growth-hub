@@ -10,6 +10,7 @@ import SeaCamp from "./pages/SeaCamp.tsx";
 import AltaiCamp from "./pages/AltaiCamp.tsx";
 import UaeTour from "./pages/UaeTour.tsx";
 import HilderstoneCourse from "./pages/HilderstoneCourse.tsx";
+import Uchitelya from "./pages/Uchitelya.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
