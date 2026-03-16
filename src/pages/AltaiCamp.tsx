@@ -92,6 +92,25 @@ const otherPrograms = [
 
 /* ─── page ─── */
 
+/* ─── hook: pause carousels when off-screen ─── */
+
+function useVisibilityPause(setPaused: (v: boolean) => void) {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => setPaused(!entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [setPaused]);
+  return ref;
+}
+
+/* ─── page ─── */
+
 const AltaiCamp = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -102,8 +121,12 @@ const AltaiCamp = () => {
   const [spotPaused, setSpotPaused] = useState(false);
   const [currentDay, setCurrentDay] = useState(0);
   const [dayPaused, setDayPaused] = useState(false);
+  const [dayUserPaused, setDayUserPaused] = useState(false);
 
   const hookPhotos = [altaiPatmos, altaiWaterfall, altaiSwimming, altaiCampfire, altaiWorkshop];
+
+  const dayRef = useVisibilityPause(setDayPaused);
+  const spotRef = useVisibilityPause(setSpotPaused);
 
   const nextSlide = useCallback(() => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -134,12 +157,12 @@ const AltaiCamp = () => {
 
   // Day schedule auto-rotation (10s)
   useEffect(() => {
-    if (dayPaused) return;
+    if (dayPaused || dayUserPaused) return;
     const interval = setInterval(() => {
       setCurrentDay((prev) => (prev + 1) % daySchedule.length);
     }, 10000);
     return () => clearInterval(interval);
-  }, [dayPaused]);
+  }, [dayPaused, dayUserPaused]);
 
   return (
     <main className="bg-program-altai">
