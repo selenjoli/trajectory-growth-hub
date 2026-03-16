@@ -427,21 +427,19 @@ const UaeTour = () => {
       <section className="py-20 px-3 md:px-6 xl:px-10">
         <div className="fluid-container">
           <AnimatedSection>
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
               {/* Left photo */}
-              <div className="hidden lg:block flex-1">
-                <div className="rounded-[1.5rem] overflow-hidden aspect-[3/4]">
-                  <img src={uaeMuseum} alt="Музей Будущего" className="w-full h-full object-cover" />
-                </div>
+              <div className="rounded-[1.5rem] overflow-hidden">
+                <img src={uaeMuseum} alt="Музей Будущего" className="w-full h-full object-cover aspect-[3/4] lg:aspect-auto" />
               </div>
 
               {/* Receipt */}
-              <div className="bg-white rounded-[1.5rem] w-full lg:w-[480px] shrink-0 px-8 py-10 shadow-2xl">
+              <div className="bg-white rounded-[1.5rem] px-8 py-10 shadow-2xl flex flex-col">
                 <div className="text-center border-b-2 border-dashed border-foreground/20 pb-6 mb-6">
                   <h2 className="text-2xl md:text-3xl text-foreground mb-1">Что входит в стоимость</h2>
                   <p className="text-sm text-muted-foreground font-normal normal-case">Тур «ОАЭ» · даты уточняются</p>
                 </div>
-                <div className="space-y-4 mb-8">
+                <div className="space-y-4 mb-8 flex-1">
                   {included.map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <span className="mt-1 w-5 h-5 rounded-full border-2 border-program-uae bg-program-uae/10 flex items-center justify-center shrink-0">
@@ -468,10 +466,8 @@ const UaeTour = () => {
               </div>
 
               {/* Right photo */}
-              <div className="hidden lg:block flex-1">
-                <div className="rounded-[1.5rem] overflow-hidden aspect-[3/4]">
-                  <img src={uaeYacht} alt="Ужин на яхте" className="w-full h-full object-cover" />
-                </div>
+              <div className="rounded-[1.5rem] overflow-hidden">
+                <img src={uaeYacht} alt="Ужин на яхте" className="w-full h-full object-cover aspect-[3/4] lg:aspect-auto" />
               </div>
             </div>
           </AnimatedSection>
