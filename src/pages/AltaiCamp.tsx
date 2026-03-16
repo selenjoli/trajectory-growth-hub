@@ -122,28 +122,19 @@ const AltaiCamp = () => {
   const [currentDay, setCurrentDay] = useState(0);
   const [dayPaused, setDayPaused] = useState(false);
   const [dayUserPaused, setDayUserPaused] = useState(false);
-  const [dayInView, setDayInView] = useState(false);
 
   const hookPhotos = [altaiPatmos, altaiWaterfall, altaiSwimming, altaiCampfire, altaiWorkshop];
 
   const dayRef = useRef<HTMLDivElement>(null);
   const spotRef = useVisibilityPause(setSpotPaused);
 
-  // Scroll-driven background: track how far dayRef is through viewport
+  // Scroll-driven background lives on the whole page, not on the section itself
   const { scrollYProgress: dayProgress } = useScroll({
     target: dayRef,
-    offset: ["start end", "end start"], // 0 = section top hits viewport bottom, 1 = section bottom hits viewport top
+    offset: ["start end", "end start"],
   });
 
-  // Map scroll progress to opacity-like factor: fade in 0→0.15, hold 0.15→0.85, fade out 0.85→1
-  const dayBgOpacity = useTransform(dayProgress, [0, 0.1, 0.15, 0.85, 0.9, 1], [0, 0.5, 1, 1, 0.5, 0]);
-
-  // Track dayInView from scroll progress for content fade
-  const [dayScrollFactor, setDayScrollFactor] = useState(0);
-  useMotionValueEvent(dayBgOpacity, "change", (v) => {
-    setDayScrollFactor(v);
-    setDayInView(v > 0.3);
-  });
+  const dayContentOpacity = useTransform(dayProgress, [0.16, 0.3, 0.7, 0.84], [0, 1, 1, 0]);
 
   // Pause day carousel when off-screen
   useEffect(() => {
