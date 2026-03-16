@@ -353,8 +353,9 @@ const UaeTour = () => {
               {/* Arrows — below carousel */}
               <div className="flex items-center justify-center gap-4 mt-8">
                 <button
-                  onClick={() => setCurrentDay((prev) => (prev - 1 + daySchedule.length) % daySchedule.length)}
-                  className="w-11 h-11 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+                  onClick={() => setCurrentDay((prev) => Math.max(0, prev - 1))}
+                  disabled={currentDay === 0}
+                  className="w-11 h-11 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform disabled:opacity-30 disabled:hover:scale-100"
                 >
                   <ArrowLeft className="w-5 h-5 text-program-uae" />
                 </button>
@@ -362,8 +363,9 @@ const UaeTour = () => {
                   {currentDay + 1} / {daySchedule.length}
                 </span>
                 <button
-                  onClick={() => setCurrentDay((prev) => (prev + 1) % daySchedule.length)}
-                  className="w-11 h-11 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+                  onClick={() => setCurrentDay((prev) => Math.min(daySchedule.length - 1, prev + 1))}
+                  disabled={currentDay === daySchedule.length - 1}
+                  className="w-11 h-11 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform disabled:opacity-30 disabled:hover:scale-100"
                 >
                   <ArrowRight className="w-5 h-5 text-program-uae" />
                 </button>
