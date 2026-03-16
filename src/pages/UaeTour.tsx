@@ -86,10 +86,10 @@ const UaeTour = () => {
   useEffect(() => {
     if (dayPaused) return;
     const interval = setInterval(() => {
-      setCurrentDay((prev) => (prev + 1) % daySchedule.length);
+      setCurrentDay((prev) => (prev < daySchedule.length - 1 ? prev + 1 : prev));
     }, 6000);
     return () => clearInterval(interval);
-  }, [dayPaused]);
+  }, [dayPaused, currentDay]);
 
   useEffect(() => {
     if (whyPaused) return;
@@ -103,7 +103,8 @@ const UaeTour = () => {
   const getVisibleDays = () => {
     const items: { index: number; offset: number }[] = [];
     for (let offset = -1; offset <= 3; offset++) {
-      const index = (currentDay + offset + daySchedule.length) % daySchedule.length;
+      const index = currentDay + offset;
+      if (index < 0 || index >= daySchedule.length) continue;
       items.push({ index, offset });
     }
     return items;
@@ -221,41 +222,27 @@ const UaeTour = () => {
                   </p>
                 </div>
 
-                {/* Stacked photo carousel — 50% */}
-                <div className="lg:w-1/2 flex justify-center">
-                  <div
-                    className="relative w-[340px] h-[460px]"
-                    onMouseEnter={() => setWhyPaused(true)}
-                    onMouseLeave={() => setWhyPaused(false)}
-                  >
-                    <AnimatePresence>
-                      {whyPhotos.map((photo, i) => {
-                        const offset = (i - whySlide + whyPhotos.length) % whyPhotos.length;
-                        if (offset > 3) return null;
-                        return (
-                          <motion.div
-                            key={i}
-                            initial={{ opacity: 0, scale: 0.9, y: 30 }}
-                            animate={{
-                              opacity: offset === 0 ? 1 : 0.55 - offset * 0.12,
-                              scale: 1 - offset * 0.05,
-                              y: offset * 16,
-                              x: offset * 8,
-                              zIndex: whyPhotos.length - offset,
-                              rotateZ: offset * -2,
-                            }}
-                            exit={{ opacity: 0, scale: 0.9, y: -20 }}
-                            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                            className="absolute inset-0"
-                          >
-                            <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl">
-                              <img src={photo} alt="ОАЭ" className="w-full h-full object-cover" />
-                            </div>
-                          </motion.div>
-                        );
-                      })}
-                    </AnimatePresence>
-                  </div>
+                {/* Horizontal photo carousel — 50% */}
+                <div
+                  className="lg:w-1/2 overflow-hidden rounded-[1.2rem]"
+                  onMouseEnter={() => setWhyPaused(true)}
+                  onMouseLeave={() => setWhyPaused(false)}
+                >
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={whySlide}
+                      initial={{ opacity: 0, x: 60 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -60 }}
+                      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                      <img
+                        src={whyPhotos[whySlide]}
+                        alt="ОАЭ"
+                        className="w-full aspect-[4/3] object-cover rounded-[1.2rem]"
+                      />
+                    </motion.div>
+                  </AnimatePresence>
                 </div>
               </div>
             </AnimatedSection>
@@ -366,8 +353,9 @@ const UaeTour = () => {
               {/* Arrows — below carousel */}
               <div className="flex items-center justify-center gap-4 mt-8">
                 <button
-                  onClick={() => setCurrentDay((prev) => (prev - 1 + daySchedule.length) % daySchedule.length)}
-                  className="w-11 h-11 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+                  onClick={() => setCurrentDay((prev) => Math.max(0, prev - 1))}
+                  disabled={currentDay === 0}
+                  className="w-11 h-11 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform disabled:opacity-30 disabled:hover:scale-100"
                 >
                   <ArrowLeft className="w-5 h-5 text-program-uae" />
                 </button>
@@ -375,8 +363,9 @@ const UaeTour = () => {
                   {currentDay + 1} / {daySchedule.length}
                 </span>
                 <button
-                  onClick={() => setCurrentDay((prev) => (prev + 1) % daySchedule.length)}
-                  className="w-11 h-11 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+                  onClick={() => setCurrentDay((prev) => Math.min(daySchedule.length - 1, prev + 1))}
+                  disabled={currentDay === daySchedule.length - 1}
+                  className="w-11 h-11 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform disabled:opacity-30 disabled:hover:scale-100"
                 >
                   <ArrowRight className="w-5 h-5 text-program-uae" />
                 </button>
