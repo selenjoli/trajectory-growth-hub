@@ -216,18 +216,18 @@ const AltaiCamp = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="w-fit mb-4"
+              className="relative mb-4"
             >
-              <div className="flex justify-end mb-3">
-                <span className="inline-block bg-program-altai text-white text-sm md:text-base font-bold uppercase tracking-wider px-5 py-2 rounded-full">
-                  10–25 июля 2026
-                </span>
-              </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95]">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95] max-w-3xl">
                 <span className="text-program-altai">Алтай:</span> здесь английский
-                <br />
+                <br className="hidden md:block" />
                 становится частью приключения
               </h1>
+              <span className="absolute -top-10 md:-top-12 right-0 inline-block bg-program-altai text-white text-sm md:text-base font-bold uppercase tracking-wider px-5 py-2 rounded-full"
+                style={{ right: 0 }}
+              >
+                10–25 июля 2026
+              </span>
             </motion.div>
 
             <motion.p
