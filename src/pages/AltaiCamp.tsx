@@ -206,17 +206,18 @@ const AltaiCamp = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="w-fit mb-4"
+              className="relative w-fit mb-4"
             >
-              <div className="flex items-center justify-between mb-4 gap-6">
+              {/* Chips row — absolute so h1 defines the wrapper width */}
+              <div className="flex items-center justify-between mb-4 gap-6 md:absolute md:bottom-full md:left-0 md:right-0 md:mb-4">
                 <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-sm md:text-base font-semibold uppercase tracking-wider px-5 py-2 rounded-full">
                   Языковой лагерь · Горный Алтай
                 </span>
-                <span className="inline-block bg-program-altai text-white text-sm md:text-base font-bold uppercase tracking-wider px-5 py-2 rounded-full">
+                <span className="inline-block bg-program-altai text-white text-sm md:text-base font-bold uppercase tracking-wider px-5 py-2 rounded-full whitespace-nowrap">
                   10–25 июля 2026
                 </span>
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95]">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95] md:mt-0 mt-4">
                 <span className="text-program-altai">Алтай:</span> здесь английский
                 <br className="hidden md:block" />
                 становится частью приключения
