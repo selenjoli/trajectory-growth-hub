@@ -8,6 +8,7 @@ import Kanikuly from "./pages/Kanikuly.tsx";
 import ChinaTour from "./pages/ChinaTour.tsx";
 import SeaCamp from "./pages/SeaCamp.tsx";
 import AltaiCamp from "./pages/AltaiCamp.tsx";
+import UaeTour from "./pages/UaeTour.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
