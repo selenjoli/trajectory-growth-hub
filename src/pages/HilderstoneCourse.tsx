@@ -261,22 +261,19 @@ const HilderstoneCourse = () => {
           </AnimatedSection>
 
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-14 items-center">
-            <AnimatedSection delay={0.2} className="w-full lg:w-auto lg:flex-shrink-0 flex justify-center">
-              <div className="w-full max-w-[280px] lg:max-w-[260px] rounded-[1.5rem] overflow-hidden">
-                <div className="relative w-full aspect-[9/16]">
-                  <iframe
-                    src="https://kinescope.io/embed/my6qHzv5AXLiPmktJFqVJn"
-                    allow="fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
-                    frameBorder="0"
-                    allowFullScreen
-                    loading="lazy"
-                    className="absolute inset-0 h-full w-full"
-                  />
-                </div>
+            <AnimatedSection delay={0.2} className="w-full lg:w-[320px] flex-shrink-0">
+              <div className="rounded-[1.5rem] overflow-hidden w-full" style={{ position: 'relative', paddingBottom: '177.78%' }}>
+                <iframe
+                  src="https://kinescope.io/embed/my6qHzv5AXLiPmktJFqVJn"
+                  allow="fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
+                  frameBorder="0"
+                  allowFullScreen
+                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                />
               </div>
             </AnimatedSection>
 
-            <AnimatedSection delay={0.1} className="w-full lg:flex-1 self-stretch flex items-center">
+            <AnimatedSection delay={0.1} className="flex-1 flex items-center">
               <div className="space-y-6">
                 <p className="text-white/90 text-base md:text-lg font-normal normal-case leading-relaxed">
                   Программа строится на&nbsp;живом общении&nbsp;&mdash; не&nbsp;на&nbsp;переводе и&nbsp;зубрёжке. Ребята расширяют словарный запас, учатся говорить уверенно и&nbsp;получают настоящее погружение в&nbsp;языковую среду.
