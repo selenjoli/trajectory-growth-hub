@@ -129,22 +129,32 @@ const AltaiCamp = () => {
   const dayRef = useRef<HTMLDivElement>(null);
   const spotRef = useVisibilityPause(setSpotPaused);
 
-  // Pause day carousel when off-screen + track visibility for page bg
-  // Separate observer for bg color — triggers early with large rootMargin
+  // Scroll-driven background: track how far dayRef is through viewport
+  const { scrollYProgress: dayProgress } = useScroll({
+    target: dayRef,
+    offset: ["start end", "end start"], // 0 = section top hits viewport bottom, 1 = section bottom hits viewport top
+  });
+
+  // Map scroll progress to opacity-like factor: fade in 0→0.15, hold 0.15→0.85, fade out 0.85→1
+  const dayBgOpacity = useTransform(dayProgress, [0, 0.1, 0.15, 0.85, 0.9, 1], [0, 0.5, 1, 1, 0.5, 0]);
+
+  // Track dayInView from scroll progress for content fade
+  const [dayScrollFactor, setDayScrollFactor] = useState(0);
+  useMotionValueEvent(dayBgOpacity, "change", (v) => {
+    setDayScrollFactor(v);
+    setDayInView(v > 0.3);
+  });
+
+  // Pause day carousel when off-screen
   useEffect(() => {
     const el = dayRef.current;
     if (!el) return;
-    const bgObs = new IntersectionObserver(
-      ([entry]) => setDayInView(entry.isIntersecting),
-      { rootMargin: "200px 0px 200px 0px", threshold: 0 }
-    );
     const pauseObs = new IntersectionObserver(
       ([entry]) => setDayPaused(!entry.isIntersecting),
       { threshold: 0.1 }
     );
-    bgObs.observe(el);
     pauseObs.observe(el);
-    return () => { bgObs.disconnect(); pauseObs.disconnect(); };
+    return () => pauseObs.disconnect();
   }, []);
 
   const nextSlide = useCallback(() => {
