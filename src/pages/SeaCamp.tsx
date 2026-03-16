@@ -302,11 +302,11 @@ const SeaCamp = () => {
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {facilities.map((f, i) => (
-                  <div key={i} className="rounded-xl overflow-hidden bg-card shadow-sm">
-                    <div className="aspect-square overflow-hidden">
-                      <img src={f.image} alt={f.text} className="w-full h-full object-cover" />
+                  <div key={i} className="rounded-xl overflow-hidden relative aspect-square">
+                    <img src={f.image} alt={f.text} className="w-full h-full object-cover" />
+                    <div className="absolute inset-x-0 bottom-0 bg-program-sea/75 backdrop-blur-sm px-4 py-3">
+                      <p className="text-white text-sm md:text-base font-bold uppercase tracking-wide leading-snug">{f.text}</p>
                     </div>
-                    <p className="text-sm md:text-base text-foreground font-medium normal-case leading-snug p-3">{f.text}</p>
                   </div>
                 ))}
               </div>
