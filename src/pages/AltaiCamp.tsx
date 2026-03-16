@@ -184,16 +184,16 @@ const AltaiCamp = () => {
     return () => clearInterval(interval);
   }, [dayPaused, dayUserPaused]);
 
-  // Determine page bg color — blend based on scroll factor
-  const defaultBg = "hsl(147, 75%, 33%)";
-  const targetBg = daySchedule[currentDay].bgColor;
+  // Page background transitions inside the section spacers, not on neighboring blocks
+  const defaultBg = "hsl(147 75% 33%)";
+  const dayPageBackground = useTransform(
+    dayProgress,
+    [0, 0.12, 0.26, 0.74, 0.88, 1],
+    [defaultBg, defaultBg, daySchedule[currentDay].bgColor, daySchedule[currentDay].bgColor, defaultBg, defaultBg]
+  );
 
   return (
-    <motion.main
-      className="bg-program-altai"
-      animate={{ backgroundColor: dayScrollFactor > 0.01 ? targetBg : defaultBg }}
-      transition={{ duration: dayScrollFactor > 0.01 ? 0.8 : 1.2, ease: "easeInOut" }}
-    >
+    <motion.main className="bg-program-altai" style={{ backgroundColor: dayPageBackground }}>
       <Header variant="light" />
 
       {/* ── HERO ── */}
