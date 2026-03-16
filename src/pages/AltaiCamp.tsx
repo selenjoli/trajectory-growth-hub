@@ -13,10 +13,10 @@ import altaiCottages from "@/assets/altai-cottages.jpg";
 import altaiWorkshop from "@/assets/altai-workshop.jpg";
 import altaiDining from "@/assets/altai-dining.jpg";
 import altaiMap from "@/assets/altai-map.png";
-import altaiMorning from "@/assets/altai-morning.jpg";
-import altaiDay from "@/assets/altai-day.jpg";
-import altaiEvening from "@/assets/altai-evening.jpg";
-import altaiNight from "@/assets/altai-night.jpg";
+import altaiMorning from "@/assets/altai-morning.png";
+import altaiDay from "@/assets/altai-day.png";
+import altaiEvening from "@/assets/altai-evening.png";
+import altaiNight from "@/assets/altai-night.png";
 import illustUae from "@/assets/illust-uae.svg";
 import illustChina from "@/assets/illust-china.png";
 import illustSea from "@/assets/illust-sea.png";
@@ -56,25 +56,25 @@ const daySchedule = [
     time: "Утро",
     text: "Завтрак, зарядка, первый блок английского — игровой формат, командные задачи.",
     image: altaiMorning,
-    bg: "from-amber-100 to-green-50",
+    bgColor: "#d4a44a",
   },
   {
     time: "День",
     text: "Мастер-классы, творческие студии, спортивные игры или экскурсия.",
     image: altaiDay,
-    bg: "from-sky-100 to-green-50",
+    bgColor: "#4a9b6e",
   },
   {
     time: "Вечер",
     text: "Квест, дискотека под открытым небом или «свечи» — вечерний круг, где каждый говорит о своём дне.",
     image: altaiEvening,
-    bg: "from-orange-100 to-purple-50",
+    bgColor: "#3b2d5e",
   },
   {
     time: "Ночь",
     text: "Костёр по расписанию, разговоры, тишина гор.",
     image: altaiNight,
-    bg: "from-indigo-100 to-slate-100",
+    bgColor: "#1a2744",
   },
 ];
 
@@ -382,59 +382,43 @@ const AltaiCamp = () => {
 
       {/* ── Day schedule — immersive full-screen carousel ── */}
       <section ref={dayRef}>
-        {/* Section title — above the immersive block */}
-        <div className="px-3 md:px-6 xl:px-10 mb-6">
-          <div className="fluid-container">
-            <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-foreground">
-                День в лагере — <span className="text-program-altai">как это выглядит</span>
-              </h2>
-            </AnimatedSection>
-          </div>
-        </div>
-
-        {/* Full-width immersive illustration + text */}
         <motion.div
           className="relative"
-          animate={{
-            backgroundColor: currentDay === 0
-              ? "#fef3c7"
-              : currentDay === 1
-              ? "#e0f2fe"
-              : currentDay === 2
-              ? "#ffedd5"
-              : "#e0e7ff",
-          }}
+          animate={{ backgroundColor: daySchedule[currentDay].bgColor }}
           transition={{ duration: 1.5, ease: "easeInOut" }}
         >
-          {/* Full-screen illustration */}
-          <div className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden">
-            {daySchedule.map((item, i) => (
-              <motion.div
-                key={i}
-                className="absolute inset-0"
-                initial={false}
-                animate={{ opacity: i === currentDay ? 1 : 0 }}
-                transition={{ duration: 1 }}
-              >
-                <img
-                  src={item.image}
-                  alt={item.time}
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-            ))}
+          {/* Title — white, on the colored bg */}
+          <div className="px-6 md:px-16 pt-16 pb-6">
+            <div className="fluid-container">
+              <h2 className="text-4xl md:text-6xl text-white">
+                День в лагере — <span className="text-white/70">как это выглядит</span>
+              </h2>
+            </div>
+          </div>
 
-            {/* Gradient fade into bg color below */}
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-current to-transparent pointer-events-none" style={{
-              // match the animated bg color
-              background: `linear-gradient(to top, ${
-                currentDay === 0 ? "#fef3c7" : currentDay === 1 ? "#e0f2fe" : currentDay === 2 ? "#ffedd5" : "#e0e7ff"
-              }, transparent)`,
-            }} />
+          {/* Full-width transparent illustration with overlay elements */}
+          <div className="relative w-full">
+            {/* Illustrations — all same size container, crossfade */}
+            <div className="relative w-full h-[40vh] md:h-[55vh]">
+              {daySchedule.map((item, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute inset-0 flex items-end justify-center"
+                  initial={false}
+                  animate={{ opacity: i === currentDay ? 1 : 0 }}
+                  transition={{ duration: 1 }}
+                >
+                  <img
+                    src={item.image}
+                    alt={item.time}
+                    className="w-full h-full object-contain object-bottom"
+                  />
+                </motion.div>
+              ))}
+            </div>
 
-            {/* Large time-of-day title overlapping bottom of image */}
-            <div className="absolute bottom-0 left-0 right-0 px-6 md:px-16 translate-y-1/3">
+            {/* Time title — large, overlapping bottom of illustration */}
+            <div className="absolute bottom-[10%] left-0 right-0 flex justify-center pointer-events-none">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={currentDay}
@@ -442,77 +426,77 @@ const AltaiCamp = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.5 }}
-                  className="block text-6xl md:text-8xl lg:text-9xl font-bold text-white drop-shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
+                  className="text-7xl md:text-9xl lg:text-[10rem] font-bold text-white/90 drop-shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
                 >
                   {daySchedule[currentDay].time}
                 </motion.span>
               </AnimatePresence>
             </div>
-          </div>
 
-          {/* White text card below */}
-          <div className="px-6 md:px-16 pt-16 md:pt-20 pb-10 md:pb-14">
-            <div className="fluid-container">
-              <div className="bg-white rounded-[1.5rem] p-6 md:p-10 max-w-2xl shadow-lg min-h-[140px] flex flex-col justify-center">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentDay}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.4, delay: 0.1 }}
-                  >
-                    <p className="text-base md:text-lg text-muted-foreground font-normal normal-case leading-relaxed">
-                      {daySchedule[currentDay].text}
-                    </p>
-                    {currentDay === daySchedule.length - 1 && (
-                      <p className="text-muted-foreground text-base font-normal normal-case leading-relaxed italic mt-4">
-                        Каждую неделю — репетиция финального выступления, которое дети готовят сами.
+            {/* White card — centered, overlapping illustration bottom */}
+            <div className="absolute bottom-0 left-0 right-0 translate-y-1/2 px-6 md:px-16 z-10">
+              <div className="fluid-container flex justify-center">
+                <div className="bg-white rounded-[1.5rem] p-6 md:p-10 max-w-2xl w-full shadow-xl min-h-[120px] flex flex-col justify-center">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={currentDay}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.4, delay: 0.1 }}
+                    >
+                      <p className="text-base md:text-lg text-muted-foreground font-normal normal-case leading-relaxed">
+                        {daySchedule[currentDay].text}
                       </p>
-                    )}
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-
-              {/* Arrows centered below */}
-              <div className="flex items-center justify-center gap-4 mt-8">
-                <button
-                  onClick={() => {
-                    setCurrentDay((prev) => (prev - 1 + daySchedule.length) % daySchedule.length);
-                    setDayUserPaused(true);
-                    setTimeout(() => setDayUserPaused(false), 10000);
-                  }}
-                  className="w-12 h-12 rounded-full bg-foreground/10 hover:bg-foreground/20 flex items-center justify-center transition-all hover:scale-110"
-                >
-                  <ArrowLeft className="w-5 h-5 text-foreground" />
-                </button>
-                <div className="flex gap-2">
-                  {daySchedule.map((_, i) => (
-                    <button
-                      key={i}
-                      onClick={() => {
-                        setCurrentDay(i);
-                        setDayUserPaused(true);
-                        setTimeout(() => setDayUserPaused(false), 10000);
-                      }}
-                      className={`w-2.5 h-2.5 rounded-full transition-all ${
-                        i === currentDay ? "bg-program-altai scale-125" : "bg-foreground/20"
-                      }`}
-                    />
-                  ))}
+                      {currentDay === daySchedule.length - 1 && (
+                        <p className="text-muted-foreground text-base font-normal normal-case leading-relaxed italic mt-4">
+                          Каждую неделю — репетиция финального выступления, которое дети готовят сами.
+                        </p>
+                      )}
+                    </motion.div>
+                  </AnimatePresence>
                 </div>
-                <button
-                  onClick={() => {
-                    setCurrentDay((prev) => (prev + 1) % daySchedule.length);
-                    setDayUserPaused(true);
-                    setTimeout(() => setDayUserPaused(false), 10000);
-                  }}
-                  className="w-12 h-12 rounded-full bg-foreground/10 hover:bg-foreground/20 flex items-center justify-center transition-all hover:scale-110"
-                >
-                  <ArrowRight className="w-5 h-5 text-foreground" />
-                </button>
               </div>
             </div>
+          </div>
+
+          {/* Arrows + dots — below card overlap area */}
+          <div className="pt-20 pb-10 flex items-center justify-center gap-4">
+            <button
+              onClick={() => {
+                setCurrentDay((prev) => (prev - 1 + daySchedule.length) % daySchedule.length);
+                setDayUserPaused(true);
+                setTimeout(() => setDayUserPaused(false), 10000);
+              }}
+              className="w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-all hover:scale-110"
+            >
+              <ArrowLeft className="w-5 h-5 text-white" />
+            </button>
+            <div className="flex gap-2">
+              {daySchedule.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => {
+                    setCurrentDay(i);
+                    setDayUserPaused(true);
+                    setTimeout(() => setDayUserPaused(false), 10000);
+                  }}
+                  className={`w-2.5 h-2.5 rounded-full transition-all ${
+                    i === currentDay ? "bg-white scale-125" : "bg-white/30"
+                  }`}
+                />
+              ))}
+            </div>
+            <button
+              onClick={() => {
+                setCurrentDay((prev) => (prev + 1) % daySchedule.length);
+                setDayUserPaused(true);
+                setTimeout(() => setDayUserPaused(false), 10000);
+              }}
+              className="w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-all hover:scale-110"
+            >
+              <ArrowRight className="w-5 h-5 text-white" />
+            </button>
           </div>
         </motion.div>
       </section>
