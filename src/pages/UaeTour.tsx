@@ -225,7 +225,7 @@ const UaeTour = () => {
                 {/* Stacked photo carousel — 50% */}
                 <div className="lg:w-1/2 flex justify-center lg:justify-start">
                   <div
-                    className="relative w-[340px] h-[460px]"
+                    className="relative w-full aspect-[4/3]"
                     onMouseEnter={() => setWhyPaused(true)}
                     onMouseLeave={() => setWhyPaused(false)}
                   >
@@ -240,10 +240,10 @@ const UaeTour = () => {
                             animate={{
                               opacity: offset === 0 ? 1 : 0.55 - offset * 0.12,
                               scale: 1 - offset * 0.05,
-                              y: offset * 16,
+                              y: offset * 12,
                               x: offset * 8,
                               zIndex: whyPhotos.length - offset,
-                              rotateZ: offset * -2,
+                              rotateZ: offset * -1.5,
                             }}
                             exit={{ opacity: 0, scale: 0.9, y: -20 }}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
