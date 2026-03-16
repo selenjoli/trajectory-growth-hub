@@ -73,7 +73,7 @@ const DropdownMenu = ({
   </AnimatePresence>
 );
 
-const NavItem = ({ item, light = false }: { item: MenuItem; light?: boolean }) => {
+const NavItem = ({ item, light = false, buttonStyle = "gold" }: { item: MenuItem; light?: boolean; buttonStyle?: "gold" | "silver" }) => {
   const [open, setOpen] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
 
