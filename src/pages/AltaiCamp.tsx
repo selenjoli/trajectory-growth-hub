@@ -483,8 +483,8 @@ const AltaiCamp = () => {
             </div>
           </div>
 
-          {/* Arrows + dots — below card overlap area */}
-          <div className="pt-20 pb-10 flex items-center justify-center gap-4">
+          {/* Arrows — below card overlap area */}
+          <div className="pt-20 pb-10 flex items-center justify-center gap-6">
             <button
               onClick={() => {
                 setCurrentDay((prev) => (prev - 1 + daySchedule.length) % daySchedule.length);
@@ -495,21 +495,6 @@ const AltaiCamp = () => {
             >
               <ArrowLeft className="w-5 h-5 text-white" />
             </button>
-            <div className="flex gap-2">
-              {daySchedule.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => {
-                    setCurrentDay(i);
-                    setDayUserPaused(true);
-                    setTimeout(() => setDayUserPaused(false), 10000);
-                  }}
-                  className={`w-2.5 h-2.5 rounded-full transition-all ${
-                    i === currentDay ? "bg-white scale-125" : "bg-white/30"
-                  }`}
-                />
-              ))}
-            </div>
             <button
               onClick={() => {
                 setCurrentDay((prev) => (prev + 1) % daySchedule.length);
