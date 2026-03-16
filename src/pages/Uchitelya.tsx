@@ -363,19 +363,22 @@ const Uchitelya = () => {
       <section className="section-padding">
         <div className="fluid-container">
           <AnimatedSection>
-            <div className="grid md:grid-cols-[1fr_auto] gap-8 md:gap-16 items-center rounded-[1.5rem] border border-border p-8 md:p-12 bg-card">
-              <div>
+            <div className="grid md:grid-cols-[1fr_auto] gap-8 md:gap-16 items-center rounded-[1.5rem] overflow-hidden border border-border bg-card">
+              <div className="p-8 md:p-12">
                 <span className="text-xs uppercase tracking-wider text-muted-foreground mb-4 block">Для руководителей</span>
                 <h2 className="text-2xl md:text-3xl text-foreground mb-4 leading-tight">
                   Вы руководите школой или образовательным центром?
                 </h2>
-                <p className="text-muted-foreground text-base font-normal normal-case leading-relaxed">
+                <p className="text-muted-foreground text-base font-normal normal-case leading-relaxed mb-6">
                   Если хотите отправить на&nbsp;курс команду педагогов или узнать о&nbsp;партнёрстве с&nbsp;ассоциацией — у&nbsp;нас есть отдельная страница для руководителей.
                 </p>
+                <a href="/partnerstvo" className="inline-block btn-gold px-8 py-4 rounded-xl text-sm tracking-widest">
+                  О&nbsp;партнёрстве →
+                </a>
               </div>
-              <a href="/partnerstvo" className="inline-block btn-gold px-8 py-4 rounded-xl text-sm tracking-widest shrink-0 self-center">
-                О&nbsp;партнёрстве →
-              </a>
+              <div className="hidden md:block h-full">
+                <img src={heroImg} alt="Партнёрство с ассоциацией" className="h-full w-64 object-cover" />
+              </div>
             </div>
           </AnimatedSection>
         </div>
