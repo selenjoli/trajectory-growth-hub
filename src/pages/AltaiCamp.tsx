@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react";
-import { motion, AnimatePresence, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -56,25 +56,25 @@ const daySchedule = [
     time: "Утро",
     text: "Завтрак, зарядка, первый блок английского — игровой формат, командные задачи.",
     image: altaiMorning,
-    bgColor: "#d4a44a",
+    bgColor: "hsl(40 61% 56%)",
   },
   {
     time: "День",
     text: "Мастер-классы, творческие студии, спортивные игры или экскурсия.",
     image: altaiDay,
-    bgColor: "#4a9b6e",
+    bgColor: "hsl(145 35% 45%)",
   },
   {
     time: "Вечер",
     text: "Квест, дискотека под открытым небом или «свечи» — вечерний круг, где каждый говорит о своём дне.",
     image: altaiEvening,
-    bgColor: "#3b2d5e",
+    bgColor: "hsl(255 35% 27%)",
   },
   {
     time: "Ночь",
     text: "Костёр по расписанию, разговоры, тишина гор.",
     image: altaiNight,
-    bgColor: "#1a2744",
+    bgColor: "hsl(220 45% 18%)",
   },
 ];
 
@@ -122,28 +122,19 @@ const AltaiCamp = () => {
   const [currentDay, setCurrentDay] = useState(0);
   const [dayPaused, setDayPaused] = useState(false);
   const [dayUserPaused, setDayUserPaused] = useState(false);
-  const [dayInView, setDayInView] = useState(false);
 
   const hookPhotos = [altaiPatmos, altaiWaterfall, altaiSwimming, altaiCampfire, altaiWorkshop];
 
   const dayRef = useRef<HTMLDivElement>(null);
   const spotRef = useVisibilityPause(setSpotPaused);
 
-  // Scroll-driven background: track how far dayRef is through viewport
+  // Scroll-driven background lives on the whole page, not on the section itself
   const { scrollYProgress: dayProgress } = useScroll({
     target: dayRef,
-    offset: ["start end", "end start"], // 0 = section top hits viewport bottom, 1 = section bottom hits viewport top
+    offset: ["start end", "end start"],
   });
 
-  // Map scroll progress to opacity-like factor: fade in 0→0.15, hold 0.15→0.85, fade out 0.85→1
-  const dayBgOpacity = useTransform(dayProgress, [0, 0.1, 0.15, 0.85, 0.9, 1], [0, 0.5, 1, 1, 0.5, 0]);
-
-  // Track dayInView from scroll progress for content fade
-  const [dayScrollFactor, setDayScrollFactor] = useState(0);
-  useMotionValueEvent(dayBgOpacity, "change", (v) => {
-    setDayScrollFactor(v);
-    setDayInView(v > 0.3);
-  });
+  const dayContentOpacity = useTransform(dayProgress, [0.16, 0.3, 0.7, 0.84], [0, 1, 1, 0]);
 
   // Pause day carousel when off-screen
   useEffect(() => {
@@ -193,16 +184,16 @@ const AltaiCamp = () => {
     return () => clearInterval(interval);
   }, [dayPaused, dayUserPaused]);
 
-  // Determine page bg color — blend based on scroll factor
-  const defaultBg = "hsl(147, 75%, 33%)";
-  const targetBg = daySchedule[currentDay].bgColor;
+  // Page background transitions inside the section spacers, not on neighboring blocks
+  const defaultBg = "hsl(147 75% 33%)";
+  const dayPageBackground = useTransform(
+    dayProgress,
+    [0, 0.12, 0.26, 0.74, 0.88, 1],
+    [defaultBg, defaultBg, daySchedule[currentDay].bgColor, daySchedule[currentDay].bgColor, defaultBg, defaultBg]
+  );
 
   return (
-    <motion.main
-      className="bg-program-altai"
-      animate={{ backgroundColor: dayScrollFactor > 0.01 ? targetBg : defaultBg }}
-      transition={{ duration: dayScrollFactor > 0.01 ? 0.8 : 1.2, ease: "easeInOut" }}
-    >
+    <motion.main className="bg-program-altai" style={{ backgroundColor: dayPageBackground }}>
       <Header variant="light" />
 
       {/* ── HERO ── */}
@@ -418,20 +409,15 @@ const AltaiCamp = () => {
       </section>
 
       {/* ── Day schedule — immersive full-screen carousel ── */}
-      <section ref={dayRef}>
-        <motion.div
-          className="relative"
-          animate={{ backgroundColor: daySchedule[currentDay].bgColor }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-        >
+      <section ref={dayRef} className="py-20 md:py-28 lg:py-36">
+        <div className="relative">
           {/* Spacer top */}
-          <div className="h-32 md:h-48" />
+          <div className="h-40 md:h-56 lg:h-64" />
 
           {/* Content fades in when section is in view */}
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: dayScrollFactor }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            style={{ opacity: dayContentOpacity }}
           >
           {/* Title — white, on the colored bg */}
           <div className="px-6 md:px-16 pb-6">
@@ -533,8 +519,8 @@ const AltaiCamp = () => {
           </motion.div>
 
           {/* Spacer bottom */}
-          <div className="h-32 md:h-48" />
-        </motion.div>
+          <div className="h-40 md:h-56 lg:h-64" />
+        </div>
       </section>
 
       {/* ── Facilities — green bg with photo cards ── */}
