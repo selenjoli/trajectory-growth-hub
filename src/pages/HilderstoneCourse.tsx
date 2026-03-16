@@ -288,30 +288,6 @@ const HilderstoneCourse = () => {
               </div>
             </AnimatedSection>
 
-            <AnimatedSection delay={0.2}>
-              <div className="lg:w-1/2">
-                {/* Kinescope player placeholder — replace src with real Kinescope embed URL */}
-                <div className="rounded-[1.5rem] overflow-hidden bg-black/30 aspect-video">
-                  <div className="w-full h-full flex items-center justify-center text-white/40 text-sm">
-                    <div className="text-center space-y-3">
-                      <svg className="w-16 h-16 mx-auto opacity-40" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                      <p className="font-normal normal-case">Видео будет добавлено</p>
-                    </div>
-                  </div>
-                  {/* When ready, replace the div above with:
-                  <iframe
-                    src="https://kinescope.io/embed/YOUR_VIDEO_ID"
-                    className="w-full h-full"
-                    frameBorder="0"
-                    allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
-                    allowFullScreen
-                  />
-                  */}
-                </div>
-              </div>
-            </AnimatedSection>
           </div>
         </div>
       </section>
