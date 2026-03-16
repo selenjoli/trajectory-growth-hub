@@ -135,6 +135,9 @@ const Uchitelya = () => {
             {/* Card 1 — online course */}
             <AnimatedSection delay={0.05}>
               <div className="rounded-[1.5rem] border border-border bg-card h-full flex flex-col overflow-hidden">
+                <div className="h-56 overflow-hidden">
+                  <img src={courseImg} alt="Онлайн-курс с британскими преподавателями" className="w-full h-full object-cover" />
+                </div>
                 <div className="p-8 md:p-10 flex-1 flex flex-col">
                   <span className="text-xs uppercase tracking-wider text-muted-foreground mb-4 block">
                     Teachers Development Course · Hilderstone College
