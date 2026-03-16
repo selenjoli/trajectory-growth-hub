@@ -330,7 +330,7 @@ const AltaiCamp = () => {
         <div className="fluid-container">
           <AnimatedSection>
             <h2 className="text-4xl md:text-6xl text-white mb-4">
-              Алтай, который <span className="bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">запоминается</span>
+              Алтай, который <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">запоминается</span>
             </h2>
             <p className="text-white/70 text-base md:text-lg mb-14 max-w-2xl font-normal normal-case">
               Природа здесь — не фон, а главный герой. Каждый день — новое место, новые впечатления.
