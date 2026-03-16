@@ -22,10 +22,10 @@ const testimonials = [
 ];
 
 const otherPrograms = [
-  { title: "Китай", illustration: illustChina, illustClass: "h-24 w-auto", dates: "3\u201312\u00a0июня", price: "от\u00a0165\u00a0000\u00a0руб.", href: "/kanikuly/china" },
-  { title: "Море", illustration: illustSea, illustClass: "h-20 w-auto", dates: "24\u00a0июня\u00a0\u2014 14\u00a0июля", price: "от\u00a0134\u00a0000\u00a0руб.", href: "/kanikuly/more" },
-  { title: "Алтай", illustration: illustAltai, illustClass: "h-24 w-auto", dates: "10\u201325\u00a0июля", price: "от\u00a095\u00a0000\u00a0руб.", href: "/kanikuly/altai" },
-  { title: "Дубай", illustration: illustUae, illustClass: "h-24 w-auto", dates: "Даты уточняются", price: "от\u00a0145\u00a0000\u00a0руб.", href: "/kanikuly/uae" },
+  { title: "Китай", illustration: illustChina, dates: "3\u201312\u00a0июня", price: "от\u00a0165\u00a0000\u00a0руб.", href: "/kanikuly/china" },
+  { title: "Море", illustration: illustSea, dates: "24\u00a0июня\u00a0\u2014 14\u00a0июля", price: "от\u00a0134\u00a0000\u00a0руб.", href: "/kanikuly/more" },
+  { title: "Алтай", illustration: illustAltai, dates: "10\u201325\u00a0июля", price: "от\u00a095\u00a0000\u00a0руб.", href: "/kanikuly/altai" },
+  { title: "Дубай", illustration: illustUae, dates: "Даты уточняются", price: "от\u00a0145\u00a0000\u00a0руб.", href: "/kanikuly/uae" },
 ];
 
 const whyPhotos = [collegePic, teacherPic, lessonPic];
