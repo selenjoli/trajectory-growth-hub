@@ -189,8 +189,8 @@ const SeaCamp = () => {
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
-              <div className="flex flex-col lg:flex-row gap-10 items-start">
-                <div className="max-w-lg space-y-6 lg:shrink-0">
+              <div className="flex flex-col lg:flex-row gap-10 items-center">
+                <div className="w-full lg:w-1/2 space-y-6">
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
                     Многие родители слышат слово «лагерь» и представляют одно и то же: скучные мероприятия по расписанию, безликие корпуса, тихий час. Мы понимаем это ощущение.
                   </p>
@@ -200,9 +200,9 @@ const SeaCamp = () => {
                 </div>
 
                 {/* Stacked photo carousel */}
-                <div className="flex-1 flex justify-center lg:justify-start">
+                <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
                   <div
-                    className="relative w-full max-w-[500px] h-[460px]"
+                    className="relative w-full h-[460px]"
                     onMouseEnter={() => setWhyPaused(true)}
                     onMouseLeave={() => setWhyPaused(false)}
                   >
@@ -319,14 +319,14 @@ const SeaCamp = () => {
       <section className="py-20 px-3 md:px-6 xl:px-10">
         <div className="fluid-container">
           <AnimatedSection>
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-              <div className="hidden lg:block flex-1">
+            <div className="grid grid-cols-1 lg:grid-cols-3 items-center gap-6">
+              <div className="hidden lg:block">
                 <div className="rounded-[1.5rem] overflow-hidden aspect-[3/4]">
                   <img src={seaDance} alt="Фото из лагеря" className="w-full h-full object-cover" />
                 </div>
               </div>
 
-              <div className="bg-white rounded-[1.5rem] w-full lg:w-[480px] shrink-0 px-8 py-10 shadow-2xl">
+              <div className="bg-white rounded-[1.5rem] w-full px-8 py-10 shadow-2xl">
                 <div className="text-center border-b-2 border-dashed border-foreground/20 pb-6 mb-6">
                   <h2 className="text-2xl md:text-3xl text-foreground mb-1">Стоимость смены</h2>
                   <p className="text-sm text-muted-foreground font-normal normal-case">Лагерь «Море» · 23 июня — 15 июля 2026</p>
@@ -365,7 +365,7 @@ const SeaCamp = () => {
                 </a>
               </div>
 
-              <div className="hidden lg:block flex-1">
+              <div className="hidden lg:block">
                 <div className="rounded-[1.5rem] overflow-hidden aspect-[3/4]">
                   <img src={seaPsychology} alt="Фото из лагеря" className="w-full h-full object-cover" />
                 </div>
