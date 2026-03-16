@@ -3,6 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import Header from "@/components/Header";
 import AnimatedSection from "@/components/AnimatedSection";
 import heroImg from "@/assets/teachers-hero.jpg";
+import courseImg from "@/assets/teachers-online-course.jpg";
+import festImg from "@/assets/teachers-festival.jpg";
+import whyImg from "@/assets/teachers-why.jpg";
 
 /* ─── data ─── */
 
@@ -132,6 +135,9 @@ const Uchitelya = () => {
             {/* Card 1 — online course */}
             <AnimatedSection delay={0.05}>
               <div className="rounded-[1.5rem] border border-border bg-card h-full flex flex-col overflow-hidden">
+                <div className="h-56 overflow-hidden">
+                  <img src={courseImg} alt="Онлайн-курс с британскими преподавателями" className="w-full h-full object-cover" />
+                </div>
                 <div className="p-8 md:p-10 flex-1 flex flex-col">
                   <span className="text-xs uppercase tracking-wider text-muted-foreground mb-4 block">
                     Teachers Development Course · Hilderstone College
@@ -167,6 +173,9 @@ const Uchitelya = () => {
             {/* Card 2 — festival */}
             <AnimatedSection delay={0.12}>
               <div className="rounded-[1.5rem] border border-border bg-card h-full flex flex-col overflow-hidden">
+                <div className="h-56 overflow-hidden">
+                  <img src={festImg} alt="ProSkill Fest — фестиваль для педагогов" className="w-full h-full object-cover" />
+                </div>
                 <div className="p-8 md:p-10 flex-1 flex flex-col">
                   <span className="text-xs uppercase tracking-wider text-muted-foreground mb-4 block">
                     ProSkill Fest · Ежегодный фестиваль для педагогов
@@ -210,6 +219,10 @@ const Uchitelya = () => {
               Честно о&nbsp;том, зачем <span className="text-accent">это нужно</span>
             </h2>
           </AnimatedSection>
+
+          <div className="mb-10 rounded-[1.5rem] overflow-hidden max-h-80">
+            <img src={whyImg} alt="Преподаватели на воркшопе" className="w-full h-full object-cover" />
+          </div>
 
           <div className="grid md:grid-cols-2 gap-10 md:gap-20 items-start">
             {/* Problem */}
