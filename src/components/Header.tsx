@@ -92,7 +92,7 @@ const NavItem = ({ item, light = false }: { item: MenuItem; light?: boolean }) =
     return (
       <a
         href={item.href}
-        className="btn-gold text-xs tracking-widest px-6 py-3 rounded-xl transition-all"
+        className={`${light && buttonStyle === "silver" ? "btn-silver" : "btn-gold"} text-xs tracking-widest px-6 py-3 rounded-xl transition-all`}
       >
         {item.label}
       </a>
