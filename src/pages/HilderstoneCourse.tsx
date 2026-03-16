@@ -261,17 +261,6 @@ const HilderstoneCourse = () => {
           </AnimatedSection>
 
           <div className="flex flex-col lg:flex-row gap-10 items-start">
-            <AnimatedSection delay={0.1}>
-              <div className="lg:w-1/2 space-y-6">
-                <p className="text-white/90 text-base md:text-lg font-normal normal-case leading-relaxed">
-                  Программа строится на&nbsp;живом общении&nbsp;&mdash; не&nbsp;на&nbsp;переводе и&nbsp;зубрёжке. Ребята расширяют словарный запас, учатся говорить уверенно и&nbsp;получают настоящее погружение в&nbsp;языковую среду.
-                </p>
-                <p className="text-white/90 text-base md:text-lg font-normal normal-case leading-relaxed">
-                  Каждое занятие&nbsp;&mdash; новая тема, новые слова в&nbsp;контексте, практика в&nbsp;разговоре. 90&nbsp;минут каждый день, десять дней подряд&nbsp;&mdash; это не&nbsp;«позанимались онлайн», а&nbsp;реальный интенсив.
-                </p>
-              </div>
-            </AnimatedSection>
-
             <AnimatedSection delay={0.2}>
               <div className="lg:w-1/2">
                 {/* Kinescope player placeholder — replace src with real Kinescope embed URL */}
@@ -284,18 +273,21 @@ const HilderstoneCourse = () => {
                       <p className="font-normal normal-case">Видео будет добавлено</p>
                     </div>
                   </div>
-                  {/* When ready, replace the div above with:
-                  <iframe
-                    src="https://kinescope.io/embed/YOUR_VIDEO_ID"
-                    className="w-full h-full"
-                    frameBorder="0"
-                    allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
-                    allowFullScreen
-                  />
-                  */}
                 </div>
               </div>
             </AnimatedSection>
+
+            <AnimatedSection delay={0.1}>
+              <div className="lg:w-1/2 space-y-6">
+                <p className="text-white/90 text-base md:text-lg font-normal normal-case leading-relaxed">
+                  Программа строится на&nbsp;живом общении&nbsp;&mdash; не&nbsp;на&nbsp;переводе и&nbsp;зубрёжке. Ребята расширяют словарный запас, учатся говорить уверенно и&nbsp;получают настоящее погружение в&nbsp;языковую среду.
+                </p>
+                <p className="text-white/90 text-base md:text-lg font-normal normal-case leading-relaxed">
+                  Каждое занятие&nbsp;&mdash; новая тема, новые слова в&nbsp;контексте, практика в&nbsp;разговоре. 90&nbsp;минут каждый день, десять дней подряд&nbsp;&mdash; это не&nbsp;«позанимались онлайн», а&nbsp;реальный интенсив.
+                </p>
+              </div>
+            </AnimatedSection>
+
           </div>
         </div>
       </section>
