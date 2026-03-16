@@ -200,9 +200,9 @@ const SeaCamp = () => {
                 </div>
 
                 {/* Stacked photo carousel */}
-                <div className="flex-1 flex justify-center lg:justify-start">
+                <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
                   <div
-                    className="relative w-full max-w-[500px] h-[460px]"
+                    className="relative w-full h-[460px]"
                     onMouseEnter={() => setWhyPaused(true)}
                     onMouseLeave={() => setWhyPaused(false)}
                   >
