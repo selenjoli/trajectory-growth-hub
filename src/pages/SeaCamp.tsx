@@ -189,8 +189,8 @@ const SeaCamp = () => {
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
-              <div className="flex flex-col lg:flex-row gap-10 items-start">
-                <div className="max-w-lg space-y-6 lg:shrink-0">
+              <div className="flex flex-col lg:flex-row gap-10 items-center">
+                <div className="w-full lg:w-1/2 space-y-6">
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
                     Многие родители слышат слово «лагерь» и представляют одно и то же: скучные мероприятия по расписанию, безликие корпуса, тихий час. Мы понимаем это ощущение.
                   </p>
