@@ -9,6 +9,11 @@ import teacherPic from "@/assets/hilderstone-teacher.jpg";
 import certificatePic from "@/assets/hilderstone-certificate.jpg";
 import lessonPic from "@/assets/hilderstone-lesson.jpg";
 
+import illustMethods from "@/assets/illust-teacher-methods.png";
+import illustOnline from "@/assets/illust-teacher-online.png";
+import illustCert from "@/assets/illust-teacher-cert.png";
+import illustEnergy from "@/assets/illust-teacher-energy.png";
+
 /* ---- data ---- */
 
 const testimonials = [
@@ -25,12 +30,22 @@ const programDays = [
   { day: 5, title: "Lesson Design", desc: "Тема уточняется — следите за\u00A0обновлениями." },
 ];
 
+const forYouCards = [
+  { text: "Вы преподаёте английский и\u00A0хотите обновить методический арсенал", img: illustMethods },
+  { text: "Ищете живой контакт с\u00A0британской педагогической школой, а\u00A0не\u00A0записанные видео", img: illustOnline },
+  { text: "Хотите получить международный сертификат без поездки в\u00A0Великобританию", img: illustCert },
+  { text: "Чувствуете что нужна свежая энергия и\u00A0новые идеи до\u00A0конца учебного года", img: illustEnergy },
+];
+
 const outcomes = [
   { title: "Готовые инструменты", text: "Приёмы, упражнения и\u00A0подходы для работы с\u00A0учениками любого возраста — проверенные в\u00A0британских классах.", img: lessonPic },
   { title: "Свежий взгляд", text: "Иногда достаточно увидеть как другой педагог решает знакомую задачу — и\u00A0всё встаёт на\u00A0место. Это именно такой курс.", img: teacherPic },
   { title: "Международный сертификат", text: "Официальный сертификат Hilderstone College после сдачи онлайн-теста по\u00A0окончании курса. Весомый документ для портфолио.", img: certificatePic },
   { title: "Мотивация до конца года", text: "Пять дней в\u00A0среде людей которые горят своим делом — это работает лучше любого отпуска.", img: collegePic },
 ];
+
+/* ---- gradient shorthand ---- */
+const gold = "bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent";
 
 /* ---- page ---- */
 
@@ -76,7 +91,7 @@ const TeachersCourse = () => {
                     </span>
                   </span>
                   <span className="block whitespace-nowrap">
-                    <span className="bg-gradient-to-r from-sky-200 via-blue-100 via-40% to-sky-400 bg-clip-text text-transparent">Rethink. Refresh.</span>
+                    <span className={gold}>Rethink. Refresh.</span>
                   </span>
                 </span>
                 <span className="block">Inspire.</span>
@@ -123,20 +138,16 @@ const TeachersCourse = () => {
         <div className="fluid-container">
           <AnimatedSection>
             <h2 className="text-4xl md:text-6xl text-white mb-14">
-              Этот курс <span className="bg-gradient-to-r from-sky-200 via-blue-100 via-40% to-sky-400 bg-clip-text text-transparent">для вас</span>, если
+              Этот курс <span className={gold}>для вас</span>, если
             </h2>
           </AnimatedSection>
 
           <div className="grid md:grid-cols-2 gap-5">
-            {[
-              "Вы преподаёте английский и\u00A0хотите обновить методический арсенал",
-              "Ищете живой контакт с\u00A0британской педагогической школой, а\u00A0не\u00A0записанные видео",
-              "Хотите получить международный сертификат без поездки в\u00A0Великобританию",
-              "Чувствуете что нужна свежая энергия и\u00A0новые идеи до\u00A0конца учебного года",
-            ].map((item, i) => (
+            {forYouCards.map((item, i) => (
               <AnimatedSection key={i} delay={i * 0.08}>
-                <div className="rounded-[1.5rem] bg-white/10 backdrop-blur-sm border border-white/15 p-8 h-full">
-                  <p className="text-white text-base md:text-lg font-normal normal-case leading-relaxed">{item}</p>
+                <div className="rounded-[1.5rem] bg-white/10 backdrop-blur-sm border border-white/15 p-8 h-full flex items-center gap-6">
+                  <img src={item.img} alt="" className="w-20 h-20 md:w-24 md:h-24 object-contain shrink-0" />
+                  <p className="text-white text-base md:text-lg font-normal normal-case leading-relaxed">{item.text}</p>
                 </div>
               </AnimatedSection>
             ))}
@@ -150,7 +161,7 @@ const TeachersCourse = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-10">
-                Почему именно <span className="bg-gradient-to-r from-sky-400 via-blue-300 via-40% to-sky-600 bg-clip-text text-transparent">Hilderstone College</span>
+                Почему именно <span className={gold}>Hilderstone College</span>
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
@@ -182,29 +193,68 @@ const TeachersCourse = () => {
         <div className="fluid-container">
           <AnimatedSection>
             <h2 className="text-4xl md:text-6xl text-white mb-14">
-              Как устроена <span className="bg-gradient-to-r from-sky-200 via-blue-100 via-40% to-sky-400 bg-clip-text text-transparent">неделя</span>
+              Как устроена <span className={gold}>неделя</span>
             </h2>
           </AnimatedSection>
 
-          <AnimatedSection delay={0.1}>
-            <div className="rounded-[1.5rem] bg-white/10 backdrop-blur-sm border border-white/15 p-8 md:p-12 max-w-3xl">
-              <div className="space-y-4 mb-8">
-                {[
-                  { label: "Даты", value: "13–17 июля, понедельник — пятница" },
-                  { label: "Сессия 1", value: "11:15 — 12:30" },
-                  { label: "Перерыв", value: "15 минут" },
-                  { label: "Сессия 2", value: "12:45 — 14:00" },
-                  { label: "Итого", value: "16,5 академических часов" },
-                  { label: "Формат", value: "Онлайн, Zoom" },
-                ].map((row) => (
-                  <div key={row.label} className="flex items-baseline gap-4">
-                    <span className="text-white/60 text-sm uppercase tracking-wider shrink-0 w-24 font-normal">{row.label}</span>
-                    <span className="text-white text-base font-medium">{row.value}</span>
-                  </div>
-                ))}
+          <div className="grid md:grid-cols-3 gap-5">
+            {/* Когда */}
+            <AnimatedSection delay={0.05}>
+              <div className="rounded-[1.5rem] bg-white/10 backdrop-blur-sm border border-white/15 p-8 h-full">
+                <span className="text-xs uppercase tracking-wider text-white/50 font-medium block mb-4">Когда</span>
+                <p className="text-white text-xl font-bold mb-2">13–17 июля 2026</p>
+                <p className="text-white/70 text-sm font-normal normal-case">Понедельник — пятница, 5&nbsp;дней подряд</p>
               </div>
-              <p className="text-white/80 text-base font-normal normal-case leading-relaxed">
-                Каждый день — две сессии по&nbsp;75&nbsp;минут с&nbsp;коротким перерывом между ними. Достаточно насыщенно чтобы был результат, и&nbsp;достаточно компактно чтобы совместить с&nbsp;работой.
+            </AnimatedSection>
+
+            {/* Формат */}
+            <AnimatedSection delay={0.1}>
+              <div className="rounded-[1.5rem] bg-white/10 backdrop-blur-sm border border-white/15 p-8 h-full">
+                <span className="text-xs uppercase tracking-wider text-white/50 font-medium block mb-4">Формат</span>
+                <p className="text-white text-xl font-bold mb-2">Онлайн, Zoom</p>
+                <p className="text-white/70 text-sm font-normal normal-case">16,5&nbsp;академических часов интенсивной практики</p>
+              </div>
+            </AnimatedSection>
+
+            {/* Объём */}
+            <AnimatedSection delay={0.15}>
+              <div className="rounded-[1.5rem] bg-white/10 backdrop-blur-sm border border-white/15 p-8 h-full">
+                <span className="text-xs uppercase tracking-wider text-white/50 font-medium block mb-4">Нагрузка</span>
+                <p className="text-white text-xl font-bold mb-2">2 сессии в день</p>
+                <p className="text-white/70 text-sm font-normal normal-case">По&nbsp;75&nbsp;минут каждая, перерыв 15&nbsp;мин</p>
+              </div>
+            </AnimatedSection>
+          </div>
+
+          {/* Timeline */}
+          <AnimatedSection delay={0.2}>
+            <div className="mt-8 rounded-[1.5rem] bg-white/10 backdrop-blur-sm border border-white/15 p-8 md:p-10 max-w-2xl">
+              <span className="text-xs uppercase tracking-wider text-white/50 font-medium block mb-6">Расписание дня</span>
+              <div className="flex items-stretch gap-4">
+                {/* Vertical timeline line */}
+                <div className="flex flex-col items-center py-1">
+                  <div className="w-3 h-3 rounded-full bg-amber-400 shrink-0" />
+                  <div className="flex-1 w-px bg-white/20" />
+                  <div className="w-2 h-2 rounded-full bg-white/30 shrink-0" />
+                  <div className="flex-1 w-px bg-white/20" />
+                  <div className="w-3 h-3 rounded-full bg-amber-400 shrink-0" />
+                </div>
+                <div className="flex flex-col justify-between gap-4 py-0.5">
+                  <div>
+                    <p className="text-white font-bold text-base">11:15 — 12:30</p>
+                    <p className="text-white/60 text-sm font-normal normal-case">Первая сессия · 75 мин</p>
+                  </div>
+                  <div>
+                    <p className="text-white/40 text-sm font-normal normal-case">☕ Перерыв · 15 мин</p>
+                  </div>
+                  <div>
+                    <p className="text-white font-bold text-base">12:45 — 14:00</p>
+                    <p className="text-white/60 text-sm font-normal normal-case">Вторая сессия · 75 мин</p>
+                  </div>
+                </div>
+              </div>
+              <p className="text-white/70 text-sm font-normal normal-case leading-relaxed mt-6 pt-6 border-t border-white/10">
+                Достаточно насыщенно чтобы был результат, и&nbsp;достаточно компактно чтобы совместить с&nbsp;работой.
               </p>
             </div>
           </AnimatedSection>
@@ -217,7 +267,7 @@ const TeachersCourse = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-14">
-                Что будет <span className="bg-gradient-to-r from-sky-400 via-blue-300 via-40% to-sky-600 bg-clip-text text-transparent">на курсе</span>
+                Что будет <span className={gold}>на курсе</span>
               </h2>
             </AnimatedSection>
 
@@ -253,7 +303,7 @@ const TeachersCourse = () => {
         <div className="fluid-container">
           <AnimatedSection>
             <h2 className="text-4xl md:text-6xl text-white mb-14">
-              Что вы <span className="bg-gradient-to-r from-sky-200 via-blue-100 via-40% to-sky-400 bg-clip-text text-transparent">заберёте</span> с&nbsp;курса
+              Что вы <span className={gold}>заберёте</span> с&nbsp;курса
             </h2>
           </AnimatedSection>
 
@@ -416,7 +466,7 @@ const TeachersCourse = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-4">
-                Есть ещё один <span className="bg-gradient-to-r from-sky-400 via-blue-300 via-40% to-sky-600 bg-clip-text text-transparent">формат</span>
+                Есть ещё один <span className={gold}>формат</span>
               </h2>
               <p className="text-foreground/60 text-lg mb-14 max-w-2xl font-normal normal-case">
                 Онлайн — хорошо. Но&nbsp;живое профессиональное мероприятие работает иначе.
