@@ -3,6 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import Header from "@/components/Header";
 import AnimatedSection from "@/components/AnimatedSection";
 import heroImg from "@/assets/teachers-hero.jpg";
+import courseImg from "@/assets/teachers-online-course.jpg";
+import festImg from "@/assets/teachers-festival.jpg";
+import whyImg from "@/assets/teachers-why.jpg";
 
 /* ─── data ─── */
 
