@@ -12,21 +12,18 @@ const testimonials = [
     image: "https://placehold.co/400x700/1a7a4a/ffffff?text=Отзыв+1",
     name: "Наталья, Москва",
     role: "преподаватель",
-    text: "После ProSkill Fest я\u00A0переработала два своих курса. Не\u00A0потому что надо было — а\u00A0потому что появились идеи и\u00A0энергия это сделать.",
   },
   {
     id: 2,
     image: "https://placehold.co/400x700/1a7a4a/ffffff?text=Отзыв+2",
     name: "Анна, Москва",
     role: "учитель английского",
-    text: "Я\u00A0не\u00A0ожидала что профессиональное мероприятие может так заряжать. Уехала с\u00A0тремя новыми идеями и\u00A0контактами коллег, с\u00A0которыми до\u00A0сих пор общаюсь.",
   },
   {
     id: 3,
     image: "https://placehold.co/400x700/1a7a4a/ffffff?text=Отзыв+3",
     name: "Елена, Москва",
     role: "преподаватель",
-    text: "За\u00A0пять дней я\u00A0получила больше практических инструментов, чем за\u00A0последние два года курсов повышения квалификации. Так просто и\u00A0эффективно. Рекомендую.",
   },
 ];
 
@@ -122,7 +119,7 @@ const Uchitelya = () => {
         </div>
       </section>
 
-      {/* ── Two programs ── */}
+      {/* ── Two programs — structured cards ── */}
       <section id="programs" className="section-padding">
         <div className="fluid-container">
           <AnimatedSection>
@@ -132,68 +129,120 @@ const Uchitelya = () => {
           </AnimatedSection>
 
           <div className="grid md:grid-cols-2 gap-5">
+            {/* Card 1 — online course */}
             <AnimatedSection delay={0.05}>
-              <div className="rounded-[1.5rem] border border-border p-8 md:p-10 bg-card h-full flex flex-col">
-                <span className="text-xs uppercase tracking-wider text-muted-foreground mb-4 block">Teachers Development Course · Hilderstone College</span>
-                <h3 className="text-xl md:text-2xl text-foreground mb-4 leading-tight">
-                  Онлайн-курс с&nbsp;британскими тьюторами
-                </h3>
-                <p className="text-muted-foreground text-[15px] font-normal normal-case leading-relaxed mb-6 flex-1">
-                  Недельный интенсив с&nbsp;британскими тьюторами-практиками — готовые инструменты для уроков, свежий взгляд на&nbsp;свои методы и&nbsp;официальный сертификат британского колледжа. Всё это онлайн, не&nbsp;выезжая из&nbsp;города.
-                </p>
-                <div className="flex flex-wrap items-center gap-4 mb-6">
-                  <span className="text-sm font-bold text-foreground">13 — 17 июля 2026</span>
-                  <span className="inline-block bg-accent/10 text-accent text-xs font-bold px-3 py-1.5 rounded-lg">
-                    32 000 ₽
+              <div className="rounded-[1.5rem] border border-border bg-card h-full flex flex-col overflow-hidden">
+                <div className="p-8 md:p-10 flex-1 flex flex-col">
+                  <span className="text-xs uppercase tracking-wider text-muted-foreground mb-4 block">
+                    Teachers Development Course · Hilderstone College
                   </span>
+                  <h3 className="text-xl md:text-2xl text-foreground mb-5 leading-tight">
+                    Онлайн-курс с&nbsp;британскими тьюторами
+                  </h3>
+                  <p className="text-muted-foreground text-[15px] font-normal normal-case leading-relaxed mb-6">
+                    Недельный интенсив с&nbsp;британскими тьюторами-практиками — готовые инструменты для уроков, свежий взгляд на&nbsp;свои методы и&nbsp;официальный сертификат британского колледжа.
+                  </p>
+
+                  <ul className="space-y-3 mb-8 flex-1">
+                    {[
+                      { label: "Формат", value: "Онлайн, живые занятия" },
+                      { label: "Длительность", value: "5 дней, 13–17 июля 2026" },
+                      { label: "Сертификат", value: "Hilderstone College, Великобритания" },
+                      { label: "Стоимость", value: "32\u00A0000\u00A0₽" },
+                    ].map((row) => (
+                      <li key={row.label} className="flex items-baseline gap-3">
+                        <span className="text-xs uppercase tracking-wider text-muted-foreground shrink-0 w-28">{row.label}</span>
+                        <span className="text-sm text-foreground font-medium">{row.value}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <a href="/uchitelya/kurs" className="inline-block btn-gold px-6 py-3 rounded-xl text-sm tracking-widest self-start">
+                    Подробнее о&nbsp;курсе →
+                  </a>
                 </div>
-                <a href="/uchitelya/kurs" className="inline-block btn-gold px-6 py-3 rounded-xl text-sm tracking-widest self-start">
-                  Подробнее о&nbsp;курсе →
-                </a>
               </div>
             </AnimatedSection>
 
+            {/* Card 2 — festival */}
             <AnimatedSection delay={0.12}>
-              <div className="rounded-[1.5rem] border border-border p-8 md:p-10 bg-card h-full flex flex-col">
-                <span className="text-xs uppercase tracking-wider text-muted-foreground mb-4 block">ProSkill Fest · Ежегодный фестиваль для педагогов</span>
-                <h3 className="text-xl md:text-2xl text-foreground mb-4 leading-tight">
-                  Живой фестиваль в&nbsp;Москве
-                </h3>
-                <p className="text-muted-foreground text-[15px] font-normal normal-case leading-relaxed mb-6 flex-1">
-                  Живое мероприятие в&nbsp;Москве — доклады от&nbsp;практикующих учителей, мастер-классы, нетворкинг и&nbsp;атмосфера, в&nbsp;которой хочется снова полюбить свою профессию. Создан учителями для учителей.
-                </p>
-                <div className="flex flex-wrap items-center gap-4 mb-6">
-                  <span className="text-sm font-bold text-foreground">7 ноября 2026</span>
-                  <span className="inline-block bg-accent/10 text-accent text-xs font-bold px-3 py-1.5 rounded-lg">
-                    Москва
+              <div className="rounded-[1.5rem] border border-border bg-card h-full flex flex-col overflow-hidden">
+                <div className="p-8 md:p-10 flex-1 flex flex-col">
+                  <span className="text-xs uppercase tracking-wider text-muted-foreground mb-4 block">
+                    ProSkill Fest · Ежегодный фестиваль для педагогов
                   </span>
+                  <h3 className="text-xl md:text-2xl text-foreground mb-5 leading-tight">
+                    Живой фестиваль в&nbsp;Москве
+                  </h3>
+                  <p className="text-muted-foreground text-[15px] font-normal normal-case leading-relaxed mb-6">
+                    Доклады от&nbsp;практикующих учителей, мастер-классы, нетворкинг и&nbsp;атмосфера, в&nbsp;которой хочется снова полюбить свою профессию. Создан учителями для учителей.
+                  </p>
+
+                  <ul className="space-y-3 mb-8 flex-1">
+                    {[
+                      { label: "Формат", value: "Очный, полный день" },
+                      { label: "Дата", value: "7 ноября 2026" },
+                      { label: "Место", value: "Москва" },
+                      { label: "Сертификат", value: "Сертификат участника" },
+                    ].map((row) => (
+                      <li key={row.label} className="flex items-baseline gap-3">
+                        <span className="text-xs uppercase tracking-wider text-muted-foreground shrink-0 w-28">{row.label}</span>
+                        <span className="text-sm text-foreground font-medium">{row.value}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <a href="/uchitelya/fest" className="inline-block btn-gold px-6 py-3 rounded-xl text-sm tracking-widest self-start">
+                    Подробнее о&nbsp;фестивале →
+                  </a>
                 </div>
-                <a href="/uchitelya/fest" className="inline-block btn-gold px-6 py-3 rounded-xl text-sm tracking-widest self-start">
-                  Подробнее о&nbsp;фестивале →
-                </a>
               </div>
             </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* ── Why it matters ── */}
+      {/* ── Why it matters — problem → solution layout ── */}
       <section className="section-padding">
         <div className="fluid-container">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl text-foreground mb-6">
+            <h2 className="text-4xl md:text-6xl text-foreground mb-14">
               Честно о&nbsp;том, зачем <span className="text-accent">это нужно</span>
             </h2>
           </AnimatedSection>
-          <AnimatedSection delay={0.1}>
-            <div className="max-w-3xl space-y-6">
-              <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
-                Найти качественные курсы повышения квалификации для учителя английского — задача не&nbsp;такая простая. Большинство предложений на&nbsp;рынке это либо дорого и&nbsp;далеко, либо дёшево и&nbsp;без реального результата.
-              </p>
-              <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
-                Мы нашли другой вариант. Партнёрство с&nbsp;Hilderstone College даёт прямой доступ к&nbsp;британским педагогам-практикам — людям, которые преподают каждый день и&nbsp;знают как это работает в&nbsp;реальном классе, а&nbsp;не&nbsp;в&nbsp;теории. ProSkill Fest — это то&nbsp;же самое, но&nbsp;в&nbsp;живом формате и&nbsp;с&nbsp;коллегами из&nbsp;разных городов России.
-              </p>
-              <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
+
+          <div className="grid md:grid-cols-2 gap-10 md:gap-20 items-start">
+            {/* Problem */}
+            <AnimatedSection delay={0.05}>
+              <div>
+                <span className="text-xs uppercase tracking-wider text-muted-foreground mb-4 block">Проблема</span>
+                <p className="text-foreground text-lg md:text-xl font-medium normal-case leading-relaxed mb-4">
+                  Найти качественные курсы повышения квалификации для учителя английского — задача не&nbsp;такая простая.
+                </p>
+                <p className="text-muted-foreground text-base font-normal normal-case leading-relaxed">
+                  Большинство предложений на&nbsp;рынке — это либо дорого и&nbsp;далеко, либо дёшево и&nbsp;без реального результата.
+                </p>
+              </div>
+            </AnimatedSection>
+
+            {/* Solution */}
+            <AnimatedSection delay={0.15}>
+              <div>
+                <span className="text-xs uppercase tracking-wider text-muted-foreground mb-4 block">Наш ответ</span>
+                <p className="text-foreground text-lg md:text-xl font-medium normal-case leading-relaxed mb-4">
+                  Партнёрство с&nbsp;Hilderstone College даёт прямой доступ к&nbsp;британским педагогам-практикам.
+                </p>
+                <p className="text-muted-foreground text-base font-normal normal-case leading-relaxed">
+                  Людям, которые преподают каждый день и&nbsp;знают как это работает в&nbsp;реальном классе, а&nbsp;не&nbsp;в&nbsp;теории. ProSkill Fest — то&nbsp;же самое, но&nbsp;в&nbsp;живом формате и&nbsp;с&nbsp;коллегами из&nbsp;разных городов.
+                </p>
+              </div>
+            </AnimatedSection>
+          </div>
+
+          {/* Result callout */}
+          <AnimatedSection delay={0.2}>
+            <div className="mt-14 border-l-4 border-accent pl-6 md:pl-8 max-w-3xl">
+              <p className="text-foreground text-base md:text-lg font-medium normal-case leading-relaxed">
                 Оба формата дают конкретный результат: инструменты которые можно применить на&nbsp;следующий день после занятия, и&nbsp;сертификат который говорит сам за&nbsp;себя.
               </p>
             </div>
@@ -290,15 +339,18 @@ const Uchitelya = () => {
       <section className="section-padding">
         <div className="fluid-container">
           <AnimatedSection>
-            <div className="rounded-[1.5rem] border border-border p-8 md:p-12 bg-card max-w-3xl">
-              <h2 className="text-2xl md:text-3xl text-foreground mb-4 leading-tight">
-                Вы руководите школой или образовательным центром?
-              </h2>
-              <p className="text-muted-foreground text-base font-normal normal-case leading-relaxed mb-8">
-                Если хотите отправить на&nbsp;курс команду педагогов или узнать о&nbsp;партнёрстве с&nbsp;ассоциацией — у&nbsp;нас есть отдельная страница для руководителей.
-              </p>
-              <a href="/partnerstvo" className="inline-block btn-gold px-8 py-4 rounded-xl text-sm tracking-widest">
-                О партнёрстве для центров →
+            <div className="grid md:grid-cols-[1fr_auto] gap-8 md:gap-16 items-center rounded-[1.5rem] border border-border p-8 md:p-12 bg-card">
+              <div>
+                <span className="text-xs uppercase tracking-wider text-muted-foreground mb-4 block">Для руководителей</span>
+                <h2 className="text-2xl md:text-3xl text-foreground mb-4 leading-tight">
+                  Вы руководите школой или образовательным центром?
+                </h2>
+                <p className="text-muted-foreground text-base font-normal normal-case leading-relaxed">
+                  Если хотите отправить на&nbsp;курс команду педагогов или узнать о&nbsp;партнёрстве с&nbsp;ассоциацией — у&nbsp;нас есть отдельная страница для руководителей.
+                </p>
+              </div>
+              <a href="/partnerstvo" className="inline-block btn-gold px-8 py-4 rounded-xl text-sm tracking-widest shrink-0 self-center">
+                О&nbsp;партнёрстве →
               </a>
             </div>
           </AnimatedSection>
