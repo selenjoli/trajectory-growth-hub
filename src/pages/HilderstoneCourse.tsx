@@ -125,8 +125,8 @@ const HilderstoneCourse = () => {
       </section>
 
       {/* ── For whom and when ── */}
-      <section className="px-3 md:px-6 xl:px-10 mt-4">
-        <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
+      <section className="section-padding">
+        <div className="fluid-container">
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-14">
