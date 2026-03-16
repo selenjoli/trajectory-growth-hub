@@ -234,7 +234,7 @@ const MobileMenu = ({
   );
 };
 
-const Header = ({ variant = "dark" }: { variant?: "dark" | "light" }) => {
+const Header = ({ variant = "dark", buttonStyle = "gold" }: { variant?: "dark" | "light"; buttonStyle?: "gold" | "silver" }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const isLight = variant === "light";
 
