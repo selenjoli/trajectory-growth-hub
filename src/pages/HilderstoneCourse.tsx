@@ -187,7 +187,6 @@ const HilderstoneCourse = () => {
                 </div>
               </AnimatedSection>
             </div>
-          </div>
         </div>
       </section>
 
