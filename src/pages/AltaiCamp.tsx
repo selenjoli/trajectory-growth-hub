@@ -64,18 +64,6 @@ const daySchedule = [
   },
 ];
 
-const facilities = [
-  { image: altaiCottages, text: "Уютные деревянные коттеджи у\u00a0подножья гор" },
-  { image: altaiDining, text: "5-разовое питание" },
-  { image: altaiHeroForFacility(), text: "Трансфер от\u00a0аэропорта и\u00a0обратно" },
-  { image: altaiWorkshop, text: "Круглосуточный медпункт на\u00a0территории" },
-  { image: altaiCampfire, text: "Сопровождающий педагог на\u00a0всём протяжении смены" },
-];
-
-function altaiHeroForFacility() {
-  return altaiSwimming;
-}
-
 const testimonials = [
   { id: 1, image: "https://placehold.co/400x700/2E8B57/ffffff?text=Отзыв+1", name: "Тимур, 16 лет, Уфа", role: "Участник лагеря" },
   { id: 2, image: "https://placehold.co/400x700/2E8B57/ffffff?text=Отзыв+2", name: "Светлана, Пермь", role: "мама Егора (14 лет)" },
