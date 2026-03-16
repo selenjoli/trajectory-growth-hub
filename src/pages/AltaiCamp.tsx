@@ -519,8 +519,8 @@ const AltaiCamp = () => {
           </motion.div>
 
           {/* Spacer bottom */}
-          <div className="h-32 md:h-48" />
-        </motion.div>
+          <div className="h-40 md:h-56 lg:h-64" />
+        </div>
       </section>
 
       {/* ── Facilities — green bg with photo cards ── */}
