@@ -304,7 +304,7 @@ const SeaCamp = () => {
                 {facilities.map((f, i) => (
                   <div key={i} className="rounded-xl overflow-hidden relative aspect-square">
                     <img src={f.image} alt={f.text} className="w-full h-full object-cover" />
-                    <div className="absolute inset-x-0 bottom-0 bg-program-sea/75 backdrop-blur-sm px-4 py-3 min-h-[3.5rem] md:min-h-[4rem] flex items-center">
+                    <div className="absolute inset-x-0 bottom-0 bg-program-sea/75 backdrop-blur-sm px-4 py-3 h-[4.5rem] md:h-[4.5rem] flex items-center">
                       <p className="text-white text-sm md:text-base font-bold uppercase tracking-wide leading-snug">{f.text}</p>
                     </div>
                   </div>
