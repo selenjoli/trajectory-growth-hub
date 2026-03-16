@@ -11,7 +11,7 @@ import lessonPic from "@/assets/hilderstone-lesson.jpg";
 import illustChina from "@/assets/illust-china.png";
 import illustSea from "@/assets/illust-starfish.png";
 import illustAltai from "@/assets/illust-altai.png";
-import illustUae from "@/assets/illust-uae.png";
+import illustUae from "@/assets/illust-uae.svg";
 
 /* ---- data ---- */
 
