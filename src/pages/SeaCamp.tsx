@@ -319,14 +319,14 @@ const SeaCamp = () => {
       <section className="py-20 px-3 md:px-6 xl:px-10">
         <div className="fluid-container">
           <AnimatedSection>
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-              <div className="hidden lg:block flex-1">
+            <div className="grid grid-cols-1 lg:grid-cols-3 items-center gap-6">
+              <div className="hidden lg:block">
                 <div className="rounded-[1.5rem] overflow-hidden aspect-[3/4]">
                   <img src={seaDance} alt="Фото из лагеря" className="w-full h-full object-cover" />
                 </div>
               </div>
 
-              <div className="bg-white rounded-[1.5rem] w-full lg:w-[480px] shrink-0 px-8 py-10 shadow-2xl">
+              <div className="bg-white rounded-[1.5rem] w-full px-8 py-10 shadow-2xl">
                 <div className="text-center border-b-2 border-dashed border-foreground/20 pb-6 mb-6">
                   <h2 className="text-2xl md:text-3xl text-foreground mb-1">Стоимость смены</h2>
                   <p className="text-sm text-muted-foreground font-normal normal-case">Лагерь «Море» · 23 июня — 15 июля 2026</p>
