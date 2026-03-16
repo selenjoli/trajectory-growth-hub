@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
@@ -12,7 +12,7 @@ import altaiCampfire from "@/assets/altai-campfire.jpg";
 import altaiCottages from "@/assets/altai-cottages.jpg";
 import altaiWorkshop from "@/assets/altai-workshop.jpg";
 import altaiDining from "@/assets/altai-dining.jpg";
-import altaiMap from "@/assets/altai-map.jpg";
+import altaiMap from "@/assets/altai-map.png";
 import altaiMorning from "@/assets/altai-morning.jpg";
 import altaiDay from "@/assets/altai-day.jpg";
 import altaiEvening from "@/assets/altai-evening.jpg";
@@ -92,6 +92,25 @@ const otherPrograms = [
 
 /* ─── page ─── */
 
+/* ─── hook: pause carousels when off-screen ─── */
+
+function useVisibilityPause(setPaused: (v: boolean) => void) {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => setPaused(!entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [setPaused]);
+  return ref;
+}
+
+/* ─── page ─── */
+
 const AltaiCamp = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -102,8 +121,12 @@ const AltaiCamp = () => {
   const [spotPaused, setSpotPaused] = useState(false);
   const [currentDay, setCurrentDay] = useState(0);
   const [dayPaused, setDayPaused] = useState(false);
+  const [dayUserPaused, setDayUserPaused] = useState(false);
 
   const hookPhotos = [altaiPatmos, altaiWaterfall, altaiSwimming, altaiCampfire, altaiWorkshop];
+
+  const dayRef = useVisibilityPause(setDayPaused);
+  const spotRef = useVisibilityPause(setSpotPaused);
 
   const nextSlide = useCallback(() => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -134,12 +157,12 @@ const AltaiCamp = () => {
 
   // Day schedule auto-rotation (10s)
   useEffect(() => {
-    if (dayPaused) return;
+    if (dayPaused || dayUserPaused) return;
     const interval = setInterval(() => {
       setCurrentDay((prev) => (prev + 1) % daySchedule.length);
     }, 10000);
     return () => clearInterval(interval);
-  }, [dayPaused]);
+  }, [dayPaused, dayUserPaused]);
 
   return (
     <main className="bg-program-altai">
@@ -151,31 +174,34 @@ const AltaiCamp = () => {
           <img src={heroBg} alt="Дети в горах Алтая" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/40" />
           <div className="relative z-10 w-full px-6 md:px-16 pb-12 md:pb-20">
-            <div className="w-fit">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex flex-wrap items-center justify-between gap-3 mb-6"
-              >
-                <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-sm md:text-base font-semibold uppercase tracking-wider px-5 py-2 rounded-full">
-                  Языковой лагерь · Горный Алтай
-                </span>
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-block bg-white/20 backdrop-blur-sm text-white text-sm md:text-base font-semibold uppercase tracking-wider px-5 py-2 rounded-full mb-6"
+            >
+              Языковой лагерь · Горный Алтай
+            </motion.span>
+
+            {/* Title wrapper — w-fit so date chip aligns to its right edge */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="w-fit mb-4"
+            >
+              <div className="flex justify-end mb-3">
                 <span className="inline-block bg-program-altai text-white text-sm md:text-base font-bold uppercase tracking-wider px-5 py-2 rounded-full">
                   10–25 июля 2026
                 </span>
-              </motion.div>
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95] mb-4"
-              >
+              </div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95]">
                 <span className="text-program-altai">Алтай:</span> здесь английский
                 <br />
                 становится частью приключения
-              </motion.h1>
-            </div>
+              </h1>
+            </motion.div>
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -275,7 +301,7 @@ const AltaiCamp = () => {
       </section>
 
       {/* ── Nature spots — map background with carousel (like China) ── */}
-      <section className="section-padding overflow-hidden">
+      <section className="section-padding overflow-hidden" ref={spotRef}>
         <div className="fluid-container">
           <AnimatedSection>
             <h2 className="text-4xl md:text-6xl text-white mb-4">
@@ -287,14 +313,10 @@ const AltaiCamp = () => {
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            <div
-              className="relative"
-              onMouseEnter={() => setSpotPaused(true)}
-              onMouseLeave={() => setSpotPaused(false)}
-            >
+            <div className="relative">
               {/* Map as background — desktop only */}
               <div className="hidden lg:block absolute top-1/2 -translate-y-1/2 -right-10 w-[65%] pointer-events-none">
-                <img src={altaiMap} alt="Карта Алтая" className="w-full h-auto rounded-[1.5rem] opacity-80" />
+                <img src={altaiMap} alt="Карта Алтая" className="w-full h-auto opacity-80" />
               </div>
 
               <div className="relative z-10 flex items-center gap-8">
@@ -358,103 +380,120 @@ const AltaiCamp = () => {
         </div>
       </section>
 
-      {/* ── Day schedule — time-of-day carousel with watercolor illustrations ── */}
-      <section className="px-3 md:px-6 xl:px-10">
-        <AnimatedSection>
-          <motion.div
-            className="rounded-[2rem] overflow-hidden transition-colors duration-1000"
-            animate={{
-              background: currentDay === 0
-                ? "linear-gradient(to bottom, #fef3c7, #f0fdf4)"
-                : currentDay === 1
-                ? "linear-gradient(to bottom, #e0f2fe, #f0fdf4)"
-                : currentDay === 2
-                ? "linear-gradient(to bottom, #ffedd5, #faf5ff)"
-                : "linear-gradient(to bottom, #e0e7ff, #f1f5f9)",
-            }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-          >
-            {/* Watercolor illustration */}
-            <div className="relative">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentDay}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.8 }}
-                  className="w-full aspect-[2.5/1] overflow-hidden"
-                >
-                  <img
-                    src={daySchedule[currentDay].image}
-                    alt={daySchedule[currentDay].time}
-                    className="w-full h-full object-cover"
-                  />
-                </motion.div>
-              </AnimatePresence>
+      {/* ── Day schedule — immersive full-screen carousel ── */}
+      <section ref={dayRef}>
+        {/* Section title — above the immersive block */}
+        <div className="px-3 md:px-6 xl:px-10 mb-6">
+          <div className="fluid-container">
+            <AnimatedSection>
+              <h2 className="text-4xl md:text-6xl text-foreground">
+                День в лагере — <span className="text-program-altai">как это выглядит</span>
+              </h2>
+            </AnimatedSection>
+          </div>
+        </div>
 
-              {/* Time title overlapping the illustration */}
-              <div className="absolute bottom-0 left-0 right-0 px-6 md:px-16 translate-y-1/2">
+        {/* Full-width immersive illustration + text */}
+        <motion.div
+          className="relative"
+          animate={{
+            backgroundColor: currentDay === 0
+              ? "#fef3c7"
+              : currentDay === 1
+              ? "#e0f2fe"
+              : currentDay === 2
+              ? "#ffedd5"
+              : "#e0e7ff",
+          }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+        >
+          {/* Full-screen illustration */}
+          <div className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden">
+            {daySchedule.map((item, i) => (
+              <motion.div
+                key={i}
+                className="absolute inset-0"
+                initial={false}
+                animate={{ opacity: i === currentDay ? 1 : 0 }}
+                transition={{ duration: 1 }}
+              >
+                <img
+                  src={item.image}
+                  alt={item.time}
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+            ))}
+
+            {/* Gradient fade into bg color below */}
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-current to-transparent pointer-events-none" style={{
+              // match the animated bg color
+              background: `linear-gradient(to top, ${
+                currentDay === 0 ? "#fef3c7" : currentDay === 1 ? "#e0f2fe" : currentDay === 2 ? "#ffedd5" : "#e0e7ff"
+              }, transparent)`,
+            }} />
+
+            {/* Large time-of-day title overlapping bottom of image */}
+            <div className="absolute bottom-0 left-0 right-0 px-6 md:px-16 translate-y-1/3">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={currentDay}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5 }}
+                  className="block text-6xl md:text-8xl lg:text-9xl font-bold text-white drop-shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
+                >
+                  {daySchedule[currentDay].time}
+                </motion.span>
+              </AnimatePresence>
+            </div>
+          </div>
+
+          {/* White text card below */}
+          <div className="px-6 md:px-16 pt-16 md:pt-20 pb-10 md:pb-14">
+            <div className="fluid-container">
+              <div className="bg-white rounded-[1.5rem] p-6 md:p-10 max-w-2xl shadow-lg min-h-[140px] flex flex-col justify-center">
                 <AnimatePresence mode="wait">
-                  <motion.h2
+                  <motion.div
                     key={currentDay}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.5 }}
-                    className="text-5xl md:text-7xl lg:text-8xl font-bold text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.4, delay: 0.1 }}
                   >
-                    {daySchedule[currentDay].time}
-                  </motion.h2>
+                    <p className="text-base md:text-lg text-muted-foreground font-normal normal-case leading-relaxed">
+                      {daySchedule[currentDay].text}
+                    </p>
+                    {currentDay === daySchedule.length - 1 && (
+                      <p className="text-muted-foreground text-base font-normal normal-case leading-relaxed italic mt-4">
+                        Каждую неделю — репетиция финального выступления, которое дети готовят сами.
+                      </p>
+                    )}
+                  </motion.div>
                 </AnimatePresence>
               </div>
-            </div>
 
-            {/* Text content below */}
-            <div className="px-6 md:px-16 pt-14 md:pt-16 pb-10 md:pb-14">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentDay}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                >
-                  <h3 className="text-2xl md:text-3xl text-foreground mb-2">
-                    День в лагере — <span className="text-program-altai">как это выглядит</span>
-                  </h3>
-                  <p className="text-base md:text-lg text-muted-foreground font-normal normal-case leading-relaxed max-w-2xl mb-2">
-                    {daySchedule[currentDay].text}
-                  </p>
-                  {currentDay === daySchedule.length - 1 && (
-                    <p className="text-muted-foreground text-base font-normal normal-case leading-relaxed italic mt-4">
-                      Каждую неделю — репетиция финального выступления, которое дети готовят сами.
-                    </p>
-                  )}
-                </motion.div>
-              </AnimatePresence>
-
-              {/* Arrows centered below text */}
+              {/* Arrows centered below */}
               <div className="flex items-center justify-center gap-4 mt-8">
                 <button
                   onClick={() => {
                     setCurrentDay((prev) => (prev - 1 + daySchedule.length) % daySchedule.length);
-                    setDayPaused(true);
-                    setTimeout(() => setDayPaused(false), 10000);
+                    setDayUserPaused(true);
+                    setTimeout(() => setDayUserPaused(false), 10000);
                   }}
                   className="w-12 h-12 rounded-full bg-foreground/10 hover:bg-foreground/20 flex items-center justify-center transition-all hover:scale-110"
                 >
                   <ArrowLeft className="w-5 h-5 text-foreground" />
                 </button>
-                {/* Dots */}
                 <div className="flex gap-2">
                   {daySchedule.map((_, i) => (
                     <button
                       key={i}
                       onClick={() => {
                         setCurrentDay(i);
-                        setDayPaused(true);
-                        setTimeout(() => setDayPaused(false), 10000);
+                        setDayUserPaused(true);
+                        setTimeout(() => setDayUserPaused(false), 10000);
                       }}
                       className={`w-2.5 h-2.5 rounded-full transition-all ${
                         i === currentDay ? "bg-program-altai scale-125" : "bg-foreground/20"
@@ -465,8 +504,8 @@ const AltaiCamp = () => {
                 <button
                   onClick={() => {
                     setCurrentDay((prev) => (prev + 1) % daySchedule.length);
-                    setDayPaused(true);
-                    setTimeout(() => setDayPaused(false), 10000);
+                    setDayUserPaused(true);
+                    setTimeout(() => setDayUserPaused(false), 10000);
                   }}
                   className="w-12 h-12 rounded-full bg-foreground/10 hover:bg-foreground/20 flex items-center justify-center transition-all hover:scale-110"
                 >
@@ -474,8 +513,8 @@ const AltaiCamp = () => {
                 </button>
               </div>
             </div>
-          </motion.div>
-        </AnimatedSection>
+          </div>
+        </motion.div>
       </section>
 
       {/* ── Facilities — green bg with photo cards ── */}
