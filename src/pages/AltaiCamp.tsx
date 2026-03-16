@@ -122,11 +122,27 @@ const AltaiCamp = () => {
   const [currentDay, setCurrentDay] = useState(0);
   const [dayPaused, setDayPaused] = useState(false);
   const [dayUserPaused, setDayUserPaused] = useState(false);
+  const [dayInView, setDayInView] = useState(false);
 
   const hookPhotos = [altaiPatmos, altaiWaterfall, altaiSwimming, altaiCampfire, altaiWorkshop];
 
-  const dayRef = useVisibilityPause(setDayPaused);
+  const dayRef = useRef<HTMLDivElement>(null);
   const spotRef = useVisibilityPause(setSpotPaused);
+
+  // Pause day carousel when off-screen + track visibility for page bg
+  useEffect(() => {
+    const el = dayRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        setDayPaused(!entry.isIntersecting);
+        setDayInView(entry.isIntersecting);
+      },
+      { threshold: 0.15 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   const nextSlide = useCallback(() => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -164,8 +180,15 @@ const AltaiCamp = () => {
     return () => clearInterval(interval);
   }, [dayPaused, dayUserPaused]);
 
+  // Determine page bg color
+  const pageBgColor = dayInView ? daySchedule[currentDay].bgColor : undefined;
+
   return (
-    <main className="bg-program-altai">
+    <motion.main
+      className="bg-program-altai"
+      animate={{ backgroundColor: pageBgColor || "hsl(147, 75%, 33%)" }}
+      transition={{ duration: 1.2, ease: "easeInOut" }}
+    >
       <Header variant="light" />
 
       {/* ── HERO ── */}
@@ -460,8 +483,8 @@ const AltaiCamp = () => {
             </div>
           </div>
 
-          {/* Arrows + dots — below card overlap area */}
-          <div className="pt-20 pb-10 flex items-center justify-center gap-4">
+          {/* Arrows — below card overlap area */}
+          <div className="pt-20 pb-10 flex items-center justify-center gap-6">
             <button
               onClick={() => {
                 setCurrentDay((prev) => (prev - 1 + daySchedule.length) % daySchedule.length);
@@ -472,21 +495,6 @@ const AltaiCamp = () => {
             >
               <ArrowLeft className="w-5 h-5 text-white" />
             </button>
-            <div className="flex gap-2">
-              {daySchedule.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => {
-                    setCurrentDay(i);
-                    setDayUserPaused(true);
-                    setTimeout(() => setDayUserPaused(false), 10000);
-                  }}
-                  className={`w-2.5 h-2.5 rounded-full transition-all ${
-                    i === currentDay ? "bg-white scale-125" : "bg-white/30"
-                  }`}
-                />
-              ))}
-            </div>
             <button
               onClick={() => {
                 setCurrentDay((prev) => (prev + 1) % daySchedule.length);
@@ -720,7 +728,7 @@ const AltaiCamp = () => {
           </div>
         </div>
       </section>
-    </main>
+    </motion.main>
   );
 };
 
