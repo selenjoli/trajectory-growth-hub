@@ -495,15 +495,19 @@ const HilderstoneCourse = () => {
                 <AnimatedSection key={p.title} delay={i * 0.08}>
                   <a
                     href={p.href}
-                    className="group block rounded-[1.5rem] border border-border hover:border-program-online/30 p-8 transition-all duration-500 hover:shadow-lg bg-card h-full text-center"
+                    className="group flex flex-col rounded-[1.5rem] border border-border hover:border-program-online/30 p-8 transition-all duration-500 hover:shadow-lg bg-card h-full text-center"
                   >
-                    <img src={p.illustration} alt={p.title} className={`${p.illustClass} mx-auto mb-4 object-contain`} />
+                    <div className="h-24 flex items-center justify-center mb-4">
+                      <img src={p.illustration} alt={p.title} className="h-full w-auto object-contain" />
+                    </div>
                     <h3 className="text-lg md:text-xl text-foreground mb-2">{p.title}</h3>
                     <p className="text-sm text-muted-foreground font-normal normal-case mb-2">{p.dates}</p>
                     <p className="text-base font-bold text-foreground mb-4">{p.price}</p>
-                    <span className="inline-block btn-gold px-5 py-2.5 rounded-xl text-xs tracking-widest">
-                      Подробнее
-                    </span>
+                    <div className="mt-auto">
+                      <span className="inline-block btn-gold px-5 py-2.5 rounded-xl text-xs tracking-widest">
+                        Подробнее
+                      </span>
+                    </div>
                   </a>
                 </AnimatedSection>
               ))}
