@@ -743,7 +743,7 @@ const AltaiCamp = () => {
           </div>
         </div>
       </section>
-    </main>
+    </motion.main>
   );
 };
 
