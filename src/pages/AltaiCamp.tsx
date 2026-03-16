@@ -130,18 +130,21 @@ const AltaiCamp = () => {
   const spotRef = useVisibilityPause(setSpotPaused);
 
   // Pause day carousel when off-screen + track visibility for page bg
+  // Separate observer for bg color — triggers early with large rootMargin
   useEffect(() => {
     const el = dayRef.current;
     if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        setDayPaused(!entry.isIntersecting);
-        setDayInView(entry.isIntersecting);
-      },
-      { threshold: 0.15 }
+    const bgObs = new IntersectionObserver(
+      ([entry]) => setDayInView(entry.isIntersecting),
+      { rootMargin: "200px 0px 200px 0px", threshold: 0 }
     );
-    obs.observe(el);
-    return () => obs.disconnect();
+    const pauseObs = new IntersectionObserver(
+      ([entry]) => setDayPaused(!entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    bgObs.observe(el);
+    pauseObs.observe(el);
+    return () => { bgObs.disconnect(); pauseObs.disconnect(); };
   }, []);
 
   const nextSlide = useCallback(() => {
