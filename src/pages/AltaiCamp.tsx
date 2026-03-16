@@ -525,7 +525,7 @@ const AltaiCamp = () => {
         <div className="fluid-container">
           <AnimatedSection>
             <h2 className="text-4xl md:text-6xl text-white mb-6">
-              Где живут и <span className="bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">что едят</span>
+              <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">Где живут</span> и что едят дети
             </h2>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
