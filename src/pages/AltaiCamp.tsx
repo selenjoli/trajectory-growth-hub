@@ -447,7 +447,7 @@ const AltaiCamp = () => {
             </div>
 
             {/* Time title — large, overlapping bottom of illustration */}
-            <div className="absolute bottom-[10%] left-0 right-0 flex justify-center pointer-events-none">
+            <div className="absolute top-[25%] left-0 right-0 flex justify-center pointer-events-none">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={currentDay}
