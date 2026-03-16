@@ -334,6 +334,31 @@ const Uchitelya = () => {
         </div>
       </section>
 
+      {/* ── Programs for students ── */}
+      <section className="section-padding">
+        <div className="fluid-container">
+          <AnimatedSection>
+            <div className="grid md:grid-cols-[1fr_auto] gap-8 md:gap-16 items-center rounded-[1.5rem] overflow-hidden border border-border bg-card">
+              <div className="p-8 md:p-12">
+                <span className="text-xs uppercase tracking-wider text-muted-foreground mb-4 block">Для ваших учеников</span>
+                <h2 className="text-2xl md:text-3xl text-foreground mb-4 leading-tight">
+                  Хотите увидеть, что мы можем предложить вашим ученикам?
+                </h2>
+                <p className="text-muted-foreground text-base font-normal normal-case leading-relaxed mb-6">
+                  Образовательные туры в&nbsp;Китай, ОАЭ, на&nbsp;Алтай и&nbsp;Чёрное море, а&nbsp;также онлайн языковая практика с&nbsp;британскими преподавателями — для детей от&nbsp;8&nbsp;до&nbsp;17&nbsp;лет.
+                </p>
+                <a href="/kanikuly" className="inline-block btn-gold px-8 py-4 rounded-xl text-sm tracking-widest">
+                  Каникулярные программы →
+                </a>
+              </div>
+              <div className="hidden md:block h-full">
+                <img src={heroImg} alt="Дети на каникулярной программе" className="h-full w-64 object-cover" />
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* ── For school leaders ── */}
       <section className="section-padding">
         <div className="fluid-container">
