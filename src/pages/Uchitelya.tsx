@@ -122,6 +122,44 @@ const Uchitelya = () => {
         </div>
       </section>
 
+      {/* ── «Это знакомо?» — empathy → transition to programs ── */}
+      <section className="section-padding">
+        <div className="fluid-container">
+          <AnimatedSection>
+            <h2 className="text-4xl md:text-6xl text-foreground mb-10">
+              Это <span className="text-accent">знакомо?</span>
+            </h2>
+          </AnimatedSection>
+
+          <div className="grid md:grid-cols-[1fr_auto] gap-10 md:gap-20 items-start mb-10">
+            <AnimatedSection delay={0.05}>
+              <div className="max-w-3xl">
+                <p className="text-foreground text-lg md:text-xl font-normal normal-case leading-relaxed mb-6">
+                  Вы&nbsp;преподаёте каждый день. Ищете новые подходы, пробуете разные методики, стараетесь держать интерес учеников. И&nbsp;при этом почти всегда в&nbsp;одиночку — потому что курсы повышения квалификации дают бумажку, но&nbsp;не&nbsp;идеи.
+                </p>
+                <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
+                  Потому что коллеги решают те&nbsp;же задачи, но&nbsp;поговорить по-настоящему некогда. Потому что профессиональное выгорание — это не&nbsp;слабость, это просто то, что происходит когда долго работаешь без живой подпитки.
+                </p>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.1}>
+              <div className="rounded-[1.5rem] overflow-hidden w-full md:w-80 h-56 md:h-64 shrink-0">
+                <img src={whyImg} alt="Преподаватели на воркшопе" className="w-full h-full object-cover" />
+              </div>
+            </AnimatedSection>
+          </div>
+
+          <AnimatedSection delay={0.15}>
+            <div className="border-l-4 border-accent pl-6 md:pl-8 max-w-3xl">
+              <p className="text-foreground text-lg md:text-xl font-medium normal-case leading-relaxed">
+                Мы&nbsp;сделали две программы именно для этого. Не&nbsp;для галочки.
+              </p>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* ── Two programs — structured cards ── */}
       <section id="programs" className="section-padding">
         <div className="fluid-container">
@@ -208,58 +246,6 @@ const Uchitelya = () => {
               </div>
             </AnimatedSection>
           </div>
-        </div>
-      </section>
-
-      {/* ── Why it matters — problem → solution layout ── */}
-      <section className="section-padding">
-        <div className="fluid-container">
-          <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl text-foreground mb-14">
-              Честно о&nbsp;том, зачем <span className="text-accent">это нужно</span>
-            </h2>
-          </AnimatedSection>
-
-          <div className="mb-10 rounded-[1.5rem] overflow-hidden max-h-80">
-            <img src={whyImg} alt="Преподаватели на воркшопе" className="w-full h-full object-cover" />
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-10 md:gap-20 items-start">
-            {/* Problem */}
-            <AnimatedSection delay={0.05}>
-              <div>
-                <span className="text-xs uppercase tracking-wider text-muted-foreground mb-4 block">Проблема</span>
-                <p className="text-foreground text-lg md:text-xl font-medium normal-case leading-relaxed mb-4">
-                  Найти качественные курсы повышения квалификации для учителя английского — задача не&nbsp;такая простая.
-                </p>
-                <p className="text-muted-foreground text-base font-normal normal-case leading-relaxed">
-                  Большинство предложений на&nbsp;рынке — это либо дорого и&nbsp;далеко, либо дёшево и&nbsp;без реального результата.
-                </p>
-              </div>
-            </AnimatedSection>
-
-            {/* Solution */}
-            <AnimatedSection delay={0.15}>
-              <div>
-                <span className="text-xs uppercase tracking-wider text-muted-foreground mb-4 block">Наш ответ</span>
-                <p className="text-foreground text-lg md:text-xl font-medium normal-case leading-relaxed mb-4">
-                  Партнёрство с&nbsp;Hilderstone College даёт прямой доступ к&nbsp;британским педагогам-практикам.
-                </p>
-                <p className="text-muted-foreground text-base font-normal normal-case leading-relaxed">
-                  Людям, которые преподают каждый день и&nbsp;знают как это работает в&nbsp;реальном классе, а&nbsp;не&nbsp;в&nbsp;теории. ProSkill Fest — то&nbsp;же самое, но&nbsp;в&nbsp;живом формате и&nbsp;с&nbsp;коллегами из&nbsp;разных городов.
-                </p>
-              </div>
-            </AnimatedSection>
-          </div>
-
-          {/* Result callout */}
-          <AnimatedSection delay={0.2}>
-            <div className="mt-14 border-l-4 border-accent pl-6 md:pl-8 max-w-3xl">
-              <p className="text-foreground text-base md:text-lg font-medium normal-case leading-relaxed">
-                Оба формата дают конкретный результат: инструменты которые можно применить на&nbsp;следующий день после занятия, и&nbsp;сертификат который говорит сам за&nbsp;себя.
-              </p>
-            </div>
-          </AnimatedSection>
         </div>
       </section>
 
