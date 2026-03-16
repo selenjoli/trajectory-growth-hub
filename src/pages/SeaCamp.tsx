@@ -269,8 +269,8 @@ const SeaCamp = () => {
                     {p.subtitle}
                   </p>
                   <h3 className="text-lg md:text-xl text-foreground mb-3">{p.name}</h3>
-                  <p className="text-sm text-foreground/80 font-normal normal-case leading-relaxed mb-3 flex-1">{p.text}</p>
-                  <p className="text-xs text-foreground/60 italic font-normal normal-case">{p.fit}</p>
+                  <p className="text-base text-foreground/80 font-normal normal-case leading-relaxed mb-3 flex-1">{p.text}</p>
+                  <p className="text-sm text-foreground/60 italic font-normal normal-case">{p.fit}</p>
                 </div>
               </div>
             </AnimatedSection>
