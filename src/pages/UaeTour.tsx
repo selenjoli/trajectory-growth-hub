@@ -86,10 +86,10 @@ const UaeTour = () => {
   useEffect(() => {
     if (dayPaused) return;
     const interval = setInterval(() => {
-      setCurrentDay((prev) => (prev + 1) % daySchedule.length);
+      setCurrentDay((prev) => (prev < daySchedule.length - 1 ? prev + 1 : prev));
     }, 6000);
     return () => clearInterval(interval);
-  }, [dayPaused]);
+  }, [dayPaused, currentDay]);
 
   useEffect(() => {
     if (whyPaused) return;
