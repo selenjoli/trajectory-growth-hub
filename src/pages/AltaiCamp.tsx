@@ -180,8 +180,15 @@ const AltaiCamp = () => {
     return () => clearInterval(interval);
   }, [dayPaused, dayUserPaused]);
 
+  // Determine page bg color
+  const pageBgColor = dayInView ? daySchedule[currentDay].bgColor : undefined;
+
   return (
-    <main className="bg-program-altai">
+    <motion.main
+      className="bg-program-altai"
+      animate={{ backgroundColor: pageBgColor || "hsl(var(--program-altai))" }}
+      transition={{ duration: 1.2, ease: "easeInOut" }}
+    >
       <Header variant="light" />
 
       {/* ── HERO ── */}
