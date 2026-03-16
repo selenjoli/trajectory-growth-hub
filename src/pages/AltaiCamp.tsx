@@ -430,8 +430,8 @@ const AltaiCamp = () => {
           {/* Content fades in when section is in view */}
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: dayInView ? 1 : 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            animate={{ opacity: dayScrollFactor }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
           >
           {/* Title — white, on the colored bg */}
           <div className="px-6 md:px-16 pb-6">
