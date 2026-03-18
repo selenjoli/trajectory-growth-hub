@@ -253,10 +253,10 @@ const ChinaTour = () => {
                   </ul>
                 </div>
 
-                {/* Stacked photo carousel */}
-                <div className="flex justify-center lg:justify-start">
+                {/* Photo carousel — horizontal, fills column */}
+                <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
                   <div
-                    className="relative w-[340px] h-[460px]"
+                    className="relative w-full aspect-[3/2]"
                     onMouseEnter={() => setWhyPaused(true)}
                     onMouseLeave={() => setWhyPaused(false)}
                   >
