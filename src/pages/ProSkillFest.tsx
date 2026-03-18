@@ -631,8 +631,7 @@ const ProSkillFest = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-12">
-                Где это{" "}
-                <span className={orangeGrad}>происходит</span>
+                <span className={orangeGrad}>Где</span> это происходит
               </h2>
             </AnimatedSection>
             <div className="flex flex-col md:flex-row gap-8">
