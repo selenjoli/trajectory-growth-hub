@@ -327,11 +327,11 @@ const TeachersCourse = () => {
 
       {/* ── Отзыв ── */}
       <section className="px-3 md:px-6 xl:px-10">
-        <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
+        <div className="bg-program-teachers-light rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-4">
-                Что говорят <span className="text-program-teachers">участники</span>
+                Что говорят <span className={gold}>участники</span>
               </h2>
               <p className="text-foreground/60 text-lg mb-12 max-w-xl font-normal normal-case">
                 Отзывы педагогов, прошедших курс с&nbsp;Hilderstone College.
