@@ -567,7 +567,7 @@ const ProSkillFest = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-white mb-4">
-                Что говорят те, кто был
+                Что говорят те,&nbsp;кто&nbsp;был
               </h2>
               <p className="text-white/80 text-base md:text-lg mb-12 font-normal normal-case">
                 Отзывы участников ProSkill Fest 2025.
