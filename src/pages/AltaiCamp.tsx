@@ -627,10 +627,10 @@ const AltaiCamp = () => {
         <div className="rounded-[2rem] bg-white/10 backdrop-blur-sm border border-white/15 py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-foreground mb-4">
-                Что говорят <span className="text-program-altai">участники</span>
+              <h2 className="text-4xl md:text-6xl text-white mb-4">
+                Что говорят <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">участники</span>
               </h2>
-              <p className="text-foreground/60 text-base md:text-lg mb-12 max-w-xl font-normal normal-case">
+              <p className="text-white/60 text-base md:text-lg mb-12 max-w-xl font-normal normal-case">
                 Отзывы родителей и детей о наших сменах.
               </p>
             </AnimatedSection>

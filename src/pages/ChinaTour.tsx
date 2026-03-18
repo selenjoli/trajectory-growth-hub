@@ -485,7 +485,7 @@ const ChinaTour = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-white mb-4">
-                Что говорят <span className={gold}>участники</span>
+                Что говорят <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">участники</span>
               </h2>
               <p className="text-white/60 text-lg mb-12 max-w-xl font-normal normal-case">
                 Отзывы семей, которые побывали в наших турах.

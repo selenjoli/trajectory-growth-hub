@@ -330,10 +330,10 @@ const TeachersCourse = () => {
         <div className="rounded-[2rem] bg-white/10 backdrop-blur-sm border border-white/15 py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-foreground mb-4">
+              <h2 className="text-4xl md:text-6xl text-white mb-4">
                 Что говорят <span className={gold}>участники</span>
               </h2>
-              <p className="text-foreground/60 text-lg mb-12 max-w-xl font-normal normal-case">
+              <p className="text-white/60 text-lg mb-12 max-w-xl font-normal normal-case">
                 Отзывы педагогов, прошедших курс с&nbsp;Hilderstone College.
               </p>
             </AnimatedSection>
