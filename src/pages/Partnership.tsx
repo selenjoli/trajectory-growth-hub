@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
+import FloatingButtons from "@/components/FloatingButtons";
 import AnimatedSection from "@/components/AnimatedSection";
 
 import heroImg from "@/assets/partnership.jpg";
@@ -543,6 +544,7 @@ const Partnership = () => {
           </div>
         </div>
       </section>
+      <FloatingButtons />
     </main>
   );
 };
