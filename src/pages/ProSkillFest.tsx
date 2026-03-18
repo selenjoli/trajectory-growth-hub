@@ -466,7 +466,7 @@ const ProSkillFest = () => {
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-white mb-4">
                 Как это было{" "}
-                <span className={orangeGrad}>в\u00A02025 году</span>
+                <span className={orangeGrad}>в&nbsp;2025&nbsp;году</span>
               </h2>
               <p className="text-white/60 mb-12 normal-case leading-relaxed text-lg">
                 Программа каждого феста формируется заново — спикеры предлагают темы которые актуальны
