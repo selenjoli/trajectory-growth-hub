@@ -31,59 +31,59 @@ const orangeGrad = "bg-gradient-to-r from-[#F29727] via-orange-400 via-40% to-[#
 const audienceLeft = [
   {
     title: "Если вы учитель английского",
-    text: "и\u00A0хотите не\u00A0просто послушать теорию, а\u00A0унести с\u00A0собой готовые инструменты для уроков.",
+    text: "и хотите не просто послушать теорию, а унести с собой готовые инструменты для уроков.",
   },
   {
     title: "Если вы руководитель центра",
-    text: "и\u00A0хотите чтобы ваши педагоги развивались и\u00A0не\u00A0выгорали.",
+    text: "и хотите чтобы ваши педагоги развивались и не выгорали.",
   },
 ];
 
 const audienceRight = [
   {
     title: "Если вам нужна энергия",
-    text: "и\u00A0вдохновение — особенно в\u00A0ноябре, когда учебный год уже давит.",
+    text: "и вдохновение — особенно в ноябре, когда учебный год уже давит.",
   },
   {
-    title: "Если вы устали от\u00A0одиночества",
-    text: "в\u00A0профессиональных поисках и\u00A0хотите наконец поговорить с\u00A0коллегами которые понимают о\u00A0чём речь.",
+    title: "Если вы устали от одиночества",
+    text: "в профессиональных поисках и хотите наконец поговорить с коллегами которые понимают о чём речь.",
   },
 ];
 
 const formatLeft = [
-  { title: "25-минутные сессии", text: "от\u00A0практикующих педагогов — интенсивно и\u00A0по\u00A0делу" },
-  { title: "Coffee & Connection", text: "паузы между сессиями с\u00A0розыгрышами методической литературы и\u00A0нетворкинг-играми. Не\u00A0просто кофе — здесь завязывается большинство знакомств" },
+  { title: "25-минутные сессии", text: "от практикующих педагогов — интенсивно и по делу" },
+  { title: "Coffee & Connection", text: "паузы между сессиями с розыгрышами методической литературы и нетворкинг-играми. Не просто кофе — здесь завязывается большинство знакомств" },
 ];
 
 const formatRight = [
   { title: "Q&A сессия", text: "вопросы спикерам напрямую" },
-  { title: "Closing Remarks", text: "итоги и\u00A0планы" },
+  { title: "Closing Remarks", text: "итоги и планы" },
 ];
 
 const scheduleCol1 = [
   { time: "09:15 — 09:55", title: "Coffee & Icebreaker", speaker: "", school: "" },
   { time: "10:00 — 10:25", title: "A Cookie Jar of Smart Ideas for (V)YL", subtitle: "копилка идей для самых маленьких", speaker: "Ms Violet", school: "Smart Cookies Club" },
-  { time: "10:30 — 10:55", title: "Managing Teens: как найти ключ к\u00A0мотивации", speaker: "Ms Svetlana", school: "Smart Cookies Club" },
-  { time: "11:00 — 11:25", title: "Beyond Quiet, Please!", subtitle: "больше чем тишина в\u00A0классе", speaker: "Ms Anastasia", school: "Академия Языков" },
-  { time: "11:30 — 11:55", title: "Teaching Vocabulary Beyond Translation", subtitle: "лексика за\u00A0пределами перевода", speaker: "Ms Sofia", school: "Академия Языков" },
-  { time: "12:00 — 12:25", title: "To burn or not to burn", subtitle: "профессиональное выгорание и\u00A0тайм-менеджмент", speaker: "Ms Shagane", school: "Liberty School" },
+  { time: "10:30 — 10:55", title: "Managing Teens: как найти ключ к мотивации", speaker: "Ms Svetlana", school: "Smart Cookies Club" },
+  { time: "11:00 — 11:25", title: "Beyond Quiet, Please!", subtitle: "больше чем тишина в классе", speaker: "Ms Anastasia", school: "Академия Языков" },
+  { time: "11:30 — 11:55", title: "Teaching Vocabulary Beyond Translation", subtitle: "лексика за пределами перевода", speaker: "Ms Sofia", school: "Академия Языков" },
+  { time: "12:00 — 12:25", title: "To burn or not to burn", subtitle: "профессиональное выгорание и тайм-менеджмент", speaker: "Ms Shagane", school: "Liberty School" },
   { time: "12:30 — 13:20", title: "Coffee & Connection", speaker: "", school: "" },
 ];
 
 const scheduleCol2 = [
-  { time: "13:25 — 13:50", title: "Parents as Partners", subtitle: "от\u00A0претензий к\u00A0сотрудничеству", speaker: "Ms Eugenia", school: "Liberty School" },
-  { time: "13:55 — 14:20", title: "Getting the most of your textbook", subtitle: "учебник: инструкция по\u00A0применению", speaker: "Ms Irina", school: "ABC School" },
+  { time: "13:25 — 13:50", title: "Parents as Partners", subtitle: "от претензий к сотрудничеству", speaker: "Ms Eugenia", school: "Liberty School" },
+  { time: "13:55 — 14:20", title: "Getting the most of your textbook", subtitle: "учебник: инструкция по применению", speaker: "Ms Irina", school: "ABC School" },
   { time: "14:25 — 14:50", title: "Demotivation: 5 harmful tips you need to unlearn as a teacher", speaker: "Ms Irina", school: "ABC Club Пушкино" },
-  { time: "14:55 — 15:20", title: "Grammar in Motion: Learning Through Play", subtitle: "как повысить эффективность и\u00A0управлять динамикой", speaker: "Ms Alexandra", school: "Lingua Cat" },
+  { time: "14:55 — 15:20", title: "Grammar in Motion: Learning Through Play", subtitle: "как повысить эффективность и управлять динамикой", speaker: "Ms Alexandra", school: "Lingua Cat" },
   { time: "15:25 — 15:35", title: "Q&A session", speaker: "", school: "" },
-  { time: "15:35 — 15:50", title: "Closing Remarks", subtitle: "итоги и\u00A0планы", speaker: "", school: "" },
+  { time: "15:35 — 15:50", title: "Closing Remarks", subtitle: "итоги и планы", speaker: "", school: "" },
 ];
 
 const takeaways = [
-  { image: takeawayTools, title: "Готовые инструменты", text: "Конкретные приемы и\u00A0упражнения от\u00A0педагогов которые проверили их в\u00A0своих классах. Применить можно в\u00A0ближайший понедельник." },
-  { image: takeawayRecordings, title: "Записи всех докладов", text: "После феста участники получают доступ к\u00A0материалам сессий. Можно пересмотреть то\u00A0что особенно зацепило — или поделиться с\u00A0коллегами которые не\u00A0смогли приехать." },
-  { image: takeawayContacts, title: "Профессиональные контакты", text: "Коллеги из\u00A0разных городов, с\u00A0которыми познакомились в\u00A0Coffee & Connection и\u00A0остались на\u00A0связи. Сообщество которое продолжает общаться после феста." },
-  { image: takeawayCert, title: "Сертификат участника", text: "Каждый участник получает официальный сертификат ProSkill Fest. Хорошее дополнение к\u00A0профессиональному портфолио." },
+  { image: takeawayTools, title: "Готовые инструменты", text: "Конкретные приемы и упражнения от педагогов которые проверили их в своих классах. Применить можно в ближайший понедельник." },
+  { image: takeawayRecordings, title: "Записи всех докладов", text: "После феста участники получают доступ к материалам сессий. Можно пересмотреть то что особенно зацепило — или поделиться с коллегами которые не смогли приехать." },
+  { image: takeawayContacts, title: "Профессиональные контакты", text: "Коллеги из разных городов, с которыми познакомились в Coffee & Connection и остались на связи. Сообщество которое продолжает общаться после феста." },
+  { image: takeawayCert, title: "Сертификат участника", text: "Каждый участник получает официальный сертификат ProSkill Fest. Хорошее дополнение к профессиональному портфолио." },
 ];
 
 const testimonials = [
@@ -222,8 +222,8 @@ const ProSkillFest = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-lg md:text-xl text-white/85 max-w-2xl mb-6 font-normal normal-case leading-relaxed"
             >
-              Один день в\u00A0году, когда учителя собираются не\u00A0на\u00A0конференцию — а\u00A0к\u00A0своим.
-              Доклады от\u00A0практикующих педагогов, живое общение и\u00A0инструменты которые работают в\u00A0реальном классе.
+              Один день в году, когда учителя собираются не на конференцию — а к своим.
+              Доклады от практикующих педагогов, живое общение и инструменты которые работают в реальном классе.
             </motion.p>
 
             <motion.div
@@ -270,18 +270,18 @@ const ProSkillFest = () => {
               <div className="flex flex-col lg:flex-row gap-10">
                 <div className="w-full lg:w-1/2 space-y-6">
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
-                    Учителя учатся лучше всего у\u00A0других учителей. Не\u00A0у\u00A0авторов учебников
-                    и\u00A0не\u00A0у\u00A0методистов из\u00A0академий — а\u00A0у\u00A0тех, кто каждый день заходит в\u00A0класс,
-                    сталкивается с\u00A0теми же задачами и\u00A0находит решения которые реально работают.
+                    Учителя учатся лучше всего у других учителей. Не у авторов учебников
+                    и не у методистов из академий — а у тех, кто каждый день заходит в класс,
+                    сталкивается с теми же задачами и находит решения которые реально работают.
                   </p>
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
-                    Ассоциация «Траектория Роста» сделала ProSkill Fest именно из\u00A0этой идеи.
-                    Никаких звездных лекторов на\u00A0недосягаемой высоте — только практики, которые
-                    честно рассказывают о\u00A0своих находках, инструментах и\u00A0ошибках.
+                    Ассоциация «Траектория Роста» сделала ProSkill Fest именно из этой идеи.
+                    Никаких звездных лекторов на недосягаемой высоте — только практики, которые
+                    честно рассказывают о своих находках, инструментах и ошибках.
                   </p>
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
-                    С\u00A02025 года фестиваль собирает учителей английского из\u00A0разных городов России.
-                    Каждый раз — новые темы, новые лица и\u00A0неизменное ощущение что ты\u00A0наконец среди своих.
+                    С 2025 года фестиваль собирает учителей английского из разных городов России.
+                    Каждый раз — новые темы, новые лица и неизменное ощущение что ты наконец среди своих.
                   </p>
                 </div>
 
@@ -374,7 +374,7 @@ const ProSkillFest = () => {
                 день
               </h2>
               <p className="text-muted-foreground mb-12 normal-case text-lg">
-                Весь день — очный формат в\u00A0Москве. Только живое общение.
+                Весь день — очный формат в Москве. Только живое общение.
               </p>
             </AnimatedSection>
 
@@ -470,8 +470,8 @@ const ProSkillFest = () => {
               </h2>
               <p className="text-white/60 mb-12 normal-case leading-relaxed text-lg">
                 Программа каждого феста формируется заново — спикеры предлагают темы которые актуальны
-                прямо сейчас в\u00A0их классах. Программа ProSkill Fest 2026 пока в\u00A0разработке,
-                следите за\u00A0анонсами.
+                прямо сейчас в их классах. Программа ProSkill Fest 2026 пока в разработке,
+                следите за анонсами.
               </p>
             </AnimatedSection>
 
@@ -507,13 +507,13 @@ const ProSkillFest = () => {
                     Все спикеры ProSkill Fest — практикующие педагоги.
                   </p>
                   <p className="text-muted-foreground mb-8 normal-case leading-relaxed">
-                    Здесь нет приглашенных экспертов которые давно не\u00A0заходили в\u00A0класс.
-                    Любой учитель с\u00A0интересной темой и\u00A0полезными наработками может подать заявку
-                    на\u00A0выступление — из\u00A0школ Ассоциации и\u00A0не\u00A0только.
+                    Здесь нет приглашенных экспертов которые давно не заходили в класс.
+                    Любой учитель с интересной темой и полезными наработками может подать заявку
+                    на выступление — из школ Ассоциации и не только.
                   </p>
                   <p className="text-muted-foreground text-sm mb-6 normal-case">
-                    Спикеры ProSkill Fest 2026 пока объявляются. Если у\u00A0вас есть тема которой хочется
-                    поделиться с\u00A0коллегами — ждем вашу заявку.
+                    Спикеры ProSkill Fest 2026 пока объявляются. Если у вас есть тема которой хочется
+                    поделиться с коллегами — ждем вашу заявку.
                   </p>
                   <a href="#register" className="inline-flex items-center gap-2 btn-gold px-8 py-4 rounded-2xl text-sm tracking-widest">
                     Подать заявку на выступление <ArrowRight className="w-4 h-4" />
@@ -645,9 +645,9 @@ const ProSkillFest = () => {
               <AnimatedSection delay={0.1} className="w-full md:w-1/2">
                 <h3 className="text-xl mb-4 normal-case" style={{ color: bordeaux }}>Loft Красный Октябрь</h3>
                 <p className="text-muted-foreground normal-case leading-relaxed mb-6">
-                  В\u00A0самом сердце Москвы, на\u00A0Берсеневской набережной. Пространство которое располагает
-                  к\u00A0разговору: не\u00A0конференц-зал со\u00A0строгими рядами, а\u00A0живое место где удобно думать
-                  и\u00A0общаться.
+                  В самом сердце Москвы, на Берсеневской набережной. Пространство которое располагает
+                  к разговору: не конференц-зал со строгими рядами, а живое место где удобно думать
+                  и общаться.
                 </p>
                 <div className="space-y-3 text-foreground/80 text-sm normal-case">
                   <div className="flex items-start gap-3">
@@ -660,7 +660,7 @@ const ProSkillFest = () => {
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="w-2.5 h-2.5 rounded-full shrink-0 mt-1.5" style={{ backgroundColor: orangeAccent }} />
-                    <span>Парковки на\u00A0площадке нет — удобнее приехать на\u00A0метро или такси</span>
+                    <span>Парковки на площадке нет — удобнее приехать на метро или такси</span>
                   </div>
                 </div>
               </AnimatedSection>
@@ -685,7 +685,7 @@ const ProSkillFest = () => {
                 <div className="bg-card border border-border rounded-2xl p-8 h-full flex flex-col">
                   <h3 className="text-xl mb-4" style={{ color: bordeaux }}>Для участников</h3>
                   <p className="text-muted-foreground normal-case leading-relaxed mb-6 flex-1">
-                    Для педагогов и\u00A0руководителей центров ассоциации участие бесплатное — фест существует
+                    Для педагогов и руководителей центров ассоциации участие бесплатное — фест существует
                     благодаря поддержке ассоциации.
                   </p>
                   <p className="text-muted-foreground/60 text-sm normal-case mb-6">
@@ -701,8 +701,8 @@ const ProSkillFest = () => {
                 <div className="rounded-2xl p-8 h-full flex flex-col text-white" style={{ backgroundColor: bordeaux }}>
                   <h3 className="text-xl mb-4">Хотите выступить?</h3>
                   <p className="text-white/70 normal-case leading-relaxed mb-6 flex-1">
-                    ProSkill Fest строится на\u00A0том, что спикеры — такие же практики как и\u00A0все в\u00A0зале.
-                    Если у\u00A0вас есть тема, инструмент или опыт которым хочется поделиться — ждем заявку.
+                    ProSkill Fest строится на том, что спикеры — такие же практики как и все в зале.
+                    Если у вас есть тема, инструмент или опыт которым хочется поделиться — ждем заявку.
                   </p>
                   <a href="#" className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-2xl text-sm tracking-widest uppercase font-bold hover:bg-white/20 transition-colors text-center">
                     Подать заявку на выступление <ArrowRight className="w-4 h-4" />
@@ -731,7 +731,7 @@ const ProSkillFest = () => {
                   <span className="text-xs uppercase tracking-wider" style={{ color: orangeAccent }}>Hilderstone College</span>
                   <h3 className="text-lg mt-2 mb-2">Teachers Development Course</h3>
                   <p className="text-muted-foreground text-sm normal-case leading-relaxed mb-4">
-                    Недельный онлайн-интенсив с\u00A0британскими тьюторами — готовые инструменты,
+                    Недельный онлайн-интенсив с британскими тьюторами — готовые инструменты,
                     международный сертификат, живой формат.
                   </p>
                   <span className="text-sm font-semibold inline-flex items-center gap-1" style={{ color: orangeAccent }}>
@@ -745,7 +745,7 @@ const ProSkillFest = () => {
                   <span className="text-xs uppercase tracking-wider" style={{ color: orangeAccent }}>Для руководителей</span>
                   <h3 className="text-lg mt-2 mb-2">Партнерство для центров</h3>
                   <p className="text-muted-foreground text-sm normal-case leading-relaxed mb-4">
-                    Руководите языковым центром? Узнайте о\u00A0партнерстве с\u00A0Ассоциацией.
+                    Руководите языковым центром? Узнайте о партнерстве с Ассоциацией.
                   </p>
                   <span className="text-sm font-semibold inline-flex items-center gap-1" style={{ color: orangeAccent }}>
                     О партнерстве <ArrowRight className="w-3.5 h-3.5" />

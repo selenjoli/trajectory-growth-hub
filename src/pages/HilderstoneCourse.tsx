@@ -16,16 +16,16 @@ import illustUae from "@/assets/illust-uae.svg";
 /* ---- data ---- */
 
 const testimonials = [
-  { id: 1, image: "https://placehold.co/400x700/d4a017/ffffff?text=Отзыв+1", name: "Татьяна, Воронеж", role: "мама Лизы (10\u00a0лет)" },
-  { id: 2, image: "https://placehold.co/400x700/d4a017/ffffff?text=Отзыв+2", name: "Елена, Москва", role: "мама Миши (13\u00a0лет)" },
-  { id: 3, image: "https://placehold.co/400x700/d4a017/ffffff?text=Отзыв+3", name: "Артём, 14\u00a0лет", role: "Участник курса" },
+  { id: 1, image: "https://placehold.co/400x700/d4a017/ffffff?text=Отзыв+1", name: "Татьяна, Воронеж", role: "мама Лизы (10 лет)" },
+  { id: 2, image: "https://placehold.co/400x700/d4a017/ffffff?text=Отзыв+2", name: "Елена, Москва", role: "мама Миши (13 лет)" },
+  { id: 3, image: "https://placehold.co/400x700/d4a017/ffffff?text=Отзыв+3", name: "Артём, 14 лет", role: "Участник курса" },
 ];
 
 const otherPrograms = [
-  { title: "Китай", illustration: illustChina, dates: "3\u201312\u00a0июня", price: "от\u00a0165\u00a0000\u00a0руб.", href: "/kanikuly/china" },
-  { title: "Море", illustration: illustSea, dates: "24\u00a0июня\u00a0\u2014 14\u00a0июля", price: "от\u00a0134\u00a0000\u00a0руб.", href: "/kanikuly/more" },
-  { title: "Алтай", illustration: illustAltai, dates: "10\u201325\u00a0июля", price: "от\u00a095\u00a0000\u00a0руб.", href: "/kanikuly/altai" },
-  { title: "Дубай", illustration: illustUae, dates: "Даты уточняются", price: "от\u00a0145\u00a0000\u00a0руб.", href: "/kanikuly/uae" },
+  { title: "Китай", illustration: illustChina, dates: "3–12 июня", price: "от 165 000 руб.", href: "/kanikuly/china" },
+  { title: "Море", illustration: illustSea, dates: "24 июня — 14 июля", price: "от 134 000 руб.", href: "/kanikuly/more" },
+  { title: "Алтай", illustration: illustAltai, dates: "10–25 июля", price: "от 95 000 руб.", href: "/kanikuly/altai" },
+  { title: "Дубай", illustration: illustUae, dates: "Даты уточняются", price: "от 145 000 руб.", href: "/kanikuly/uae" },
 ];
 
 const whyPhotos = [collegePic, teacherPic, lessonPic];
@@ -105,7 +105,7 @@ const HilderstoneCourse = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="flex flex-wrap items-center gap-3 mb-8"
             >
-              {["10\u00a0занятий", "Группа до\u00a012\u00a0человек", "От\u00a011\u00a0лет"].map((chip) => (
+              {["10 занятий", "Группа до 12 человек", "От 11 лет"].map((chip) => (
                 <span key={chip} className="bg-white/15 backdrop-blur-sm text-white text-xs font-medium px-4 py-2 rounded-full">
                   {chip}
                 </span>
