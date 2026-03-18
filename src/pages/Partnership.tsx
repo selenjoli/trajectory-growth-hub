@@ -273,7 +273,11 @@ const Partnership = () => {
                     <div className="p-6">
                       <h3 className="text-lg mb-3">{item.title}</h3>
                       <p className="text-muted-foreground text-sm normal-case leading-relaxed">{item.text}</p>
-                    </div>
+                      {item.link && (
+                        <Link to={item.link} className="text-accent text-sm font-semibold inline-flex items-center gap-1 mt-4 hover:underline">
+                          {item.linkText} <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                      )}
                   </div>
                 </AnimatedSection>
               ))}
