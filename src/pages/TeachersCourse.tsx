@@ -197,67 +197,67 @@ const TeachersCourse = () => {
             </h2>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-3 gap-5">
-            {/* Когда */}
-            <AnimatedSection delay={0.05}>
-              <div className="rounded-[1.5rem] bg-white/10 backdrop-blur-sm border border-white/15 p-8 h-full">
-                <span className="text-xs uppercase tracking-wider text-white/50 font-medium block mb-4">Когда</span>
-                <p className="text-white text-xl font-bold mb-2">13–17 июля 2026</p>
-                <p className="text-white/70 text-sm font-normal normal-case">Понедельник — пятница, 5&nbsp;дней подряд</p>
-              </div>
-            </AnimatedSection>
+          <div className="grid md:grid-cols-2 gap-5">
+            {/* Left column — 3 info cards stacked */}
+            <div className="flex flex-col gap-5">
+              <AnimatedSection delay={0.05}>
+                <div className="rounded-[1.5rem] bg-white/10 backdrop-blur-sm border border-white/15 p-8 h-full">
+                  <span className="text-xs uppercase tracking-wider text-white/50 font-medium block mb-4">Когда</span>
+                  <p className="text-white text-xl font-bold mb-2">13–17 июля 2026</p>
+                  <p className="text-white/70 text-sm font-normal normal-case">Понедельник — пятница, 5&nbsp;дней подряд</p>
+                </div>
+              </AnimatedSection>
 
-            {/* Формат */}
-            <AnimatedSection delay={0.1}>
-              <div className="rounded-[1.5rem] bg-white/10 backdrop-blur-sm border border-white/15 p-8 h-full">
-                <span className="text-xs uppercase tracking-wider text-white/50 font-medium block mb-4">Формат</span>
-                <p className="text-white text-xl font-bold mb-2">Онлайн, Zoom</p>
-                <p className="text-white/70 text-sm font-normal normal-case">16,5&nbsp;академических часов интенсивной практики</p>
-              </div>
-            </AnimatedSection>
+              <AnimatedSection delay={0.1}>
+                <div className="rounded-[1.5rem] bg-white/10 backdrop-blur-sm border border-white/15 p-8 h-full">
+                  <span className="text-xs uppercase tracking-wider text-white/50 font-medium block mb-4">Формат</span>
+                  <p className="text-white text-xl font-bold mb-2">Онлайн, Zoom</p>
+                  <p className="text-white/70 text-sm font-normal normal-case">16,5&nbsp;академических часов интенсивной практики</p>
+                </div>
+              </AnimatedSection>
 
-            {/* Объём */}
-            <AnimatedSection delay={0.15}>
-              <div className="rounded-[1.5rem] bg-white/10 backdrop-blur-sm border border-white/15 p-8 h-full">
-                <span className="text-xs uppercase tracking-wider text-white/50 font-medium block mb-4">Нагрузка</span>
-                <p className="text-white text-xl font-bold mb-2">2 сессии в день</p>
-                <p className="text-white/70 text-sm font-normal normal-case">По&nbsp;75&nbsp;минут каждая, перерыв 15&nbsp;мин</p>
+              <AnimatedSection delay={0.15}>
+                <div className="rounded-[1.5rem] bg-white/10 backdrop-blur-sm border border-white/15 p-8 h-full">
+                  <span className="text-xs uppercase tracking-wider text-white/50 font-medium block mb-4">Нагрузка</span>
+                  <p className="text-white text-xl font-bold mb-2">2 сессии в день</p>
+                  <p className="text-white/70 text-sm font-normal normal-case">По&nbsp;75&nbsp;минут каждая, перерыв 15&nbsp;мин</p>
+                </div>
+              </AnimatedSection>
+            </div>
+
+            {/* Right column — daily schedule */}
+            <AnimatedSection delay={0.2}>
+              <div className="rounded-[1.5rem] bg-white/10 backdrop-blur-sm border border-white/15 p-8 md:p-10 h-full flex flex-col">
+                <span className="text-xs uppercase tracking-wider text-white/50 font-medium block mb-8">Расписание дня</span>
+                <div className="flex items-stretch gap-4 flex-1">
+                  {/* Vertical timeline line */}
+                  <div className="flex flex-col items-center py-1">
+                    <div className="w-3 h-3 rounded-full bg-amber-400 shrink-0" />
+                    <div className="flex-1 w-px bg-white/20" />
+                    <div className="w-2 h-2 rounded-full bg-white/30 shrink-0" />
+                    <div className="flex-1 w-px bg-white/20" />
+                    <div className="w-3 h-3 rounded-full bg-amber-400 shrink-0" />
+                  </div>
+                  <div className="flex flex-col justify-between gap-4 py-0.5">
+                    <div>
+                      <p className="text-white font-bold text-base">11:15 — 12:30</p>
+                      <p className="text-white/60 text-sm font-normal normal-case">Первая сессия · 75 мин</p>
+                    </div>
+                    <div>
+                      <p className="text-white/40 text-sm font-normal normal-case">☕ Перерыв · 15 мин</p>
+                    </div>
+                    <div>
+                      <p className="text-white font-bold text-base">12:45 — 14:00</p>
+                      <p className="text-white/60 text-sm font-normal normal-case">Вторая сессия · 75 мин</p>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-white/70 text-sm font-normal normal-case leading-relaxed mt-8 pt-6 border-t border-white/10">
+                  Достаточно насыщенно чтобы был результат, и&nbsp;достаточно компактно чтобы совместить с&nbsp;работой.
+                </p>
               </div>
             </AnimatedSection>
           </div>
-
-          {/* Timeline */}
-          <AnimatedSection delay={0.2}>
-            <div className="mt-8 rounded-[1.5rem] bg-white/10 backdrop-blur-sm border border-white/15 p-8 md:p-10 max-w-2xl">
-              <span className="text-xs uppercase tracking-wider text-white/50 font-medium block mb-6">Расписание дня</span>
-              <div className="flex items-stretch gap-4">
-                {/* Vertical timeline line */}
-                <div className="flex flex-col items-center py-1">
-                  <div className="w-3 h-3 rounded-full bg-amber-400 shrink-0" />
-                  <div className="flex-1 w-px bg-white/20" />
-                  <div className="w-2 h-2 rounded-full bg-white/30 shrink-0" />
-                  <div className="flex-1 w-px bg-white/20" />
-                  <div className="w-3 h-3 rounded-full bg-amber-400 shrink-0" />
-                </div>
-                <div className="flex flex-col justify-between gap-4 py-0.5">
-                  <div>
-                    <p className="text-white font-bold text-base">11:15 — 12:30</p>
-                    <p className="text-white/60 text-sm font-normal normal-case">Первая сессия · 75 мин</p>
-                  </div>
-                  <div>
-                    <p className="text-white/40 text-sm font-normal normal-case">☕ Перерыв · 15 мин</p>
-                  </div>
-                  <div>
-                    <p className="text-white font-bold text-base">12:45 — 14:00</p>
-                    <p className="text-white/60 text-sm font-normal normal-case">Вторая сессия · 75 мин</p>
-                  </div>
-                </div>
-              </div>
-              <p className="text-white/70 text-sm font-normal normal-case leading-relaxed mt-6 pt-6 border-t border-white/10">
-                Достаточно насыщенно чтобы был результат, и&nbsp;достаточно компактно чтобы совместить с&nbsp;работой.
-              </p>
-            </div>
-          </AnimatedSection>
         </div>
       </section>
 
