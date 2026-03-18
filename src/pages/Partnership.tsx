@@ -169,7 +169,7 @@ const Partnership = () => {
             >
               Вы&nbsp;строите центр.
               <br />
-              Мы&nbsp;знаем как это <span className="text-accent">бывает.</span>
+              Мы&nbsp;знаем как это <span className={gold}>бывает.</span>
             </motion.h1>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -193,7 +193,7 @@ const Partnership = () => {
         <div className="fluid-container">
           <AnimatedSection>
             <h2 className="text-4xl md:text-6xl text-foreground mb-10">
-              Это <span className="text-accent">знакомо?</span>
+              Это <span className={gold}>знакомо?</span>
             </h2>
           </AnimatedSection>
 
@@ -258,7 +258,7 @@ const Partnership = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-4">
-                Что это значит <span className="text-accent">на&nbsp;практике</span>
+                Что это значит <span className={gold}>на&nbsp;практике</span>
               </h2>
               <p className="text-muted-foreground mb-14 text-lg font-normal normal-case">
                 Шесть конкретных вещей, которые получает каждый центр в&nbsp;составе ассоциации.
@@ -330,7 +330,7 @@ const Partnership = () => {
         <div className="fluid-container">
           <AnimatedSection>
             <h2 className="text-4xl md:text-6xl text-foreground mb-12">
-              Почему это <span className="text-accent">работает</span>
+              Почему это <span className={gold}>работает</span>
             </h2>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
@@ -429,7 +429,7 @@ const Partnership = () => {
         <div className="fluid-container">
           <AnimatedSection>
             <h2 className="text-4xl md:text-6xl text-foreground mb-4">
-              Как это <span className="text-accent">работает</span>
+              Как это <span className={gold}>работает</span>
             </h2>
             <p className="text-muted-foreground mb-12 max-w-2xl text-lg font-normal normal-case leading-relaxed">
               Никакого сложного процесса. Напишите нам — познакомимся, расскажем как устроена ассоциация изнутри и ответим на все вопросы. Никаких обязательств до разговора.
@@ -476,11 +476,11 @@ const Partnership = () => {
 
       {/* ── CROSS-LINKS — "Посмотрите ещё" ── */}
       <section className="px-3 md:px-6 xl:px-10 mb-4">
-        <div className="bg-primary rounded-[2rem] py-20 px-6 md:px-16">
+        <div className="bg-foreground rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-primary-foreground mb-14">
-                Посмотрите <span className="text-accent">ещё</span>
+                Посмотрите <span className={gold}>ещё</span>
               </h2>
             </AnimatedSection>
 
