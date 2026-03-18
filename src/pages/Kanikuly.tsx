@@ -230,7 +230,7 @@ const Kanikuly = () => {
               Что есть <span className="text-accent">в&nbsp;этом году</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mb-14 font-normal normal-case">
-              Шесть программ — выбирайте по&nbsp;возрасту, датам и&nbsp;тому, что откликается вашему ребёнку.
+              Пять программ — выбирайте по&nbsp;возрасту, датам и&nbsp;тому, что откликается вашему ребёнку.
             </p>
           </AnimatedSection>
 
