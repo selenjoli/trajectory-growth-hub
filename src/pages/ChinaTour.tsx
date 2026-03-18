@@ -227,7 +227,7 @@ const ChinaTour = () => {
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
               <div className="flex flex-col lg:flex-row gap-10 items-start">
-                <div className="max-w-2xl space-y-6 lg:shrink-0">
+                <div className="lg:w-1/2 space-y-6">
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
                     Есть страны, после которых смотришь на мир немного иначе. Китай — одна из них.
                   </p>
