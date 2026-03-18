@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import FloatingButtons from "@/components/FloatingButtons";
 import HeroSection from "@/components/HeroSection";
 import ActivitiesSection from "@/components/ActivitiesSection";
 import HistorySection from "@/components/HistorySection";
