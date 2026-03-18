@@ -541,7 +541,7 @@ const ProSkillFest = () => {
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl mb-12" style={{ color: bordeaux }}>
                 Что вы{" "}
-                <span className={orangeGrad}>заберете с собой</span>
+                <span className={orangeGrad}>заберёте с&nbsp;собой</span>
               </h2>
             </AnimatedSection>
             <div className="grid md:grid-cols-2 gap-6">
