@@ -487,7 +487,7 @@ const Partnership = () => {
               <AnimatedSection delay={0.05}>
                 <div className="grid md:grid-cols-[1fr_auto] gap-10 md:gap-20 items-start">
                   <div>
-                    <p className="text-muted-foreground text-sm normal-case mb-3">
+                    <p className="text-primary-foreground/70 text-sm normal-case mb-3">
                       Хотите сначала понять как устроена вся ассоциация?
                     </p>
                     <Link
