@@ -502,6 +502,7 @@ const HilderstoneCourse = () => {
           </div>
         </div>
       </section>
+      <FloatingButtons arrowColor="hsl(var(--program-online))" />
     </main>
   );
 };

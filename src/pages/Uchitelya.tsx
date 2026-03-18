@@ -417,6 +417,7 @@ const Uchitelya = () => {
           </div>
         </div>
       </section>
+      <FloatingButtons />
     </main>
   );
 };

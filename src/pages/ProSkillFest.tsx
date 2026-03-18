@@ -757,6 +757,7 @@ const ProSkillFest = () => {
           </div>
         </div>
       </section>
+      <FloatingButtons arrowColor="#300000" />
     </main>
   );
 };

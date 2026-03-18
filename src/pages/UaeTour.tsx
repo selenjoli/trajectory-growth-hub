@@ -617,6 +617,7 @@ const UaeTour = () => {
           </div>
         </div>
       </section>
+      <FloatingButtons arrowColor="hsl(var(--program-uae))" />
     </main>
   );
 };

@@ -493,6 +493,7 @@ const SeaCamp = () => {
           </div>
         </div>
       </section>
+      <FloatingButtons arrowColor="hsl(var(--program-sea))" />
     </main>);
 
 };

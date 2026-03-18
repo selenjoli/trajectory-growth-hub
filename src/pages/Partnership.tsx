@@ -544,6 +544,7 @@ const Partnership = () => {
           </div>
         </div>
       </section>
+      <FloatingButtons />
     </main>
   );
 };

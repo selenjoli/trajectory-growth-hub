@@ -19,6 +19,7 @@ const Index = () => {
       <MembersSection />
       <TestimonialsSection />
       <CTASection />
+      <FloatingButtons />
     </main>
   );
 };

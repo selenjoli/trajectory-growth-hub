@@ -512,6 +512,7 @@ const TeachersCourse = () => {
           </div>
         </div>
       </section>
+      <FloatingButtons arrowColor="hsl(var(--program-teachers))" />
     </main>
   );
 };

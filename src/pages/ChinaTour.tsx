@@ -599,6 +599,7 @@ const ChinaTour = () => {
           </div>
         </div>
       </section>
+      <FloatingButtons arrowColor="hsl(var(--program-china))" />
     </main>
   );
 };

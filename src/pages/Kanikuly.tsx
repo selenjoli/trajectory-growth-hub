@@ -579,6 +579,7 @@ const Kanikuly = () => {
           </div>
         </div>
       </section>
+      <FloatingButtons />
     </main>
   );
 };
