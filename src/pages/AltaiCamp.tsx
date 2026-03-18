@@ -273,11 +273,11 @@ const AltaiCamp = () => {
             <AnimatedSection delay={0.1}>
               <div className="flex flex-col lg:flex-row gap-10 items-center">
                 <div className="w-full lg:w-1/2 space-y-6">
-                  <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
-                    Выучить английский в классе — можно. Заговорить по-настоящему — только когда это нужно, когда интересно, когда вокруг люди и нет времени бояться ошибиться.
+                  <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed whitespace-pre-line">
+                    Выучить английский в классе — можно. Заговорить{"\n"}по-настоящему — только когда это нужно, когда интересно, когда вокруг люди и нет времени бояться ошибиться.
                   </p>
-                  <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
-                    На Алтае именно такая среда. Английский здесь — язык на котором проходит квест, объясняют правила игры, спрашивают как дела вечером у костра и ждут настоящего ответа.
+                  <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed whitespace-pre-line">
+                    На Алтае именно такая среда. Английский здесь — язык{"\n"}на котором проходит квест, объясняют правила игры, спрашивают как дела вечером у костра и ждут настоящего ответа.
                   </p>
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
                     Горы делают своё дело: ребята быстро открываются, быстро дружат и быстро перестают бояться говорить. Алтай — не фон для лагеря, а часть программы.
