@@ -227,7 +227,7 @@ const ChinaTour = () => {
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
               <div className="flex flex-col lg:flex-row gap-10 items-start">
-                <div className="max-w-2xl space-y-6 lg:shrink-0">
+                <div className="lg:w-1/2 space-y-6">
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
                     Есть страны, после которых смотришь на мир немного иначе. Китай — одна из них.
                   </p>
@@ -253,10 +253,10 @@ const ChinaTour = () => {
                   </ul>
                 </div>
 
-                {/* Stacked photo carousel */}
-                <div className="flex justify-center lg:justify-start">
+                {/* Photo carousel — horizontal, fills column */}
+                <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
                   <div
-                    className="relative w-[340px] h-[460px]"
+                    className="relative w-full aspect-[3/2]"
                     onMouseEnter={() => setWhyPaused(true)}
                     onMouseLeave={() => setWhyPaused(false)}
                   >
