@@ -30,23 +30,23 @@ const orangeGrad = "bg-gradient-to-r from-[#F29727] via-orange-400 via-40% to-[#
 
 const audienceLeft = [
   {
-    title: "Учителям английского",
-    text: "которые хотят не\u00A0просто послушать теорию, а\u00A0унести с\u00A0собой готовые инструменты для уроков.",
+    title: "Если вы учитель английского",
+    text: "и\u00A0хотите не\u00A0просто послушать теорию, а\u00A0унести с\u00A0собой готовые инструменты для уроков.",
   },
   {
-    title: "Руководителям центров",
-    text: "которые хотят чтобы их педагоги развивались и\u00A0не\u00A0выгорали.",
+    title: "Если вы руководитель центра",
+    text: "и\u00A0хотите чтобы ваши педагоги развивались и\u00A0не\u00A0выгорали.",
   },
 ];
 
 const audienceRight = [
   {
-    title: "Тем, кому нужна энергия",
+    title: "Если вам нужна энергия",
     text: "и\u00A0вдохновение — особенно в\u00A0ноябре, когда учебный год уже давит.",
   },
   {
-    title: "Тем, кто устал от\u00A0одиночества",
-    text: "в\u00A0профессиональных поисках и\u00A0хочет наконец поговорить с\u00A0коллегами которые понимают о\u00A0чем речь.",
+    title: "Если вы устали от\u00A0одиночества",
+    text: "в\u00A0профессиональных поисках и\u00A0хотите наконец поговорить с\u00A0коллегами которые понимают о\u00A0чём речь.",
   },
 ];
 
@@ -263,7 +263,7 @@ const ProSkillFest = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-6">
-                Откуда это все началось
+                Откуда это началось
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
@@ -466,7 +466,7 @@ const ProSkillFest = () => {
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-white mb-4">
                 Как это было{" "}
-                <span className={orangeGrad}>в\u00A02025 году</span>
+                <span className={orangeGrad}>в&nbsp;2025&nbsp;году</span>
               </h2>
               <p className="text-white/60 mb-12 normal-case leading-relaxed text-lg">
                 Программа каждого феста формируется заново — спикеры предлагают темы которые актуальны
@@ -523,7 +523,7 @@ const ProSkillFest = () => {
                 {/* Speaker photos — right column */}
                 <div className="w-full lg:w-1/2 grid grid-cols-2 gap-4">
                   {[speaker1, speaker2, speaker3, speaker4].map((img, i) => (
-                    <div key={i} className="aspect-[3/4] rounded-2xl overflow-hidden">
+                    <div key={i} className="aspect-square rounded-2xl overflow-hidden">
                       <img src={img} alt={`Спикер ${i + 1}`} className="w-full h-full object-cover" />
                     </div>
                   ))}
@@ -541,7 +541,7 @@ const ProSkillFest = () => {
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl mb-12" style={{ color: bordeaux }}>
                 Что вы{" "}
-                <span className={orangeGrad}>заберете с собой</span>
+                <span className={orangeGrad}>заберёте с&nbsp;собой</span>
               </h2>
             </AnimatedSection>
             <div className="grid md:grid-cols-2 gap-6">
@@ -567,7 +567,7 @@ const ProSkillFest = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-white mb-4">
-                Что говорят те, кто был
+                Что говорят те,&nbsp;кто&nbsp;был
               </h2>
               <p className="text-white/80 text-base md:text-lg mb-12 font-normal normal-case">
                 Отзывы участников ProSkill Fest 2025.
@@ -631,8 +631,7 @@ const ProSkillFest = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-12">
-                Где это{" "}
-                <span className={orangeGrad}>происходит</span>
+                <span className={orangeGrad}>Где</span> это происходит
               </h2>
             </AnimatedSection>
             <div className="flex flex-col md:flex-row gap-8">
@@ -722,7 +721,7 @@ const ProSkillFest = () => {
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-4">
                 Хотите расти{" "}
-                <span className={orangeGrad}>не только в ноябре?</span>
+                <span className={orangeGrad}>не&nbsp;только в&nbsp;ноябре?</span>
               </h2>
             </AnimatedSection>
 
