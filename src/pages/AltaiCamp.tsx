@@ -25,70 +25,70 @@ import illustHilderstone from "@/assets/illust-hilderstone-uk.png";
 /* ─── data ─── */
 
 const natureSpots = [
-  {
-    name: "Остров Патмос",
-    subtitle: "скальный остров на реке Катунь",
-    image: altaiPatmos,
-    text: "Скальный остров посреди реки Катунь с деревянным подвесным мостом — одно из самых красивых мест Алтая. Дети описывают его одним словом: нереально.",
-  },
-  {
-    name: "Камышлинский водопад",
-    subtitle: "поход через лес",
-    image: altaiWaterfall,
-    text: "Поход через лес к шумящему водопаду — первое настоящее приключение смены.",
-  },
-  {
-    name: "Купание",
-    subtitle: "горное озеро и бассейн",
-    image: altaiSwimming,
-    text: "Горное озеро и бассейн — ежедневно, под присмотром инструкторов.",
-  },
-  {
-    name: "Вечерние костры",
-    subtitle: "гитара и звёздное небо",
-    image: altaiCampfire,
-    text: "Гитара, разговоры, звёздное небо над Алтаем. Именно это дети вспоминают в первую очередь.",
-  },
-];
+{
+  name: "Остров Патмос",
+  subtitle: "скальный остров на реке Катунь",
+  image: altaiPatmos,
+  text: "Скальный остров посреди реки Катунь с деревянным подвесным мостом — одно из самых красивых мест Алтая. Дети описывают его одним словом: нереально."
+},
+{
+  name: "Камышлинский водопад",
+  subtitle: "поход через лес",
+  image: altaiWaterfall,
+  text: "Поход через лес к шумящему водопаду — первое настоящее приключение смены."
+},
+{
+  name: "Купание",
+  subtitle: "горное озеро и бассейн",
+  image: altaiSwimming,
+  text: "Горное озеро и бассейн — ежедневно, под присмотром инструкторов."
+},
+{
+  name: "Вечерние костры",
+  subtitle: "гитара и звёздное небо",
+  image: altaiCampfire,
+  text: "Гитара, разговоры, звёздное небо над Алтаем. Именно это дети вспоминают в первую очередь."
+}];
+
 
 const daySchedule = [
-  {
-    time: "Утро",
-    text: "Завтрак, зарядка, первый блок английского — игровой формат, командные задачи.",
-    image: altaiMorning,
-    bgColor: "hsl(40 61% 56%)",
-  },
-  {
-    time: "День",
-    text: "Мастер-классы, творческие студии, спортивные игры или экскурсия.",
-    image: altaiDay,
-    bgColor: "hsl(145 35% 45%)",
-  },
-  {
-    time: "Вечер",
-    text: "Квест, дискотека под открытым небом или «свечи» — вечерний круг, где каждый говорит о своём дне.",
-    image: altaiEvening,
-    bgColor: "hsl(255 35% 27%)",
-  },
-  {
-    time: "Ночь",
-    text: "Костёр по расписанию, разговоры, тишина гор.",
-    image: altaiNight,
-    bgColor: "hsl(220 45% 18%)",
-  },
-];
+{
+  time: "Утро",
+  text: "Завтрак, зарядка, первый блок английского — игровой формат, командные задачи.",
+  image: altaiMorning,
+  bgColor: "hsl(40 61% 56%)"
+},
+{
+  time: "День",
+  text: "Мастер-классы, творческие студии, спортивные игры или экскурсия.",
+  image: altaiDay,
+  bgColor: "hsl(145 35% 45%)"
+},
+{
+  time: "Вечер",
+  text: "Квест, дискотека под открытым небом или «свечи» — вечерний круг, где каждый говорит о своём дне.",
+  image: altaiEvening,
+  bgColor: "hsl(255 35% 27%)"
+},
+{
+  time: "Ночь",
+  text: "Костёр по расписанию, разговоры, тишина гор.",
+  image: altaiNight,
+  bgColor: "hsl(220 45% 18%)"
+}];
+
 
 const testimonials = [
-  { id: 1, image: "https://placehold.co/400x700/2E8B57/ffffff?text=Отзыв+1", name: "Тимур, 16 лет, Уфа", role: "Участник лагеря" },
-  { id: 2, image: "https://placehold.co/400x700/2E8B57/ffffff?text=Отзыв+2", name: "Светлана, Пермь", role: "мама Егора (14 лет)" },
-  { id: 3, image: "https://placehold.co/400x700/2E8B57/ffffff?text=Отзыв+3", name: "Анна, Новосибирск", role: "Родитель" },
-];
+{ id: 1, image: "https://placehold.co/400x700/2E8B57/ffffff?text=Отзыв+1", name: "Тимур, 16 лет, Уфа", role: "Участник лагеря" },
+{ id: 2, image: "https://placehold.co/400x700/2E8B57/ffffff?text=Отзыв+2", name: "Светлана, Пермь", role: "мама Егора (14 лет)" },
+{ id: 3, image: "https://placehold.co/400x700/2E8B57/ffffff?text=Отзыв+3", name: "Анна, Новосибирск", role: "Родитель" }];
+
 
 const otherPrograms = [
-  { title: "Дубай", illustration: illustUae, illustClass: "h-24 w-auto", dates: "даты уточняются", price: "от 145 000 ₽", href: "/kanikuly/uae" },
-  { title: "Китай", illustration: illustChina, illustClass: "h-24 w-auto", dates: "3–12 июня", price: "от 165 000 ₽", href: "/kanikuly/china" },
-  { title: "Море", illustration: illustSea, illustClass: "h-24 w-auto", dates: "23 июня — 15 июля", price: "от 134 000 ₽", href: "/kanikuly/more" },
-];
+{ title: "Дубай", illustration: illustUae, illustClass: "h-24 w-auto", dates: "даты уточняются", price: "от 145 000 ₽", href: "/kanikuly/uae" },
+{ title: "Китай", illustration: illustChina, illustClass: "h-24 w-auto", dates: "3–12 июня", price: "от 165 000 ₽", href: "/kanikuly/china" },
+{ title: "Море", illustration: illustSea, illustClass: "h-24 w-auto", dates: "23 июня — 15 июля", price: "от 134 000 ₽", href: "/kanikuly/more" }];
+
 
 /* ─── page ─── */
 
@@ -131,7 +131,7 @@ const AltaiCamp = () => {
   // Scroll-driven background lives on the whole page, not on the section itself
   const { scrollYProgress: dayProgress } = useScroll({
     target: dayRef,
-    offset: ["start end", "end start"],
+    offset: ["start end", "end start"]
   });
 
   const dayContentOpacity = useTransform(dayProgress, [0.16, 0.3, 0.7, 0.84], [0, 1, 1, 0]);
@@ -206,8 +206,8 @@ const AltaiCamp = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="mb-4"
-            >
+              className="mb-4">
+              
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95]">
                 <span className="relative block w-fit">
                   <span className="flex items-center justify-between gap-6 mb-4 md:absolute md:bottom-full md:left-0 md:right-0 md:mb-4">
@@ -231,29 +231,29 @@ const AltaiCamp = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-base md:text-lg text-white/85 max-w-2xl font-normal normal-case leading-relaxed mb-8"
-            >
-              15 дней в горах, где язык учат не по учебнику — а в квестах, у костра и в разговорах с новыми друзьями со всей России. Для детей и подростков 10–17 лет.
+              className="text-base md:text-lg text-white/85 max-w-2xl font-normal normal-case leading-relaxed mb-8">15 дней в горах, где язык учат не по учебнику — а в квестах, у костра
+и в разговорах с новыми друзьями со всей России. 
+
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="flex flex-wrap items-center gap-3 mb-8"
-            >
-              {["15 дней", "10–17 лет"].map((chip) => (
-                <span key={chip} className="bg-white/15 backdrop-blur-sm text-white text-xs font-medium px-4 py-2 rounded-full">
+              className="flex flex-wrap items-center gap-3 mb-8">
+              
+              {["15 дней", "10–17 лет"].map((chip) =>
+              <span key={chip} className="bg-white/15 backdrop-blur-sm text-white text-xs font-medium px-4 py-2 rounded-full">
                   {chip}
                 </span>
-              ))}
+              )}
             </motion.div>
             <motion.a
               href="#forma"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1 }}
-              className="inline-block btn-gold px-8 py-4 rounded-2xl text-sm tracking-widest"
-            >
+              className="inline-block btn-gold px-8 py-4 rounded-2xl text-sm tracking-widest">
+              
               Записаться — от 95 000 ₽
             </motion.a>
           </div>
@@ -266,7 +266,8 @@ const AltaiCamp = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-6">
-                При чём здесь <span className="text-program-altai">Алтай и английский?</span>
+                При чём здесь <span className="text-program-altai">АЛТАЙ
+И АНГЛИЙСКИЙ?</span>
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
@@ -285,11 +286,10 @@ const AltaiCamp = () => {
 
                 {/* Stacked photo carousel */}
                 <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
-                  <div
-                    className="relative w-full h-[460px]"
-                    onMouseEnter={() => setHookPaused(true)}
-                    onMouseLeave={() => setHookPaused(false)}
-                  >
+                  <div className="relative w-full h-[460px]"
+                  onMouseEnter={() => setHookPaused(true)}
+                  onMouseLeave={() => setHookPaused(false)}>
+                    
                     <AnimatePresence>
                       {hookPhotos.map((photo, i) => {
                         const offset = (i - hookSlide + hookPhotos.length) % hookPhotos.length;
@@ -304,17 +304,17 @@ const AltaiCamp = () => {
                               y: offset * 16,
                               x: offset * 8,
                               zIndex: hookPhotos.length - offset,
-                              rotateZ: offset * -2,
+                              rotateZ: offset * -2
                             }}
                             exit={{ opacity: 0, scale: 0.9, y: -20 }}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                            className="absolute inset-0"
-                          >
+                            className="absolute inset-0">
+                            
                             <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl">
                               <img src={photo} alt="Алтай" className="w-full h-full object-cover" />
                             </div>
-                          </motion.div>
-                        );
+                          </motion.div>);
+
                       })}
                     </AnimatePresence>
                   </div>
@@ -354,8 +354,8 @@ const AltaiCamp = () => {
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: 30 }}
                       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                      className="bg-white/10 backdrop-blur-sm rounded-[1.5rem] overflow-hidden"
-                    >
+                      className="bg-white/10 backdrop-blur-sm rounded-[1.5rem] overflow-hidden">
+                      
                       <div className="aspect-[16/10] overflow-hidden">
                         <img src={natureSpots[currentSpot].image} alt={natureSpots[currentSpot].name} className="w-full h-full object-cover" />
                       </div>
@@ -372,14 +372,14 @@ const AltaiCamp = () => {
                 <div className="hidden lg:flex flex-col gap-4">
                   <button
                     onClick={() => setCurrentSpot((prev) => (prev - 1 + natureSpots.length) % natureSpots.length)}
-                    className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
-                  >
+                    className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                    
                     <ArrowLeft className="w-5 h-5 text-program-altai" />
                   </button>
                   <button
                     onClick={() => setCurrentSpot((prev) => (prev + 1) % natureSpots.length)}
-                    className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
-                  >
+                    className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                    
                     <ArrowRight className="w-5 h-5 text-program-altai" />
                   </button>
                 </div>
@@ -389,14 +389,14 @@ const AltaiCamp = () => {
               <div className="flex lg:hidden items-center justify-center gap-4 mt-6">
                 <button
                   onClick={() => setCurrentSpot((prev) => (prev - 1 + natureSpots.length) % natureSpots.length)}
-                  className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
-                >
+                  className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                  
                   <ArrowLeft className="w-4 h-4 text-program-altai" />
                 </button>
                 <button
                   onClick={() => setCurrentSpot((prev) => (prev + 1) % natureSpots.length)}
-                  className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
-                >
+                  className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                  
                   <ArrowRight className="w-4 h-4 text-program-altai" />
                 </button>
               </div>
@@ -414,8 +414,8 @@ const AltaiCamp = () => {
           {/* Content fades in when section is in view */}
           <motion.div
             initial={{ opacity: 0 }}
-            style={{ opacity: dayContentOpacity }}
-          >
+            style={{ opacity: dayContentOpacity }}>
+            
           {/* Title — white, on the colored bg */}
           <div className="px-6 md:px-16 pb-6">
             <div className="fluid-container">
@@ -429,34 +429,34 @@ const AltaiCamp = () => {
           <div className="relative w-full">
             {/* Illustrations — all same size container, crossfade */}
             <div className="relative w-full h-[40vh] md:h-[55vh]">
-              {daySchedule.map((item, i) => (
+              {daySchedule.map((item, i) =>
                 <motion.div
                   key={i}
                   className="absolute inset-0 flex items-end justify-center"
                   initial={false}
                   animate={{ opacity: i === currentDay ? 1 : 0 }}
-                  transition={{ duration: 1 }}
-                >
+                  transition={{ duration: 1 }}>
+                  
                   <img
                     src={item.image}
                     alt={item.time}
-                    className="w-full h-full object-contain object-bottom"
-                  />
+                    className="w-full h-full object-contain object-bottom" />
+                  
                 </motion.div>
-              ))}
+                )}
             </div>
 
             {/* Time title — large, overlapping bottom of illustration */}
             <div className="absolute top-[25%] left-0 right-0 flex justify-center pointer-events-none">
               <AnimatePresence mode="wait">
                 <motion.span
-                  key={currentDay}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.5 }}
-                  className="text-7xl md:text-9xl lg:text-[10rem] font-bold text-white/90 drop-shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
-                >
+                    key={currentDay}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5 }}
+                    className="text-7xl md:text-9xl lg:text-[10rem] font-bold text-white/90 drop-shadow-[0_4px_30px_rgba(0,0,0,0.3)]">
+                    
                   {daySchedule[currentDay].time}
                 </motion.span>
               </AnimatePresence>
@@ -468,20 +468,20 @@ const AltaiCamp = () => {
                 <div className="bg-white rounded-[1.5rem] p-6 md:p-10 max-w-2xl w-full shadow-xl min-h-[120px] flex flex-col justify-center">
                   <AnimatePresence mode="wait">
                     <motion.div
-                      key={currentDay}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.4, delay: 0.1 }}
-                    >
+                        key={currentDay}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.4, delay: 0.1 }}>
+                        
                       <p className="text-base md:text-lg text-muted-foreground font-normal normal-case leading-relaxed">
                         {daySchedule[currentDay].text}
                       </p>
-                      {currentDay === daySchedule.length - 1 && (
-                        <p className="text-muted-foreground text-base font-normal normal-case leading-relaxed italic mt-4">
-                          Каждую неделю — репетиция финального выступления, которое дети готовят сами.
+                      {currentDay === daySchedule.length - 1 &&
+                        <p className="text-muted-foreground text-base font-normal normal-case leading-relaxed italic mt-4">Каждый день — репетиция финального выступления, которое дети готовят сами.
+
                         </p>
-                      )}
+                        }
                     </motion.div>
                   </AnimatePresence>
                 </div>
@@ -492,23 +492,23 @@ const AltaiCamp = () => {
           {/* Arrows — below card overlap area */}
           <div className="pt-20 pb-10 flex items-center justify-center gap-6">
             <button
-              onClick={() => {
-                setCurrentDay((prev) => (prev - 1 + daySchedule.length) % daySchedule.length);
-                setDayUserPaused(true);
-                setTimeout(() => setDayUserPaused(false), 10000);
-              }}
-              className="w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-all hover:scale-110"
-            >
+                onClick={() => {
+                  setCurrentDay((prev) => (prev - 1 + daySchedule.length) % daySchedule.length);
+                  setDayUserPaused(true);
+                  setTimeout(() => setDayUserPaused(false), 10000);
+                }}
+                className="w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-all hover:scale-110">
+                
               <ArrowLeft className="w-5 h-5 text-white" />
             </button>
             <button
-              onClick={() => {
-                setCurrentDay((prev) => (prev + 1) % daySchedule.length);
-                setDayUserPaused(true);
-                setTimeout(() => setDayUserPaused(false), 10000);
-              }}
-              className="w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-all hover:scale-110"
-            >
+                onClick={() => {
+                  setCurrentDay((prev) => (prev + 1) % daySchedule.length);
+                  setDayUserPaused(true);
+                  setTimeout(() => setDayUserPaused(false), 10000);
+                }}
+                className="w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-all hover:scale-110">
+                
               <ArrowRight className="w-5 h-5 text-white" />
             </button>
           </div>
@@ -531,8 +531,8 @@ const AltaiCamp = () => {
           <AnimatedSection delay={0.1}>
             <div className="grid lg:grid-cols-2 gap-10 items-center mb-10">
               <div>
-                <p className="text-white/85 text-base md:text-lg font-normal normal-case leading-relaxed">
-                  Уютные деревянные коттеджи у подножья гор — комнаты на 5 человек, все удобства. 5-разовое питание, трансфер от аэропорта и обратно, круглосуточный медпункт и сопровождающий педагог на всём протяжении смены.
+                <p className="text-white/85 text-base md:text-lg font-normal normal-case leading-relaxed">Уютные деревянные коттеджи у подножья гор — комнаты на 5 человек, все удобства. 5-разовое питание, трансфер от аэропорта и обратно, круглосуточный медпункт и сопровождающий педагог на всём протяжении смены.
+
                 </p>
               </div>
               <div>
@@ -543,20 +543,20 @@ const AltaiCamp = () => {
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {[
-                { image: altaiCottages, text: "Деревянные коттеджи, комнаты на 5 человек" },
-                { image: altaiDining, text: "5-разовое питание" },
-                { image: altaiSwimming, text: "Трансфер от аэропорта и обратно" },
-                { image: altaiWorkshop, text: "Круглосуточный медпункт" },
-                { image: altaiCampfire, text: "Сопровождающий педагог 24/7" },
-                { image: altaiPatmos, text: "Охраняемая территория" },
-              ].map((f, i) => (
-                <div key={i} className="rounded-xl overflow-hidden relative aspect-square">
+              { image: altaiCottages, text: "Деревянные коттеджи, комнаты на 5 человек" },
+              { image: altaiDining, text: "5-разовое питание" },
+              { image: altaiSwimming, text: "Трансфер от аэропорта и обратно" },
+              { image: altaiWorkshop, text: "Круглосуточный медпункт" },
+              { image: altaiCampfire, text: "Сопровождающий педагог 24/7" },
+              { image: altaiPatmos, text: "Охраняемая территория" }].
+              map((f, i) =>
+              <div key={i} className="rounded-xl overflow-hidden relative aspect-square">
                   <img src={f.image} alt={f.text} className="w-full h-full object-cover" />
                   <div className="absolute inset-x-0 bottom-0 bg-program-altai/75 backdrop-blur-sm px-4 py-3 h-[4.5rem] flex items-center">
                     <p className="text-white text-sm md:text-base font-bold uppercase tracking-wide leading-snug">{f.text}</p>
                   </div>
                 </div>
-              ))}
+              )}
             </div>
           </AnimatedSection>
         </div>
@@ -580,20 +580,20 @@ const AltaiCamp = () => {
                 </div>
                 <div className="space-y-4 mb-8">
                   {[
-                    "Проживание в коттеджах",
-                    "5-разовое питание",
-                    "Английский в игровом формате",
-                    "Экскурсии и мероприятия",
-                    "Купание ежедневно",
-                    "Сопровождающий от ассоциации 24/7",
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-start gap-3">
+                  "Проживание в коттеджах",
+                  "5-разовое питание",
+                  "Английский в игровом формате",
+                  "Экскурсии и мероприятия",
+                  "Купание ежедневно",
+                  "Сопровождающий от ассоциации 24/7"].
+                  map((item, i) =>
+                  <div key={i} className="flex items-start gap-3">
                       <span className="mt-1 w-5 h-5 rounded-full border-2 border-program-altai bg-program-altai/10 flex items-center justify-center shrink-0">
                         <span className="w-2 h-2 rounded-full bg-program-altai" />
                       </span>
                       <p className="text-foreground text-base font-normal normal-case leading-snug">{item}</p>
                     </div>
-                  ))}
+                  )}
                 </div>
                 <div className="border-t-2 border-dashed border-foreground/20 pt-6">
                   <div className="flex items-end justify-between">
@@ -606,8 +606,8 @@ const AltaiCamp = () => {
                 </p>
                 <a
                   href="#forma"
-                  className="block w-full text-center btn-gold px-6 py-4 rounded-2xl text-sm tracking-widest"
-                >
+                  className="block w-full text-center btn-gold px-6 py-4 rounded-2xl text-sm tracking-widest">
+                  
                   Записаться
                 </a>
               </div>
@@ -639,8 +639,8 @@ const AltaiCamp = () => {
               <div
                 className="relative mx-auto w-[280px] md:w-[340px] h-[560px] md:h-[640px]"
                 onMouseEnter={() => setIsPaused(true)}
-                onMouseLeave={() => { setIsPaused(false); setZoomed(null); }}
-              >
+                onMouseLeave={() => {setIsPaused(false);setZoomed(null);}}>
+                
                 <AnimatePresence>
                   {testimonials.map((item, i) => {
                     const offset = (i - currentTestimonial + testimonials.length) % testimonials.length;
@@ -656,13 +656,13 @@ const AltaiCamp = () => {
                           y: isZoomed ? -8 : offset * 18,
                           x: isZoomed ? 0 : offset * 10,
                           zIndex: isZoomed ? 100 : testimonials.length - offset,
-                          rotateZ: isZoomed ? 0 : offset * -2,
+                          rotateZ: isZoomed ? 0 : offset * -2
                         }}
                         exit={{ opacity: 0, scale: 0.9, y: -20 }}
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         className="absolute inset-0 cursor-pointer"
-                        onClick={() => offset === 0 && setZoomed(isZoomed ? null : item.id)}
-                      >
+                        onClick={() => offset === 0 && setZoomed(isZoomed ? null : item.id)}>
+                        
                         <div className="w-full h-full flex flex-col">
                           <div className="flex-1 rounded-[1.2rem] overflow-hidden shadow-2xl bg-background">
                             <img src={item.image} alt={`Отзыв от ${item.name}`} className="w-full h-full object-cover" />
@@ -670,14 +670,14 @@ const AltaiCamp = () => {
                           <motion.div
                             className="mt-4 text-center"
                             animate={{ opacity: offset === 0 ? 1 : 0 }}
-                            transition={{ duration: 0.3 }}
-                          >
+                            transition={{ duration: 0.3 }}>
+                            
                             <p className="text-foreground font-bold text-base">{item.name}</p>
                             <p className="text-foreground/60 text-sm">{item.role}</p>
                           </motion.div>
                         </div>
-                      </motion.div>
-                    );
+                      </motion.div>);
+
                   })}
                 </AnimatePresence>
               </div>
@@ -697,12 +697,12 @@ const AltaiCamp = () => {
             </AnimatedSection>
 
             <div className="grid md:grid-cols-3 gap-5 mb-8">
-              {otherPrograms.map((p, i) => (
-                <AnimatedSection key={p.title} delay={i * 0.08}>
+              {otherPrograms.map((p, i) =>
+              <AnimatedSection key={p.title} delay={i * 0.08}>
                   <a
-                    href={p.href}
-                    className="group block rounded-[1.5rem] border border-border hover:border-program-altai/30 p-8 transition-all duration-500 hover:shadow-lg bg-card h-full text-center"
-                  >
+                  href={p.href}
+                  className="group block rounded-[1.5rem] border border-border hover:border-program-altai/30 p-8 transition-all duration-500 hover:shadow-lg bg-card h-full text-center">
+                  
                     <img src={p.illustration} alt={p.title} className={`${p.illustClass} mx-auto mb-4 object-contain`} />
                     <h3 className="text-lg md:text-xl text-foreground mb-2">{p.title}</h3>
                     <p className="text-sm text-muted-foreground font-normal normal-case mb-2">{p.dates}</p>
@@ -712,14 +712,14 @@ const AltaiCamp = () => {
                     </span>
                   </a>
                 </AnimatedSection>
-              ))}
+              )}
             </div>
 
             <AnimatedSection delay={0.3}>
               <a
                 href="/kanikuly/online"
-                className="group block rounded-[1.5rem] border border-border hover:border-program-altai/30 p-8 transition-all duration-500 hover:shadow-lg bg-card"
-              >
+                className="group block rounded-[1.5rem] border border-border hover:border-program-altai/30 p-8 transition-all duration-500 hover:shadow-lg bg-card">
+                
                 <div className="flex items-center gap-6">
                   <img src={illustHilderstone} alt="Hilderstone College" className="h-28 w-auto object-contain shrink-0" />
                   <div>
@@ -739,8 +739,8 @@ const AltaiCamp = () => {
           </div>
         </div>
       </section>
-    </motion.main>
-  );
+    </motion.main>);
+
 };
 
 export default AltaiCamp;
