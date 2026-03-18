@@ -478,7 +478,7 @@ const Partnership = () => {
         <div className="bg-primary rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-foreground mb-14">
+              <h2 className="text-4xl md:text-6xl text-primary-foreground mb-14">
                 Посмотрите <span className="text-accent">ещё</span>
               </h2>
             </AnimatedSection>
