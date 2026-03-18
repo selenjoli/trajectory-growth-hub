@@ -27,7 +27,7 @@ import illustHilderstone from "@/assets/illust-hilderstone-uk.png";
 const natureSpots = [
   {
     name: "Остров Патмос",
-    subtitle: "скальный остров на\u00a0реке Катунь",
+    subtitle: "скальный остров на реке Катунь",
     image: altaiPatmos,
     text: "Скальный остров посреди реки Катунь с деревянным подвесным мостом — одно из самых красивых мест Алтая. Дети описывают его одним словом: нереально.",
   },

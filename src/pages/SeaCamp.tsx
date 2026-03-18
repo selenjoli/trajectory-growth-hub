@@ -59,12 +59,12 @@ const projects = [
 ];
 
 const facilities = [
-  { image: facilityRooms, text: "Новые корпуса с видом на\u00a0море" },
+  { image: facilityRooms, text: "Новые корпуса с видом на море" },
   { image: facilityDining, text: "5-разовое питание, шведский стол" },
-  { image: facilityBeach, text: "Собственный песчаный пляж 145\u00a0метров" },
-  { image: facilityForest, text: "Охраняемая территория в\u00a0субтропическом лесу" },
+  { image: facilityBeach, text: "Собственный песчаный пляж 145 метров" },
+  { image: facilityForest, text: "Охраняемая территория в субтропическом лесу" },
   { image: facilityMedical, text: "Круглосуточный медпункт" },
-  { image: facilityGuide, text: "Сопровождающий от\u00a0ассоциации 24/7" },
+  { image: facilityGuide, text: "Сопровождающий от ассоциации 24/7" },
 ];
 
 const testimonials = [
