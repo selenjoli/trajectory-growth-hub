@@ -24,62 +24,62 @@ import illustHilderstone from "@/assets/illust-hilderstone-uk.png";
 /* ─── data ─── */
 
 const projects = [
-  {
-    emoji: "🌍",
-    name: "Клуб путешественников",
-    subtitle: "английский без учебников",
-    image: seaEnglish,
-    text: "60+ часов живого языка за смену. Каждый день — новая страна: культура, традиции, задания на английском. Не урок, а путешествие вокруг света — не уезжая с берега Чёрного моря.",
-    fit: "Подойдёт детям, которым хочется говорить, а не зубрить.",
-  },
-  {
-    emoji: "💃",
-    name: "Шаг вперёд",
-    subtitle: "современные танцы",
-    image: seaDance,
-    text: "Авторские постановки, репетиции, финальный спектакль на сцене у моря. Танец здесь — способ рассказать о себе.",
-    fit: "Подойдёт детям, которые выражают себя через движение.",
-  },
-  {
-    emoji: "🎨",
-    name: "Искусство прогресса",
-    subtitle: "арт-проект",
-    image: seaProjects,
-    text: "Инсталляции, коллажи, цифровые и рукотворные работы о том, каким будет мир. В конце смены — настоящая выставка.",
-    fit: "Подойдёт детям с творческим взглядом на мир.",
-  },
-  {
-    emoji: "🧠",
-    name: "Развитие личности",
-    subtitle: "психология",
-    image: seaPsychology,
-    text: "В безопасной среде с профессиональным психологом — про эмоции, границы, уверенность и умение быть собой. Живой разговор о важном, не групповая терапия.",
-    fit: "Подойдёт детям, которым интересно понимать себя и других.",
-  },
-];
+{
+  emoji: "🌍",
+  name: "Клуб путешественников",
+  subtitle: "английский без учебников",
+  image: seaEnglish,
+  text: "60+ часов живого языка за смену. Каждый день — новая страна: культура, традиции, задания на английском. Не урок, а путешествие вокруг света — не уезжая с берега Чёрного моря.",
+  fit: "Подойдёт детям, которым хочется говорить, а не зубрить."
+},
+{
+  emoji: "💃",
+  name: "Шаг вперёд",
+  subtitle: "современные танцы",
+  image: seaDance,
+  text: "Авторские постановки, репетиции, финальный спектакль на сцене у моря. Танец здесь — способ рассказать о себе.",
+  fit: "Подойдёт детям, которые выражают себя через движение."
+},
+{
+  emoji: "🎨",
+  name: "Искусство прогресса",
+  subtitle: "арт-проект",
+  image: seaProjects,
+  text: "Инсталляции, коллажи, цифровые и рукотворные работы о том, каким будет мир. В конце смены — настоящая выставка.",
+  fit: "Подойдёт детям с творческим взглядом на мир."
+},
+{
+  emoji: "🧠",
+  name: "Развитие личности",
+  subtitle: "психология",
+  image: seaPsychology,
+  text: "В безопасной среде с профессиональным психологом — про эмоции, границы, уверенность и умение быть собой. Живой разговор о важном, не групповая терапия.",
+  fit: "Подойдёт детям, которым интересно понимать себя и других."
+}];
+
 
 const facilities = [
-  { image: facilityRooms, text: "Новые корпуса с видом на море" },
-  { image: facilityDining, text: "5-разовое питание, шведский стол" },
-  { image: facilityBeach, text: "Собственный песчаный пляж 145 метров" },
-  { image: facilityForest, text: "Охраняемая территория в субтропическом лесу" },
-  { image: facilityMedical, text: "Круглосуточный медпункт" },
-  { image: facilityGuide, text: "Сопровождающий от ассоциации 24/7" },
-];
+{ image: facilityRooms, text: "Новые корпуса с видом на море" },
+{ image: facilityDining, text: "5-разовое питание, шведский стол" },
+{ image: facilityBeach, text: "Собственный песчаный пляж 145 метров" },
+{ image: facilityForest, text: "Охраняемая территория в субтропическом лесу" },
+{ image: facilityMedical, text: "Круглосуточный медпункт" },
+{ image: facilityGuide, text: "Сопровождающий от ассоциации 24/7" }];
+
 
 const testimonials = [
-  { id: 1, image: "https://placehold.co/400x700/00BBC5/ffffff?text=Отзыв+1", name: "Оксана, Москва", role: "мама Вики (11 лет)" },
-  { id: 2, image: "https://placehold.co/400x700/00BBC5/ffffff?text=Отзыв+2", name: "Соня, 12 лет", role: "Участница лагеря" },
-  { id: 3, image: "https://placehold.co/400x700/00BBC5/ffffff?text=Отзыв+3", name: "Марина, Белгород", role: "Родитель" },
-  { id: 4, image: "https://placehold.co/400x700/00BBC5/ffffff?text=Отзыв+4", name: "Дима, 13 лет", role: "Участник лагеря" },
-  { id: 5, image: "https://placehold.co/400x700/00BBC5/ffffff?text=Отзыв+5", name: "Елена, Курск", role: "Родитель" },
-];
+{ id: 1, image: "https://placehold.co/400x700/00BBC5/ffffff?text=Отзыв+1", name: "Оксана, Москва", role: "мама Вики (11 лет)" },
+{ id: 2, image: "https://placehold.co/400x700/00BBC5/ffffff?text=Отзыв+2", name: "Соня, 12 лет", role: "Участница лагеря" },
+{ id: 3, image: "https://placehold.co/400x700/00BBC5/ffffff?text=Отзыв+3", name: "Марина, Белгород", role: "Родитель" },
+{ id: 4, image: "https://placehold.co/400x700/00BBC5/ffffff?text=Отзыв+4", name: "Дима, 13 лет", role: "Участник лагеря" },
+{ id: 5, image: "https://placehold.co/400x700/00BBC5/ffffff?text=Отзыв+5", name: "Елена, Курск", role: "Родитель" }];
+
 
 const otherPrograms = [
-  { title: "Дубай", illustration: illustUae, illustClass: "h-24 w-auto", dates: "даты уточняются", price: "от 145 000 ₽", href: "/kanikuly/uae" },
-  { title: "Китай", illustration: illustChina, illustClass: "h-24 w-auto", dates: "3–12 июня", price: "от 165 000 ₽", href: "/kanikuly/china" },
-  { title: "Алтай", illustration: illustAltai, illustClass: "h-24 w-auto", dates: "10–25 июля", price: "от 95 000 ₽", href: "/kanikuly/altai" },
-];
+{ title: "Дубай", illustration: illustUae, illustClass: "h-24 w-auto", dates: "даты уточняются", price: "от 145 000 ₽", href: "/kanikuly/uae" },
+{ title: "Китай", illustration: illustChina, illustClass: "h-24 w-auto", dates: "3–12 июня", price: "от 165 000 ₽", href: "/kanikuly/china" },
+{ title: "Алтай", illustration: illustAltai, illustClass: "h-24 w-auto", dates: "10–25 июля", price: "от 95 000 ₽", href: "/kanikuly/altai" }];
+
 
 /* ─── page ─── */
 
@@ -126,8 +126,8 @@ const SeaCamp = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex flex-wrap items-center justify-between gap-3 mb-6"
-              >
+                className="flex flex-wrap items-center justify-between gap-3 mb-6">
+                
                 <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-sm md:text-base font-semibold uppercase tracking-wider px-5 py-2 rounded-full">
                   Летний лагерь · Чёрное море
                 </span>
@@ -139,8 +139,8 @@ const SeaCamp = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95] mb-4"
-              >
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95] mb-4">
+                
                 21 день, которые ребёнок
                 <br />
                 будет <span className="text-program-sea">вспоминать</span> всю жизнь
@@ -150,29 +150,29 @@ const SeaCamp = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-base md:text-lg text-white/85 max-w-2xl font-normal normal-case leading-relaxed mb-8"
-            >
+              className="text-base md:text-lg text-white/85 max-w-2xl font-normal normal-case leading-relaxed mb-8">
+              
               На базе лагеря «Морская звезда» на берегу Чёрного моря — собственный пляж, творческие проекты и три недели настоящего лета. Для детей 8–14 лет.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="flex flex-wrap items-center gap-3 mb-8"
-            >
-              {["21 день", "Дети 8–14 лет"].map((chip) => (
-                <span key={chip} className="bg-white/15 backdrop-blur-sm text-white text-xs font-medium px-4 py-2 rounded-full">
+              className="flex flex-wrap items-center gap-3 mb-8">
+              
+              {["21 день", "Дети 8–14 лет"].map((chip) =>
+              <span key={chip} className="bg-white/15 backdrop-blur-sm text-white text-xs font-medium px-4 py-2 rounded-full">
                   {chip}
                 </span>
-              ))}
+              )}
             </motion.div>
             <motion.a
               href="#forma"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1 }}
-              className="inline-block btn-gold px-8 py-4 rounded-2xl text-sm tracking-widest"
-            >
+              className="inline-block btn-gold px-8 py-4 rounded-2xl text-sm tracking-widest">
+              
               Записаться — от 134 000 ₽
             </motion.a>
           </div>
@@ -204,8 +204,8 @@ const SeaCamp = () => {
                   <div
                     className="relative w-full h-[460px]"
                     onMouseEnter={() => setWhyPaused(true)}
-                    onMouseLeave={() => setWhyPaused(false)}
-                  >
+                    onMouseLeave={() => setWhyPaused(false)}>
+                    
                     <AnimatePresence>
                       {whyPhotos.map((photo, i) => {
                         const offset = (i - whySlide + whyPhotos.length) % whyPhotos.length;
@@ -220,17 +220,17 @@ const SeaCamp = () => {
                               y: offset * 16,
                               x: offset * 8,
                               zIndex: whyPhotos.length - offset,
-                              rotateZ: offset * -2,
+                              rotateZ: offset * -2
                             }}
                             exit={{ opacity: 0, scale: 0.9, y: -20 }}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                            className="absolute inset-0"
-                          >
+                            className="absolute inset-0">
+                            
                             <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl">
                               <img src={photo} alt="Лагерь" className="w-full h-full object-cover" />
                             </div>
-                          </motion.div>
-                        );
+                          </motion.div>);
+
                       })}
                     </AnimatePresence>
                   </div>
@@ -255,8 +255,8 @@ const SeaCamp = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 gap-5">
-          {projects.map((p, i) => (
-            <AnimatedSection key={p.name} delay={i * 0.1}>
+          {projects.map((p, i) =>
+          <AnimatedSection key={p.name} delay={i * 0.1}>
               <div className="bg-white rounded-[1.5rem] overflow-hidden h-full flex flex-col">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
@@ -274,7 +274,7 @@ const SeaCamp = () => {
                 </div>
               </div>
             </AnimatedSection>
-          ))}
+          )}
         </div>
       </section>
 
@@ -301,14 +301,14 @@ const SeaCamp = () => {
                 </div>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                {facilities.map((f, i) => (
-                  <div key={i} className="rounded-xl overflow-hidden relative aspect-square">
+                {facilities.map((f, i) =>
+                <div key={i} className="rounded-xl overflow-hidden relative aspect-square">
                     <img src={f.image} alt={f.text} className="w-full h-full object-cover" />
                     <div className="absolute inset-x-0 bottom-0 bg-program-sea/75 backdrop-blur-sm px-4 py-3 h-[4.5rem] md:h-[4.5rem] flex items-center">
                       <p className="text-white text-sm md:text-base font-bold uppercase tracking-wide leading-snug">{f.text}</p>
                     </div>
                   </div>
-                ))}
+                )}
               </div>
             </AnimatedSection>
           </div>
@@ -329,24 +329,24 @@ const SeaCamp = () => {
               <div className="bg-white rounded-[1.5rem] w-full px-8 py-10 shadow-2xl">
                 <div className="text-center border-b-2 border-dashed border-foreground/20 pb-6 mb-6">
                   <h2 className="text-2xl md:text-3xl text-foreground mb-1">Стоимость смены</h2>
-                  <p className="text-sm text-muted-foreground font-normal normal-case">Лагерь «Море» · 23 июня — 15 июля 2026</p>
+                  <p className="text-sm text-muted-foreground font-normal normal-case">Лагерь  на море · 23 июня — 15 июля 2026</p>
                 </div>
                 <div className="space-y-4 mb-8">
                   {[
-                    "Проживание в новых корпусах",
-                    "5-разовое питание (шведский стол)",
-                    "Творческий проект на выбор",
-                    "Экскурсии и мероприятия",
-                    "Купание и пляж ежедневно",
-                    "Сопровождающий от ассоциации 24/7",
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-start gap-3">
+                  "Проживание в новых корпусах",
+                  "5-разовое питание (шведский стол)",
+                  "Творческий проект на выбор",
+                  "Экскурсии и мероприятия",
+                  "Купание и пляж ежедневно",
+                  "Сопровождающий от ассоциации 24/7"].
+                  map((item, i) =>
+                  <div key={i} className="flex items-start gap-3">
                       <span className="mt-1 w-5 h-5 rounded-full border-2 border-program-sea bg-program-sea/10 flex items-center justify-center shrink-0">
                         <span className="w-2 h-2 rounded-full bg-program-sea" />
                       </span>
                       <p className="text-foreground text-base font-normal normal-case leading-snug">{item}</p>
                     </div>
-                  ))}
+                  )}
                 </div>
                 <div className="border-t-2 border-dashed border-foreground/20 pt-6">
                   <div className="flex items-end justify-between">
@@ -359,8 +359,8 @@ const SeaCamp = () => {
                 </p>
                 <a
                   href="#forma"
-                  className="block w-full text-center btn-gold px-6 py-4 rounded-2xl text-sm tracking-widest"
-                >
+                  className="block w-full text-center btn-gold px-6 py-4 rounded-2xl text-sm tracking-widest">
+                  
                   Записаться
                 </a>
               </div>
@@ -392,8 +392,8 @@ const SeaCamp = () => {
               <div
                 className="relative mx-auto w-[280px] md:w-[340px] h-[560px] md:h-[640px]"
                 onMouseEnter={() => setIsPaused(true)}
-                onMouseLeave={() => { setIsPaused(false); setZoomed(null); }}
-              >
+                onMouseLeave={() => {setIsPaused(false);setZoomed(null);}}>
+                
                 <AnimatePresence>
                   {testimonials.map((item, i) => {
                     const offset = (i - currentTestimonial + testimonials.length) % testimonials.length;
@@ -409,13 +409,13 @@ const SeaCamp = () => {
                           y: isZoomed ? -8 : offset * 18,
                           x: isZoomed ? 0 : offset * 10,
                           zIndex: isZoomed ? 100 : testimonials.length - offset,
-                          rotateZ: isZoomed ? 0 : offset * -2,
+                          rotateZ: isZoomed ? 0 : offset * -2
                         }}
                         exit={{ opacity: 0, scale: 0.9, y: -20 }}
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         className="absolute inset-0 cursor-pointer"
-                        onClick={() => offset === 0 && setZoomed(isZoomed ? null : item.id)}
-                      >
+                        onClick={() => offset === 0 && setZoomed(isZoomed ? null : item.id)}>
+                        
                         <div className="w-full h-full flex flex-col">
                           <div className="flex-1 rounded-[1.2rem] overflow-hidden shadow-2xl bg-background">
                             <img src={item.image} alt={`Отзыв от ${item.name}`} className="w-full h-full object-cover" />
@@ -423,14 +423,14 @@ const SeaCamp = () => {
                           <motion.div
                             className="mt-4 text-center"
                             animate={{ opacity: offset === 0 ? 1 : 0 }}
-                            transition={{ duration: 0.3 }}
-                          >
+                            transition={{ duration: 0.3 }}>
+                            
                             <p className="text-foreground font-bold text-base">{item.name}</p>
                             <p className="text-foreground/60 text-sm">{item.role}</p>
                           </motion.div>
                         </div>
-                      </motion.div>
-                    );
+                      </motion.div>);
+
                   })}
                 </AnimatePresence>
               </div>
@@ -450,12 +450,12 @@ const SeaCamp = () => {
             </AnimatedSection>
 
             <div className="grid md:grid-cols-3 gap-5 mb-8">
-              {otherPrograms.map((p, i) => (
-                <AnimatedSection key={p.title} delay={i * 0.08}>
+              {otherPrograms.map((p, i) =>
+              <AnimatedSection key={p.title} delay={i * 0.08}>
                   <a
-                    href={p.href}
-                    className="group block rounded-[1.5rem] border border-border hover:border-program-sea/30 p-8 transition-all duration-500 hover:shadow-lg bg-card h-full text-center"
-                  >
+                  href={p.href}
+                  className="group block rounded-[1.5rem] border border-border hover:border-program-sea/30 p-8 transition-all duration-500 hover:shadow-lg bg-card h-full text-center">
+                  
                     <img src={p.illustration} alt={p.title} className={`${p.illustClass} mx-auto mb-4 object-contain`} />
                     <h3 className="text-lg md:text-xl text-foreground mb-2">{p.title}</h3>
                     <p className="text-sm text-muted-foreground font-normal normal-case mb-2">{p.dates}</p>
@@ -465,14 +465,14 @@ const SeaCamp = () => {
                     </span>
                   </a>
                 </AnimatedSection>
-              ))}
+              )}
             </div>
 
             <AnimatedSection delay={0.3}>
               <a
                 href="/kanikuly/online"
-                className="group block rounded-[1.5rem] border border-border hover:border-program-sea/30 p-8 transition-all duration-500 hover:shadow-lg bg-card"
-              >
+                className="group block rounded-[1.5rem] border border-border hover:border-program-sea/30 p-8 transition-all duration-500 hover:shadow-lg bg-card">
+                
                 <div className="flex items-center gap-6">
                   <img src={illustHilderstone} alt="Hilderstone College" className="h-28 w-auto object-contain shrink-0" />
                   <div>
@@ -492,8 +492,8 @@ const SeaCamp = () => {
           </div>
         </div>
       </section>
-    </main>
-  );
+    </main>);
+
 };
 
 export default SeaCamp;
