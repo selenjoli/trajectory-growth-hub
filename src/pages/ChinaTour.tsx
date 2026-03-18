@@ -397,7 +397,7 @@ const ChinaTour = () => {
                       <img src={m.image} alt={m.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     </div>
                     <div className="p-6 md:p-8">
-                      <h3 className="text-lg md:text-xl text-foreground mb-2">{m.title}</h3>
+                      <h3 className="text-lg md:text-xl text-foreground mb-2 whitespace-pre-line">{m.title}</h3>
                       <p className="text-sm md:text-base text-muted-foreground font-normal normal-case leading-relaxed">{m.text}</p>
                     </div>
                   </div>
