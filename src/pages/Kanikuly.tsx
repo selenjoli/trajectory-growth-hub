@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Header from "@/components/Header";
+import FloatingButtons from "@/components/FloatingButtons";
 import AnimatedSection from "@/components/AnimatedSection";
 import heroBg from "@/assets/kanikuly-hero.jpg";
 import illustChina from "@/assets/illust-china.png";
