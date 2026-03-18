@@ -507,14 +507,14 @@ const Partnership = () => {
                    <p className="text-primary-foreground/70 text-sm normal-case mb-4">
                     Хотите показать педагогам что у нас есть для них?
                   </p>
-                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="grid md:grid-cols-2 gap-4">
                     <Link
                       to="/uchitelya/kurs"
-                      className="block bg-card border border-border rounded-2xl p-6 hover:border-accent/30 transition-colors"
+                      className="block bg-primary-foreground/10 border border-primary-foreground/20 rounded-2xl p-6 hover:bg-primary-foreground/15 transition-colors"
                     >
                       <span className="text-xs text-accent uppercase tracking-wider">Hilderstone College</span>
-                      <h3 className="text-lg mt-2 mb-2">Teachers Development Course</h3>
-                      <p className="text-muted-foreground text-sm normal-case leading-relaxed mb-3">
+                      <h3 className="text-lg mt-2 mb-2 text-primary-foreground">Teachers Development Course</h3>
+                      <p className="text-primary-foreground/70 text-sm normal-case leading-relaxed mb-3">
                         Онлайн-интенсив с&nbsp;британскими тьюторами · июль 2026
                       </p>
                       <span className="text-accent text-sm font-semibold inline-flex items-center gap-1">
@@ -524,11 +524,11 @@ const Partnership = () => {
 
                     <Link
                       to="/uchitelya/fest"
-                      className="block bg-card border border-border rounded-2xl p-6 hover:border-accent/30 transition-colors"
+                      className="block bg-primary-foreground/10 border border-primary-foreground/20 rounded-2xl p-6 hover:bg-primary-foreground/15 transition-colors"
                     >
                       <span className="text-xs text-accent uppercase tracking-wider">ProSkill Fest</span>
-                      <h3 className="text-lg mt-2 mb-2">Фестиваль для педагогов</h3>
-                      <p className="text-muted-foreground text-sm normal-case leading-relaxed mb-3">
+                      <h3 className="text-lg mt-2 mb-2 text-primary-foreground">Фестиваль для педагогов</h3>
+                      <p className="text-primary-foreground/70 text-sm normal-case leading-relaxed mb-3">
                         7&nbsp;ноября 2026 · Москва
                       </p>
                       <span className="text-accent text-sm font-semibold inline-flex items-center gap-1">
