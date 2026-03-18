@@ -66,6 +66,7 @@ interface ProgramCard {
   notice?: string;
   tag?: string;
   dimmed?: boolean;
+  shifts?: { label: string; dates: string }[];
 }
 
 const programs: ProgramCard[] = [
@@ -106,12 +107,16 @@ const programs: ProgramCard[] = [
     bgColor: "bg-program-online",
     illustration: illustH1,
     illustClass: "absolute right-6 top-1/2 -translate-y-1/2 h-[60%] w-auto object-contain",
-    dates: "Смена 1: 01.06 — 12.06  ·  Смена 2: 15.06 — 26.06",
+    dates: "",
     price: "28 500 руб",
     title: "Hilderstone College",
     subtitle: "Языковая онлайн-практика",
     text: "10 занятий с\u00A0дипломированным преподавателем из\u00A0Британского колледжа. Сертификат по\u00A0окончании. Две смены на\u00A0выбор.",
     href: "/kanikuly/online",
+    shifts: [
+      { label: "Смена 1", dates: "01.06 — 12.06" },
+      { label: "Смена 2", dates: "15.06 — 26.06" },
+    ],
   },
   {
     bgColor: "bg-program-uae",
@@ -265,8 +270,21 @@ const Kanikuly = () => {
                           {p.text}
                         </p>
                       </div>
-                      <div className="flex flex-wrap items-center gap-4">
-                        <span className="text-lg md:text-xl font-black">{p.dates}</span>
+                      <div className="flex flex-wrap items-end gap-4">
+                        {p.shifts ? (
+                          <div className="flex flex-col gap-1.5">
+                            {p.shifts.map((s) => (
+                              <div key={s.label} className="flex items-center gap-2">
+                                <span className="text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-white/20 shrink-0">
+                                  {s.label}
+                                </span>
+                                <span className="text-base md:text-lg font-black">{s.dates}</span>
+                              </div>
+                            ))}
+                          </div>
+                        ) : (
+                          <span className="text-lg md:text-xl font-black">{p.dates}</span>
+                        )}
                         {p.price && (
                           <span className="inline-block bg-white text-foreground text-xs font-bold px-3 py-1.5 rounded-lg uppercase">
                             {p.price}
