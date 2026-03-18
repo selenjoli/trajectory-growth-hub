@@ -107,12 +107,16 @@ const programs: ProgramCard[] = [
     bgColor: "bg-program-online",
     illustration: illustH1,
     illustClass: "absolute right-6 top-1/2 -translate-y-1/2 h-[60%] w-auto object-contain",
-    dates: "Смена 1: 01.06 — 12.06  ·  Смена 2: 15.06 — 26.06",
+    dates: "",
     price: "28 500 руб",
     title: "Hilderstone College",
     subtitle: "Языковая онлайн-практика",
     text: "10 занятий с\u00A0дипломированным преподавателем из\u00A0Британского колледжа. Сертификат по\u00A0окончании. Две смены на\u00A0выбор.",
     href: "/kanikuly/online",
+    shifts: [
+      { label: "Смена 1", dates: "01.06 — 12.06" },
+      { label: "Смена 2", dates: "15.06 — 26.06" },
+    ],
   },
   {
     bgColor: "bg-program-uae",
