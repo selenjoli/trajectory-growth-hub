@@ -500,7 +500,7 @@ const Partnership = () => {
                 </div>
               </AnimatedSection>
 
-              <hr className="border-border" />
+              <hr className="border-primary-foreground/20" />
 
               <AnimatedSection delay={0.1}>
                 <div>
