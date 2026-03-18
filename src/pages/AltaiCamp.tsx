@@ -241,7 +241,7 @@ const AltaiCamp = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="flex flex-wrap items-center gap-3 mb-8">
               
-              {["15 дней", "10–17 лет"].map((chip) =>
+              {["15 дней", "для детей 10–17 лет"].map((chip) =>
               <span key={chip} className="bg-white/15 backdrop-blur-sm text-white text-xs font-medium px-4 py-2 rounded-full">
                   {chip}
                 </span>
@@ -273,11 +273,11 @@ const AltaiCamp = () => {
             <AnimatedSection delay={0.1}>
               <div className="flex flex-col lg:flex-row gap-10 items-center">
                 <div className="w-full lg:w-1/2 space-y-6">
-                  <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
-                    Выучить английский в классе — можно. Заговорить по-настоящему — только когда это нужно, когда интересно, когда вокруг люди и нет времени бояться ошибиться.
+                  <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed whitespace-pre-line">
+                    Выучить английский в классе — можно. Заговорить{"\n"}по-настоящему — только когда это нужно, когда интересно, когда вокруг люди и нет времени бояться ошибиться.
                   </p>
-                  <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
-                    На Алтае именно такая среда. Английский здесь — язык на котором проходит квест, объясняют правила игры, спрашивают как дела вечером у костра и ждут настоящего ответа.
+                  <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed whitespace-pre-line">
+                    На Алтае именно такая среда. Английский здесь — язык{"\n"}на котором проходит квест, объясняют правила игры, спрашивают как дела вечером у костра и ждут настоящего ответа.
                   </p>
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
                     Горы делают своё дело: ребята быстро открываются, быстро дружат и быстро перестают бояться говорить. Алтай — не фон для лагеря, а часть программы.
@@ -584,7 +584,7 @@ const AltaiCamp = () => {
                   "5-разовое питание",
                   "Английский в игровом формате",
                   "Экскурсии и мероприятия",
-                  "Купание ежедневно",
+                  "Купание в озере и бассейне",
                   "Сопровождающий от ассоциации 24/7"].
                   map((item, i) =>
                   <div key={i} className="flex items-start gap-3">
