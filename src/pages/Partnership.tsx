@@ -365,7 +365,7 @@ const Partnership = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-accent-foreground mb-4">
-                Что говорят <span className={gold}>участники</span> ассоциации
+                <span className={gold}>Что говорят</span> участники ассоциации
               </h2>
               <p className="text-accent-foreground/70 text-lg mb-12 max-w-xl font-normal normal-case">
                 Руководители центров — о&nbsp;том, что изменилось после вступления.
