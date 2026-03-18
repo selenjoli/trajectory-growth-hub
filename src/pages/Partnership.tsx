@@ -475,7 +475,7 @@ const Partnership = () => {
 
       {/* ── CROSS-LINKS — "Посмотрите ещё" ── */}
       <section className="px-3 md:px-6 xl:px-10 mb-4">
-        <div className="section-alt rounded-[2rem] py-20 px-6 md:px-16">
+        <div className="bg-primary rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-14">
