@@ -429,7 +429,7 @@ const Partnership = () => {
         <div className="fluid-container">
           <AnimatedSection>
             <h2 className="text-4xl md:text-6xl text-foreground mb-4">
-              Как это <span className="text-accent">работает</span>
+              Как это <span className={gold}>работает</span>
             </h2>
             <p className="text-muted-foreground mb-12 max-w-2xl text-lg font-normal normal-case leading-relaxed">
               Никакого сложного процесса. Напишите нам — познакомимся, расскажем как устроена ассоциация изнутри и ответим на все вопросы. Никаких обязательств до разговора.
