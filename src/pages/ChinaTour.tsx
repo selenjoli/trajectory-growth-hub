@@ -481,7 +481,7 @@ const ChinaTour = () => {
 
       {/* ── Testimonials — pale yellow block ── */}
       <section className="px-3 md:px-6 xl:px-10">
-        <div className="bg-testimonial-yellow rounded-[2rem] py-20 px-6 md:px-16">
+        <div className="bg-program-china-light rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-4">

@@ -36,6 +36,14 @@
     --program-hilderstone2: 175 65% 42%;
     --program-teachers: 210 65% 55%;
 
+    /* Light tinted testimonial backgrounds for colored pages */
+    --program-china-light: 4 70% 94%;
+    --program-altai-light: 147 45% 92%;
+    --program-uae-light: 283 40% 94%;
+    --program-sea-light: 184 50% 93%;
+    --program-online-light: 35 60% 93%;
+    --program-teachers-light: 210 50% 94%;
+
     --testimonial-yellow: 45 70% 92%;
 
     --destructive: 0 84% 60%;

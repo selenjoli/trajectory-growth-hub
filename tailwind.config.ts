@@ -53,6 +53,12 @@ export default {
         "program-online": "hsl(var(--program-online))",
         "program-hilderstone2": "hsl(var(--program-hilderstone2))",
         "program-teachers": "hsl(var(--program-teachers))",
+        "program-china-light": "hsl(var(--program-china-light))",
+        "program-altai-light": "hsl(var(--program-altai-light))",
+        "program-uae-light": "hsl(var(--program-uae-light))",
+        "program-sea-light": "hsl(var(--program-sea-light))",
+        "program-online-light": "hsl(var(--program-online-light))",
+        "program-teachers-light": "hsl(var(--program-teachers-light))",
         "testimonial-yellow": "hsl(var(--testimonial-yellow))",
         "surface-alt": "hsl(var(--surface-alt))",
         popover: {
