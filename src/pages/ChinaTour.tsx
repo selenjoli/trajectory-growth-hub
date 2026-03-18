@@ -484,10 +484,10 @@ const ChinaTour = () => {
         <div className="rounded-[2rem] bg-white/10 backdrop-blur-sm border border-white/15 py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-foreground mb-4">
-                Что говорят <span className="text-program-china">участники</span>
+              <h2 className="text-4xl md:text-6xl text-white mb-4">
+                Что говорят <span className={gold}>участники</span>
               </h2>
-              <p className="text-foreground/60 text-lg mb-12 max-w-xl font-normal normal-case">
+              <p className="text-white/60 text-lg mb-12 max-w-xl font-normal normal-case">
                 Отзывы семей, которые побывали в наших турах.
               </p>
             </AnimatedSection>
