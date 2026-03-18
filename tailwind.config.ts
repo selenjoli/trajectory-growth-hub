@@ -53,6 +53,8 @@ export default {
         "program-online": "hsl(var(--program-online))",
         "program-hilderstone2": "hsl(var(--program-hilderstone2))",
         "program-teachers": "hsl(var(--program-teachers))",
+        "program-fest": "hsl(var(--program-fest))",
+        "program-fest-light": "hsl(var(--program-fest-light))",
         "program-china-light": "hsl(var(--program-china-light))",
         "program-altai-light": "hsl(var(--program-altai-light))",
         "program-uae-light": "hsl(var(--program-uae-light))",
