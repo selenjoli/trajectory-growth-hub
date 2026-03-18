@@ -66,6 +66,7 @@ interface ProgramCard {
   notice?: string;
   tag?: string;
   dimmed?: boolean;
+  shifts?: { label: string; dates: string }[];
 }
 
 const programs: ProgramCard[] = [
