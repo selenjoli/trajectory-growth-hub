@@ -169,7 +169,7 @@ const Partnership = () => {
             >
               Вы&nbsp;строите центр.
               <br />
-              Мы&nbsp;знаем как это <span className="text-accent">бывает.</span>
+              Мы&nbsp;знаем как это <span className={gold}>бывает.</span>
             </motion.h1>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
