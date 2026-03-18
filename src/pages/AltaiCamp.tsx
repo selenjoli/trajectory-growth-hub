@@ -241,7 +241,7 @@ const AltaiCamp = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="flex flex-wrap items-center gap-3 mb-8">
               
-              {["15 дней", "10–17 лет"].map((chip) =>
+              {["15 дней", "для детей 10–17 лет"].map((chip) =>
               <span key={chip} className="bg-white/15 backdrop-blur-sm text-white text-xs font-medium px-4 py-2 rounded-full">
                   {chip}
                 </span>
