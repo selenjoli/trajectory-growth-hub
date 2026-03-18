@@ -504,7 +504,7 @@ const Partnership = () => {
 
               <AnimatedSection delay={0.1}>
                 <div>
-                  <p className="text-muted-foreground text-sm normal-case mb-4">
+                   <p className="text-primary-foreground/70 text-sm normal-case mb-4">
                     Хотите показать педагогам что у нас есть для них?
                   </p>
                   <div className="grid md:grid-cols-2 gap-4">
