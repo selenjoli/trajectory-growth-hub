@@ -22,11 +22,15 @@ const benefits = [
     image: turizmImg,
     title: "Совместные программы для учеников",
     text: "Ваши дети едут в Китай, на Алтай, на море — в рамках проверенных программ Ассоциации. Вы не организуете логистику с нуля, вы присоединяетесь к готовому. Это то, что ни один центр не потянет в одиночку.",
+    link: "/kanikuly",
+    linkText: "Смотреть программы",
   },
   {
     image: razvitieImg,
     title: "Развитие педагогов",
     text: "Ваша команда участвует в Teachers Development Course с Hilderstone College и в ProSkill Fest. Мотивированные учителя — это не абстракция, это конкретный результат который видят ученики и родители.",
+    link: "/uchitelya",
+    linkText: "Программы для педагогов",
   },
   {
     image: sotrudnichestvoImg,
@@ -47,6 +51,8 @@ const benefits = [
     image: collaborationImg,
     title: "Международные партнёрства",
     text: "Доступ к программам Hilderstone College и другим международным проектам ассоциации — то, что сложно выстроить самостоятельно.",
+    link: "/uchitelya/kurs",
+    linkText: "Hilderstone College",
   },
 ];
 
@@ -267,6 +273,11 @@ const Partnership = () => {
                     <div className="p-6">
                       <h3 className="text-lg mb-3">{item.title}</h3>
                       <p className="text-muted-foreground text-sm normal-case leading-relaxed">{item.text}</p>
+                      {item.link && (
+                        <Link to={item.link} className="text-accent text-sm font-semibold inline-flex items-center gap-1 mt-4 hover:underline">
+                          {item.linkText} <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                      )}
                     </div>
                   </div>
                 </AnimatedSection>
@@ -282,7 +293,7 @@ const Partnership = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-4">
-                15&nbsp;центров, которые уже сделали <span className="text-accent">этот&nbsp;шаг</span>
+                <span className={gold}>15&nbsp;центров,</span> которые уже сделали этот&nbsp;шаг
               </h2>
               <p className="text-muted-foreground mb-14 max-w-2xl text-lg font-normal normal-case">
                 Москва, Подмосковье, Белгород, Курск, Воронеж, Чебоксары, Тамбов, Кисловодск.
@@ -355,7 +366,7 @@ const Partnership = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-accent-foreground mb-4">
-                Что говорят <span className={gold}>участники</span> ассоциации
+                <span className={gold}>Что говорят</span> участники ассоциации
               </h2>
               <p className="text-accent-foreground/70 text-lg mb-12 max-w-xl font-normal normal-case">
                 Руководители центров — о&nbsp;том, что изменилось после вступления.
@@ -465,10 +476,10 @@ const Partnership = () => {
 
       {/* ── CROSS-LINKS — "Посмотрите ещё" ── */}
       <section className="px-3 md:px-6 xl:px-10 mb-4">
-        <div className="section-alt rounded-[2rem] py-20 px-6 md:px-16">
+        <div className="bg-primary rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-foreground mb-14">
+              <h2 className="text-4xl md:text-6xl text-primary-foreground mb-14">
                 Посмотрите <span className="text-accent">ещё</span>
               </h2>
             </AnimatedSection>
@@ -477,7 +488,7 @@ const Partnership = () => {
               <AnimatedSection delay={0.05}>
                 <div className="grid md:grid-cols-[1fr_auto] gap-10 md:gap-20 items-start">
                   <div>
-                    <p className="text-muted-foreground text-sm normal-case mb-3">
+                    <p className="text-primary-foreground/70 text-sm normal-case mb-3">
                       Хотите сначала понять как устроена вся ассоциация?
                     </p>
                     <Link
@@ -490,21 +501,21 @@ const Partnership = () => {
                 </div>
               </AnimatedSection>
 
-              <hr className="border-border" />
+              <hr className="border-primary-foreground/20" />
 
               <AnimatedSection delay={0.1}>
                 <div>
-                  <p className="text-muted-foreground text-sm normal-case mb-4">
+                   <p className="text-primary-foreground/70 text-sm normal-case mb-4">
                     Хотите показать педагогам что у нас есть для них?
                   </p>
-                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="grid md:grid-cols-2 gap-4">
                     <Link
                       to="/uchitelya/kurs"
-                      className="block bg-card border border-border rounded-2xl p-6 hover:border-accent/30 transition-colors"
+                      className="block bg-primary-foreground/10 border border-primary-foreground/20 rounded-2xl p-6 hover:bg-primary-foreground/15 transition-colors"
                     >
                       <span className="text-xs text-accent uppercase tracking-wider">Hilderstone College</span>
-                      <h3 className="text-lg mt-2 mb-2">Teachers Development Course</h3>
-                      <p className="text-muted-foreground text-sm normal-case leading-relaxed mb-3">
+                      <h3 className="text-lg mt-2 mb-2 text-primary-foreground">Teachers Development Course</h3>
+                      <p className="text-primary-foreground/70 text-sm normal-case leading-relaxed mb-3">
                         Онлайн-интенсив с&nbsp;британскими тьюторами · июль 2026
                       </p>
                       <span className="text-accent text-sm font-semibold inline-flex items-center gap-1">
@@ -514,11 +525,11 @@ const Partnership = () => {
 
                     <Link
                       to="/uchitelya/fest"
-                      className="block bg-card border border-border rounded-2xl p-6 hover:border-accent/30 transition-colors"
+                      className="block bg-primary-foreground/10 border border-primary-foreground/20 rounded-2xl p-6 hover:bg-primary-foreground/15 transition-colors"
                     >
                       <span className="text-xs text-accent uppercase tracking-wider">ProSkill Fest</span>
-                      <h3 className="text-lg mt-2 mb-2">Фестиваль для педагогов</h3>
-                      <p className="text-muted-foreground text-sm normal-case leading-relaxed mb-3">
+                      <h3 className="text-lg mt-2 mb-2 text-primary-foreground">Фестиваль для педагогов</h3>
+                      <p className="text-primary-foreground/70 text-sm normal-case leading-relaxed mb-3">
                         7&nbsp;ноября 2026 · Москва
                       </p>
                       <span className="text-accent text-sm font-semibold inline-flex items-center gap-1">
