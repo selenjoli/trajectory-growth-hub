@@ -1,10 +1,20 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Clock, Users, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import AnimatedSection from "@/components/AnimatedSection";
 
+import flowersLeft from "@/assets/fest-flowers-left.png";
+import flowersRight from "@/assets/fest-flowers-right.png";
+import heroImg from "@/assets/fest-hero.jpg";
+import networkingImg from "@/assets/fest-networking.jpg";
+import venueImg from "@/assets/fest-venue.jpg";
+import sessionImg from "@/assets/fest-session.jpg";
+import speaker1 from "@/assets/fest-speaker1.jpg";
+import speaker2 from "@/assets/fest-speaker2.jpg";
+import speaker3 from "@/assets/fest-speaker3.jpg";
+import speaker4 from "@/assets/fest-speaker4.jpg";
 import leaves1 from "@/assets/fest-leaves-1.png";
 import leaves2 from "@/assets/fest-leaves-2.png";
 import leaves3 from "@/assets/fest-leaves-3.png";
@@ -16,28 +26,32 @@ const gold = "bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500
 
 const audienceItems = [
   {
+    image: leaves1,
     title: "Учителям английского",
     text: "которые хотят не\u00A0просто послушать теорию, а\u00A0унести с\u00A0собой готовые инструменты для уроков.",
   },
   {
+    image: leaves2,
     title: "Тем, кто устал от\u00A0одиночества",
     text: "в\u00A0профессиональных поисках и\u00A0хочет наконец поговорить с\u00A0коллегами которые понимают о\u00A0чём речь.",
   },
   {
+    image: leaves3,
     title: "Тем, кому нужна энергия",
     text: "и\u00A0вдохновение — особенно в\u00A0ноябре, когда учебный год уже давит.",
   },
   {
+    image: leaves1,
     title: "Руководителям центров",
     text: "которые хотят чтобы их педагоги развивались и\u00A0не\u00A0выгорали.",
   },
 ];
 
 const formatItems = [
-  { icon: "🎤", title: "25-минутные сессии", text: "от\u00A0практикующих педагогов — интенсивно и\u00A0по\u00A0делу" },
-  { icon: "☕", title: "Coffee & Connection", text: "паузы между сессиями с\u00A0розыгрышами методической литературы и\u00A0нетворкинг-играми. Не\u00A0просто кофе — здесь завязывается большинство знакомств" },
-  { icon: "🗣️", title: "Q&A сессия", text: "вопросы спикерам напрямую" },
-  { icon: "📋", title: "Closing Remarks", text: "итоги и\u00A0планы" },
+  { image: leaves2, title: "25-минутные сессии", text: "от\u00A0практикующих педагогов — интенсивно и\u00A0по\u00A0делу" },
+  { image: leaves3, title: "Coffee & Connection", text: "паузы между сессиями с\u00A0розыгрышами методической литературы и\u00A0нетворкинг-играми. Не\u00A0просто кофе — здесь завязывается большинство знакомств" },
+  { image: leaves1, title: "Q&A сессия", text: "вопросы спикерам напрямую" },
+  { image: leaves2, title: "Closing Remarks", text: "итоги и\u00A0планы" },
 ];
 
 const programSchedule = [
@@ -57,37 +71,37 @@ const programSchedule = [
 ];
 
 const takeaways = [
-  { title: "Готовые инструменты", text: "Конкретные приёмы и\u00A0упражнения от\u00A0педагогов которые проверили их в\u00A0своих классах. Применить можно в\u00A0ближайший понедельник." },
-  { title: "Записи всех докладов", text: "После феста участники получают доступ к\u00A0материалам сессий. Можно пересмотреть то\u00A0что особенно зацепило — или поделиться с\u00A0коллегами которые не\u00A0смогли приехать." },
-  { title: "Профессиональные контакты", text: "Коллеги из\u00A0разных городов, с\u00A0которыми познакомились в\u00A0Coffee & Connection и\u00A0остались на\u00A0связи. Сообщество которое продолжает общаться после феста." },
-  { title: "Сертификат участника", text: "Каждый участник получает официальный сертификат ProSkill Fest. Хорошее дополнение к\u00A0профессиональному портфолио." },
+  { image: leaves1, title: "Готовые инструменты", text: "Конкретные приёмы и\u00A0упражнения от\u00A0педагогов которые проверили их в\u00A0своих классах. Применить можно в\u00A0ближайший понедельник." },
+  { image: leaves3, title: "Записи всех докладов", text: "После феста участники получают доступ к\u00A0материалам сессий. Можно пересмотреть то\u00A0что особенно зацепило — или поделиться с\u00A0коллегами которые не\u00A0смогли приехать." },
+  { image: leaves2, title: "Профессиональные контакты", text: "Коллеги из\u00A0разных городов, с\u00A0которыми познакомились в\u00A0Coffee & Connection и\u00A0остались на\u00A0связи. Сообщество которое продолжает общаться после феста." },
+  { image: leaves1, title: "Сертификат участника", text: "Каждый участник получает официальный сертификат ProSkill Fest. Хорошее дополнение к\u00A0профессиональному портфолио." },
 ];
 
 const testimonials = [
   {
     id: 1,
-    image: "https://placehold.co/400x500/c2703a/ffffff?text=Марина",
+    image: speaker1,
     name: "Марина",
     role: "учитель английского",
     text: "Пришла за\u00A0идеями — ушла с\u00A0тремя готовыми упражнениями которые использую до\u00A0сих пор. Сессия про лексику перевернула мой подход к\u00A0работе со\u00A0словами.",
   },
   {
     id: 2,
-    image: "https://placehold.co/400x500/c2703a/ffffff?text=Анна",
+    image: speaker2,
     name: "Анна",
     role: "учитель английского",
     text: "Я\u00A0не\u00A0ожидала что профессиональное мероприятие может так заряжать. Уехала с\u00A0новыми идеями и\u00A0контактами коллег с\u00A0которыми до\u00A0сих пор общаюсь.",
   },
   {
     id: 3,
-    image: "https://placehold.co/400x500/c2703a/ffffff?text=Светлана",
+    image: speaker4,
     name: "Светлана",
     role: "преподаватель английского",
     text: "Ноябрь — самый тяжёлый месяц учебного года. После ProSkill Fest я\u00A0вспомнила почему вообще пошла в\u00A0эту профессию. Это дорогого стоит.",
   },
   {
     id: 4,
-    image: "https://placehold.co/400x500/c2703a/ffffff?text=Екатерина",
+    image: speaker3,
     name: "Екатерина",
     role: "руководитель языкового центра «Космос», г.\u00A0Троицк",
     text: "Отправила двух педагогов — вернулись вдохновленными, отдохнувшими, мотивированными, с\u00A0идеями, готовыми пробовать новое. Теперь едем всей командой.",
@@ -111,27 +125,22 @@ const ProSkillFest = () => {
   }, [isPaused, nextSlide]);
 
   return (
-    <main className="bg-background relative overflow-hidden">
-      <Header variant="light" />
+    <main className="relative overflow-hidden" style={{ backgroundColor: "#F2F2F2" }}>
+      <Header variant="dark" />
 
-      {/* Decorative leaves */}
-      <img src={leaves1} alt="" className="absolute top-[600px] -right-20 w-48 md:w-72 opacity-30 pointer-events-none rotate-12 z-0" />
-      <img src={leaves2} alt="" className="absolute top-[1800px] -left-16 w-56 md:w-80 opacity-25 pointer-events-none -rotate-12 z-0" />
-      <img src={leaves3} alt="" className="absolute top-[3200px] -right-12 w-44 md:w-64 opacity-20 pointer-events-none rotate-6 z-0" />
+      {/* Side flowers — full opacity, decorative */}
+      <img src={flowersLeft} alt="" className="fixed top-0 left-0 h-full w-auto max-w-[200px] md:max-w-[280px] object-contain object-left pointer-events-none z-0 hidden lg:block" />
+      <img src={flowersRight} alt="" className="fixed top-0 right-0 h-full w-auto max-w-[200px] md:max-w-[280px] object-contain object-right pointer-events-none z-0 hidden lg:block" />
 
       {/* ── HERO ── */}
-      <section className="px-3 md:px-6 xl:px-10 pt-20 lg:pt-0">
+      <section className="px-3 md:px-6 xl:px-10 pt-20 lg:pt-0 relative z-10">
         <div className="relative min-h-[90vh] flex items-end rounded-[2rem] overflow-hidden">
           <img
-            src="https://placehold.co/1600x900/8B4513/ffffff?text=ProSkill+Fest+2025+—+живые+фото"
+            src={heroImg}
             alt="ProSkill Fest — зал, спикер, участники"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
-
-          {/* Leaf decorations on hero */}
-          <img src={leaves1} alt="" className="absolute top-6 right-6 w-28 md:w-40 opacity-40 pointer-events-none rotate-45" />
-          <img src={leaves3} alt="" className="absolute bottom-32 right-8 w-20 md:w-32 opacity-30 pointer-events-none -rotate-12" />
 
           <div className="relative z-10 w-full px-6 md:px-16 pb-12 md:pb-20">
             <motion.p
@@ -143,15 +152,24 @@ const ProSkillFest = () => {
               Ежегодный фестиваль для педагогов · Ассоциация «Траектория Роста»
             </motion.p>
 
-            <motion.h1
+            {/* Date chip + Title */}
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-white leading-[0.9] mb-4"
+              className="max-w-4xl"
             >
-              ProSkill{" "}
-              <span className={gold}>Fest</span>
-            </motion.h1>
+              <div className="flex items-start justify-between mb-2">
+                <div />
+                <span className="bg-program-fest text-white text-xs sm:text-sm font-bold uppercase tracking-wider px-4 py-1.5 rounded-full whitespace-nowrap">
+                  7 ноября 2026
+                </span>
+              </div>
+              <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-white leading-[0.9] mb-4">
+                ProSkill{" "}
+                <span className={gold}>Fest</span>
+              </h1>
+            </motion.div>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -169,7 +187,7 @@ const ProSkillFest = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="flex flex-wrap gap-3 mb-8"
             >
-              {["7 ноября 2026", "Москва", "Регистрация открыта"].map((chip) => (
+              {["Москва", "Регистрация открыта"].map((chip) => (
                 <span key={chip} className="bg-white/15 backdrop-blur-sm border border-white/20 text-white text-sm px-4 py-2 rounded-full">
                   {chip}
                 </span>
@@ -225,7 +243,6 @@ const ProSkillFest = () => {
 
       {/* ── AUDIENCE ── */}
       <section className="section-padding bg-foreground text-primary-foreground relative overflow-hidden">
-        <img src={leaves2} alt="" className="absolute -top-10 -right-16 w-56 opacity-10 pointer-events-none rotate-45" />
         <div className="fluid-container relative z-10">
           <AnimatedSection>
             <h2 className="text-3xl md:text-5xl text-center mb-12">
@@ -236,9 +253,12 @@ const ProSkillFest = () => {
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {audienceItems.map((item, i) => (
               <AnimatedSection key={i} delay={i * 0.1}>
-                <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-6">
-                  <h3 className="text-lg text-white mb-2">{item.title}</h3>
-                  <p className="text-white/70 text-sm normal-case leading-relaxed">{item.text}</p>
+                <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-6 flex gap-4 items-start">
+                  <img src={item.image} alt="" className="w-12 h-12 object-contain shrink-0" />
+                  <div>
+                    <h3 className="text-lg text-white mb-2">{item.title}</h3>
+                    <p className="text-white/70 text-sm normal-case leading-relaxed">{item.text}</p>
+                  </div>
                 </div>
               </AnimatedSection>
             ))}
@@ -262,10 +282,12 @@ const ProSkillFest = () => {
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
             {formatItems.map((item, i) => (
               <AnimatedSection key={i} delay={i * 0.1}>
-                <div className="bg-program-fest/10 border border-program-fest/20 rounded-2xl p-6 h-full">
-                  <div className="text-3xl mb-3">{item.icon}</div>
-                  <h3 className="text-lg mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm normal-case leading-relaxed">{item.text}</p>
+                <div className="bg-white border border-foreground/10 rounded-2xl p-6 h-full flex gap-4 items-start">
+                  <img src={item.image} alt="" className="w-10 h-10 object-contain shrink-0" />
+                  <div>
+                    <h3 className="text-lg mb-2">{item.title}</h3>
+                    <p className="text-muted-foreground text-sm normal-case leading-relaxed">{item.text}</p>
+                  </div>
                 </div>
               </AnimatedSection>
             ))}
@@ -274,7 +296,7 @@ const ProSkillFest = () => {
           <AnimatedSection>
             <div className="rounded-2xl overflow-hidden max-w-4xl mx-auto">
               <img
-                src="https://placehold.co/1200x500/8B4513/ffffff?text=Спикер+у+микрофона+·+Участники+за+столами"
+                src={sessionImg}
                 alt="ProSkill Fest — формат дня"
                 className="w-full h-64 md:h-80 object-cover"
               />
@@ -285,7 +307,6 @@ const ProSkillFest = () => {
 
       {/* ── PROGRAM 2025 ── */}
       <section id="program" className="section-padding bg-foreground text-primary-foreground relative overflow-hidden">
-        <img src={leaves1} alt="" className="absolute bottom-10 -left-12 w-40 opacity-10 pointer-events-none -rotate-45" />
         <div className="fluid-container relative z-10">
           <AnimatedSection>
             <h2 className="text-3xl md:text-5xl text-center mb-4">
@@ -345,12 +366,12 @@ const ProSkillFest = () => {
                 на\u00A0выступление — из\u00A0школ Ассоциации и\u00A0не\u00A0только.
               </p>
 
-              {/* Placeholder speaker grid */}
+              {/* Speaker grid */}
               <div className="grid grid-cols-3 md:grid-cols-5 gap-4 mb-8">
-                {Array.from({ length: 5 }).map((_, i) => (
+                {[speaker1, speaker2, speaker3, speaker4, speaker1].map((img, i) => (
                   <div key={i} className="aspect-square rounded-2xl overflow-hidden">
                     <img
-                      src={`https://placehold.co/200x200/d4956a/ffffff?text=Спикер+${i + 1}`}
+                      src={img}
                       alt={`Спикер ${i + 1}`}
                       className="w-full h-full object-cover"
                     />
@@ -372,7 +393,6 @@ const ProSkillFest = () => {
 
       {/* ── TAKEAWAYS ── */}
       <section className="section-padding bg-foreground text-primary-foreground relative overflow-hidden">
-        <img src={leaves3} alt="" className="absolute top-10 -right-10 w-48 opacity-10 pointer-events-none rotate-12" />
         <div className="fluid-container relative z-10">
           <AnimatedSection>
             <h2 className="text-3xl md:text-5xl text-center mb-12">
@@ -383,9 +403,12 @@ const ProSkillFest = () => {
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {takeaways.map((item, i) => (
               <AnimatedSection key={i} delay={i * 0.1}>
-                <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-6 h-full">
-                  <h3 className="text-lg text-white mb-3">{item.title}</h3>
-                  <p className="text-white/70 text-sm normal-case leading-relaxed">{item.text}</p>
+                <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-6 h-full flex gap-4 items-start">
+                  <img src={item.image} alt="" className="w-12 h-12 object-contain shrink-0" />
+                  <div>
+                    <h3 className="text-lg text-white mb-3">{item.title}</h3>
+                    <p className="text-white/70 text-sm normal-case leading-relaxed">{item.text}</p>
+                  </div>
                 </div>
               </AnimatedSection>
             ))}
@@ -458,7 +481,7 @@ const ProSkillFest = () => {
           <div className="flex flex-col md:flex-row gap-8 max-w-4xl mx-auto items-center">
             <AnimatedSection className="flex-1">
               <img
-                src="https://placehold.co/600x400/8B4513/ffffff?text=Loft+Красный+Октябрь"
+                src={venueImg}
                 alt="Loft Красный Октябрь"
                 className="w-full rounded-2xl object-cover h-64 md:h-80"
               />
@@ -472,15 +495,15 @@ const ProSkillFest = () => {
               </p>
               <div className="space-y-3 text-white/80 text-sm normal-case">
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-4 h-4 text-amber-300 shrink-0 mt-0.5" />
+                  <img src={leaves1} alt="" className="w-5 h-5 object-contain shrink-0 mt-0.5" />
                   <span>Берсеневская набережная, 6с3</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-amber-300 shrink-0">🚇</span>
+                  <img src={leaves2} alt="" className="w-5 h-5 object-contain shrink-0 mt-0.5" />
                   <span>Кропоткинская или Полянка — 10\u00A0минут пешком</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-amber-300 shrink-0">🚗</span>
+                  <img src={leaves3} alt="" className="w-5 h-5 object-contain shrink-0 mt-0.5" />
                   <span>Парковки на\u00A0площадке нет — удобнее приехать на\u00A0метро или такси</span>
                 </div>
               </div>
@@ -501,7 +524,7 @@ const ProSkillFest = () => {
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <AnimatedSection>
-              <div className="bg-program-fest/10 border border-program-fest/20 rounded-2xl p-8 h-full flex flex-col">
+              <div className="bg-white border border-foreground/10 rounded-2xl p-8 h-full flex flex-col">
                 <h3 className="text-xl mb-4">Для участников</h3>
                 <p className="text-muted-foreground normal-case leading-relaxed mb-6 flex-1">
                   Для педагогов и\u00A0руководителей центров ассоциации участие бесплатное — фест существует
@@ -545,7 +568,7 @@ const ProSkillFest = () => {
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-12">
             <AnimatedSection>
               <Link to="/uchitelya/kurs" className="block bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-6 hover:bg-white/15 transition-colors h-full">
-                <span className="text-xs text-amber-300/70 uppercase tracking-wider">🇬🇧 Hilderstone College</span>
+                <span className="text-xs text-amber-300/70 uppercase tracking-wider">Hilderstone College</span>
                 <h3 className="text-lg text-white mt-2 mb-2">Teachers Development Course</h3>
                 <p className="text-white/60 text-sm normal-case leading-relaxed mb-4">
                   Недельный онлайн-интенсив с\u00A0британскими тьюторами — готовые инструменты,
