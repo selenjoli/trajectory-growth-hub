@@ -152,7 +152,7 @@ const SeaCamp = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-base md:text-lg text-white/85 max-w-2xl font-normal normal-case leading-relaxed mb-8">
               
-              На базе лагеря «Морская звезда» на берегу Чёрного моря — собственный пляж, творческие проекты и три недели настоящего лета. Для детей 8–14 лет.
+              На базе лагеря «Морская звезда» на берегу Чёрного моря — собственный пляж, творческие проекты и три недели настоящего лета. 
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -160,7 +160,7 @@ const SeaCamp = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="flex flex-wrap items-center gap-3 mb-8">
               
-              {["21 день", "Дети 8–14 лет"].map((chip) =>
+              {["21 день", "Для детей 8–14 лет"].map((chip) =>
               <span key={chip} className="bg-white/15 backdrop-blur-sm text-white text-xs font-medium px-4 py-2 rounded-full">
                   {chip}
                 </span>
