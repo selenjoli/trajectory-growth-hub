@@ -270,8 +270,21 @@ const Kanikuly = () => {
                           {p.text}
                         </p>
                       </div>
-                      <div className="flex flex-wrap items-center gap-4">
-                        <span className="text-lg md:text-xl font-black">{p.dates}</span>
+                      <div className="flex flex-wrap items-end gap-4">
+                        {p.shifts ? (
+                          <div className="flex flex-col gap-1.5">
+                            {p.shifts.map((s) => (
+                              <div key={s.label} className="flex items-center gap-2">
+                                <span className="text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-white/20 shrink-0">
+                                  {s.label}
+                                </span>
+                                <span className="text-base md:text-lg font-black">{s.dates}</span>
+                              </div>
+                            ))}
+                          </div>
+                        ) : (
+                          <span className="text-lg md:text-xl font-black">{p.dates}</span>
+                        )}
                         {p.price && (
                           <span className="inline-block bg-white text-foreground text-xs font-bold px-3 py-1.5 rounded-lg uppercase">
                             {p.price}
