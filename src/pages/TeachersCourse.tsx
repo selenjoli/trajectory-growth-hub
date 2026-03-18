@@ -310,13 +310,13 @@ const TeachersCourse = () => {
           <div className="grid md:grid-cols-2 gap-5">
             {outcomes.map((o, i) => (
               <AnimatedSection key={o.title} delay={i * 0.08}>
-                <div className="rounded-[1.5rem] overflow-hidden border border-border bg-card h-full flex flex-col">
+                <div className="rounded-[1.5rem] overflow-hidden border border-white/15 bg-white/10 backdrop-blur-sm h-full flex flex-col">
                   <div className="h-48 overflow-hidden">
                     <img src={o.img} alt={o.title} className="w-full h-full object-cover" />
                   </div>
                   <div className="p-8 flex-1">
-                    <h3 className="text-lg text-foreground mb-3">{o.title}</h3>
-                    <p className="text-muted-foreground text-[15px] font-normal normal-case leading-relaxed">{o.text}</p>
+                    <h3 className="text-lg text-white mb-3">{o.title}</h3>
+                    <p className="text-white/75 text-[15px] font-normal normal-case leading-relaxed">{o.text}</p>
                   </div>
                 </div>
               </AnimatedSection>
@@ -327,13 +327,13 @@ const TeachersCourse = () => {
 
       {/* ── Отзыв ── */}
       <section className="px-3 md:px-6 xl:px-10">
-        <div className="bg-program-teachers-light rounded-[2rem] py-20 px-6 md:px-16">
+        <div className="rounded-[2rem] bg-white/10 backdrop-blur-sm border border-white/15 py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-foreground mb-4">
+              <h2 className="text-4xl md:text-6xl text-white mb-4">
                 Что говорят <span className={gold}>участники</span>
               </h2>
-              <p className="text-foreground/60 text-lg mb-12 max-w-xl font-normal normal-case">
+              <p className="text-white/60 text-lg mb-12 max-w-xl font-normal normal-case">
                 Отзывы педагогов, прошедших курс с&nbsp;Hilderstone College.
               </p>
             </AnimatedSection>
