@@ -292,7 +292,7 @@ const Partnership = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-4">
-                15&nbsp;центров, которые уже сделали <span className="text-accent">этот&nbsp;шаг</span>
+                <span className={gold}>15&nbsp;центров,</span> которые уже сделали этот&nbsp;шаг
               </h2>
               <p className="text-muted-foreground mb-14 max-w-2xl text-lg font-normal normal-case">
                 Москва, Подмосковье, Белгород, Курск, Воронеж, Чебоксары, Тамбов, Кисловодск.
