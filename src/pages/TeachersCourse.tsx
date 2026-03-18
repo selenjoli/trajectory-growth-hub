@@ -310,13 +310,13 @@ const TeachersCourse = () => {
           <div className="grid md:grid-cols-2 gap-5">
             {outcomes.map((o, i) => (
               <AnimatedSection key={o.title} delay={i * 0.08}>
-                <div className="rounded-[1.5rem] overflow-hidden border border-border bg-card h-full flex flex-col">
+                <div className="rounded-[1.5rem] overflow-hidden border border-white/15 bg-white/10 backdrop-blur-sm h-full flex flex-col">
                   <div className="h-48 overflow-hidden">
                     <img src={o.img} alt={o.title} className="w-full h-full object-cover" />
                   </div>
                   <div className="p-8 flex-1">
-                    <h3 className="text-lg text-foreground mb-3">{o.title}</h3>
-                    <p className="text-muted-foreground text-[15px] font-normal normal-case leading-relaxed">{o.text}</p>
+                    <h3 className="text-lg text-white mb-3">{o.title}</h3>
+                    <p className="text-white/75 text-[15px] font-normal normal-case leading-relaxed">{o.text}</p>
                   </div>
                 </div>
               </AnimatedSection>
