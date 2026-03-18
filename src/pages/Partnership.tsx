@@ -193,7 +193,7 @@ const Partnership = () => {
         <div className="fluid-container">
           <AnimatedSection>
             <h2 className="text-4xl md:text-6xl text-foreground mb-10">
-              Это <span className="text-accent">знакомо?</span>
+              Это <span className={gold}>знакомо?</span>
             </h2>
           </AnimatedSection>
 
