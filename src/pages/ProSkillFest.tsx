@@ -523,7 +523,7 @@ const ProSkillFest = () => {
                 {/* Speaker photos — right column */}
                 <div className="w-full lg:w-1/2 grid grid-cols-2 gap-4">
                   {[speaker1, speaker2, speaker3, speaker4].map((img, i) => (
-                    <div key={i} className="aspect-[3/4] rounded-2xl overflow-hidden">
+                    <div key={i} className="aspect-square rounded-2xl overflow-hidden">
                       <img src={img} alt={`Спикер ${i + 1}`} className="w-full h-full object-cover" />
                     </div>
                   ))}
