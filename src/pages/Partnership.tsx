@@ -258,7 +258,7 @@ const Partnership = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-4">
-                Что это значит <span className="text-accent">на&nbsp;практике</span>
+                Что это значит <span className={gold}>на&nbsp;практике</span>
               </h2>
               <p className="text-muted-foreground mb-14 text-lg font-normal normal-case">
                 Шесть конкретных вещей, которые получает каждый центр в&nbsp;составе ассоциации.
