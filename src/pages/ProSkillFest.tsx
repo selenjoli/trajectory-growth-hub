@@ -721,7 +721,7 @@ const ProSkillFest = () => {
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-4">
                 Хотите расти{" "}
-                <span className={orangeGrad}>не только в ноябре?</span>
+                <span className={orangeGrad}>не&nbsp;только в&nbsp;ноябре?</span>
               </h2>
             </AnimatedSection>
 
