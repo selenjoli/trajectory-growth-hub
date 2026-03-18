@@ -12,6 +12,7 @@ import UaeTour from "./pages/UaeTour.tsx";
 import HilderstoneCourse from "./pages/HilderstoneCourse.tsx";
 import Uchitelya from "./pages/Uchitelya.tsx";
 import TeachersCourse from "./pages/TeachersCourse.tsx";
+import ProSkillFest from "./pages/ProSkillFest.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/kanikuly/:program" element={<Index />} />
           <Route path="/uchitelya" element={<Uchitelya />} />
           <Route path="/uchitelya/kurs" element={<TeachersCourse />} />
+          <Route path="/uchitelya/fest" element={<ProSkillFest />} />
           <Route path="/uchitelya/:course" element={<Index />} />
           <Route path="/partnerstvo" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
