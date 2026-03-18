@@ -22,11 +22,15 @@ const benefits = [
     image: turizmImg,
     title: "Совместные программы для учеников",
     text: "Ваши дети едут в Китай, на Алтай, на море — в рамках проверенных программ Ассоциации. Вы не организуете логистику с нуля, вы присоединяетесь к готовому. Это то, что ни один центр не потянет в одиночку.",
+    link: "/kanikuly",
+    linkText: "Смотреть программы",
   },
   {
     image: razvitieImg,
     title: "Развитие педагогов",
     text: "Ваша команда участвует в Teachers Development Course с Hilderstone College и в ProSkill Fest. Мотивированные учителя — это не абстракция, это конкретный результат который видят ученики и родители.",
+    link: "/uchitelya",
+    linkText: "Программы для педагогов",
   },
   {
     image: sotrudnichestvoImg,
@@ -47,6 +51,8 @@ const benefits = [
     image: collaborationImg,
     title: "Международные партнёрства",
     text: "Доступ к программам Hilderstone College и другим международным проектам ассоциации — то, что сложно выстроить самостоятельно.",
+    link: "/uchitelya/kurs",
+    linkText: "Hilderstone College",
   },
 ];
 
