@@ -12,6 +12,7 @@ import UaeTour from "./pages/UaeTour.tsx";
 import HilderstoneCourse from "./pages/HilderstoneCourse.tsx";
 import Uchitelya from "./pages/Uchitelya.tsx";
 import TeachersCourse from "./pages/TeachersCourse.tsx";
+import ProSkillFest from "./pages/ProSkillFest.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
