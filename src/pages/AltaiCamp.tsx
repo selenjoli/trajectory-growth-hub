@@ -220,7 +220,7 @@ const AltaiCamp = () => {
                     </span>
                   </span>
                   <span className="block whitespace-nowrap">
-                    <span className="text-program-altai">Алтай:</span> здесь английский
+                    <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">Алтай:</span> здесь английский
                   </span>
                 </span>
                 <span className="block">становится частью</span>
