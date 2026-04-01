@@ -179,7 +179,7 @@ const ChinaTour = () => {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95] mb-4"
               >
-                <span className="text-program-china">Китай:</span> когда история
+                <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">Китай:</span> когда история
                 <br />
                 смотрит тебе в&nbsp;глаза
               </motion.h1>
@@ -223,7 +223,7 @@ const ChinaTour = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-6">
-                Почему Китай — это <span className="text-program-china">что-то особенное</span>
+                Почему Китай — это <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">что-то особенное</span>
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
@@ -386,7 +386,7 @@ const ChinaTour = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-14">
-                Что останется <span className="text-program-china">в памяти</span>
+                Что останется <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">в&nbsp;памяти</span>
               </h2>
             </AnimatedSection>
 
@@ -551,7 +551,7 @@ const ChinaTour = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-14">
-                Посмотрите <span className="text-program-china">ещё</span>
+                Посмотрите <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">ещё</span>
               </h2>
             </AnimatedSection>
 

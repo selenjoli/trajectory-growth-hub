@@ -220,7 +220,7 @@ const AltaiCamp = () => {
                     </span>
                   </span>
                   <span className="block whitespace-nowrap">
-                    <span className="text-program-altai">Алтай:</span> здесь английский
+                    <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">Алтай:</span> здесь английский
                   </span>
                 </span>
                 <span className="block">становится частью</span>
@@ -267,8 +267,8 @@ const AltaiCamp = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-6">
-                При чём здесь <span className="text-program-altai">АЛТАЙ
-И АНГЛИЙСКИЙ?</span>
+                При чём здесь <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">АЛТАЙ
+И&nbsp;АНГЛИЙСКИЙ?</span>
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
@@ -693,7 +693,7 @@ const AltaiCamp = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-14">
-                Посмотрите <span className="text-program-altai">ещё</span>
+                Посмотрите <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">ещё</span>
               </h2>
             </AnimatedSection>
 

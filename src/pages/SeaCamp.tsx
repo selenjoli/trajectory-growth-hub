@@ -144,7 +144,7 @@ const SeaCamp = () => {
                 
                 21 день, которые ребёнок
                 <br />
-                будет <span className="text-program-sea">вспоминать</span> всю жизнь
+                будет <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">вспоминать</span> всю жизнь
               </motion.h1>
             </div>
             <motion.p
@@ -186,7 +186,7 @@ const SeaCamp = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-6">
-                Лагерь — это <span className="text-program-sea">не «сдать ребёнка на лето»</span>
+                Лагерь — это <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">не «сдать ребёнка на&nbsp;лето»</span>
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
@@ -285,7 +285,7 @@ const SeaCamp = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-6">
-                Где и как <span className="text-program-sea">живут дети</span>
+                Где и&nbsp;как <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">живут дети</span>
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
@@ -446,7 +446,7 @@ const SeaCamp = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-14">
-                Посмотрите <span className="text-program-sea">ещё</span>
+                Посмотрите <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">ещё</span>
               </h2>
             </AnimatedSection>
 
