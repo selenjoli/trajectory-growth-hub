@@ -250,7 +250,7 @@ const SeaCamp = () => {
               Выбери <span className="bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">своё</span> лето
             </h2>
             <p className="text-white/70 text-base md:text-lg mb-14 max-w-2xl font-normal normal-case">
-              В начале смены каждый ребёнок выбирает один проект. Занятия, дружба и финальный день выстраиваются вокруг этого выбора.
+              В начале смены каждый ребёнок выбирает проект по&nbsp;интересам. Занятия, дружба и финальный день выстраиваются вокруг этого выбора.
             </p>
           </AnimatedSection>
         </div>
