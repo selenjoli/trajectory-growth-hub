@@ -210,7 +210,7 @@ const ProSkillFest = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-white leading-[0.9] mb-4"
+                className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-white leading-[0.9] mb-4"
               >
                 ProSkill{" "}
                 <span className={orangeGrad}>Fest</span>
