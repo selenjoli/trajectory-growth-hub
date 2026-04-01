@@ -262,7 +262,7 @@ const Kanikuly = () => {
                             {p.tag}
                           </span>
                         )}
-                        <h3 className="text-2xl md:text-3xl font-black uppercase leading-tight whitespace-nowrap">{p.title}</h3>
+                        <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase leading-tight">{p.title}</h3>
                         <p className="text-sm uppercase tracking-wide opacity-80 mt-1 font-bold">{p.subtitle}</p>
                         {p.notice && (
                           <p className="text-sm font-medium opacity-80 mt-2 normal-case italic">{p.notice}</p>
