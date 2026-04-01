@@ -196,7 +196,7 @@ const HilderstoneCourse = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-10">
-                <span className="bg-gradient-to-r from-amber-400 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">Hilderstone College</span>&nbsp;&mdash; это не&nbsp;просто название
+                Hilderstone College&nbsp;&mdash; это не&nbsp;просто название
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
