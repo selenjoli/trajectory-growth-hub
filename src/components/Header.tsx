@@ -20,11 +20,11 @@ const leftMenu: MenuItem[] = [
     label: "Программы для детей",
     href: "/kanikuly",
     children: [
-      { label: "Дубай", href: "/kanikuly/uae" },
       { label: "Китай", href: "/kanikuly/china" },
       { label: "Море", href: "/kanikuly/more" },
       { label: "Алтай", href: "/kanikuly/altai" },
       { label: "Онлайн-интенсив с Hilderstone", href: "/kanikuly/online" },
+      { label: "Дубай (даты уточняются)", href: "/kanikuly/uae" },
     ],
   },
   {

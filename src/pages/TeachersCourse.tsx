@@ -254,7 +254,7 @@ const TeachersCourse = () => {
                   </div>
                 </div>
                 <p className="text-white/70 text-sm font-normal normal-case leading-relaxed mt-8 pt-6 border-t border-white/10">
-                  Достаточно насыщенно чтобы был результат, и&nbsp;достаточно компактно чтобы совместить с&nbsp;работой.
+                  Достаточно насыщенно чтобы был результат, и&nbsp;достаточно компактно чтобы совместить с&nbsp;работой или&nbsp;отпуском.
                 </p>
               </div>
             </AnimatedSection>

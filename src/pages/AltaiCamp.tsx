@@ -577,7 +577,7 @@ const AltaiCamp = () => {
               <div className="bg-white rounded-[1.5rem] w-full px-8 py-10 shadow-2xl">
                 <div className="text-center border-b-2 border-dashed border-foreground/20 pb-6 mb-6">
                   <h2 className="text-2xl md:text-3xl text-foreground mb-1">Стоимость смены</h2>
-                  <p className="text-sm text-muted-foreground font-normal normal-case">Лагерь «Алтай» · 10–25 июля 2026</p>
+                  <p className="text-sm text-muted-foreground font-normal normal-case">Лагерь на Алтае · 10–25 июля 2026</p>
                 </div>
                 <div className="space-y-4 mb-8">
                   {[

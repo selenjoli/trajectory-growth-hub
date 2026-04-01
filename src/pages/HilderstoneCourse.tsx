@@ -303,7 +303,7 @@ const HilderstoneCourse = () => {
               <div className="flex flex-col lg:flex-row gap-10 items-center">
                 <div className="lg:w-1/2 space-y-6">
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
-                    По&nbsp;окончании курса каждый участник пишет онлайн-тест по&nbsp;пройденным темам и&nbsp;получает официальный сертификат Hilderstone College. Это не&nbsp;бумажка для мамы на&nbsp;холодильник&nbsp;&mdash; это реальный документ британского учебного заведения, который можно добавить в&nbsp;портфолио.
+                    По&nbsp;окончании курса каждый участник проходит онлайн-тестирование по&nbsp;изученным темам и&nbsp;получает официальный сертификат Hilderstone College. Реальный документ британского учебного заведения для портфолио, который подтверждает уровень и&nbsp;пройденную программу.
                   </p>
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
                     Для подростков, которые думают о&nbsp;поступлении или хотят выделиться&nbsp;&mdash; это весомо.
