@@ -264,7 +264,7 @@ const ProSkillFest = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-6">
-                Откуда это началось
+                Как это началось
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
