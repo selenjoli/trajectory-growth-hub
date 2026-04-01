@@ -153,9 +153,9 @@ const HilderstoneCourse = () => {
                       <span className="text-muted-foreground">Ежедневно (кроме выходных)</span>
                       <span className="font-bold">11:15&nbsp;&mdash; 12:45</span>
                     </p>
-                    <h4 className="text-base md:text-lg font-bold text-foreground normal-case mb-2">Разогрейте язык до&nbsp;начала лета</h4>
+                    <h4 className="text-base md:text-lg font-bold text-foreground normal-case mb-2">Первая смена &mdash; старт в&nbsp;июне</h4>
                     <p className="text-muted-foreground text-sm font-normal normal-case leading-relaxed">
-                      Первая смена проходит в&nbsp;начале июня — идеальное время чтобы включить английский до&nbsp;каникул, лагеря или поездки. Две недели с&nbsp;британским преподавателем — и&nbsp;ребёнок входит в&nbsp;лето с&nbsp;живым языком в&nbsp;голове.
+                      Десять занятий с&nbsp;британским преподавателем в&nbsp;мини-группе. Живой язык, реальные задания и&nbsp;уверенность, которая остаётся надолго.
                     </p>
                   </div>
                 </div>
