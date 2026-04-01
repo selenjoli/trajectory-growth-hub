@@ -144,7 +144,7 @@ const SeaCamp = () => {
                 
                 21 день, которые ребёнок
                 <br />
-                будет <span className="text-program-sea">вспоминать</span> всю жизнь
+                будет <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">вспоминать</span> всю жизнь
               </motion.h1>
             </div>
             <motion.p
