@@ -470,7 +470,7 @@ const HilderstoneCourse = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-4">
-                Хотите <span className="bg-gradient-to-r from-amber-400 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">больше чем&nbsp;онлайн?</span>
+                Хотите больше чем&nbsp;онлайн?
               </h2>
               <p className="text-foreground/60 text-lg mb-14 max-w-2xl font-normal normal-case">
                 Языковая практика&nbsp;&mdash; хорошее начало или отличное дополнение. Но&nbsp;живое погружение работает иначе.
