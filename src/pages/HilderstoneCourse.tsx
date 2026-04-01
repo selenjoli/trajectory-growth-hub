@@ -153,7 +153,7 @@ const HilderstoneCourse = () => {
                       <span className="text-muted-foreground">Ежедневно (кроме выходных)</span>
                       <span className="font-bold">11:15&nbsp;&mdash; 12:45</span>
                     </p>
-                    <h4 className="text-base md:text-lg font-bold text-foreground normal-case mb-2">Первая смена &mdash; старт в&nbsp;июне</h4>
+                    <h4 className="text-base md:text-lg font-bold text-foreground normal-case mb-2">Первая смена</h4>
                     <p className="text-muted-foreground text-sm font-normal normal-case leading-relaxed">
                       Десять занятий с&nbsp;британским преподавателем в&nbsp;мини-группе. Живой язык, реальные задания и&nbsp;уверенность, которая остаётся надолго.
                     </p>
@@ -302,9 +302,9 @@ const HilderstoneCourse = () => {
             <AnimatedSection delay={0.1}>
               <div className="flex flex-col lg:flex-row gap-10 items-center">
                 <div className="lg:w-1/2 space-y-6">
-                  <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
-                    По&nbsp;окончании курса каждый участник проходит онлайн-тестирование по&nbsp;изученным темам и&nbsp;получает официальный сертификат Hilderstone College. Реальный документ британского учебного заведения для портфолио, который подтверждает уровень и&nbsp;пройденную программу.
-                  </p>
+                    <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
+                      По&nbsp;окончании курса каждый участник проходит онлайн-тестирование по&nbsp;изученным темам и&nbsp;получает официальный сертификат Hilderstone College. Такой сертификат можно добавить в&nbsp;портфолио: он&nbsp;подтверждает, что участник прошёл программу и&nbsp;освоил темы курса.
+                    </p>
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
                     Для подростков, которые думают о&nbsp;поступлении или хотят выделиться&nbsp;&mdash; это весомо.
                   </p>
