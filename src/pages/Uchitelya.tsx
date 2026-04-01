@@ -89,7 +89,7 @@ const Uchitelya = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary-foreground leading-[0.95] mb-4 max-w-4xl"
+              className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-primary-foreground leading-[0.95] mb-4 max-w-4xl"
             >
               Для учителей,
               <br />
@@ -127,7 +127,7 @@ const Uchitelya = () => {
       <section className="section-padding">
         <div className="fluid-container">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl text-foreground mb-10">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-10">
               Это <span className="text-accent">знакомо?</span>
             </h2>
           </AnimatedSection>
@@ -165,7 +165,7 @@ const Uchitelya = () => {
       <section id="programs" className="section-padding">
         <div className="fluid-container">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl text-foreground mb-14">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-14">
               Что у&nbsp;нас <span className="text-accent">есть</span>
             </h2>
           </AnimatedSection>
@@ -254,7 +254,7 @@ const Uchitelya = () => {
       <section className="section-padding section-alt">
         <div className="fluid-container">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl text-foreground mb-14">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-14">
               Что вы <span className="text-accent">заберёте</span> с&nbsp;собой
             </h2>
           </AnimatedSection>
@@ -279,7 +279,7 @@ const Uchitelya = () => {
         <div className="bg-accent rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-white mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white mb-12">
                 Что говорят участники
               </h2>
             </AnimatedSection>
@@ -390,7 +390,7 @@ const Uchitelya = () => {
         <div className="bg-foreground rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-primary-foreground mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-primary-foreground mb-6">
                 Остались <span className="text-accent">вопросы?</span>
               </h2>
               <p className="text-primary-foreground/80 text-lg max-w-2xl mb-10 font-normal normal-case leading-relaxed">

@@ -197,7 +197,7 @@ const Kanikuly = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary-foreground leading-[0.95] mb-4 max-w-4xl"
+              className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-primary-foreground leading-[0.95] mb-4 max-w-4xl"
             >
               Каникулы,
               <br />
@@ -232,7 +232,7 @@ const Kanikuly = () => {
       <section id="programs" className="section-padding">
         <div className="fluid-container">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl text-foreground mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-4">
               Что есть <span className="text-accent">в&nbsp;этом году</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mb-14 font-normal normal-case">
@@ -262,7 +262,7 @@ const Kanikuly = () => {
                             {p.tag}
                           </span>
                         )}
-                        <h3 className="text-2xl md:text-3xl font-black uppercase leading-tight whitespace-nowrap">{p.title}</h3>
+                        <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase leading-tight">{p.title}</h3>
                         <p className="text-sm uppercase tracking-wide opacity-80 mt-1 font-bold">{p.subtitle}</p>
                         {p.notice && (
                           <p className="text-sm font-medium opacity-80 mt-2 normal-case italic">{p.notice}</p>
@@ -317,7 +317,7 @@ const Kanikuly = () => {
               <AnimatedSection delay={0.1}>
                 <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
                   <div className={imageFirst ? "md:order-2" : ""}>
-                    <h2 className="text-3xl md:text-5xl text-foreground mb-6">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-foreground mb-6">
                       {item.q}
                     </h2>
                     <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
@@ -340,7 +340,7 @@ const Kanikuly = () => {
       <section className="section-padding section-alt">
         <div className="fluid-container">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl text-foreground mb-14">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-14">
               Нам <span className="text-accent">доверяют</span>
             </h2>
           </AnimatedSection>
@@ -361,7 +361,7 @@ const Kanikuly = () => {
       <section className="section-padding">
         <div className="fluid-container">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl text-foreground mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-4">
               Почему это <span className="text-accent">работает</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-3xl mb-4 font-normal normal-case leading-relaxed">
@@ -391,7 +391,7 @@ const Kanikuly = () => {
         <div className="bg-accent rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-white mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white mb-4">
                 Что говорят дети и&nbsp;родители
               </h2>
               <p className="text-white/70 text-lg mb-12 max-w-xl font-normal normal-case">
@@ -454,7 +454,7 @@ const Kanikuly = () => {
       <section className="section-padding">
         <div className="fluid-container">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl text-foreground mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-4">
               Как мы <span className="text-accent">заботимся</span> о&nbsp;детях
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mb-14 font-normal normal-case">
@@ -481,7 +481,7 @@ const Kanikuly = () => {
         <div className="bg-foreground rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-primary-foreground mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-primary-foreground mb-16">
                 Ассоциация
                 <br />
                 <span className="text-accent">«Траектория Роста»</span>
@@ -548,7 +548,7 @@ const Kanikuly = () => {
       <section className="section-padding">
         <div className="fluid-container">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl text-foreground mb-14">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-14">
               Есть ещё <span className="text-accent">кое-что</span>
             </h2>
           </AnimatedSection>

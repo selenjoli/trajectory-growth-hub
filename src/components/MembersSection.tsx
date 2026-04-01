@@ -53,7 +53,7 @@ const MembersSection = () => {
       <div className="section-alt rounded-[2rem] py-20 px-6 md:px-16">
         <div className="fluid-container">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl text-foreground mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-4">
               Кто входит
               <br />
               в ассоциацию

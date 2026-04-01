@@ -166,7 +166,7 @@ const Partnership = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary-foreground leading-[0.95] mb-4 max-w-4xl"
+              className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-primary-foreground leading-[0.95] mb-4 max-w-4xl"
             >
               Вы&nbsp;строите центр.
               <br />
@@ -193,7 +193,7 @@ const Partnership = () => {
       <section id="about" className="section-padding">
         <div className="fluid-container">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl text-foreground mb-10">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-10">
               Это <span className={gold}>знакомо?</span>
             </h2>
           </AnimatedSection>
@@ -258,7 +258,7 @@ const Partnership = () => {
         <div className="section-alt rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-foreground mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-4">
                 Что это значит <span className={gold}>на&nbsp;практике</span>
               </h2>
               <p className="text-muted-foreground mb-14 text-lg font-normal normal-case">
@@ -293,7 +293,7 @@ const Partnership = () => {
         <div className="section-alt rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-foreground mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-4">
                 <span className={gold}>15&nbsp;центров,</span> которые уже сделали этот&nbsp;шаг
               </h2>
               <p className="text-muted-foreground mb-14 max-w-2xl text-lg font-normal normal-case">
@@ -330,7 +330,7 @@ const Partnership = () => {
       <section className="section-padding">
         <div className="fluid-container">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl text-foreground mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-12">
               Почему это <span className={gold}>работает</span>
             </h2>
           </AnimatedSection>
@@ -366,7 +366,7 @@ const Partnership = () => {
         <div className="bg-accent rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-accent-foreground mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-accent-foreground mb-4">
                 <span className={gold}>Что говорят</span> участники ассоциации
               </h2>
               <p className="text-accent-foreground/70 text-lg mb-12 max-w-xl font-normal normal-case">
@@ -429,7 +429,7 @@ const Partnership = () => {
       <section id="join" className="section-padding">
         <div className="fluid-container">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl text-foreground mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-4">
               Как это <span className={gold}>работает</span>
             </h2>
             <p className="text-muted-foreground mb-12 max-w-2xl text-lg font-normal normal-case leading-relaxed">
@@ -480,7 +480,7 @@ const Partnership = () => {
         <div className="bg-foreground rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-primary-foreground mb-14">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-primary-foreground mb-14">
                 Посмотрите <span className={gold}>ещё</span>
               </h2>
             </AnimatedSection>

@@ -210,7 +210,7 @@ const ProSkillFest = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-white leading-[0.9] mb-4"
+                className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-white leading-[0.9] mb-4"
               >
                 ProSkill{" "}
                 <span className={orangeGrad}>Fest</span>
@@ -263,7 +263,7 @@ const ProSkillFest = () => {
         <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-foreground mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-6">
                 Как это началось
               </h2>
             </AnimatedSection>
@@ -333,7 +333,7 @@ const ProSkillFest = () => {
         <div className="rounded-[2rem] py-20 px-6 md:px-16" style={{ backgroundColor: bordeaux }}>
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-white mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white mb-12">
                 Кому сюда
               </h2>
             </AnimatedSection>
@@ -370,7 +370,7 @@ const ProSkillFest = () => {
         <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl mb-4" style={{ color: bordeaux }}>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl mb-4" style={{ color: bordeaux }}>
                 <span className={orangeGrad}>Как устроен</span>{" "}
                 день
               </h2>
@@ -465,7 +465,7 @@ const ProSkillFest = () => {
 
           <div className="fluid-container relative z-10">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-white mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white mb-4">
                 Как это было{" "}
                 <span className={orangeGrad}>в&nbsp;2025&nbsp;году</span>
               </h2>
@@ -500,7 +500,7 @@ const ProSkillFest = () => {
             <AnimatedSection>
               <div className="flex flex-col lg:flex-row gap-10">
                 <div className="w-full lg:w-1/2">
-                  <h2 className="text-4xl md:text-6xl mb-4" style={{ color: bordeaux }}>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl mb-4" style={{ color: bordeaux }}>
                     Кто{" "}
                     <span className={orangeGrad}>выступает</span>
                   </h2>
@@ -540,7 +540,7 @@ const ProSkillFest = () => {
         <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl mb-12" style={{ color: bordeaux }}>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl mb-12" style={{ color: bordeaux }}>
                 Что вы{" "}
                 <span className={orangeGrad}>заберёте с&nbsp;собой</span>
               </h2>
@@ -567,7 +567,7 @@ const ProSkillFest = () => {
         <div className="rounded-[2rem] py-20 px-6 md:px-16" style={{ backgroundColor: orangeAccent }}>
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-white mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white mb-4">
                 Что говорят те,&nbsp;кто&nbsp;был
               </h2>
               <p className="text-white/80 text-base md:text-lg mb-12 font-normal normal-case">
@@ -631,7 +631,7 @@ const ProSkillFest = () => {
         <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-foreground mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-12">
                 <span className={orangeGrad}>Где</span> это происходит
               </h2>
             </AnimatedSection>
@@ -675,7 +675,7 @@ const ProSkillFest = () => {
         <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl mb-12" style={{ color: bordeaux }}>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl mb-12" style={{ color: bordeaux }}>
                 7 ноября. Москва.{" "}
                 <span className={orangeGrad}>Приходите.</span>
               </h2>
@@ -720,7 +720,7 @@ const ProSkillFest = () => {
         <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-foreground mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-4">
                 Хотите расти{" "}
                 <span className={orangeGrad}>не&nbsp;только в&nbsp;ноябре?</span>
               </h2>

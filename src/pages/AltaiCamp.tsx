@@ -209,7 +209,7 @@ const AltaiCamp = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="mb-4">
               
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95]">
+              <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white leading-[0.95]">
                 <span className="relative block w-fit">
                   <span className="flex items-center justify-between gap-6 mb-4 md:absolute md:bottom-full md:left-0 md:right-0 md:mb-4">
                     <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-sm md:text-base font-semibold uppercase tracking-wider px-5 py-2 rounded-full whitespace-nowrap">
@@ -219,7 +219,7 @@ const AltaiCamp = () => {
                       10–25 июля 2026
                     </span>
                   </span>
-                  <span className="block whitespace-nowrap">
+                  <span className="block">
                     <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">Алтай:</span> здесь английский
                   </span>
                 </span>
@@ -266,7 +266,7 @@ const AltaiCamp = () => {
         <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-foreground mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-6">
                 При чём здесь <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">АЛТАЙ
 И&nbsp;АНГЛИЙСКИЙ?</span>
               </h2>
@@ -330,7 +330,7 @@ const AltaiCamp = () => {
       <section className="section-padding overflow-hidden" ref={spotRef}>
         <div className="fluid-container">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl text-white mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white mb-4">
               Алтай, который <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">запоминается</span>
             </h2>
             <p className="text-white/70 text-base md:text-lg mb-14 max-w-2xl font-normal normal-case">
@@ -420,7 +420,7 @@ const AltaiCamp = () => {
           {/* Title — white, on the colored bg */}
           <div className="px-6 md:px-16 pb-6">
             <div className="fluid-container">
-              <h2 className="text-4xl md:text-6xl text-white">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white">
                 День в лагере — <span className="text-white/70">как это выглядит</span>
               </h2>
             </div>
@@ -525,7 +525,7 @@ const AltaiCamp = () => {
       <section className="section-padding overflow-hidden">
         <div className="fluid-container">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl text-white mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white mb-6">
               <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">Где живут</span> и что едят дети
             </h2>
           </AnimatedSection>
@@ -628,7 +628,7 @@ const AltaiCamp = () => {
         <div className="rounded-[2rem] bg-white/10 backdrop-blur-sm border border-white/15 py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-white mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white mb-4">
                 Что говорят <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">участники</span>
               </h2>
               <p className="text-white/60 text-base md:text-lg mb-12 max-w-xl font-normal normal-case">
@@ -692,7 +692,7 @@ const AltaiCamp = () => {
         <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-foreground mb-14">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-14">
                 Посмотрите <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">ещё</span>
               </h2>
             </AnimatedSection>

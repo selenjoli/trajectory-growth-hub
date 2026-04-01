@@ -127,7 +127,7 @@ const UaeTour = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="mb-4"
             >
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95]">
+              <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white leading-[0.95]">
                 <span className="relative block w-fit">
                   <span className="flex items-center justify-between gap-6 mb-4 md:absolute md:bottom-full md:left-0 md:right-0 md:mb-4">
                     <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-sm md:text-base font-semibold uppercase tracking-wider px-5 py-2 rounded-full whitespace-nowrap">
@@ -137,7 +137,7 @@ const UaeTour = () => {
                       Даты уточняются
                     </span>
                   </span>
-                  <span className="block whitespace-nowrap">
+                  <span className="block">
                     <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">Дубай</span> — город, где будущее
                   </span>
                 </span>
@@ -208,7 +208,7 @@ const UaeTour = () => {
         <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-foreground mb-10">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-10">
                 Это не обычная <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">экскурсионная поездка</span>
               </h2>
             </AnimatedSection>
@@ -269,7 +269,7 @@ const UaeTour = () => {
       <section className="section-padding overflow-hidden">
         <div className="fluid-container">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl text-white mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white mb-4">
               8 дней — <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">день за днём</span>
             </h2>
             <p className="text-white/70 text-base md:text-lg mb-14 max-w-2xl font-normal normal-case">
@@ -395,7 +395,7 @@ const UaeTour = () => {
         <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-foreground mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-6">
                 Жизнь в <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">международном кампусе</span>
               </h2>
             </AnimatedSection>
@@ -484,7 +484,7 @@ const UaeTour = () => {
         <div className="rounded-[2rem] bg-white/10 backdrop-blur-sm border border-white/15 py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-white mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white mb-4">
                 Что говорят <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">участники</span>
               </h2>
               <p className="text-white/60 text-lg mb-12 max-w-xl font-normal normal-case">
@@ -547,7 +547,7 @@ const UaeTour = () => {
       <section className="section-padding">
         <div className="fluid-container text-center max-w-2xl mx-auto">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl text-white mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white mb-6">
               Дубай ждёт — <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">следите за датами</span>
             </h2>
             <p className="text-white/80 text-base md:text-lg font-normal normal-case leading-relaxed mb-10">
@@ -568,7 +568,7 @@ const UaeTour = () => {
         <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-foreground mb-14">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-14">
                 Посмотрите <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">ещё</span>
               </h2>
             </AnimatedSection>

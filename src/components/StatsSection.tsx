@@ -42,7 +42,7 @@ const StatsSection = () => {
     <section className="section-padding">
       <div className="fluid-container">
         <AnimatedSection>
-          <h2 className="text-4xl md:text-6xl text-foreground mb-14">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-14">
             Ассоциация
             <br />
             <span className="text-accent">сегодня</span>

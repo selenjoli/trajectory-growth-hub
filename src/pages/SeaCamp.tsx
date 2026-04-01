@@ -140,7 +140,7 @@ const SeaCamp = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95] mb-4">
+                className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white leading-[0.95] mb-4">
                 
                 21 день, которые ребёнок
                 <br />
@@ -185,7 +185,7 @@ const SeaCamp = () => {
         <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-foreground mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-6">
                 Лагерь — это <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">не «сдать ребёнка на&nbsp;лето»</span>
               </h2>
             </AnimatedSection>
@@ -246,7 +246,7 @@ const SeaCamp = () => {
       <section className="section-padding overflow-hidden">
         <div className="fluid-container">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl text-white mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white mb-4">
               Выбери <span className="bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">своё</span> лето
             </h2>
             <p className="text-white/70 text-base md:text-lg mb-14 max-w-2xl font-normal normal-case">
@@ -284,7 +284,7 @@ const SeaCamp = () => {
         <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-foreground mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-6">
                 Где и&nbsp;как <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">живут дети</span>
               </h2>
             </AnimatedSection>
@@ -305,8 +305,8 @@ const SeaCamp = () => {
                 {facilities.map((f, i) =>
                 <div key={i} className="rounded-xl overflow-hidden relative aspect-square">
                     <img src={f.image} alt={f.text} className="w-full h-full object-cover" />
-                    <div className="absolute inset-x-0 bottom-0 bg-program-sea/75 backdrop-blur-sm px-4 py-3 h-[4.5rem] md:h-[4.5rem] flex items-center">
-                      <p className="text-white text-sm md:text-base font-bold uppercase tracking-wide leading-snug">{f.text}</p>
+                    <div className="absolute inset-x-0 bottom-0 bg-program-sea/75 backdrop-blur-sm px-3 py-2 md:px-4 md:py-3 min-h-[3.5rem] md:min-h-[4.5rem] flex items-center">
+                      <p className="text-white text-[0.65rem] sm:text-xs md:text-sm font-bold uppercase tracking-wide leading-snug">{f.text}</p>
                     </div>
                   </div>
                 )}
@@ -381,7 +381,7 @@ const SeaCamp = () => {
         <div className="rounded-[2rem] bg-white/10 backdrop-blur-sm border border-white/15 py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-white mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white mb-4">
                 Что говорят <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">участники</span>
               </h2>
               <p className="text-white/60 text-base md:text-lg mb-12 max-w-xl font-normal normal-case">
@@ -445,7 +445,7 @@ const SeaCamp = () => {
         <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-foreground mb-14">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-14">
                 Посмотрите <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">ещё</span>
               </h2>
             </AnimatedSection>
