@@ -55,7 +55,7 @@ const HistorySection = () => {
       <div className="bg-foreground rounded-[2rem] py-20 px-6 md:px-16">
         <div className="fluid-container">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl text-primary-foreground mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-primary-foreground mb-16">
               Как это
               <br />
               начиналось

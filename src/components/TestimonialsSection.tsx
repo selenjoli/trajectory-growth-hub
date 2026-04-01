@@ -55,7 +55,7 @@ const TestimonialsSection = () => {
       <div className="bg-accent rounded-[2rem] py-20 px-6 md:px-16">
         <div className="fluid-container">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl text-accent-foreground mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-accent-foreground mb-4">
               Отзывы
             </h2>
             <p className="text-accent-foreground/70 text-lg mb-12 max-w-xl">
