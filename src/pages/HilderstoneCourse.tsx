@@ -84,7 +84,7 @@ const HilderstoneCourse = () => {
                       Июнь 2026
                     </span>
                   </span>
-                  <span className="block whitespace-nowrap">
+                  <span className="block">
                     <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">Британский преподаватель.</span>
                   </span>
                 </span>
@@ -129,7 +129,7 @@ const HilderstoneCourse = () => {
       <section className="section-padding">
         <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-white mb-14">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white mb-14">
                 Два способа провести лето <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">с&nbsp;пользой</span>
               </h2>
             </AnimatedSection>
@@ -195,7 +195,7 @@ const HilderstoneCourse = () => {
         <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-foreground mb-10">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-10">
                 Hilderstone College&nbsp;&mdash; это не&nbsp;просто название
               </h2>
             </AnimatedSection>
@@ -256,7 +256,7 @@ const HilderstoneCourse = () => {
       <section className="section-padding">
         <div className="fluid-container">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl text-white mb-14">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white mb-14">
               Что происходит на&nbsp;занятиях
             </h2>
           </AnimatedSection>
@@ -294,7 +294,7 @@ const HilderstoneCourse = () => {
         <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-foreground mb-10">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-10">
                 Официальный сертификат британского колледжа
               </h2>
             </AnimatedSection>
@@ -325,7 +325,7 @@ const HilderstoneCourse = () => {
         <div className="rounded-[2rem] bg-white/10 backdrop-blur-sm border border-white/15 py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-white mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white mb-4">
                 Что говорят <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">участники</span>
               </h2>
               <p className="text-white/60 text-lg mb-12 max-w-xl font-normal normal-case">
@@ -469,7 +469,7 @@ const HilderstoneCourse = () => {
         <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-6xl text-foreground mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-4">
                 Хотите больше чем&nbsp;онлайн?
               </h2>
               <p className="text-foreground/60 text-lg mb-14 max-w-2xl font-normal normal-case">
