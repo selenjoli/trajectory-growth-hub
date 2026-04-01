@@ -386,7 +386,7 @@ const ChinaTour = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-14">
-                Что останется <span className="text-program-china">в памяти</span>
+                Что останется <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">в&nbsp;памяти</span>
               </h2>
             </AnimatedSection>
 
