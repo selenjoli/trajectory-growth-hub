@@ -285,7 +285,7 @@ const SeaCamp = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-6">
-                Где и как <span className="text-program-sea">живут дети</span>
+                Где и&nbsp;как <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">живут дети</span>
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
