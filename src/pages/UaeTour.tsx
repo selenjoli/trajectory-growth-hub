@@ -138,7 +138,7 @@ const UaeTour = () => {
                     </span>
                   </span>
                   <span className="block whitespace-nowrap">
-                    <span className="text-program-uae">Дубай</span> — город, где будущее
+                    <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">Дубай</span> — город, где будущее
                   </span>
                 </span>
                 <span className="block">уже наступило</span>
