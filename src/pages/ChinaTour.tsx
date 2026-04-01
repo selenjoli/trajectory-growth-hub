@@ -223,7 +223,7 @@ const ChinaTour = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl text-foreground mb-6">
-                Почему Китай — это <span className="text-program-china">что-то особенное</span>
+                Почему Китай — это <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">что-то особенное</span>
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
