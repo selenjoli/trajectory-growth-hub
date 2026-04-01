@@ -169,7 +169,7 @@ const TeachersCourse = () => {
               <div className="flex flex-col lg:flex-row gap-10 items-center">
                 <div className="lg:w-1/2 space-y-6">
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
-                    Hilderstone College — британский колледж с&nbsp;многолетней историей преподавания английского как иностранного. Их&nbsp;преподаватели работают с&nbsp;учениками со&nbsp;всего мира и&nbsp;понимают как выглядит реальный класс — не&nbsp;идеальный из&nbsp;учебника по&nbsp;методике, а&nbsp;живой, со&nbsp;всеми его сложностями.
+                    Hilderstone College — британский колледж с&nbsp;многолетней историей преподавания английского как иностранного. Команда колледжа работает с&nbsp;учениками со&nbsp;всего мира и&nbsp;понимает как выглядит реальный класс — не&nbsp;идеальный из&nbsp;учебника по&nbsp;методике, а&nbsp;живой, со&nbsp;всеми его сложностями.
                   </p>
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
                     Этот курс — не&nbsp;адаптация чужих материалов и&nbsp;не&nbsp;пересказ теорий. Британские тьюторы-практики ведут занятия сами, в&nbsp;прямом эфире. Вы&nbsp;задаёте вопросы, обсуждаете задачи, получаете обратную связь.
@@ -254,7 +254,7 @@ const TeachersCourse = () => {
                   </div>
                 </div>
                 <p className="text-white/70 text-sm font-normal normal-case leading-relaxed mt-8 pt-6 border-t border-white/10">
-                  Достаточно насыщенно чтобы был результат, и&nbsp;достаточно компактно чтобы совместить с&nbsp;работой.
+                  Достаточно насыщенно чтобы был результат, и&nbsp;достаточно компактно чтобы совместить с&nbsp;работой или&nbsp;отпуском.
                 </p>
               </div>
             </AnimatedSection>

@@ -153,9 +153,9 @@ const HilderstoneCourse = () => {
                       <span className="text-muted-foreground">Ежедневно (кроме выходных)</span>
                       <span className="font-bold">11:15&nbsp;&mdash; 12:45</span>
                     </p>
-                    <h4 className="text-base md:text-lg font-bold text-foreground normal-case mb-2">Едете в&nbsp;поездку&nbsp;&mdash; готовьтесь заранее</h4>
+                    <h4 className="text-base md:text-lg font-bold text-foreground normal-case mb-2">Разогрейте язык до&nbsp;начала лета</h4>
                     <p className="text-muted-foreground text-sm font-normal normal-case leading-relaxed">
-                      Записались в&nbsp;тур в&nbsp;Китай или лагерь? Первая смена проходит в&nbsp;начале июня&nbsp;&mdash; как раз до&nbsp;отъезда. Ребёнок приедет уже разогретым: с&nbsp;живым языком в&nbsp;голове, а&nbsp;не&nbsp;школьными правилами.
+                      Первая смена проходит в&nbsp;начале июня — идеальное время чтобы включить английский до&nbsp;каникул, лагеря или поездки. Две недели с&nbsp;британским преподавателем — и&nbsp;ребёнок входит в&nbsp;лето с&nbsp;живым языком в&nbsp;голове.
                     </p>
                   </div>
                 </div>
@@ -303,7 +303,7 @@ const HilderstoneCourse = () => {
               <div className="flex flex-col lg:flex-row gap-10 items-center">
                 <div className="lg:w-1/2 space-y-6">
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
-                    По&nbsp;окончании курса каждый участник пишет онлайн-тест по&nbsp;пройденным темам и&nbsp;получает официальный сертификат Hilderstone College. Это не&nbsp;бумажка для мамы на&nbsp;холодильник&nbsp;&mdash; это реальный документ британского учебного заведения, который можно добавить в&nbsp;портфолио.
+                    По&nbsp;окончании курса каждый участник проходит онлайн-тестирование по&nbsp;изученным темам и&nbsp;получает официальный сертификат Hilderstone College. Реальный документ британского учебного заведения для портфолио, который подтверждает уровень и&nbsp;пройденную программу.
                   </p>
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
                     Для подростков, которые думают о&nbsp;поступлении или хотят выделиться&nbsp;&mdash; это весомо.

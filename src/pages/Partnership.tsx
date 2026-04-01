@@ -179,7 +179,7 @@ const Partnership = () => {
               className="flex flex-col md:flex-row md:items-end gap-8 md:gap-16"
             >
               <p className="text-base md:text-lg text-primary-foreground/85 max-w-lg font-normal normal-case leading-relaxed">
-                Ассоциация «Траектория Роста» объединяет 15&nbsp;центров из&nbsp;8&nbsp;городов России. Не&nbsp;для того чтобы конкурировать — а&nbsp;чтобы вместе делать то, что в&nbsp;одиночку невозможно.
+                Ассоциация «Траектория Роста» объединяет 15&nbsp;центров из&nbsp;разных городов России. Не&nbsp;для того чтобы конкурировать — а&nbsp;чтобы вместе делать то, что в&nbsp;одиночку невозможно.
               </p>
               <a href="#about" className="inline-block btn-gold px-8 py-4 rounded-2xl transition-all text-sm tracking-widest shrink-0">
                 Узнать об&nbsp;ассоциации ↓
@@ -433,7 +433,7 @@ const Partnership = () => {
               Как это <span className={gold}>работает</span>
             </h2>
             <p className="text-muted-foreground mb-12 max-w-2xl text-lg font-normal normal-case leading-relaxed">
-              Никакого сложного процесса. Напишите нам — познакомимся, расскажем как устроена ассоциация изнутри и ответим на все вопросы. Никаких обязательств до разговора.
+              Никакого сложного процесса. Напишите нам — познакомимся, расскажем как устроена ассоциация изнутри и&nbsp;ответим на&nbsp;все вопросы.
             </p>
           </AnimatedSection>
 
