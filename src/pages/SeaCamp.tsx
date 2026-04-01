@@ -140,7 +140,7 @@ const SeaCamp = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95] mb-4">
+                className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white leading-[0.95] mb-4">
                 
                 21 день, которые ребёнок
                 <br />
