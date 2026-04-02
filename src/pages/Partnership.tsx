@@ -98,20 +98,57 @@ const testimonials = [
 /* ---- gold gradient ---- */
 const gold = "bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent";
 
-/* ---- member card ---- */
+/* ---- founder card (logo + photo) ---- */
+const FounderCard = ({ member, index }: { member: Member; index: number }) => {
+  const initials = member.name.split(" ").map((w) => w[0]).join("");
+  return (
+    <AnimatedSection delay={index * 0.05}>
+      <div className="rounded-[1.5rem] border border-border p-6 bg-card hover:border-primary/30 transition-all duration-300 group h-full flex items-start gap-4">
+        <div className="flex-1 min-w-0">
+          {member.logo ? (
+            <div className="h-10 mb-4">
+              <img src={member.logo} alt={member.school} className="h-full w-auto object-contain" />
+            </div>
+          ) : (
+            <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold flex items-center justify-center text-sm mb-4 group-hover:scale-110 transition-transform duration-300">
+              {initials}
+            </div>
+          )}
+          <p className="font-semibold text-foreground normal-case">{member.name}</p>
+          <p className="text-sm text-muted-foreground normal-case">{member.school}</p>
+          <p className="text-xs text-muted-foreground/60 normal-case mt-1">{member.city}</p>
+        </div>
+        {member.photo && (
+          <div className="w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0">
+            <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
+          </div>
+        )}
+      </div>
+    </AnimatedSection>
+  );
+};
+
+/* ---- member card (logo or initials only) ---- */
 const MemberCard = ({ member, index }: { member: Member; index: number }) => {
   const initials = member.name.split(" ").map((w) => w[0]).join("");
   return (
     <AnimatedSection delay={index * 0.05}>
       <div className="rounded-[1.5rem] border border-border p-6 bg-card hover:border-primary/30 transition-all duration-300 group h-full">
-        <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold flex items-center justify-center text-sm mb-4 group-hover:scale-110 transition-transform duration-300">
-          {initials}
-        </div>
+        {member.logo ? (
+          <div className="h-10 mb-4">
+            <img src={member.logo} alt={member.school} className="h-full w-auto object-contain" />
+          </div>
+        ) : (
+          <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold flex items-center justify-center text-sm mb-4 group-hover:scale-110 transition-transform duration-300">
+            {initials}
+          </div>
+        )}
         <p className="font-semibold text-foreground normal-case">{member.name}</p>
         <p className="text-sm text-muted-foreground normal-case">{member.school}</p>
         <p className="text-xs text-muted-foreground/60 normal-case mt-1">{member.city}</p>
       </div>
     </AnimatedSection>
+  );
   );
 };
 
