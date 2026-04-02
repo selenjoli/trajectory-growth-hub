@@ -155,7 +155,7 @@ const MemberCard = ({ member, index }: { member: Member; index: number }) => {
     <AnimatedSection delay={index * 0.05}>
       <div className="rounded-[1.5rem] border border-border p-6 bg-card hover:border-primary/30 transition-all duration-300 group h-full">
         {member.logo ? (
-          <div className="h-7 mb-4">
+          <div className="h-10 mb-4">
             <img src={member.logo} alt={member.school} className="h-full w-auto object-contain" />
           </div>
         ) : (
