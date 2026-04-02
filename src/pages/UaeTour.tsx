@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import FloatingButtons from "@/components/FloatingButtons";
 import AnimatedSection from "@/components/AnimatedSection";
+import PhotoLightbox from "@/components/PhotoLightbox";
 
 import heroBg from "@/assets/uae-hero.jpg";
 import uaeBeach from "@/assets/uae-beach.jpg";
@@ -71,6 +72,8 @@ const UaeTour = () => {
   const [dayPaused, setDayPaused] = useState(false);
   const [whySlide, setWhySlide] = useState(0);
   const [whyPaused, setWhyPaused] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   const whyPhotos = [uaeBeach, uaeAbudhabi, uaeMuseum, uaeMall, uaeYacht];
 
@@ -248,7 +251,8 @@ const UaeTour = () => {
                             }}
                             exit={{ opacity: 0, scale: 0.9, y: -20 }}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                            className="absolute inset-0"
+                            className={`absolute inset-0 ${offset === 0 ? "cursor-pointer" : ""}`}
+                            onClick={() => { if (offset === 0) { setLightboxIndex(i); setLightboxOpen(true); } }}
                           >
                             <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl">
                               <img src={photo} alt="ОАЭ" className="w-full h-full object-cover" />
@@ -618,6 +622,7 @@ const UaeTour = () => {
         </div>
       </section>
       <FloatingButtons arrowColor="hsl(var(--program-uae))" />
+      <PhotoLightbox photos={whyPhotos} initialIndex={lightboxIndex} open={lightboxOpen} onClose={() => setLightboxOpen(false)} />
     </main>
   );
 };

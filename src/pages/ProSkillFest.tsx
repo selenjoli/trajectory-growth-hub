@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import AnimatedSection from "@/components/AnimatedSection";
+import PhotoLightbox from "@/components/PhotoLightbox";
 
 import flowersLeft from "@/assets/fest-flowers-left.png";
 import flowersRight from "@/assets/fest-flowers-right.png";
@@ -128,6 +129,9 @@ const ProSkillFest = () => {
   const [formatSlide, setFormatSlide] = useState(0);
   const [formatPaused, setFormatPaused] = useState(false);
   const formatPhotos = [heroImg, sessionImg, networkingImg, venueImg];
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [lightboxPhotos, setLightboxPhotos] = useState<string[]>([]);
 
   const nextSlide = useCallback(() => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -311,7 +315,8 @@ const ProSkillFest = () => {
                             }}
                             exit={{ opacity: 0, scale: 0.9, y: -20 }}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                            className="absolute inset-0"
+                            className={`absolute inset-0 ${offset === 0 ? "cursor-pointer" : ""}`}
+                            onClick={() => { if (offset === 0) { setLightboxPhotos(galleryPhotos); setLightboxIndex(i); setLightboxOpen(true); } }}
                           >
                             <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl">
                               <img src={photo} alt="ProSkill Fest" className="w-full h-full object-cover" />
@@ -417,7 +422,8 @@ const ProSkillFest = () => {
                           }}
                           exit={{ opacity: 0, scale: 0.9, y: -20 }}
                           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                          className="absolute inset-0"
+                          className={`absolute inset-0 ${offset === 0 ? "cursor-pointer" : ""}`}
+                          onClick={() => { if (offset === 0) { setLightboxPhotos(formatPhotos); setLightboxIndex(i); setLightboxOpen(true); } }}
                         >
                           <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl">
                             <img src={photo} alt="ProSkill Fest" className="w-full h-full object-cover" />
@@ -758,6 +764,7 @@ const ProSkillFest = () => {
         </div>
       </section>
       <FloatingButtons arrowColor="#300000" />
+      <PhotoLightbox photos={lightboxPhotos.length ? lightboxPhotos : galleryPhotos} initialIndex={lightboxIndex} open={lightboxOpen} onClose={() => setLightboxOpen(false)} />
     </main>
   );
 };
