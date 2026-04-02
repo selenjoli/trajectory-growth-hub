@@ -512,7 +512,8 @@ const Kanikuly = () => {
                           }}
                           exit={{ opacity: 0, scale: 0.9, y: -20 }}
                           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                          className="absolute inset-0"
+                          className={`absolute inset-0 ${offset === 0 ? "cursor-pointer" : ""}`}
+                          onClick={() => { if (offset === 0) { setLightboxIndex(i); setLightboxOpen(true); } }}
                         >
                           <img src={img} alt="Встречи ассоциации" className="w-full h-full object-cover rounded-[1.5rem] shadow-2xl" />
                         </motion.div>

@@ -251,7 +251,8 @@ const UaeTour = () => {
                             }}
                             exit={{ opacity: 0, scale: 0.9, y: -20 }}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                            className="absolute inset-0"
+                            className={`absolute inset-0 ${offset === 0 ? "cursor-pointer" : ""}`}
+                            onClick={() => { if (offset === 0) { setLightboxIndex(i); setLightboxOpen(true); } }}
                           >
                             <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl">
                               <img src={photo} alt="ОАЭ" className="w-full h-full object-cover" />
