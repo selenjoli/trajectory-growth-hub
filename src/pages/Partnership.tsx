@@ -122,6 +122,9 @@ const Partnership = () => {
   const [gallerySlide, setGallerySlide] = useState(0);
   const [galleryPaused, setGalleryPaused] = useState(false);
   const galleryPhotos = [heroImg, meetingImg, collaborationImg, sotrudnichestvoImg];
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [lightboxPhotos, setLightboxPhotos] = useState<string[]>([]);
 
   const nextSlide = useCallback(() => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
