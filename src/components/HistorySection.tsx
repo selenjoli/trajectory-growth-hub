@@ -43,6 +43,8 @@ const rostItems = [
 
 const HistorySection = () => {
   const [currentImg, setCurrentImg] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
