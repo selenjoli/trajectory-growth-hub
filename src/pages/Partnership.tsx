@@ -98,15 +98,15 @@ const founders: Member[] = [
 ];
 
 const members: Member[] = [
-  { name: "Татьяна Морозова", school: "Lingua Cat", city: "Москва" },
-  { name: "Ирина Бондарь", school: "IC School", city: "Москва" },
-  { name: "Екатерина Полянская", school: "Космос", city: "Московская область" },
-  { name: "Юлия Мирошниченко", school: "ABC Club", city: "Московская область" },
-  { name: "Светлана Москаленко", school: "Motion School", city: "Московская область" },
-  { name: "Елена Шестакова", school: "Eye Club", city: "Кисловодск" },
-  { name: "Александра Филиппова", school: "Язык для успеха", city: "Чебоксары" },
-  { name: "Диана Воробьева", school: "Лингва-Плюс", city: "Курск" },
-  { name: "Вера Романова", school: "SPU", city: "Тамбов" },
+  { name: "Татьяна Морозова", school: "Lingua Cat", city: "Москва", logo: linguaCatLogo },
+  { name: "Ирина Бондарь", school: "IC School", city: "Москва", logo: icSchoolLogo },
+  { name: "Екатерина Полянская", school: "Космос", city: "Московская область", logo: kosmosLogo },
+  { name: "Юлия Мирошниченко", school: "ABC Club", city: "Московская область", logo: abcClubLogo },
+  { name: "Светлана Москаленко", school: "Motion School", city: "Московская область", logo: motionSchoolLogo },
+  { name: "Елена Шестакова", school: "Eye Club", city: "Кисловодск", logo: eyeClubLogo },
+  { name: "Александра Филиппова", school: "Язык для успеха", city: "Чебоксары", logo: yazykUspekhaLogo },
+  { name: "Диана Воробьева", school: "Лингва-Плюс", city: "Курск", logo: lingvaPlusLogo },
+  { name: "Вера Романова", school: "SPU", city: "Тамбов", logo: spuLogo },
 ];
 
 const testimonials = [
