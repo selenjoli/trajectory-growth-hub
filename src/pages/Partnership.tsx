@@ -72,7 +72,7 @@ interface Member {
 
 const founders: Member[] = [
   { name: "Виктория Першина", school: "Smart Cookies Club", city: "Москва", logo: smartCookiesLogo, photo: pershinaPhoto },
-  { name: "Марина Кокорина", school: "Академия Языков", city: "Москва" },
+  { name: "Марина Кокорина", school: "Академия Языков", city: "Москва", logo: akademiyaLogo, photo: kokorinaPhoto },
   { name: "Галина Фаустова", school: "LS Studio", city: "Белгород" },
   { name: "Юлия Алексеева", school: "Liberty School", city: "Московская область" },
   { name: "Татьяна Ермилова", school: "ABC School", city: "Москва" },
