@@ -119,6 +119,8 @@ const AltaiCamp = () => {
   const [zoomed, setZoomed] = useState<number | null>(null);
   const [hookSlide, setHookSlide] = useState(0);
   const [hookPaused, setHookPaused] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
   const [currentSpot, setCurrentSpot] = useState(0);
   const [spotPaused, setSpotPaused] = useState(false);
   const [currentDay, setCurrentDay] = useState(0);
