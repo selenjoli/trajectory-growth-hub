@@ -510,18 +510,8 @@ const TeachersCourse = () => {
                         className="absolute inset-0 cursor-pointer"
                         onClick={() => offset === 0 && setZoomed(isZoomed ? null : item.id)}
                       >
-                        <div className="w-full h-full flex flex-col">
-                          <div className="flex-1 rounded-[1.2rem] overflow-hidden shadow-2xl bg-background">
-                            <img src={item.image} alt={`Отзыв от ${item.name}`} className="w-full h-full object-cover" />
-                          </div>
-                          <motion.div
-                            className="mt-4 text-center"
-                            animate={{ opacity: offset === 0 ? 1 : 0 }}
-                            transition={{ duration: 0.3 }}
-                          >
-                            <p className="text-foreground font-bold text-base">{item.name}</p>
-                            <p className="text-foreground/60 text-sm">{item.role}</p>
-                          </motion.div>
+                        <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl bg-background">
+                          <img src={item.image} alt={`Отзыв ${item.id}`} className="w-full h-full object-cover" />
                         </div>
                       </motion.div>
                     );
