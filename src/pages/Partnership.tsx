@@ -12,6 +12,8 @@ import akademiyaLogo from "@/assets/logos/akademiya-yazykov.png";
 import kokorinaPhoto from "@/assets/founders/kokorina.jpg";
 import lsStudioLogo from "@/assets/logos/ls-studio.png";
 import faustovaPhoto from "@/assets/founders/faustova.jpg";
+import libertyLogo from "@/assets/logos/liberty-school.png";
+import alekseevaPhoto from "@/assets/founders/alekseeva.png";
 
 import heroImg from "@/assets/partnership.jpg";
 import quoteImg from "@/assets/rost-quote.jpg";
@@ -76,7 +78,7 @@ const founders: Member[] = [
   { name: "Виктория Першина", school: "Smart Cookies Club", city: "Москва", logo: smartCookiesLogo, photo: pershinaPhoto },
   { name: "Марина Кокорина", school: "Академия Языков", city: "Москва", logo: akademiyaLogo, photo: kokorinaPhoto },
   { name: "Галина Фаустова", school: "LS Studio", city: "Белгород", logo: lsStudioLogo, photo: faustovaPhoto },
-  { name: "Юлия Алексеева", school: "Liberty School", city: "Московская область" },
+  { name: "Юлия Алексеева", school: "Liberty School", city: "Московская область", logo: libertyLogo, photo: alekseevaPhoto },
   { name: "Татьяна Ермилова", school: "ABC School", city: "Москва" },
   { name: "Светлана Гольцова", school: "HighFlySchool", city: "Москва" },
 ];
