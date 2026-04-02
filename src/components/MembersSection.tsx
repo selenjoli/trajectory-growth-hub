@@ -9,6 +9,8 @@ import libertyLogo from "@/assets/logos/liberty-school.png";
 import alekseevaPhoto from "@/assets/founders/alekseeva.png";
 import abcSchoolLogo from "@/assets/logos/abc-school.png";
 import ermilovaPhoto from "@/assets/founders/ermilova.jpg";
+import highflyLogo from "@/assets/logos/highfly-school.png";
+import goltsovaPhoto from "@/assets/founders/goltsova.png";
 
 interface Member {
   name: string;
@@ -24,7 +26,7 @@ const founders: Member[] = [
   { name: "Галина Фаустова", school: "LS Studio", city: "Белгород", logo: lsStudioLogo, photo: faustovaPhoto },
   { name: "Юлия Алексеева", school: "Liberty School", city: "Московская область", logo: libertyLogo, photo: alekseevaPhoto },
   { name: "Татьяна Ермилова", school: "ABC School", city: "Москва", logo: abcSchoolLogo, photo: ermilovaPhoto },
-  { name: "Светлана Гольцова", school: "HighFlySchool", city: "Москва" },
+  { name: "Светлана Гольцова", school: "HighFlySchool", city: "Москва", logo: highflyLogo, photo: goltsovaPhoto },
 ];
 
 const members: Member[] = [
