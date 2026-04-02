@@ -9,6 +9,8 @@ import libertyLogo from "@/assets/logos/liberty-school.png";
 import alekseevaPhoto from "@/assets/founders/alekseeva.png";
 import abcSchoolLogo from "@/assets/logos/abc-school.png";
 import ermilovaPhoto from "@/assets/founders/ermilova.jpg";
+import highflyLogo from "@/assets/logos/highfly-school.png";
+import goltsovaPhoto from "@/assets/founders/goltsova.png";
 
 interface Member {
   name: string;
