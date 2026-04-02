@@ -84,7 +84,7 @@ const founders: Member[] = [
   { name: "Галина Фаустова", school: "LS Studio", city: "Белгород", logo: lsStudioLogo, photo: faustovaPhoto },
   { name: "Юлия Алексеева", school: "Liberty School", city: "Московская область", logo: libertyLogo, photo: alekseevaPhoto },
   { name: "Татьяна Ермилова", school: "ABC School", city: "Москва", logo: abcSchoolLogo, photo: ermilovaPhoto },
-  { name: "Светлана Гольцова", school: "HighFlySchool", city: "Москва" },
+  { name: "Светлана Гольцова", school: "HighFlySchool", city: "Москва", logo: highflyLogo, photo: goltsovaPhoto },
 ];
 
 const members: Member[] = [
