@@ -18,6 +18,15 @@ import abcSchoolLogo from "@/assets/logos/abc-school.png";
 import ermilovaPhoto from "@/assets/founders/ermilova.jpg";
 import highflyLogo from "@/assets/logos/highfly-school.png";
 import goltsovaPhoto from "@/assets/founders/goltsova.png";
+import linguaCatLogo from "@/assets/logos/lingua-cat.png";
+import icSchoolLogo from "@/assets/logos/ic-school.png";
+import kosmosLogo from "@/assets/logos/kosmos.png";
+import abcClubLogo from "@/assets/logos/abc-club.png";
+import motionSchoolLogo from "@/assets/logos/motion-school.png";
+import eyeClubLogo from "@/assets/logos/eye-club.png";
+import yazykUspekhaLogo from "@/assets/logos/yazyk-dlya-uspekha.png";
+import lingvaPlusLogo from "@/assets/logos/lingva-plus.png";
+import spuLogo from "@/assets/logos/spu.png";
 
 import heroImg from "@/assets/partnership.jpg";
 import quoteImg from "@/assets/rost-quote.jpg";
@@ -36,6 +45,7 @@ const benefits = [
     image: turizmImg,
     title: "Совместные программы для учеников",
     text: "Ваши дети едут в Китай, на Алтай, на море — в рамках проверенных программ Ассоциации. Вы не организуете логистику с нуля, вы присоединяетесь к готовому. Это то, что ни один центр не потянет в одиночку.",
+
     link: "/kanikuly",
     linkText: "Смотреть программы",
   },
