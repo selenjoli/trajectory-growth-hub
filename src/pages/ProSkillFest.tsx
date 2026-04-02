@@ -129,6 +129,9 @@ const ProSkillFest = () => {
   const [formatSlide, setFormatSlide] = useState(0);
   const [formatPaused, setFormatPaused] = useState(false);
   const formatPhotos = [heroImg, sessionImg, networkingImg, venueImg];
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [lightboxPhotos, setLightboxPhotos] = useState<string[]>([]);
 
   const nextSlide = useCallback(() => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
