@@ -268,9 +268,14 @@ const TeachersCourse = () => {
       </section>
 
       {/* ── Видео-блок ── */}
-      <section className="px-3 md:px-6 xl:px-10">
+      <section className="section-padding px-3 md:px-6 xl:px-10">
         <div className="fluid-container">
           <AnimatedSection>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white mb-10">
+              Обращение от <span className={gold}>преподавателей</span> Hilderstone&nbsp;College
+            </h2>
+          </AnimatedSection>
+          <AnimatedSection delay={0.1}>
             <div className="rounded-[2rem] overflow-hidden" style={{ position: "relative", paddingTop: "56.25%", width: "100%" }}>
               <iframe
                 src="https://kinescope.io/embed/sVNGfZfc8mmsgUjaD9RgR5"
