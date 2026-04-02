@@ -27,9 +27,6 @@ const testimonials = [
 const programDays = [
   { day: 1, title: "Language & Culture Unlocked", desc: "Как говорить с учениками о современном мире через язык. Современные медиа и культурный контекст, развитие межкультурной осознанности." },
   { day: 2, title: "The Lexicon Lab", desc: "Как превратить слова из списка в активный инструмент общения. Работа с лексикой без зубрёжки, практические инструменты." },
-  { day: 3, title: "Grammar in Action", desc: "Тема уточняется — следите за обновлениями." },
-  { day: 4, title: "Skills Workshop", desc: "Тема уточняется — следите за обновлениями." },
-  { day: 5, title: "Lesson Design", desc: "Тема уточняется — следите за обновлениями." },
 ];
 
 const forYouCards = [
@@ -44,6 +41,9 @@ const outcomes = [
   { title: "Свежий взгляд", text: "Иногда достаточно увидеть как другой педагог решает знакомую задачу — и всё встаёт на место. Это именно такой курс.", img: teacherPic },
   { title: "Международный сертификат", text: "Официальный сертификат Hilderstone College после сдачи онлайн-теста по окончании курса. Весомый документ для портфолио.", img: certificatePic },
   { title: "Мотивация до конца года", text: "Пять дней в среде людей которые горят своим делом — это работает лучше любого отпуска.", img: collegePic },
+  { title: "💬 Telegram-чат с преподавателями", text: "Живое общение с британскими тьюторами и однокурсниками во время и после курса — для вопросов, обсуждений и нетворкинга.", img: null },
+  { title: "📁 Материалы навсегда", text: "Все презентации, задания и шаблоны курса собраны в папку и остаются у вас после окончания.", img: null },
+  { title: "🎬 Форс-мажор не проблема", text: "Пропустили занятие — мы записываем каждую сессию, сможете наверстать в удобное время.", img: null },
 ];
 
 /* ---- gradient shorthand ---- */
@@ -313,9 +313,9 @@ const TeachersCourse = () => {
             {outcomes.map((o, i) => (
               <AnimatedSection key={o.title} delay={i * 0.08}>
                 <div className="rounded-[1.5rem] overflow-hidden border border-white/15 bg-white/10 backdrop-blur-sm h-full flex flex-col">
-                  <div className="h-48 overflow-hidden">
+                  {o.img && <div className="h-48 overflow-hidden">
                     <img src={o.img} alt={o.title} className="w-full h-full object-cover" />
-                  </div>
+                  </div>}
                   <div className="p-8 flex-1">
                     <h3 className="text-lg text-white mb-3">{o.title}</h3>
                     <p className="text-white/75 text-[15px] font-normal normal-case leading-relaxed">{o.text}</p>
