@@ -14,6 +14,8 @@ import lsStudioLogo from "@/assets/logos/ls-studio.png";
 import faustovaPhoto from "@/assets/founders/faustova.jpg";
 import libertyLogo from "@/assets/logos/liberty-school.png";
 import alekseevaPhoto from "@/assets/founders/alekseeva.png";
+import abcSchoolLogo from "@/assets/logos/abc-school.png";
+import ermilovaPhoto from "@/assets/founders/ermilova.jpg";
 
 import heroImg from "@/assets/partnership.jpg";
 import quoteImg from "@/assets/rost-quote.jpg";
