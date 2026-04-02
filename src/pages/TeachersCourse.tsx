@@ -291,9 +291,9 @@ const TeachersCourse = () => {
               ))}
             </div>
 
-            <AnimatedSection delay={0.4}>
+            <AnimatedSection delay={0.2}>
               <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed mt-10 max-w-3xl">
-                Программа построена так, чтобы каждый день давал конкретные инструменты которые можно применить сразу — не&nbsp;после того как всё осмыслите и&nbsp;переработаете, а&nbsp;буквально в&nbsp;следующем уроке.
+                А&nbsp;дальше — работа с&nbsp;грамматикой, навыками и&nbsp;много практического дизайна уроков. Полная программа приходит после регистрации.
               </p>
             </AnimatedSection>
           </div>
