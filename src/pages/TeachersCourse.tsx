@@ -267,6 +267,23 @@ const TeachersCourse = () => {
         </div>
       </section>
 
+      {/* ── Видео-блок ── */}
+      <section className="px-3 md:px-6 xl:px-10">
+        <div className="fluid-container">
+          <AnimatedSection>
+            <div className="rounded-[2rem] overflow-hidden" style={{ position: "relative", paddingTop: "56.25%", width: "100%" }}>
+              <iframe
+                src="https://kinescope.io/embed/sVNGfZfc8mmsgUjaD9RgR5"
+                allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
+                frameBorder="0"
+                allowFullScreen
+                style={{ position: "absolute", width: "100%", height: "100%", top: 0, left: 0 }}
+              />
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* ── Программа по дням ── */}
       <section className="px-3 md:px-6 xl:px-10">
         <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
