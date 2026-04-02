@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Header from "@/components/Header";
 import FloatingButtons from "@/components/FloatingButtons";
+import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 
 import heroBg from "@/assets/hilderstone-hero.jpg";
@@ -512,6 +513,7 @@ const TeachersCourse = () => {
           </div>
         </div>
       </section>
+      <Footer variant="white" />
       <FloatingButtons arrowColor="hsl(var(--program-teachers))" />
     </main>
   );

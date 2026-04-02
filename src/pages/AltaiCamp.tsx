@@ -3,6 +3,7 @@ import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import FloatingButtons from "@/components/FloatingButtons";
+import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import PhotoLightbox from "@/components/PhotoLightbox";
 
@@ -745,6 +746,7 @@ const AltaiCamp = () => {
           </div>
         </div>
       </section>
+      <Footer variant="white" />
       <FloatingButtons arrowColor="hsl(var(--program-altai))" />
       <PhotoLightbox photos={hookPhotos} initialIndex={lightboxIndex} open={lightboxOpen} onClose={() => setLightboxOpen(false)} />
     </motion.main>);

@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import FloatingButtons from "@/components/FloatingButtons";
+import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import PhotoLightbox from "@/components/PhotoLightbox";
 import smartCookiesLogo from "@/assets/logos/smart-cookies.svg";
@@ -609,6 +610,7 @@ const Partnership = () => {
           </div>
         </div>
       </section>
+      <Footer />
       <FloatingButtons />
       <PhotoLightbox photos={lightboxPhotos.length ? lightboxPhotos : galleryPhotos} initialIndex={lightboxIndex} open={lightboxOpen} onClose={() => setLightboxOpen(false)} />
     </main>
