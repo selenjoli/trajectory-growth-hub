@@ -100,6 +100,7 @@ const HistorySection = () => {
                     );
                   })}
                 </AnimatePresence>
+                <PhotoLightbox photos={carouselImages} initialIndex={lightboxIndex} open={lightboxOpen} onClose={() => setLightboxOpen(false)} />
               </div>
 
               {/* Text right */}
