@@ -428,6 +428,7 @@ const TeachersCourse = () => {
                     <span className="text-muted-foreground text-sm font-normal normal-case">Стоимость</span>
                     <span className="text-3xl md:text-4xl font-bold text-foreground">32&nbsp;000&nbsp;₽</span>
                   </div>
+                  <p className="text-sm font-semibold text-program-teachers text-right">Количество мест ограничено</p>
                 </div>
 
                 <p className="text-muted-foreground text-xs font-normal normal-case leading-relaxed mb-6">
