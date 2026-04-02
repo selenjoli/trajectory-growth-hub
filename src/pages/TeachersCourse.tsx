@@ -513,6 +513,7 @@ const TeachersCourse = () => {
           </div>
         </div>
       </section>
+      <Footer variant="white" />
       <FloatingButtons arrowColor="hsl(var(--program-teachers))" />
     </main>
   );
