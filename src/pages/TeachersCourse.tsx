@@ -20,6 +20,10 @@ import outcomeTelegram from "@/assets/outcome-telegram.jpg";
 import outcomeMaterials from "@/assets/outcome-materials.jpg";
 import outcomeRecording from "@/assets/outcome-recording.jpg";
 
+import testimonial1 from "@/assets/testimonial-teacher-1.jpg";
+import testimonial2 from "@/assets/testimonial-teacher-2.jpg";
+import testimonial3 from "@/assets/testimonial-teacher-3.jpg";
+
 /* ---- data ---- */
 
 const testimonials = [
