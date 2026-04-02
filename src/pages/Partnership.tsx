@@ -6,6 +6,8 @@ import Header from "@/components/Header";
 import FloatingButtons from "@/components/FloatingButtons";
 import AnimatedSection from "@/components/AnimatedSection";
 import PhotoLightbox from "@/components/PhotoLightbox";
+import smartCookiesLogo from "@/assets/logos/smart-cookies.svg";
+import pershinaPhoto from "@/assets/founders/pershina.jpg";
 
 import heroImg from "@/assets/partnership.jpg";
 import quoteImg from "@/assets/rost-quote.jpg";
