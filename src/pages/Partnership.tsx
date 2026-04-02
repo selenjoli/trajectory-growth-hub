@@ -149,7 +149,6 @@ const MemberCard = ({ member, index }: { member: Member; index: number }) => {
       </div>
     </AnimatedSection>
   );
-  );
 };
 
 /* ---- page ---- */
