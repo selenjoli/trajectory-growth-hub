@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Header from "@/components/Header";
 import FloatingButtons from "@/components/FloatingButtons";
 import AnimatedSection from "@/components/AnimatedSection";
+import PhotoLightbox from "@/components/PhotoLightbox";
 import heroBg from "@/assets/kanikuly-hero.jpg";
 import illustChina from "@/assets/illust-china.png";
 import illustSea from "@/assets/illust-starfish.png";
