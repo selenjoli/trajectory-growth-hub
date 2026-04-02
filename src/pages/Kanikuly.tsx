@@ -166,6 +166,8 @@ const Kanikuly = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [zoomed, setZoomed] = useState<number | null>(null);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
