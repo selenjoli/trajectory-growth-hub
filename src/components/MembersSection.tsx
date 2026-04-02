@@ -3,6 +3,8 @@ import smartCookiesLogo from "@/assets/logos/smart-cookies.svg";
 import akademiyaLogo from "@/assets/logos/akademiya-yazykov.png";
 import pershinaPhoto from "@/assets/founders/pershina.jpg";
 import kokorinaPhoto from "@/assets/founders/kokorina.jpg";
+import lsStudioLogo from "@/assets/logos/ls-studio.png";
+import faustovaPhoto from "@/assets/founders/faustova.jpg";
 
 interface Member {
   name: string;
