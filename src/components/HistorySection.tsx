@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
+import PhotoLightbox from "./PhotoLightbox";
 import meetingsImg from "@/assets/meetings.jpg";
 import kidsImg from "@/assets/kids-tour.jpg";
 import partnershipImg from "@/assets/partnership.jpg";
