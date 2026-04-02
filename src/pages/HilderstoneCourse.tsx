@@ -19,9 +19,9 @@ import illustUae from "@/assets/illust-uae.svg";
 /* ---- data ---- */
 
 const testimonials = [
-  { id: 1, image: "https://placehold.co/400x700/d4a017/ffffff?text=Отзыв+1", name: "Татьяна, Воронеж", role: "мама Лизы (10 лет)" },
-  { id: 2, image: "https://placehold.co/400x700/d4a017/ffffff?text=Отзыв+2", name: "Елена, Москва", role: "мама Миши (13 лет)" },
-  { id: 3, image: "https://placehold.co/400x700/d4a017/ffffff?text=Отзыв+3", name: "Артём, 14 лет", role: "Участник курса" },
+  { id: 1, image: "https://placehold.co/400x700/d4a017/ffffff?text=Отзыв+1" },
+  { id: 2, image: "https://placehold.co/400x700/d4a017/ffffff?text=Отзыв+2" },
+  { id: 3, image: "https://placehold.co/400x700/d4a017/ffffff?text=Отзыв+3" },
 ];
 
 const otherPrograms = [
@@ -340,7 +340,7 @@ const HilderstoneCourse = () => {
 
             <AnimatedSection delay={0.1}>
               <div
-                className="relative mx-auto w-[280px] md:w-[340px] h-[560px] md:h-[640px]"
+                className="relative mx-auto w-[320px] md:w-[380px] h-[400px] md:h-[475px]"
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => { setIsPaused(false); setZoomed(null); }}
               >
@@ -366,18 +366,8 @@ const HilderstoneCourse = () => {
                         className="absolute inset-0 cursor-pointer"
                         onClick={() => offset === 0 && setZoomed(isZoomed ? null : item.id)}
                       >
-                        <div className="w-full h-full flex flex-col">
-                          <div className="flex-1 rounded-[1.2rem] overflow-hidden shadow-2xl bg-background">
-                            <img src={item.image} alt={`Отзыв от ${item.name}`} className="w-full h-full object-cover" />
-                          </div>
-                          <motion.div
-                            className="mt-4 text-center"
-                            animate={{ opacity: offset === 0 ? 1 : 0 }}
-                            transition={{ duration: 0.3 }}
-                          >
-                            <p className="text-foreground font-bold text-base">{item.name}</p>
-                            <p className="text-foreground/60 text-sm">{item.role}</p>
-                          </motion.div>
+                        <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl bg-background">
+                          <img src={item.image} alt={`Отзыв ${item.id}`} className="w-full h-full object-cover" />
                         </div>
                       </motion.div>
                     );

@@ -20,12 +20,16 @@ import outcomeTelegram from "@/assets/outcome-telegram.jpg";
 import outcomeMaterials from "@/assets/outcome-materials.jpg";
 import outcomeRecording from "@/assets/outcome-recording.jpg";
 
+import testimonial1 from "@/assets/testimonial-teacher-1.jpg";
+import testimonial2 from "@/assets/testimonial-teacher-2.jpg";
+import testimonial3 from "@/assets/testimonial-teacher-3.jpg";
+
 /* ---- data ---- */
 
 const testimonials = [
-  { id: 1, image: "https://placehold.co/400x700/4a90d9/ffffff?text=Отзыв+1", name: "Елена, Москва", role: "преподаватель английского" },
-  { id: 2, image: "https://placehold.co/400x700/4a90d9/ffffff?text=Отзыв+2", name: "Наталья, Воронеж", role: "учитель английского" },
-  { id: 3, image: "https://placehold.co/400x700/4a90d9/ffffff?text=Отзыв+3", name: "Ирина, Казань", role: "преподаватель" },
+  { id: 1, image: testimonial1 },
+  { id: 2, image: testimonial2 },
+  { id: 3, image: testimonial3 },
 ];
 
 const programDays = [
@@ -480,7 +484,7 @@ const TeachersCourse = () => {
 
             <AnimatedSection delay={0.1}>
               <div
-                className="relative mx-auto w-[280px] md:w-[340px] h-[560px] md:h-[640px]"
+                className="relative mx-auto w-[320px] md:w-[380px] h-[400px] md:h-[475px]"
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => { setIsPaused(false); setZoomed(null); }}
               >
@@ -506,18 +510,8 @@ const TeachersCourse = () => {
                         className="absolute inset-0 cursor-pointer"
                         onClick={() => offset === 0 && setZoomed(isZoomed ? null : item.id)}
                       >
-                        <div className="w-full h-full flex flex-col">
-                          <div className="flex-1 rounded-[1.2rem] overflow-hidden shadow-2xl bg-background">
-                            <img src={item.image} alt={`Отзыв от ${item.name}`} className="w-full h-full object-cover" />
-                          </div>
-                          <motion.div
-                            className="mt-4 text-center"
-                            animate={{ opacity: offset === 0 ? 1 : 0 }}
-                            transition={{ duration: 0.3 }}
-                          >
-                            <p className="text-foreground font-bold text-base">{item.name}</p>
-                            <p className="text-foreground/60 text-sm">{item.role}</p>
-                          </motion.div>
+                        <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl bg-background">
+                          <img src={item.image} alt={`Отзыв ${item.id}`} className="w-full h-full object-cover" />
                         </div>
                       </motion.div>
                     );
