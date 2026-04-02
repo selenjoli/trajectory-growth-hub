@@ -23,9 +23,9 @@ import outcomeRecording from "@/assets/outcome-recording.jpg";
 /* ---- data ---- */
 
 const testimonials = [
-  { id: 1, image: "https://placehold.co/400x700/4a90d9/ffffff?text=Отзыв+1", name: "Елена, Москва", role: "преподаватель английского" },
-  { id: 2, image: "https://placehold.co/400x700/4a90d9/ffffff?text=Отзыв+2", name: "Наталья, Воронеж", role: "учитель английского" },
-  { id: 3, image: "https://placehold.co/400x700/4a90d9/ffffff?text=Отзыв+3", name: "Ирина, Казань", role: "преподаватель" },
+  { id: 1, image: testimonial1 },
+  { id: 2, image: testimonial2 },
+  { id: 3, image: testimonial3 },
 ];
 
 const programDays = [
