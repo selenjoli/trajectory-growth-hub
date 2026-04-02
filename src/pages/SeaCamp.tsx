@@ -91,6 +91,8 @@ const SeaCamp = () => {
   const [zoomed, setZoomed] = useState<number | null>(null);
   const [whySlide, setWhySlide] = useState(0);
   const [whyPaused, setWhyPaused] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   const whyPhotos = [seaEnglish, seaDance, seaProjects, seaPsychology, seaResort];
 
