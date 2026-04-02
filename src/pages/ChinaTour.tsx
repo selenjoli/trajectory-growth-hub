@@ -605,6 +605,7 @@ const ChinaTour = () => {
           </div>
         </div>
       </section>
+      <Footer variant="white" />
       <FloatingButtons arrowColor="hsl(var(--program-china))" />
       <PhotoLightbox photos={lightboxPhotos.length ? lightboxPhotos : whyPhotos} initialIndex={lightboxIndex} open={lightboxOpen} onClose={() => setLightboxOpen(false)} />
     </main>

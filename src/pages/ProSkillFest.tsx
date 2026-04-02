@@ -764,6 +764,7 @@ const ProSkillFest = () => {
           </div>
         </div>
       </section>
+      <Footer variant="white" />
       <FloatingButtons arrowColor="#300000" />
       <PhotoLightbox photos={lightboxPhotos.length ? lightboxPhotos : galleryPhotos} initialIndex={lightboxIndex} open={lightboxOpen} onClose={() => setLightboxOpen(false)} />
     </main>

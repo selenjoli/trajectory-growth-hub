@@ -507,6 +507,7 @@ const HilderstoneCourse = () => {
           </div>
         </div>
       </section>
+      <Footer variant="white" />
       <FloatingButtons arrowColor="hsl(var(--program-online))" />
       <PhotoLightbox photos={whyPhotos} initialIndex={lightboxIndex} open={lightboxOpen} onClose={() => setLightboxOpen(false)} />
     </main>
