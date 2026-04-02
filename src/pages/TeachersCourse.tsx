@@ -484,7 +484,7 @@ const TeachersCourse = () => {
 
             <AnimatedSection delay={0.1}>
               <div
-                className="relative mx-auto w-[280px] md:w-[340px] h-[560px] md:h-[640px]"
+                className="relative mx-auto w-[320px] md:w-[380px] h-[400px] md:h-[475px]"
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => { setIsPaused(false); setZoomed(null); }}
               >
