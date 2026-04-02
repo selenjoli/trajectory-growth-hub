@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import AnimatedSection from "@/components/AnimatedSection";
+import PhotoLightbox from "@/components/PhotoLightbox";
 
 import flowersLeft from "@/assets/fest-flowers-left.png";
 import flowersRight from "@/assets/fest-flowers-right.png";
