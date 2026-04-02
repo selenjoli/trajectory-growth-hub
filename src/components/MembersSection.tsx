@@ -36,10 +36,10 @@ const FounderCard = ({ member, index }: { member: Member; index: number }) => {
 
   return (
     <AnimatedSection delay={index * 0.05}>
-      <div className="rounded-[1.5rem] border border-border p-6 bg-card hover:border-primary/30 transition-all duration-300 group h-full flex items-start gap-4">
-        <div className="flex-1 min-w-0">
+      <div className="rounded-[1.5rem] border border-border p-6 bg-card hover:border-primary/30 transition-all duration-300 group h-full flex items-stretch gap-4">
+        <div className="flex-1 min-w-0 flex flex-col">
           {member.logo ? (
-            <div className="h-10 mb-4">
+            <div className="h-7 mb-4">
               <img src={member.logo} alt={member.school} className="h-full w-auto object-contain" />
             </div>
           ) : (
@@ -52,7 +52,7 @@ const FounderCard = ({ member, index }: { member: Member; index: number }) => {
           <p className="text-xs text-muted-foreground/60 normal-case mt-1">{member.city}</p>
         </div>
         {member.photo && (
-          <div className="w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0">
+          <div className="w-24 rounded-2xl overflow-hidden flex-shrink-0 -my-6 -mr-6 ml-2">
             <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
           </div>
         )}
@@ -68,7 +68,7 @@ const MemberCard = ({ member, index }: { member: Member; index: number }) => {
     <AnimatedSection delay={index * 0.05}>
       <div className="rounded-[1.5rem] border border-border p-6 bg-card hover:border-primary/30 transition-all duration-300 group h-full">
         {member.logo ? (
-          <div className="h-10 mb-4">
+          <div className="h-7 mb-4">
             <img src={member.logo} alt={member.school} className="h-full w-auto object-contain" />
           </div>
         ) : (
