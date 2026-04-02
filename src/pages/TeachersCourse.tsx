@@ -86,7 +86,7 @@ const TeachersCourse = () => {
                 <span className="relative block w-fit">
                   <span className="flex flex-wrap items-center gap-3 mb-4 md:absolute md:bottom-full md:left-0 md:mb-4">
                     <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-sm md:text-base font-semibold uppercase tracking-wider px-5 py-2 rounded-full whitespace-nowrap">
-                      Онлайн-интенсив · Hilderstone College
+                      Курс повышения квалификации для педагогов
                     </span>
                     <span className="inline-block bg-program-teachers text-white text-sm md:text-base font-bold uppercase tracking-wider px-5 py-2 rounded-full whitespace-nowrap">
                       Июль 2026
