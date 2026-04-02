@@ -6,8 +6,8 @@ interface FooterProps {
 
 const Footer = ({ variant = "gray" }: FooterProps) => {
   const cardClass = variant === "white"
-    ? "bg-white rounded-[2rem]"
-    : "bg-[hsl(210,33%,96%)] rounded-[2rem] border-2 border-accent";
+    ? "bg-white rounded-t-[2rem]"
+    : "bg-[hsl(210,33%,96%)] rounded-t-[2rem] border-2 border-b-0 border-accent";
 
   return (
     <footer className="px-3 md:px-6 xl:px-10 pt-4">
