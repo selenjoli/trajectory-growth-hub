@@ -33,7 +33,7 @@ const Footer = ({ variant = "gray" }: FooterProps) => {
 
             {/* Center: logo + email */}
             <div className="flex flex-col items-center justify-start gap-4 md:px-8">
-              <img src={logoRed} alt="Траектория Роста" className="h-10" />
+              <img src={logoRed} alt="Траектория Роста" className="h-14" />
               <a
                 href="mailto:rost-traektoria@yandex.ru"
                 className="text-muted-foreground hover:text-foreground transition-colors text-sm font-normal normal-case"
