@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import FloatingButtons from "@/components/FloatingButtons";
 import AnimatedSection from "@/components/AnimatedSection";
+import PhotoLightbox from "@/components/PhotoLightbox";
 
 import heroBg from "@/assets/china-hero2.jpg";
 import beijing from "@/assets/china-beijing.jpg";
