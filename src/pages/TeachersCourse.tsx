@@ -313,7 +313,108 @@ const TeachersCourse = () => {
             </h2>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 gap-5">
+          {/* Desktop 3-col layout with video */}
+          <div className="hidden xl:grid grid-cols-3 gap-5">
+            {/* Row 1: 2 cards + video spanning 2 rows */}
+            {outcomes.slice(0, 2).map((o, i) => (
+              <AnimatedSection key={o.title} delay={i * 0.08}>
+                <div className="rounded-[1.5rem] overflow-hidden border border-white/15 bg-white/10 backdrop-blur-sm h-full flex flex-col">
+                  <div className="h-48 overflow-hidden">
+                    <img src={o.img} alt={o.title} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="p-8 flex-1">
+                    <h3 className="text-lg text-white mb-3">{o.title}</h3>
+                    <p className="text-white/75 text-[15px] font-normal normal-case leading-relaxed">{o.text}</p>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+            <AnimatedSection delay={0.16} className="row-span-2">
+              <div className="rounded-[1.5rem] overflow-hidden border border-white/15 bg-white/10 backdrop-blur-sm h-full">
+                <div style={{ position: "relative", width: "100%", height: "100%" }}>
+                  <iframe
+                    src="https://kinescope.io/embed/dMrNW7kTLCSeUTysM3cE61"
+                    allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
+                    frameBorder="0"
+                    allowFullScreen
+                    style={{ position: "absolute", width: "100%", height: "100%", top: 0, left: 0 }}
+                  />
+                </div>
+              </div>
+            </AnimatedSection>
+            {/* Row 2: 2 cards */}
+            {outcomes.slice(2, 4).map((o, i) => (
+              <AnimatedSection key={o.title} delay={(i + 3) * 0.08}>
+                <div className="rounded-[1.5rem] overflow-hidden border border-white/15 bg-white/10 backdrop-blur-sm h-full flex flex-col">
+                  <div className="h-48 overflow-hidden">
+                    <img src={o.img} alt={o.title} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="p-8 flex-1">
+                    <h3 className="text-lg text-white mb-3">{o.title}</h3>
+                    <p className="text-white/75 text-[15px] font-normal normal-case leading-relaxed">{o.text}</p>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+            {/* Row 3: 3 cards */}
+            {outcomes.slice(4).map((o, i) => (
+              <AnimatedSection key={o.title} delay={(i + 5) * 0.08}>
+                <div className="rounded-[1.5rem] overflow-hidden border border-white/15 bg-white/10 backdrop-blur-sm h-full flex flex-col">
+                  <div className="h-48 overflow-hidden">
+                    <img src={o.img} alt={o.title} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="p-8 flex-1">
+                    <h3 className="text-lg text-white mb-3">{o.title}</h3>
+                    <p className="text-white/75 text-[15px] font-normal normal-case leading-relaxed">{o.text}</p>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+
+          {/* Tablet 2-col layout with video */}
+          <div className="hidden md:grid xl:hidden grid-cols-2 gap-5">
+            {outcomes.slice(0, 2).map((o, i) => (
+              <AnimatedSection key={o.title} delay={i * 0.08}>
+                <div className="rounded-[1.5rem] overflow-hidden border border-white/15 bg-white/10 backdrop-blur-sm h-full flex flex-col">
+                  <div className="h-48 overflow-hidden">
+                    <img src={o.img} alt={o.title} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="p-8 flex-1">
+                    <h3 className="text-lg text-white mb-3">{o.title}</h3>
+                    <p className="text-white/75 text-[15px] font-normal normal-case leading-relaxed">{o.text}</p>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+            {outcomes.slice(2).map((o, i) => (
+              <AnimatedSection key={o.title} delay={(i + 2) * 0.08}>
+                <div className="rounded-[1.5rem] overflow-hidden border border-white/15 bg-white/10 backdrop-blur-sm h-full flex flex-col">
+                  <div className="h-48 overflow-hidden">
+                    <img src={o.img} alt={o.title} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="p-8 flex-1">
+                    <h3 className="text-lg text-white mb-3">{o.title}</h3>
+                    <p className="text-white/75 text-[15px] font-normal normal-case leading-relaxed">{o.text}</p>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+            <AnimatedSection delay={0.72} className="col-span-2">
+              <div className="rounded-[1.5rem] overflow-hidden border border-white/15 bg-white/10 backdrop-blur-sm" style={{ position: "relative", paddingTop: "56.25%" }}>
+                <iframe
+                  src="https://kinescope.io/embed/dMrNW7kTLCSeUTysM3cE61"
+                  allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
+                  frameBorder="0"
+                  allowFullScreen
+                  style={{ position: "absolute", width: "100%", height: "100%", top: 0, left: 0 }}
+                />
+              </div>
+            </AnimatedSection>
+          </div>
+
+          {/* Mobile 1-col layout */}
+          <div className="grid md:hidden grid-cols-1 gap-5">
             {outcomes.map((o, i) => (
               <AnimatedSection key={o.title} delay={i * 0.08}>
                 <div className="rounded-[1.5rem] overflow-hidden border border-white/15 bg-white/10 backdrop-blur-sm h-full flex flex-col">
@@ -327,6 +428,17 @@ const TeachersCourse = () => {
                 </div>
               </AnimatedSection>
             ))}
+            <AnimatedSection delay={0.56}>
+              <div className="rounded-[1.5rem] overflow-hidden border border-white/15 bg-white/10 backdrop-blur-sm" style={{ position: "relative", paddingTop: "177.78%" }}>
+                <iframe
+                  src="https://kinescope.io/embed/dMrNW7kTLCSeUTysM3cE61"
+                  allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
+                  frameBorder="0"
+                  allowFullScreen
+                  style={{ position: "absolute", width: "100%", height: "100%", top: 0, left: 0 }}
+                />
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
