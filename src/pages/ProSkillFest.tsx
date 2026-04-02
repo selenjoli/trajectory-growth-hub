@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
+import ImageLightbox from "@/components/ImageLightbox";
 import AnimatedSection from "@/components/AnimatedSection";
 
 import flowersLeft from "@/assets/fest-flowers-left.png";
@@ -122,11 +123,13 @@ const ProSkillFest = () => {
 
   const [gallerySlide, setGallerySlide] = useState(0);
   const [galleryPaused, setGalleryPaused] = useState(false);
+  const [galleryLightbox, setGalleryLightbox] = useState<number | null>(null);
   const galleryPhotos = [heroImg, networkingImg, sessionImg, venueImg];
 
   /* format carousel */
   const [formatSlide, setFormatSlide] = useState(0);
   const [formatPaused, setFormatPaused] = useState(false);
+  const [formatLightbox, setFormatLightbox] = useState<number | null>(null);
   const formatPhotos = [heroImg, sessionImg, networkingImg, venueImg];
 
   const nextSlide = useCallback(() => {
@@ -159,6 +162,7 @@ const ProSkillFest = () => {
   const flowerPositions = [0, 900, 1800, 2700, 3600, 4500];
 
   return (
+    <>
     <main className="relative overflow-hidden" style={{ backgroundColor: "#F2F2F2" }}>
       <Header variant="dark" />
 
@@ -311,7 +315,8 @@ const ProSkillFest = () => {
                             }}
                             exit={{ opacity: 0, scale: 0.9, y: -20 }}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                            className="absolute inset-0"
+                            className={`absolute inset-0${offset === 0 ? " cursor-pointer" : ""}`}
+                            onClick={() => offset === 0 && setGalleryLightbox(gallerySlide)}
                           >
                             <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl">
                               <img src={photo} alt="ProSkill Fest" className="w-full h-full object-cover" />
@@ -417,7 +422,8 @@ const ProSkillFest = () => {
                           }}
                           exit={{ opacity: 0, scale: 0.9, y: -20 }}
                           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                          className="absolute inset-0"
+                          className={`absolute inset-0${offset === 0 ? " cursor-pointer" : ""}`}
+                          onClick={() => offset === 0 && setFormatLightbox(formatSlide)}
                         >
                           <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl">
                             <img src={photo} alt="ProSkill Fest" className="w-full h-full object-cover" />
@@ -759,6 +765,24 @@ const ProSkillFest = () => {
       </section>
       <FloatingButtons arrowColor="#300000" />
     </main>
+
+    <AnimatePresence>
+      {galleryLightbox !== null && (
+        <ImageLightbox
+          images={galleryPhotos}
+          initialIndex={galleryLightbox}
+          onClose={() => setGalleryLightbox(null)}
+        />
+      )}
+      {formatLightbox !== null && (
+        <ImageLightbox
+          images={formatPhotos}
+          initialIndex={formatLightbox}
+          onClose={() => setFormatLightbox(null)}
+        />
+      )}
+    </AnimatePresence>
+    </>
   );
 };
 

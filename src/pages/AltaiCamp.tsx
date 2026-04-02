@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
+import ImageLightbox from "@/components/ImageLightbox";
 import FloatingButtons from "@/components/FloatingButtons";
 import AnimatedSection from "@/components/AnimatedSection";
 
@@ -118,6 +119,7 @@ const AltaiCamp = () => {
   const [zoomed, setZoomed] = useState<number | null>(null);
   const [hookSlide, setHookSlide] = useState(0);
   const [hookPaused, setHookPaused] = useState(false);
+  const [hookLightbox, setHookLightbox] = useState<number | null>(null);
   const [currentSpot, setCurrentSpot] = useState(0);
   const [spotPaused, setSpotPaused] = useState(false);
   const [currentDay, setCurrentDay] = useState(0);
@@ -194,6 +196,7 @@ const AltaiCamp = () => {
   );
 
   return (
+    <>
     <motion.main className="bg-program-altai" style={{ backgroundColor: dayPageBackground }}>
       <Header variant="light" />
 
@@ -309,8 +312,9 @@ const AltaiCamp = () => {
                             }}
                             exit={{ opacity: 0, scale: 0.9, y: -20 }}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                            className="absolute inset-0">
-                            
+                            className={`absolute inset-0${offset === 0 ? " cursor-pointer" : ""}`}
+                            onClick={() => offset === 0 && setHookLightbox(hookSlide)}>
+
                             <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl">
                               <img src={photo} alt="Алтай" className="w-full h-full object-cover" />
                             </div>
@@ -741,8 +745,18 @@ const AltaiCamp = () => {
         </div>
       </section>
       <FloatingButtons arrowColor="hsl(var(--program-altai))" />
-    </motion.main>);
+    </motion.main>
 
-};
+    <AnimatePresence>
+      {hookLightbox !== null && (
+        <ImageLightbox
+          images={hookPhotos}
+          initialIndex={hookLightbox}
+          onClose={() => setHookLightbox(null)}
+        />
+      )}
+    </AnimatePresence>
+    </>
+  );
 
 export default AltaiCamp;

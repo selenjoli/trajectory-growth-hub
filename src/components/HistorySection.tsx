@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
+import ImageLightbox from "./ImageLightbox";
 import meetingsImg from "@/assets/meetings.jpg";
 import kidsImg from "@/assets/kids-tour.jpg";
 import partnershipImg from "@/assets/partnership.jpg";
@@ -42,6 +43,7 @@ const rostItems = [
 
 const HistorySection = () => {
   const [currentImg, setCurrentImg] = useState(0);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -85,7 +87,8 @@ const HistorySection = () => {
                         }}
                         exit={{ opacity: 0, scale: 0.9, y: -20 }}
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                        className="absolute inset-0"
+                        className={`absolute inset-0${offset === 0 ? " cursor-pointer" : ""}`}
+                        onClick={() => offset === 0 && setLightboxIndex(currentImg)}
                       >
                         <img
                           src={img}
@@ -166,6 +169,16 @@ const HistorySection = () => {
         </div>
       </div>
     </section>
+
+    <AnimatePresence>
+      {lightboxIndex !== null && (
+        <ImageLightbox
+          images={carouselImages}
+          initialIndex={lightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+        />
+      )}
+    </AnimatePresence>
   );
 };
 

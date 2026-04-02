@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Header from "@/components/Header";
+import ImageLightbox from "@/components/ImageLightbox";
 import FloatingButtons from "@/components/FloatingButtons";
 import AnimatedSection from "@/components/AnimatedSection";
 
@@ -39,6 +40,7 @@ const HilderstoneCourse = () => {
   const [zoomed, setZoomed] = useState<number | null>(null);
   const [whySlide, setWhySlide] = useState(0);
   const [whyPaused, setWhyPaused] = useState(false);
+  const [whyLightbox, setWhyLightbox] = useState<number | null>(null);
 
   const nextSlide = useCallback(() => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -59,6 +61,7 @@ const HilderstoneCourse = () => {
   }, [whyPaused]);
 
   return (
+    <>
     <main className="bg-program-online">
       <Header variant="light" buttonStyle="silver" />
 
@@ -235,7 +238,8 @@ const HilderstoneCourse = () => {
                             }}
                             exit={{ opacity: 0, scale: 0.9, y: -20 }}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                            className="absolute inset-0"
+                            className={`absolute inset-0${offset === 0 ? " cursor-pointer" : ""}`}
+                            onClick={() => offset === 0 && setWhyLightbox(whySlide)}
                           >
                             <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl">
                               <img src={photo} alt="Hilderstone College" className="w-full h-full object-cover" />
@@ -504,6 +508,17 @@ const HilderstoneCourse = () => {
       </section>
       <FloatingButtons arrowColor="hsl(var(--program-online))" />
     </main>
+
+    <AnimatePresence>
+      {whyLightbox !== null && (
+        <ImageLightbox
+          images={whyPhotos}
+          initialIndex={whyLightbox}
+          onClose={() => setWhyLightbox(null)}
+        />
+      )}
+    </AnimatePresence>
+    </>
   );
 };
 

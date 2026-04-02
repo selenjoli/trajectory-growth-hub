@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Header from "@/components/Header";
+import ImageLightbox from "@/components/ImageLightbox";
 import FloatingButtons from "@/components/FloatingButtons";
 import AnimatedSection from "@/components/AnimatedSection";
 import heroBg from "@/assets/kanikuly-hero.jpg";
@@ -162,6 +163,7 @@ const carouselImages = [meetingsImg, kidsImg, partnershipImg, teachersImg];
 
 const Kanikuly = () => {
   const [currentImg, setCurrentImg] = useState(0);
+  const [imgLightbox, setImgLightbox] = useState<number | null>(null);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [zoomed, setZoomed] = useState<number | null>(null);
@@ -184,6 +186,7 @@ const Kanikuly = () => {
   }, [isPaused, zoomed, nextSlide]);
 
   return (
+    <>
     <main className="space-y-4">
       <Header />
 
@@ -509,7 +512,8 @@ const Kanikuly = () => {
                           }}
                           exit={{ opacity: 0, scale: 0.9, y: -20 }}
                           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                          className="absolute inset-0"
+                          className={`absolute inset-0${offset === 0 ? " cursor-pointer" : ""}`}
+                          onClick={() => offset === 0 && setImgLightbox(currentImg)}
                         >
                           <img src={img} alt="Встречи ассоциации" className="w-full h-full object-cover rounded-[1.5rem] shadow-2xl" />
                         </motion.div>
@@ -581,6 +585,17 @@ const Kanikuly = () => {
       </section>
       <FloatingButtons />
     </main>
+
+    <AnimatePresence>
+      {imgLightbox !== null && (
+        <ImageLightbox
+          images={carouselImages}
+          initialIndex={imgLightbox}
+          onClose={() => setImgLightbox(null)}
+        />
+      )}
+    </AnimatePresence>
+    </>
   );
 };
 

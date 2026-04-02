@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
+import ImageLightbox from "@/components/ImageLightbox";
 import FloatingButtons from "@/components/FloatingButtons";
 import AnimatedSection from "@/components/AnimatedSection";
 
@@ -71,6 +72,7 @@ const UaeTour = () => {
   const [dayPaused, setDayPaused] = useState(false);
   const [whySlide, setWhySlide] = useState(0);
   const [whyPaused, setWhyPaused] = useState(false);
+  const [whyLightbox, setWhyLightbox] = useState<number | null>(null);
 
   const whyPhotos = [uaeBeach, uaeAbudhabi, uaeMuseum, uaeMall, uaeYacht];
 
@@ -112,6 +114,7 @@ const UaeTour = () => {
   };
 
   return (
+    <>
     <main className="bg-program-uae">
       <Header variant="light" />
 
@@ -248,7 +251,8 @@ const UaeTour = () => {
                             }}
                             exit={{ opacity: 0, scale: 0.9, y: -20 }}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                            className="absolute inset-0"
+                            className={`absolute inset-0${offset === 0 ? " cursor-pointer" : ""}`}
+                            onClick={() => offset === 0 && setWhyLightbox(whySlide)}
                           >
                             <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl">
                               <img src={photo} alt="ОАЭ" className="w-full h-full object-cover" />
@@ -619,6 +623,17 @@ const UaeTour = () => {
       </section>
       <FloatingButtons arrowColor="hsl(var(--program-uae))" />
     </main>
+
+    <AnimatePresence>
+      {whyLightbox !== null && (
+        <ImageLightbox
+          images={whyPhotos}
+          initialIndex={whyLightbox}
+          onClose={() => setWhyLightbox(null)}
+        />
+      )}
+    </AnimatePresence>
+    </>
   );
 };
 

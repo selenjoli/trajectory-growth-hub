@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
+import ImageLightbox from "@/components/ImageLightbox";
 import FloatingButtons from "@/components/FloatingButtons";
 import AnimatedSection from "@/components/AnimatedSection";
 
@@ -120,6 +121,7 @@ const Partnership = () => {
   /* gallery for pain block */
   const [gallerySlide, setGallerySlide] = useState(0);
   const [galleryPaused, setGalleryPaused] = useState(false);
+  const [galleryLightbox, setGalleryLightbox] = useState<number | null>(null);
   const galleryPhotos = [heroImg, meetingImg, collaborationImg, sotrudnichestvoImg];
 
   const nextSlide = useCallback(() => {
@@ -141,6 +143,7 @@ const Partnership = () => {
   }, [galleryPaused, galleryPhotos.length]);
 
   return (
+    <>
     <main className="space-y-4">
       <Header />
 
@@ -237,7 +240,8 @@ const Partnership = () => {
                           }}
                           exit={{ opacity: 0, scale: 0.9, y: -20 }}
                           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                          className="absolute inset-0"
+                          className={`absolute inset-0${offset === 0 ? " cursor-pointer" : ""}`}
+                          onClick={() => offset === 0 && setGalleryLightbox(gallerySlide)}
                         >
                           <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl">
                             <img src={photo} alt="Ассоциация" className="w-full h-full object-cover" />
@@ -546,6 +550,17 @@ const Partnership = () => {
       </section>
       <FloatingButtons />
     </main>
+
+    <AnimatePresence>
+      {galleryLightbox !== null && (
+        <ImageLightbox
+          images={galleryPhotos}
+          initialIndex={galleryLightbox}
+          onClose={() => setGalleryLightbox(null)}
+        />
+      )}
+    </AnimatePresence>
+    </>
   );
 };
 
