@@ -86,7 +86,7 @@ const TeachersCourse = () => {
                 <span className="relative block w-fit">
                   <span className="flex flex-wrap items-center gap-3 mb-4 md:absolute md:bottom-full md:left-0 md:mb-4">
                     <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-sm md:text-base font-semibold uppercase tracking-wider px-5 py-2 rounded-full whitespace-nowrap">
-                      Онлайн-интенсив · Hilderstone College
+                      Курс повышения квалификации для педагогов
                     </span>
                     <span className="inline-block bg-program-teachers text-white text-sm md:text-base font-bold uppercase tracking-wider px-5 py-2 rounded-full whitespace-nowrap">
                       Июль 2026
@@ -291,9 +291,9 @@ const TeachersCourse = () => {
               ))}
             </div>
 
-            <AnimatedSection delay={0.4}>
+            <AnimatedSection delay={0.2}>
               <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed mt-10 max-w-3xl">
-                Программа построена так, чтобы каждый день давал конкретные инструменты которые можно применить сразу — не&nbsp;после того как всё осмыслите и&nbsp;переработаете, а&nbsp;буквально в&nbsp;следующем уроке.
+                А&nbsp;дальше — работа с&nbsp;грамматикой, навыками и&nbsp;много практического дизайна уроков. Полная программа приходит после регистрации.
               </p>
             </AnimatedSection>
           </div>
@@ -428,6 +428,7 @@ const TeachersCourse = () => {
                     <span className="text-muted-foreground text-sm font-normal normal-case">Стоимость</span>
                     <span className="text-3xl md:text-4xl font-bold text-foreground">32&nbsp;000&nbsp;₽</span>
                   </div>
+                  <p className="text-sm font-semibold text-program-teachers text-right">Количество мест ограничено</p>
                 </div>
 
                 <p className="text-muted-foreground text-xs font-normal normal-case leading-relaxed mb-6">
