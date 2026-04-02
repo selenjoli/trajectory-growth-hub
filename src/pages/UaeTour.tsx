@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import FloatingButtons from "@/components/FloatingButtons";
 import AnimatedSection from "@/components/AnimatedSection";
+import PhotoLightbox from "@/components/PhotoLightbox";
 
 import heroBg from "@/assets/uae-hero.jpg";
 import uaeBeach from "@/assets/uae-beach.jpg";
