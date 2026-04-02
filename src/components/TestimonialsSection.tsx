@@ -3,36 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 
 const testimonials = [
-  {
-    id: 1,
-    image: "https://placehold.co/400x700/1a7a4a/ffffff?text=Отзыв+1",
-    name: "Анна Петрова",
-    role: "Родитель",
-  },
-  {
-    id: 2,
-    image: "https://placehold.co/400x700/1a7a4a/ffffff?text=Отзыв+2",
-    name: "Мария Иванова",
-    role: "Преподаватель",
-  },
-  {
-    id: 3,
-    image: "https://placehold.co/400x700/1a7a4a/ffffff?text=Отзыв+3",
-    name: "Дмитрий Козлов",
-    role: "Руководитель центра",
-  },
-  {
-    id: 4,
-    image: "https://placehold.co/400x700/1a7a4a/ffffff?text=Отзыв+4",
-    name: "Елена Смирнова",
-    role: "Родитель",
-  },
-  {
-    id: 5,
-    image: "https://placehold.co/400x700/1a7a4a/ffffff?text=Отзыв+5",
-    name: "Ольга Новикова",
-    role: "Преподаватель",
-  },
+  { id: 1, image: "https://placehold.co/380x475/1a7a4a/ffffff?text=Отзыв+1" },
+  { id: 2, image: "https://placehold.co/380x475/1a7a4a/ffffff?text=Отзыв+2" },
+  { id: 3, image: "https://placehold.co/380x475/1a7a4a/ffffff?text=Отзыв+3" },
+  { id: 4, image: "https://placehold.co/380x475/1a7a4a/ffffff?text=Отзыв+4" },
+  { id: 5, image: "https://placehold.co/380x475/1a7a4a/ffffff?text=Отзыв+5" },
 ];
 
 const TestimonialsSection = () => {
