@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import FloatingButtons from "@/components/FloatingButtons";
 import AnimatedSection from "@/components/AnimatedSection";
+import PhotoLightbox from "@/components/PhotoLightbox";
 
 import heroImg from "@/assets/partnership.jpg";
 import quoteImg from "@/assets/rost-quote.jpg";
