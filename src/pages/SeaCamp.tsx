@@ -499,6 +499,7 @@ const SeaCamp = () => {
         </div>
       </section>
       <FloatingButtons arrowColor="hsl(var(--program-sea))" />
+      <PhotoLightbox photos={whyPhotos} initialIndex={lightboxIndex} open={lightboxOpen} onClose={() => setLightboxOpen(false)} />
     </main>);
 
 };

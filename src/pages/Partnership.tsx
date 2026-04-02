@@ -550,6 +550,7 @@ const Partnership = () => {
         </div>
       </section>
       <FloatingButtons />
+      <PhotoLightbox photos={lightboxPhotos.length ? lightboxPhotos : galleryPhotos} initialIndex={lightboxIndex} open={lightboxOpen} onClose={() => setLightboxOpen(false)} />
     </main>
   );
 };

@@ -746,6 +746,7 @@ const AltaiCamp = () => {
         </div>
       </section>
       <FloatingButtons arrowColor="hsl(var(--program-altai))" />
+      <PhotoLightbox photos={hookPhotos} initialIndex={lightboxIndex} open={lightboxOpen} onClose={() => setLightboxOpen(false)} />
     </motion.main>);
 
 };

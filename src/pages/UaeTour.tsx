@@ -622,6 +622,7 @@ const UaeTour = () => {
         </div>
       </section>
       <FloatingButtons arrowColor="hsl(var(--program-uae))" />
+      <PhotoLightbox photos={whyPhotos} initialIndex={lightboxIndex} open={lightboxOpen} onClose={() => setLightboxOpen(false)} />
     </main>
   );
 };

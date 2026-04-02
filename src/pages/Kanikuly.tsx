@@ -584,6 +584,7 @@ const Kanikuly = () => {
         </div>
       </section>
       <FloatingButtons />
+      <PhotoLightbox photos={carouselImages} initialIndex={lightboxIndex} open={lightboxOpen} onClose={() => setLightboxOpen(false)} />
     </main>
   );
 };
