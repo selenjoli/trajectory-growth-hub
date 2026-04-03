@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import AnimatedSection from "@/components/AnimatedSection";
 import PhotoLightbox from "@/components/PhotoLightbox";
+import ContactForm from "@/components/ContactForm";
 
 import flowersLeft from "@/assets/fest-flowers-left.png";
 import flowersRight from "@/assets/fest-flowers-right.png";
@@ -709,6 +710,15 @@ const ProSkillFest = () => {
               </AnimatedSection>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── Contact Form ── */}
+      <section className="section-padding" id="forma">
+        <div className="fluid-container">
+          <AnimatedSection>
+            <ContactForm program="Другое" page="ProSkillFest" />
+          </AnimatedSection>
         </div>
       </section>
 

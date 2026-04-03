@@ -6,6 +6,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import PhotoLightbox from "@/components/PhotoLightbox";
+import ContactForm from "@/components/ContactForm";
 
 import heroBg from "@/assets/china-hero2.jpg";
 import beijing from "@/assets/china-beijing.jpg";
@@ -538,6 +539,15 @@ const ChinaTour = () => {
             </AnimatedSection>
 
           </div>
+        </div>
+      </section>
+
+      {/* ── Contact Form ── */}
+      <section className="section-padding" id="forma">
+        <div className="fluid-container">
+          <AnimatedSection>
+            <ContactForm program="Путешествие в Китай" page="ChinaTour" />
+          </AnimatedSection>
         </div>
       </section>
 

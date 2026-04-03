@@ -8,6 +8,7 @@ import StatsSection from "@/components/StatsSection";
 import MembersSection from "@/components/MembersSection";
 import CTASection from "@/components/CTASection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import ContactForm from "@/components/ContactForm";
 
 const Index = () => {
   return (
@@ -20,6 +21,11 @@ const Index = () => {
       <MembersSection />
       <TestimonialsSection />
       <CTASection />
+      <section className="section-padding" id="forma">
+        <div className="fluid-container">
+          <ContactForm page="Index" />
+        </div>
+      </section>
       <Footer />
       <FloatingButtons />
     </main>

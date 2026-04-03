@@ -5,6 +5,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import PhotoLightbox from "@/components/PhotoLightbox";
+import ContactForm from "@/components/ContactForm";
 
 import heroBg from "@/assets/sea-hero.jpg";
 import seaEnglish from "@/assets/sea-english.jpg";
@@ -433,6 +434,15 @@ const SeaCamp = () => {
               </div>
             </AnimatedSection>
           </div>
+        </div>
+      </section>
+
+      {/* ── Contact Form ── */}
+      <section className="section-padding" id="forma">
+        <div className="fluid-container">
+          <AnimatedSection>
+            <ContactForm program="Лагерь на море" page="SeaCamp" />
+          </AnimatedSection>
         </div>
       </section>
 

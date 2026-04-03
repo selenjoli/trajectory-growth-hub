@@ -6,6 +6,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import PhotoLightbox from "@/components/PhotoLightbox";
+import ContactForm from "@/components/ContactForm";
 
 import heroBg from "@/assets/altai-hero.jpg";
 import altaiPatmos from "@/assets/altai-patmos.jpg";
@@ -680,6 +681,15 @@ const AltaiCamp = () => {
               </div>
             </AnimatedSection>
           </div>
+        </div>
+      </section>
+
+      {/* ── Contact Form ── */}
+      <section className="section-padding" id="forma">
+        <div className="fluid-container">
+          <AnimatedSection>
+            <ContactForm program="Лагерь на Алтае" page="AltaiCamp" />
+          </AnimatedSection>
         </div>
       </section>
 

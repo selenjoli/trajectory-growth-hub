@@ -6,6 +6,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import PhotoLightbox from "@/components/PhotoLightbox";
+import ContactForm from "@/components/ContactForm";
 
 import heroBg from "@/assets/uae-hero.jpg";
 import uaeBeach from "@/assets/uae-beach.jpg";
@@ -554,6 +555,15 @@ const UaeTour = () => {
             >
               Оставить контакт
             </a>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── Contact Form ── */}
+      <section className="section-padding" id="forma">
+        <div className="fluid-container">
+          <AnimatedSection>
+            <ContactForm program="Тур в ОАЭ" page="UaeTour" />
           </AnimatedSection>
         </div>
       </section>

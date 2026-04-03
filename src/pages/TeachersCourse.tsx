@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import FloatingButtons from "@/components/FloatingButtons";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
+import ContactForm from "@/components/ContactForm";
 
 import heroBg from "@/assets/hilderstone-hero.jpg";
 import collegePic from "@/assets/hilderstone-college.jpg";
@@ -591,6 +592,15 @@ const TeachersCourse = () => {
                 </div>
               </div>
             </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── Contact Form ── */}
+      <section className="section-padding" id="forma">
+        <div className="fluid-container">
+          <AnimatedSection>
+            <ContactForm program="Программы для педагогов" page="TeachersCourse" />
           </AnimatedSection>
         </div>
       </section>
