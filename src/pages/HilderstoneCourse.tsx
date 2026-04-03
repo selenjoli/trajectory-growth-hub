@@ -5,7 +5,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import PhotoLightbox from "@/components/PhotoLightbox";
-import ContactForm from "@/components/ContactForm";
+import ContactFormModal from "@/components/ContactFormModal";
 
 import heroBg from "@/assets/hilderstone-hero.jpg";
 import collegePic from "@/assets/hilderstone-college.jpg";
@@ -44,6 +44,7 @@ const HilderstoneCourse = () => {
   const [whyPaused, setWhyPaused] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [formOpen, setFormOpen] = useState(false);
 
   const nextSlide = useCallback(() => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -117,15 +118,15 @@ const HilderstoneCourse = () => {
                 </span>
               ))}
             </motion.div>
-            <motion.a
-              href="#forma"
+            <motion.button
+              onClick={() => setFormOpen(true)}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1 }}
               className="inline-block btn-gold px-8 py-4 rounded-2xl text-sm tracking-widest"
             >
               Записаться&nbsp;&mdash; 28&nbsp;500&nbsp;руб.
-            </motion.a>
+            </motion.button>
           </div>
         </div>
       </section>
@@ -440,12 +441,12 @@ const HilderstoneCourse = () => {
                   Оставьте заявку&nbsp;&mdash; менеджер свяжется, уточнит уровень ребёнка и&nbsp;поможет выбрать подходящую смену.
                 </p>
                 <div className="border-t-2 border-dashed border-foreground/20 pt-6">
-                  <a
-                    href="#forma"
+                  <button
+                    onClick={() => setFormOpen(true)}
                     className="block w-full text-center btn-gold px-6 py-4 rounded-2xl text-sm tracking-widest"
                   >
                     Записаться
-                  </a>
+                  </button>
                 </div>
               </div>
 
@@ -456,15 +457,6 @@ const HilderstoneCourse = () => {
                 </div>
               </div>
             </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ── Contact Form ── */}
-      <section className="section-padding" id="forma">
-        <div className="fluid-container">
-          <AnimatedSection>
-            <ContactForm program="Онлайн-практика Hilderstone" page="HilderstoneCourse" />
           </AnimatedSection>
         </div>
       </section>
@@ -510,6 +502,7 @@ const HilderstoneCourse = () => {
       <Footer variant="white" />
       <FloatingButtons arrowColor="hsl(var(--program-online))" />
       <PhotoLightbox photos={whyPhotos} initialIndex={lightboxIndex} open={lightboxOpen} onClose={() => setLightboxOpen(false)} />
+      <ContactFormModal open={formOpen} onClose={() => setFormOpen(false)} program="Онлайн-практика Hilderstone" page="HilderstoneCourse" />
     </main>
   );
 };

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import AnimatedSection from "@/components/AnimatedSection";
 import PhotoLightbox from "@/components/PhotoLightbox";
-import ContactForm from "@/components/ContactForm";
+import ContactFormModal from "@/components/ContactFormModal";
 
 import flowersLeft from "@/assets/fest-flowers-left.png";
 import flowersRight from "@/assets/fest-flowers-right.png";
@@ -134,6 +134,7 @@ const ProSkillFest = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [lightboxPhotos, setLightboxPhotos] = useState<string[]>([]);
+  const [formOpen, setFormOpen] = useState(false);
 
   const nextSlide = useCallback(() => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -253,9 +254,9 @@ const ProSkillFest = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="flex flex-wrap gap-4"
             >
-              <a href="#register" className="btn-gold px-8 py-4 rounded-2xl text-sm tracking-widest">
+              <button onClick={() => setFormOpen(true)} className="btn-gold px-8 py-4 rounded-2xl text-sm tracking-widest">
                 Зарегистрироваться
-              </a>
+              </button>
               <a href="#program" className="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-2xl text-sm tracking-widest uppercase font-bold hover:bg-white/20 transition-colors">
                 Программа феста
               </a>
@@ -524,9 +525,9 @@ const ProSkillFest = () => {
                     Спикеры ProSkill Fest 2026 пока объявляются. Если у вас есть тема которой хочется
                     поделиться с коллегами — ждем вашу заявку.
                   </p>
-                  <a href="#register" className="inline-flex items-center gap-2 btn-gold px-8 py-4 rounded-2xl text-sm tracking-widest">
+                  <button onClick={() => setFormOpen(true)} className="inline-flex items-center gap-2 btn-gold px-8 py-4 rounded-2xl text-sm tracking-widest">
                     Подать заявку на выступление <ArrowRight className="w-4 h-4" />
-                  </a>
+                  </button>
                 </div>
 
                 {/* Speaker photos — right column */}
@@ -690,9 +691,9 @@ const ProSkillFest = () => {
                   <p className="text-muted-foreground/60 text-sm normal-case mb-6">
                     Стоимость для внешних участников уточняется.
                   </p>
-                  <a href="#" className="block w-full text-center btn-gold px-8 py-4 rounded-2xl text-sm tracking-widest">
+                  <button onClick={() => setFormOpen(true)} className="block w-full text-center btn-gold px-8 py-4 rounded-2xl text-sm tracking-widest">
                     Зарегистрироваться как участник
-                  </a>
+                  </button>
                 </div>
               </AnimatedSection>
 
@@ -703,22 +704,13 @@ const ProSkillFest = () => {
                     ProSkill Fest строится на том, что спикеры — такие же практики как и все в зале.
                     Если у вас есть тема, инструмент или опыт которым хочется поделиться — ждем заявку.
                   </p>
-                  <a href="#" className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-2xl text-sm tracking-widest uppercase font-bold hover:bg-white/20 transition-colors text-center">
+                  <button onClick={() => setFormOpen(true)} className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-2xl text-sm tracking-widest uppercase font-bold hover:bg-white/20 transition-colors text-center">
                     Подать заявку на выступление <ArrowRight className="w-4 h-4" />
-                  </a>
+                  </button>
                 </div>
               </AnimatedSection>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ── Contact Form ── */}
-      <section className="section-padding" id="forma">
-        <div className="fluid-container">
-          <AnimatedSection>
-            <ContactForm program="Другое" page="ProSkillFest" />
-          </AnimatedSection>
         </div>
       </section>
 
@@ -766,6 +758,7 @@ const ProSkillFest = () => {
       </section>
       <Footer variant="white" />
       <FloatingButtons arrowColor="#300000" />
+      <ContactFormModal open={formOpen} onClose={() => setFormOpen(false)} program="Другое" page="ProSkillFest" />
       <PhotoLightbox photos={lightboxPhotos.length ? lightboxPhotos : galleryPhotos} initialIndex={lightboxIndex} open={lightboxOpen} onClose={() => setLightboxOpen(false)} />
     </main>
   );

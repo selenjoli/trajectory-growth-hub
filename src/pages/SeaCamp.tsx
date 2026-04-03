@@ -5,7 +5,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import PhotoLightbox from "@/components/PhotoLightbox";
-import ContactForm from "@/components/ContactForm";
+import ContactFormModal from "@/components/ContactFormModal";
 
 import heroBg from "@/assets/sea-hero.jpg";
 import seaEnglish from "@/assets/sea-english.jpg";
@@ -95,6 +95,7 @@ const SeaCamp = () => {
   const [whyPaused, setWhyPaused] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [formOpen, setFormOpen] = useState(false);
 
   const whyPhotos = [seaEnglish, seaDance, seaProjects, seaPsychology, seaResort];
 
@@ -172,15 +173,14 @@ const SeaCamp = () => {
                 </span>
               )}
             </motion.div>
-            <motion.a
-              href="#forma"
+            <motion.button
+              onClick={() => setFormOpen(true)}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1 }}
               className="inline-block btn-gold px-8 py-4 rounded-2xl text-sm tracking-widest">
-              
               Записаться — от 134 000 ₽
-            </motion.a>
+            </motion.button>
           </div>
         </div>
       </section>
@@ -365,12 +365,11 @@ const SeaCamp = () => {
                 <p className="text-muted-foreground text-xs mt-4 font-normal normal-case leading-relaxed mb-6">
                   Трансфер до лагеря оплачивается отдельно. Возможна рассрочка.
                 </p>
-                <a
-                  href="#forma"
+                <button
+                  onClick={() => setFormOpen(true)}
                   className="block w-full text-center btn-gold px-6 py-4 rounded-2xl text-sm tracking-widest">
-                  
                   Записаться
-                </a>
+                </button>
               </div>
 
               <div className="hidden lg:block">
@@ -437,15 +436,6 @@ const SeaCamp = () => {
         </div>
       </section>
 
-      {/* ── Contact Form ── */}
-      <section className="section-padding" id="forma">
-        <div className="fluid-container">
-          <AnimatedSection>
-            <ContactForm program="Лагерь на море" page="SeaCamp" />
-          </AnimatedSection>
-        </div>
-      </section>
-
       {/* ── Other programs — neutral block ── */}
       <section className="px-3 md:px-6 xl:px-10 mt-4 mb-4">
         <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
@@ -502,6 +492,7 @@ const SeaCamp = () => {
       <Footer variant="white" />
       <FloatingButtons arrowColor="hsl(var(--program-sea))" />
       <PhotoLightbox photos={whyPhotos} initialIndex={lightboxIndex} open={lightboxOpen} onClose={() => setLightboxOpen(false)} />
+      <ContactFormModal open={formOpen} onClose={() => setFormOpen(false)} program="Лагерь на море" page="SeaCamp" />
     </main>);
 
 };
