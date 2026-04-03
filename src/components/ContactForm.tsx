@@ -6,6 +6,8 @@ const ContactForm = ({ program = "", page = "" }) => {
     phone: "",
     email: "",
     program: program,
+    city: "",
+    centerName: "",
     comment: "",
   });
   const [agreed, setAgreed] = useState(false);
@@ -38,7 +40,7 @@ const ContactForm = ({ program = "", page = "" }) => {
 
       if (data.success) {
         setStatus("success");
-        setFormData({ name: "", phone: "", email: "", program: "", comment: "" });
+        setFormData({ name: "", phone: "", email: "", program: "", city: "", centerName: "", comment: "" });
         setAgreed(false);
       } else {
         setStatus("error");
@@ -165,6 +167,50 @@ const ContactForm = ({ program = "", page = "" }) => {
           <option value="Другое">Другое</option>
         </select>
       </div>
+
+      {/* Город и название центра — только для Партнёрства */}
+      {formData.program === "Партнёрство" && (
+        <>
+          <div style={{ marginBottom: "16px" }}>
+            <input
+              type="text"
+              name="city"
+              placeholder="Ваш город"
+              value={formData.city}
+              onChange={handleChange}
+              style={{
+                width: "100%",
+                padding: "14px 16px",
+                border: "1.5px solid #e0e0e0",
+                borderRadius: "8px",
+                fontSize: "15px",
+                outline: "none",
+                boxSizing: "border-box",
+                fontFamily: "'Inter', sans-serif",
+              }}
+            />
+          </div>
+          <div style={{ marginBottom: "16px" }}>
+            <input
+              type="text"
+              name="centerName"
+              placeholder="Название образовательного центра"
+              value={formData.centerName}
+              onChange={handleChange}
+              style={{
+                width: "100%",
+                padding: "14px 16px",
+                border: "1.5px solid #e0e0e0",
+                borderRadius: "8px",
+                fontSize: "15px",
+                outline: "none",
+                boxSizing: "border-box",
+                fontFamily: "'Inter', sans-serif",
+              }}
+            />
+          </div>
+        </>
+      )}
 
       {/* Комментарий */}
       <div style={{ marginBottom: "20px" }}>
