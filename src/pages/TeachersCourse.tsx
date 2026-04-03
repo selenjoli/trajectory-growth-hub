@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import FloatingButtons from "@/components/FloatingButtons";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
+import ContactFormModal from "@/components/ContactFormModal";
 
 import heroBg from "@/assets/hilderstone-hero.jpg";
 import collegePic from "@/assets/hilderstone-college.jpg";
@@ -63,6 +64,7 @@ const TeachersCourse = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [zoomed, setZoomed] = useState<number | null>(null);
+  const [formOpen, setFormOpen] = useState(false);
 
   const nextSlide = useCallback(() => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -130,15 +132,15 @@ const TeachersCourse = () => {
               ))}
             </motion.div>
 
-            <motion.a
-              href="#price"
+            <motion.button
+              onClick={() => setFormOpen(true)}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1 }}
               className="inline-block btn-gold px-8 py-4 rounded-2xl text-sm tracking-widest"
             >
               Записаться — 32&nbsp;000&nbsp;₽
-            </motion.a>
+            </motion.button>
           </div>
         </div>
       </section>
@@ -568,12 +570,12 @@ const TeachersCourse = () => {
                 </p>
 
                 <div className="border-t-2 border-dashed border-foreground/20 pt-6 space-y-4">
-                  <a
-                    href="#price"
+                  <button
+                    onClick={() => setFormOpen(true)}
                     className="block w-full text-center btn-gold px-6 py-4 rounded-2xl text-sm tracking-widest"
                   >
                     Записаться на курс →
-                  </a>
+                  </button>
 
                   <div className="flex flex-col items-center gap-1 text-xs text-muted-foreground">
                     <a href="mailto:rost-traektoria@yandex.ru" className="hover:text-foreground transition-colors">rost-traektoria@yandex.ru</a>
@@ -648,6 +650,7 @@ const TeachersCourse = () => {
       </section>
       <Footer variant="white" />
       <FloatingButtons arrowColor="hsl(var(--program-teachers))" />
+      <ContactFormModal open={formOpen} onClose={() => setFormOpen(false)} program="Программы для педагогов" page="TeachersCourse" />
     </main>
   );
 };

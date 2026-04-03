@@ -6,6 +6,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import PhotoLightbox from "@/components/PhotoLightbox";
+import ContactFormModal from "@/components/ContactFormModal";
 
 import heroBg from "@/assets/uae-hero.jpg";
 import uaeBeach from "@/assets/uae-beach.jpg";
@@ -75,6 +76,7 @@ const UaeTour = () => {
   const [whyPaused, setWhyPaused] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [formOpen, setFormOpen] = useState(false);
 
   const whyPhotos = [uaeBeach, uaeAbudhabi, uaeMuseum, uaeMall, uaeYacht];
 
@@ -169,15 +171,15 @@ const UaeTour = () => {
                 </span>
               ))}
             </motion.div>
-            <motion.a
-              href="#forma"
+            <motion.button
+              onClick={() => setFormOpen(true)}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1 }}
               className="inline-block btn-gold px-8 py-4 rounded-2xl text-sm tracking-widest"
             >
               Узнать когда откроется запись
-            </motion.a>
+            </motion.button>
           </div>
         </div>
       </section>
@@ -195,13 +197,12 @@ const UaeTour = () => {
               </p>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
-              <a
-                href="#forma"
-                id="forma"
+              <button
+                onClick={() => setFormOpen(true)}
                 className="inline-block btn-gold px-8 py-4 rounded-2xl text-sm tracking-widest"
               >
                 Оставить контакт
-              </a>
+              </button>
             </AnimatedSection>
           </div>
         </div>
@@ -464,12 +465,12 @@ const UaeTour = () => {
                   <p className="text-center text-muted-foreground text-sm font-normal normal-case mb-4">
                     Стоимость будет объявлена после подтверждения программы.
                   </p>
-                  <a
-                    href="#forma"
+                  <button
+                    onClick={() => setFormOpen(true)}
                     className="block w-full text-center btn-gold px-6 py-4 rounded-2xl text-sm tracking-widest"
                   >
                     Узнать о новых датах
-                  </a>
+                  </button>
                 </div>
               </div>
 
@@ -548,12 +549,12 @@ const UaeTour = () => {
             <p className="text-white/80 text-base md:text-lg font-normal normal-case leading-relaxed mb-10">
               Стоимость и даты будут объявлены после подтверждения программы. Оставьте контакт — пришлём информацию первыми, как только всё подтвердится.
             </p>
-            <a
-              href="#forma"
+            <button
+              onClick={() => setFormOpen(true)}
               className="inline-block btn-gold px-10 py-4 rounded-2xl text-sm tracking-widest"
             >
               Оставить контакт
-            </a>
+            </button>
           </AnimatedSection>
         </div>
       </section>
@@ -615,6 +616,7 @@ const UaeTour = () => {
       <Footer variant="white" />
       <FloatingButtons arrowColor="hsl(var(--program-uae))" />
       <PhotoLightbox photos={whyPhotos} initialIndex={lightboxIndex} open={lightboxOpen} onClose={() => setLightboxOpen(false)} />
+      <ContactFormModal open={formOpen} onClose={() => setFormOpen(false)} program="Тур в ОАЭ" page="UaeTour" />
     </main>
   );
 };

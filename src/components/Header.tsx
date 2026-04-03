@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
+import ContactFormModal from "./ContactFormModal";
 import { motion, AnimatePresence } from "framer-motion";
 import logoDark from "@/assets/logo-dark.svg";
 import logoLight from "@/assets/logo-light.svg";
@@ -60,20 +62,20 @@ const DropdownMenu = ({
         className="absolute top-full left-0 mt-2 min-w-[220px] bg-background rounded-xl shadow-lg border border-border py-2 z-50"
       >
         {items.map((item) => (
-          <a
+          <Link
             key={item.href}
-            href={item.href}
+            to={item.href}
             className="block px-5 py-2.5 text-sm text-foreground/80 hover:text-foreground hover:bg-muted transition-colors"
           >
             {item.label}
-          </a>
+          </Link>
         ))}
       </motion.div>
     )}
   </AnimatePresence>
 );
 
-const NavItem = ({ item, light = false, buttonStyle = "gold" }: { item: MenuItem; light?: boolean; buttonStyle?: "gold" | "silver" }) => {
+const NavItem = ({ item, light = false, buttonStyle = "gold", onFormOpen }: { item: MenuItem; light?: boolean; buttonStyle?: "gold" | "silver"; onFormOpen?: () => void }) => {
   const [open, setOpen] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
 
@@ -90,12 +92,12 @@ const NavItem = ({ item, light = false, buttonStyle = "gold" }: { item: MenuItem
 
   if (item.isButton) {
     return (
-      <a
-        href={item.href}
+      <button
+        onClick={onFormOpen}
         className={`${light && buttonStyle === "silver" ? "btn-silver" : "btn-gold"} text-xs tracking-widest px-6 py-3 rounded-xl transition-all`}
       >
         {item.label}
-      </a>
+      </button>
     );
   }
 
@@ -105,8 +107,8 @@ const NavItem = ({ item, light = false, buttonStyle = "gold" }: { item: MenuItem
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
     >
-      <a
-        href={item.href}
+      <Link
+        to={item.href}
         className={`text-sm font-medium transition-colors py-2 flex items-center gap-1 ${light ? "text-white/70 hover:text-white" : "text-foreground/70 hover:text-foreground"}`}
       >
         {item.label}
@@ -121,7 +123,7 @@ const NavItem = ({ item, light = false, buttonStyle = "gold" }: { item: MenuItem
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         )}
-      </a>
+      </Link>
       {item.children && <DropdownMenu items={item.children} isOpen={open} />}
     </div>
   );
@@ -131,9 +133,11 @@ const NavItem = ({ item, light = false, buttonStyle = "gold" }: { item: MenuItem
 const MobileMenu = ({
   isOpen,
   onClose,
+  onFormOpen,
 }: {
   isOpen: boolean;
   onClose: () => void;
+  onFormOpen?: () => void;
 }) => {
   const [expandedIdx, setExpandedIdx] = useState<number | null>(null);
   const allItems = [...leftMenu, ...rightMenu];
@@ -167,23 +171,22 @@ const MobileMenu = ({
               {allItems.map((item, idx) => (
                 <div key={item.href + idx}>
                   {item.isButton ? (
-                    <a
-                      href={item.href}
-                      onClick={onClose}
-                      className="block mt-4 btn-gold text-sm tracking-widest px-6 py-4 rounded-xl text-center"
+                    <button
+                      onClick={() => { onClose(); onFormOpen?.(); }}
+                      className="block w-full mt-4 btn-gold text-sm tracking-widest px-6 py-4 rounded-xl text-center"
                     >
                       {item.label}
-                    </a>
+                    </button>
                   ) : (
                     <>
                       <div className="flex items-center justify-between">
-                        <a
-                          href={item.href}
+                        <Link
+                          to={item.href}
                           onClick={onClose}
                           className="block py-3 text-base font-medium text-foreground/80"
                         >
                           {item.label}
-                        </a>
+                        </Link>
                         {item.children && (
                           <button
                             onClick={() => setExpandedIdx(expandedIdx === idx ? null : idx)}
@@ -210,14 +213,14 @@ const MobileMenu = ({
                             className="overflow-hidden pl-4 border-l-2 border-accent/30 ml-2"
                           >
                             {item.children.map((child) => (
-                              <a
+                              <Link
                                 key={child.href}
-                                href={child.href}
+                                to={child.href}
                                 onClick={onClose}
                                 className="block py-2 text-sm text-foreground/60 hover:text-foreground"
                               >
                                 {child.label}
-                              </a>
+                              </Link>
                             ))}
                           </motion.div>
                         )}
@@ -236,47 +239,51 @@ const MobileMenu = ({
 
 const Header = ({ variant = "dark", buttonStyle = "gold" }: { variant?: "dark" | "light"; buttonStyle?: "gold" | "silver" }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [formOpen, setFormOpen] = useState(false);
   const isLight = variant === "light";
 
   return (
-    <header className={`w-full relative z-30 ${isLight ? "bg-transparent absolute top-0 left-0 right-0" : "bg-background"}`}>
-      <div className="fluid-container flex items-center justify-between px-5 md:px-10 xl:px-20 py-5">
-        {/* Left nav — desktop */}
-        <nav className="hidden lg:flex items-center gap-6 flex-1">
-          {leftMenu.map((item) => (
-            <NavItem key={item.href} item={item} light={isLight} buttonStyle={buttonStyle} />
-          ))}
-        </nav>
+    <>
+      <header className={`w-full relative z-30 ${isLight ? "bg-transparent absolute top-0 left-0 right-0" : "bg-background"}`}>
+        <div className="fluid-container flex items-center justify-between px-5 md:px-10 xl:px-20 py-5">
+          {/* Left nav — desktop */}
+          <nav className="hidden lg:flex items-center gap-6 flex-1">
+            {leftMenu.map((item) => (
+              <NavItem key={item.href} item={item} light={isLight} buttonStyle={buttonStyle} onFormOpen={() => setFormOpen(true)} />
+            ))}
+          </nav>
 
-        {/* Logo */}
-        <a href="/" className="flex-shrink-0 lg:mx-8">
-          <img
-            src={isLight ? logoLight : logoDark}
-            alt="Траектория Роста"
-            className="h-8 sm:h-10 lg:h-14 xl:h-[72px] w-auto"
-          />
-        </a>
+          {/* Logo */}
+          <Link to="/" className="flex-shrink-0 lg:mx-8">
+            <img
+              src={isLight ? logoLight : logoDark}
+              alt="Траектория Роста"
+              className="h-8 sm:h-10 lg:h-14 xl:h-[72px] w-auto"
+            />
+          </Link>
 
-        {/* Right nav — desktop */}
-        <nav className="hidden lg:flex items-center justify-end gap-6 flex-1">
-          {rightMenu.map((item) => (
-            <NavItem key={item.href} item={item} light={isLight} buttonStyle={buttonStyle} />
-          ))}
-        </nav>
+          {/* Right nav — desktop */}
+          <nav className="hidden lg:flex items-center justify-end gap-6 flex-1">
+            {rightMenu.map((item) => (
+              <NavItem key={item.href} item={item} light={isLight} buttonStyle={buttonStyle} onFormOpen={() => setFormOpen(true)} />
+            ))}
+          </nav>
 
-        {/* Mobile burger */}
-        <button
-          className={`lg:hidden ${isLight ? "text-white/70 hover:text-white" : "text-foreground/70 hover:text-foreground"}`}
-          onClick={() => setMobileOpen(true)}
-        >
-          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
+          {/* Mobile burger */}
+          <button
+            className={`lg:hidden ${isLight ? "text-white/70 hover:text-white" : "text-foreground/70 hover:text-foreground"}`}
+            onClick={() => setMobileOpen(true)}
+          >
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
 
-      <MobileMenu isOpen={mobileOpen} onClose={() => setMobileOpen(false)} />
-    </header>
+        <MobileMenu isOpen={mobileOpen} onClose={() => setMobileOpen(false)} onFormOpen={() => setFormOpen(true)} />
+      </header>
+      <ContactFormModal open={formOpen} onClose={() => setFormOpen(false)} page="Header" />
+    </>
   );
 };
 

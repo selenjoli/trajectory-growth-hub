@@ -7,6 +7,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import PhotoLightbox from "@/components/PhotoLightbox";
+import ContactFormModal from "@/components/ContactFormModal";
 import smartCookiesLogo from "@/assets/logos/smart-cookies.svg";
 import pershinaPhoto from "@/assets/founders/pershina.jpg";
 import akademiyaLogo from "@/assets/logos/akademiya-yazykov.png";
@@ -186,6 +187,7 @@ const Partnership = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [lightboxPhotos, setLightboxPhotos] = useState<string[]>([]);
+  const [formOpen, setFormOpen] = useState(false);
 
   const nextSlide = useCallback(() => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -501,12 +503,12 @@ const Partnership = () => {
                   Расскажите о&nbsp;себе и&nbsp;своём центре — мы&nbsp;свяжемся в&nbsp;течение дня.
                 </p>
 
-                <a
-                  href="mailto:rost-traektoria@yandex.ru?subject=Партнёрство — запрос"
+                <button
+                  onClick={() => setFormOpen(true)}
                   className="block w-full text-center btn-gold px-8 py-4 rounded-2xl text-sm tracking-widest mb-6"
                 >
-                  Написать нам
-                </a>
+                  Оставить заявку
+                </button>
 
                 <div className="space-y-2 text-sm text-muted-foreground normal-case mt-auto">
                   <p>📧 rost-traektoria@yandex.ru</p>
@@ -602,6 +604,7 @@ const Partnership = () => {
       </section>
       <Footer />
       <FloatingButtons />
+      <ContactFormModal open={formOpen} onClose={() => setFormOpen(false)} program="Партнёрство" page="Partnership" />
       <PhotoLightbox photos={lightboxPhotos.length ? lightboxPhotos : galleryPhotos} initialIndex={lightboxIndex} open={lightboxOpen} onClose={() => setLightboxOpen(false)} />
     </main>
   );
