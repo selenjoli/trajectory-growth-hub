@@ -25,69 +25,115 @@ const takeawayContacts = "/assets/fest-takeaway-contacts.jpg";
 const takeawayCert = "/assets/fest-takeaway-cert.jpg";
 const leaves1 = "/assets/fest-leaves-1.png";
 
+/* ---- photo variables for easy replacement ---- */
+const aboutPhoto = "/assets/fest-about.jpg";
+const formatVideo = ""; // TODO: вставить embed URL видео для блока "Как устроен день"
+const speakersPhoto = "/assets/fest-speakers-wide.jpg";
+const galleryPhoto1 = "/assets/fest-gallery-1.jpg";
+const galleryPhoto2 = "/assets/fest-gallery-2.jpg";
+const galleryPhoto3 = "/assets/fest-gallery-3.jpg";
+const galleryPhoto4 = "/assets/fest-gallery-4.jpg";
+
 /* ---- colors from mockup ---- */
 const bordeaux = "#300000";
 const orangeAccent = "#F29727";
 const orangeGrad = "bg-gradient-to-r from-[#F29727] via-orange-400 via-40% to-[#F29727] bg-clip-text text-transparent";
 
+/* ---- icons for "Кому сюда" ---- */
+const IconLightning = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="24" cy="24" r="22" stroke="white" strokeWidth="2" fill="none" />
+    <path d="M27 12L19 26h6l-2 10 8-14h-6l2-10z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round" strokeLinecap="round" />
+  </svg>
+);
+
+const IconPerson = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="24" cy="24" r="22" stroke="white" strokeWidth="2" fill="none" />
+    <circle cx="24" cy="18" r="5" stroke="white" strokeWidth="2" fill="none" />
+    <path d="M15 36c0-5 4-9 9-9s9 4 9 9" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" />
+  </svg>
+);
+
+const IconBritishFlag = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="24" cy="24" r="22" stroke="white" strokeWidth="2" fill="none" />
+    <rect x="13" y="15" width="22" height="18" rx="1" stroke="white" strokeWidth="1.5" fill="none" />
+    <line x1="24" y1="15" x2="24" y2="33" stroke="white" strokeWidth="1.5" />
+    <line x1="13" y1="24" x2="35" y2="24" stroke="white" strokeWidth="1.5" />
+    <line x1="13" y1="15" x2="35" y2="33" stroke="white" strokeWidth="0.8" />
+    <line x1="35" y1="15" x2="13" y2="33" stroke="white" strokeWidth="0.8" />
+  </svg>
+);
+
+const IconGradCap = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="24" cy="24" r="22" stroke="white" strokeWidth="2" fill="none" />
+    <path d="M12 22l12-6 12 6-12 6-12-6z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round" />
+    <path d="M18 25v6c0 0 2.5 3 6 3s6-3 6-3v-6" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+    <line x1="36" y1="22" x2="36" y2="32" stroke="white" strokeWidth="2" strokeLinecap="round" />
+  </svg>
+);
+
 /* ---- data ---- */
 
-const audienceLeft = [
+const audienceItems = [
   {
     title: "Если вы учитель английского",
-    text: "и хотите не просто послушать теорию, а унести с собой готовые инструменты для уроков.",
+    text: "и хотите не просто послушать теорию, а унести с собой готовые инструменты для уроков.",
+    icon: <IconBritishFlag />,
   },
   {
     title: "Если вы руководитель центра",
-    text: "и хотите чтобы ваши педагоги развивались и не выгорали.",
+    text: "и хотите чтобы ваши педагоги развивались и не выгорали.",
+    icon: <IconGradCap />,
   },
-];
-
-const audienceRight = [
   {
     title: "Если вам нужна энергия",
-    text: "и вдохновение — особенно в ноябре, когда учебный год уже давит.",
+    text: "и вдохновение — особенно в ноябре, когда учебный год уже давит.",
+    icon: <IconLightning />,
   },
   {
-    title: "Если вы устали от одиночества",
-    text: "в профессиональных поисках и хотите наконец поговорить с коллегами которые понимают о чём речь.",
+    title: "Если вы устали от одиночества",
+    text: "в профессиональных поисках и хотите наконец поговорить с коллегами которые понимают о чём речь.",
+    icon: <IconPerson />,
   },
 ];
 
 const formatLeft = [
-  { title: "25-минутные сессии", text: "от практикующих педагогов — интенсивно и по делу" },
-  { title: "Coffee & Connection", text: "паузы между сессиями с розыгрышами методической литературы и нетворкинг-играми. Не просто кофе — здесь завязывается большинство знакомств" },
+  { title: "25-минутные сессии", text: "от практикующих педагогов — интенсивно и по делу" },
+  { title: "Coffee & Connection", text: "паузы между сессиями с розыгрышами методической литературы и нетворкинг-играми. Не просто кофе — здесь завязывается большинство знакомств" },
 ];
 
 const formatRight = [
   { title: "Q&A сессия", text: "вопросы спикерам напрямую" },
-  { title: "Closing Remarks", text: "итоги и планы" },
+  { title: "Closing Remarks", text: "итоги и планы" },
 ];
 
 const scheduleCol1 = [
   { time: "09:15 — 09:55", title: "Coffee & Icebreaker", speaker: "", school: "" },
   { time: "10:00 — 10:25", title: "A Cookie Jar of Smart Ideas for (V)YL", subtitle: "копилка идей для самых маленьких", speaker: "Ms Violet", school: "Smart Cookies Club" },
-  { time: "10:30 — 10:55", title: "Managing Teens: как найти ключ к мотивации", speaker: "Ms Svetlana", school: "Smart Cookies Club" },
-  { time: "11:00 — 11:25", title: "Beyond Quiet, Please!", subtitle: "больше чем тишина в классе", speaker: "Ms Anastasia", school: "Академия Языков" },
-  { time: "11:30 — 11:55", title: "Teaching Vocabulary Beyond Translation", subtitle: "лексика за пределами перевода", speaker: "Ms Sofia", school: "Академия Языков" },
-  { time: "12:00 — 12:25", title: "To burn or not to burn", subtitle: "профессиональное выгорание и тайм-менеджмент", speaker: "Ms Shagane", school: "Liberty School" },
+  { time: "10:30 — 10:55", title: "Managing Teens: как найти ключ к мотивации", speaker: "Ms Svetlana", school: "Smart Cookies Club" },
+  { time: "11:00 — 11:25", title: "Beyond Quiet, Please!", subtitle: "больше чем тишина в классе", speaker: "Ms Anastasia", school: "Академия Языков" },
+  { time: "11:30 — 11:55", title: "Teaching Vocabulary Beyond Translation", subtitle: "лексика за пределами перевода", speaker: "Ms Sofia", school: "Академия Языков" },
+  { time: "12:00 — 12:25", title: "To burn or not to burn", subtitle: "профессиональное выгорание и тайм-менеджмент", speaker: "Ms Shagane", school: "Liberty School" },
   { time: "12:30 — 13:20", title: "Coffee & Connection", speaker: "", school: "" },
 ];
 
 const scheduleCol2 = [
-  { time: "13:25 — 13:50", title: "Parents as Partners", subtitle: "от претензий к сотрудничеству", speaker: "Ms Eugenia", school: "Liberty School" },
-  { time: "13:55 — 14:20", title: "Getting the most of your textbook", subtitle: "учебник: инструкция по применению", speaker: "Ms Irina", school: "ABC School" },
+  { time: "13:25 — 13:50", title: "Parents as Partners", subtitle: "от претензий к сотрудничеству", speaker: "Ms Eugenia", school: "Liberty School" },
+  { time: "13:55 — 14:20", title: "Getting the most of your textbook", subtitle: "учебник: инструкция по применению", speaker: "Ms Irina", school: "ABC School" },
   { time: "14:25 — 14:50", title: "Demotivation: 5 harmful tips you need to unlearn as a teacher", speaker: "Ms Irina", school: "ABC Club Пушкино" },
-  { time: "14:55 — 15:20", title: "Grammar in Motion: Learning Through Play", subtitle: "как повысить эффективность и управлять динамикой", speaker: "Ms Alexandra", school: "Lingua Cat" },
+  { time: "14:55 — 15:20", title: "Grammar in Motion: Learning Through Play", subtitle: "как повысить эффективность и управлять динамикой", speaker: "Ms Alexandra", school: "Lingua Cat" },
   { time: "15:25 — 15:35", title: "Q&A session", speaker: "", school: "" },
-  { time: "15:35 — 15:50", title: "Closing Remarks", subtitle: "итоги и планы", speaker: "", school: "" },
+  { time: "15:35 — 15:50", title: "Closing Remarks", subtitle: "итоги и планы", speaker: "", school: "" },
 ];
 
 const takeaways = [
-  { image: takeawayTools, title: "Готовые инструменты", text: "Конкретные приемы и упражнения от педагогов которые проверили их в своих классах. Применить можно в ближайший понедельник." },
-  { image: takeawayRecordings, title: "Материалы докладов", text: "После феста участники получают доступ к материалам сессий. Можно пересмотреть то что особенно зацепило — или поделиться с коллегами которые не смогли приехать." },
-  { image: takeawayContacts, title: "Профессиональные контакты", text: "Коллеги из разных городов, с которыми познакомились в Coffee & Connection и остались на связи. Сообщество которое продолжает общаться после феста." },
-  { image: takeawayCert, title: "Сертификат участника", text: "Каждый участник получает официальный сертификат ProSkill Fest. Хорошее дополнение к профессиональному портфолио." },
+  { image: takeawayTools, title: "Готовые инструменты", text: "Конкретные приемы и упражнения от педагогов которые проверили их в своих классах. Применить можно в ближайший понедельник." },
+  { image: takeawayRecordings, title: "Материалы докладов", text: "После феста участники получают доступ к материалам сессий. Можно пересмотреть то что особенно зацепило — или поделиться с коллегами которые не смогли приехать." },
+  { image: takeawayContacts, title: "Профессиональные контакты", text: "Коллеги из разных городов, с которыми познакомились в Coffee & Connection и остались на связи. Сообщество которое продолжает общаться после феста." },
+  { image: takeawayCert, title: "Сертификат участника", text: "Каждый участник получает официальный сертификат ProSkill Fest. Хорошее дополнение к профессиональному портфолио." },
 ];
 
 const testimonials = [
@@ -96,6 +142,8 @@ const testimonials = [
   { id: 3, image: "https://placehold.co/400x700/F29727/ffffff?text=Отзыв+3" },
   { id: 4, image: "https://placehold.co/400x700/F29727/ffffff?text=Отзыв+4" },
 ];
+
+const galleryPhotos = [galleryPhoto1, galleryPhoto2, galleryPhoto3, galleryPhoto4];
 
 /* ---- schedule item renderer ---- */
 const ScheduleItem = ({ item, i }: { item: typeof scheduleCol1[0]; i: number }) => {
@@ -123,17 +171,12 @@ const ProSkillFest = () => {
   const [isPaused, setIsPaused] = useState(false);
   const [zoomed, setZoomed] = useState<number | null>(null);
 
+  /* gallery carousel */
   const [gallerySlide, setGallerySlide] = useState(0);
   const [galleryPaused, setGalleryPaused] = useState(false);
-  const galleryPhotos = [heroImg, networkingImg, sessionImg, venueImg];
 
-  /* format carousel */
-  const [formatSlide, setFormatSlide] = useState(0);
-  const [formatPaused, setFormatPaused] = useState(false);
-  const formatPhotos = [heroImg, sessionImg, networkingImg, venueImg];
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
-  const [lightboxPhotos, setLightboxPhotos] = useState<string[]>([]);
   const [formOpen, setFormOpen] = useState(false);
 
   const nextSlide = useCallback(() => {
@@ -152,15 +195,7 @@ const ProSkillFest = () => {
       setGallerySlide((prev) => (prev + 1) % galleryPhotos.length);
     }, 3500);
     return () => clearInterval(interval);
-  }, [galleryPaused, galleryPhotos.length]);
-
-  useEffect(() => {
-    if (formatPaused) return;
-    const interval = setInterval(() => {
-      setFormatSlide((prev) => (prev + 1) % formatPhotos.length);
-    }, 3500);
-    return () => clearInterval(interval);
-  }, [formatPaused, formatPhotos.length]);
+  }, [galleryPaused]);
 
   /* Repeating flowers positions */
   const flowerPositions = [0, 900, 1800, 2700, 3600, 4500];
@@ -230,8 +265,8 @@ const ProSkillFest = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-lg md:text-xl text-white/85 max-w-2xl mb-6 font-normal normal-case leading-relaxed"
             >
-              Один день в году, когда учителя собираются не на конференцию — а к своим.
-              Доклады от практикующих педагогов, живое общение и инструменты которые работают в реальном классе.
+              Один день в году, когда учителя собираются не на конференцию — а к своим.
+              Доклады от практикующих педагогов, живое общение и инструменты которые работают в реальном классе.
             </motion.p>
 
             <motion.div
@@ -265,7 +300,7 @@ const ProSkillFest = () => {
         </div>
       </section>
 
-      {/* ── ABOUT — "Откуда это все началось" ── */}
+      {/* ── ABOUT — "Как это началось" — single photo ── */}
       <section className="px-3 md:px-6 xl:px-10 mt-4 relative z-10">
         <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
@@ -276,58 +311,27 @@ const ProSkillFest = () => {
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
               <div className="flex flex-col lg:flex-row gap-10">
-                <div className="w-full lg:w-1/2 space-y-6">
+                <div className="w-full lg:flex-1 space-y-6">
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
-                    Учителя учатся лучше всего у других учителей. Не у авторов учебников
-                    и не у методистов из академий — а у тех, кто каждый день заходит в класс,
-                    сталкивается с теми же задачами и находит решения которые реально работают.
+                    Учителя учатся лучше всего у других учителей. Не у авторов учебников
+                    и не у методистов из академий — а у тех, кто каждый день заходит в класс,
+                    сталкивается с теми же задачами и находит решения которые реально работают.
                   </p>
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
-                    Ассоциация «Траектория Роста» сделала ProSkill Fest именно из этой идеи.
-                    Никаких звездных лекторов на недосягаемой высоте — только практики, которые
-                    честно рассказывают о своих находках, инструментах и ошибках.
+                    Ассоциация «Траектория Роста» сделала ProSkill Fest именно из этой идеи.
+                    Никаких звездных лекторов на недосягаемой высоте — только практики, которые
+                    честно рассказывают о своих находках, инструментах и ошибках.
                   </p>
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
-                    С 2025 года фестиваль собирает учителей английского из разных городов России.
-                    Каждый раз — новые темы, новые лица и неизменное ощущение что ты наконец среди своих.
+                    С 2025 года фестиваль собирает учителей английского из разных городов России.
+                    Каждый раз — новые темы, новые лица и неизменное ощущение что ты наконец среди своих.
                   </p>
                 </div>
 
-                {/* Stacked photo carousel */}
-                <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
-                  <div
-                    className="relative w-full h-[460px]"
-                    onMouseEnter={() => setGalleryPaused(true)}
-                    onMouseLeave={() => setGalleryPaused(false)}
-                  >
-                    <AnimatePresence>
-                      {galleryPhotos.map((photo, i) => {
-                        const offset = (i - gallerySlide + galleryPhotos.length) % galleryPhotos.length;
-                        if (offset > 3) return null;
-                        return (
-                          <motion.div
-                            key={i}
-                            initial={{ opacity: 0, scale: 0.9, y: 30 }}
-                            animate={{
-                              opacity: offset === 0 ? 1 : 0.55 - offset * 0.12,
-                              scale: 1 - offset * 0.05,
-                              y: offset * 16,
-                              x: offset * 8,
-                              zIndex: galleryPhotos.length - offset,
-                              rotateZ: offset * -2,
-                            }}
-                            exit={{ opacity: 0, scale: 0.9, y: -20 }}
-                            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                            className={`absolute inset-0 ${offset === 0 ? "cursor-pointer" : ""}`}
-                            onClick={() => { if (offset === 0) { setLightboxPhotos(galleryPhotos); setLightboxIndex(i); setLightboxOpen(true); } }}
-                          >
-                            <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl">
-                              <img src={photo} alt="ProSkill Fest" className="w-full h-full object-cover" />
-                            </div>
-                          </motion.div>
-                        );
-                      })}
-                    </AnimatePresence>
+                {/* Single horizontal photo */}
+                <div className="w-full lg:w-1/2">
+                  <div className="rounded-2xl overflow-hidden">
+                    <img src={aboutPhoto} alt="ProSkill Fest — как всё начиналось" className="w-full h-full object-cover aspect-[4/3]" />
                   </div>
                 </div>
               </div>
@@ -336,7 +340,7 @@ const ProSkillFest = () => {
         </div>
       </section>
 
-      {/* ── AUDIENCE — "Кому сюда" ── */}
+      {/* ── AUDIENCE — "Кому сюда" with icons ── */}
       <section className="px-3 md:px-6 xl:px-10 mt-4 relative z-10">
         <div className="rounded-[2rem] py-20 px-6 md:px-16" style={{ backgroundColor: bordeaux }}>
           <div className="fluid-container">
@@ -346,34 +350,25 @@ const ProSkillFest = () => {
               </h2>
             </AnimatedSection>
             <div className="grid md:grid-cols-2 gap-4">
-              {/* Left: профессии */}
-              <div className="space-y-4">
-                {audienceLeft.map((item, i) => (
-                  <AnimatedSection key={i} delay={i * 0.1}>
-                    <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-6 h-full">
+              {audienceItems.map((item, i) => (
+                <AnimatedSection key={i} delay={i * 0.1}>
+                  <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-6 h-full flex gap-5 items-start">
+                    <div className="shrink-0 mt-1">
+                      {item.icon}
+                    </div>
+                    <div>
                       <h3 className="text-lg text-white mb-2">{item.title}</h3>
                       <p className="text-white/70 text-sm normal-case leading-relaxed">{item.text}</p>
                     </div>
-                  </AnimatedSection>
-                ))}
-              </div>
-              {/* Right: состояния */}
-              <div className="space-y-4">
-                {audienceRight.map((item, i) => (
-                  <AnimatedSection key={i} delay={i * 0.1}>
-                    <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-6 h-full">
-                      <h3 className="text-lg text-white mb-2">{item.title}</h3>
-                      <p className="text-white/70 text-sm normal-case leading-relaxed">{item.text}</p>
-                    </div>
-                  </AnimatedSection>
-                ))}
-              </div>
+                  </div>
+                </AnimatedSection>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── FORMAT — "Как устроен день" ── */}
+      {/* ── FORMAT — "Как устроен день" with video ── */}
       <section className="px-3 md:px-6 xl:px-10 mt-4 relative z-10">
         <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
@@ -383,11 +378,11 @@ const ProSkillFest = () => {
                 день
               </h2>
               <p className="text-muted-foreground mb-12 normal-case text-lg">
-                Весь день — очный формат в Москве. Только живое общение.
+                Весь день — очный формат в Москве. Только живое общение.
               </p>
             </AnimatedSection>
 
-            {/* 3 columns: left items, center carousel, right items */}
+            {/* 3 columns: left items, center video, right items */}
             <div className="grid md:grid-cols-3 gap-6 mb-12">
               <div className="space-y-4">
                 {formatLeft.map((item, i) => (
@@ -400,41 +395,22 @@ const ProSkillFest = () => {
                 ))}
               </div>
 
-              {/* Center: stacked carousel */}
+              {/* Center: video placeholder */}
               <AnimatedSection delay={0.1}>
-                <div
-                  className="relative w-full h-[400px]"
-                  onMouseEnter={() => setFormatPaused(true)}
-                  onMouseLeave={() => setFormatPaused(false)}
-                >
-                  <AnimatePresence>
-                    {formatPhotos.map((photo, i) => {
-                      const offset = (i - formatSlide + formatPhotos.length) % formatPhotos.length;
-                      if (offset > 3) return null;
-                      return (
-                        <motion.div
-                          key={i}
-                          initial={{ opacity: 0, scale: 0.9, y: 30 }}
-                          animate={{
-                            opacity: offset === 0 ? 1 : 0.55 - offset * 0.12,
-                            scale: 1 - offset * 0.05,
-                            y: offset * 16,
-                            x: offset * 8,
-                            zIndex: formatPhotos.length - offset,
-                            rotateZ: offset * -2,
-                          }}
-                          exit={{ opacity: 0, scale: 0.9, y: -20 }}
-                          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                          className={`absolute inset-0 ${offset === 0 ? "cursor-pointer" : ""}`}
-                          onClick={() => { if (offset === 0) { setLightboxPhotos(formatPhotos); setLightboxIndex(i); setLightboxOpen(true); } }}
-                        >
-                          <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl">
-                            <img src={photo} alt="ProSkill Fest" className="w-full h-full object-cover" />
-                          </div>
-                        </motion.div>
-                      );
-                    })}
-                  </AnimatePresence>
+                <div className="relative w-full h-[400px] rounded-2xl overflow-hidden bg-muted flex items-center justify-center">
+                  {formatVideo ? (
+                    <iframe
+                      src={formatVideo}
+                      allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
+                      frameBorder="0"
+                      allowFullScreen
+                      className="absolute inset-0 w-full h-full"
+                    />
+                  ) : (
+                    <div className="text-muted-foreground text-center p-4">
+                      <p className="text-sm">Видео скоро появится</p>
+                    </div>
+                  )}
                 </div>
               </AnimatedSection>
 
@@ -480,8 +456,8 @@ const ProSkillFest = () => {
               </h2>
               <p className="text-white/60 mb-12 normal-case leading-relaxed text-lg">
                 Программа каждого феста формируется заново — спикеры предлагают темы которые актуальны
-                прямо сейчас в их классах. Программа ProSkill Fest 2026 пока в разработке,
-                следите за анонсами.
+                прямо сейчас в их классах. Программа ProSkill Fest 2026 пока в разработке,
+                следите за анонсами.
               </p>
             </AnimatedSection>
 
@@ -517,26 +493,24 @@ const ProSkillFest = () => {
                     Все спикеры ProSkill Fest — практикующие педагоги.
                   </p>
                   <p className="text-muted-foreground mb-8 normal-case leading-relaxed">
-                    Здесь нет приглашенных экспертов которые давно не заходили в класс.
-                    Любой учитель с интересной темой и полезными наработками может подать заявку
-                    на выступление — из школ Ассоциации и не только.
+                    Здесь нет приглашенных экспертов которые давно не заходили в класс.
+                    Любой учитель с интересной темой и полезными наработками может подать заявку
+                    на выступление — из школ Ассоциации и не только.
                   </p>
                   <p className="text-muted-foreground text-sm mb-6 normal-case">
-                    Спикеры ProSkill Fest 2026 пока объявляются. Если у вас есть тема которой хочется
-                    поделиться с коллегами — ждем вашу заявку.
+                    Спикеры ProSkill Fest 2026 пока объявляются. Если у вас есть тема которой хочется
+                    поделиться с коллегами — ждем вашу заявку.
                   </p>
                   <button onClick={() => setFormOpen(true)} className="inline-flex items-center gap-2 btn-gold px-8 py-4 rounded-2xl text-sm tracking-widest">
                     Подать заявку на выступление <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
 
-                {/* Speaker photos — right column */}
-                <div className="w-full lg:w-1/2 grid grid-cols-2 gap-4">
-                  {[speaker1, speaker2, speaker3, speaker4].map((img, i) => (
-                    <div key={i} className="aspect-square rounded-2xl overflow-hidden">
-                      <img src={img} alt={`Спикер ${i + 1}`} className="w-full h-full object-cover" />
-                    </div>
-                  ))}
+                {/* Single wide speaker photo */}
+                <div className="w-full lg:w-1/2 flex items-center">
+                  <div className="w-full rounded-2xl overflow-hidden">
+                    <img src={speakersPhoto} alt="Спикеры ProSkill Fest" className="w-full h-full object-cover aspect-[4/3]" />
+                  </div>
                 </div>
               </div>
             </AnimatedSection>
@@ -567,6 +541,61 @@ const ProSkillFest = () => {
                 </AnimatedSection>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── GALLERY — "Как это было в 2025" stacked carousel ── */}
+      <section className="px-3 md:px-6 xl:px-10 mt-4 relative z-10">
+        <div className="rounded-[2rem] py-20 px-6 md:px-16" style={{ backgroundColor: bordeaux }}>
+          <div className="fluid-container">
+            <AnimatedSection>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white mb-14">
+                Как это было <span className={orangeGrad}>в 2025</span>
+              </h2>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.1}>
+              <div
+                className="relative mx-auto max-w-3xl h-[420px] md:h-[500px]"
+                onMouseEnter={() => setGalleryPaused(true)}
+                onMouseLeave={() => setGalleryPaused(false)}
+              >
+                <AnimatePresence>
+                  {galleryPhotos.map((photo, i) => {
+                    const offset = (i - gallerySlide + galleryPhotos.length) % galleryPhotos.length;
+                    if (offset > 3) return null;
+                    return (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                        animate={{
+                          opacity: offset === 0 ? 1 : 0.55 - offset * 0.12,
+                          scale: 1 - offset * 0.05,
+                          y: offset * 16,
+                          x: offset * 8,
+                          zIndex: galleryPhotos.length - offset,
+                          rotateZ: offset * -2,
+                        }}
+                        exit={{ opacity: 0, scale: 0.9, y: -20 }}
+                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                        className={`absolute inset-0 ${offset === 0 ? "cursor-pointer" : ""}`}
+                        onClick={() => {
+                          if (offset === 0) {
+                            setLightboxIndex(i);
+                            setLightboxOpen(true);
+                          }
+                        }}
+                      >
+                        <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl">
+                          <img src={photo} alt={`ProSkill Fest ${i + 1}`} className="w-full h-full object-cover" />
+                        </div>
+                      </motion.div>
+                    );
+                  })}
+                </AnimatePresence>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -645,9 +674,9 @@ const ProSkillFest = () => {
               <AnimatedSection delay={0.1} className="w-full md:w-1/2">
                 <h3 className="text-xl mb-4 normal-case" style={{ color: bordeaux }}>Loft Красный Октябрь</h3>
                 <p className="text-muted-foreground normal-case leading-relaxed mb-6">
-                  В самом сердце Москвы, на Берсеневской набережной. Пространство которое располагает
-                  к разговору: не конференц-зал со строгими рядами, а живое место где удобно думать
-                  и общаться.
+                  В самом сердце Москвы, на Берсеневской набережной. Пространство которое располагает
+                  к разговору: не конференц-зал со строгими рядами, а живое место где удобно думать
+                  и общаться.
                 </p>
                 <div className="space-y-3 text-foreground/80 text-sm normal-case">
                   <div className="flex items-start gap-3">
@@ -660,7 +689,7 @@ const ProSkillFest = () => {
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="w-2.5 h-2.5 rounded-full shrink-0 mt-1.5" style={{ backgroundColor: orangeAccent }} />
-                    <span>Парковки на площадке нет — удобнее приехать на метро или такси</span>
+                    <span>Парковки на площадке нет — удобнее приехать на метро или такси</span>
                   </div>
                 </div>
               </AnimatedSection>
@@ -685,7 +714,7 @@ const ProSkillFest = () => {
                 <div className="bg-card border border-border rounded-2xl p-8 h-full flex flex-col">
                   <h3 className="text-xl mb-4" style={{ color: bordeaux }}>Для участников</h3>
                   <p className="text-muted-foreground normal-case leading-relaxed mb-6 flex-1">
-                    Для педагогов и руководителей центров ассоциации участие бесплатное — фест существует
+                    Для педагогов и руководителей центров ассоциации участие бесплатное — фест существует
                     благодаря поддержке ассоциации.
                   </p>
                   <p className="text-muted-foreground/60 text-sm normal-case mb-6">
@@ -701,8 +730,8 @@ const ProSkillFest = () => {
                 <div className="rounded-2xl p-8 h-full flex flex-col text-white" style={{ backgroundColor: bordeaux }}>
                   <h3 className="text-xl mb-4">Хотите выступить?</h3>
                   <p className="text-white/70 normal-case leading-relaxed mb-6 flex-1">
-                    ProSkill Fest строится на том, что спикеры — такие же практики как и все в зале.
-                    Если у вас есть тема, инструмент или опыт которым хочется поделиться — ждем заявку.
+                    ProSkill Fest строится на том, что спикеры — такие же практики как и все в зале.
+                    Если у вас есть тема, инструмент или опыт которым хочется поделиться — ждем заявку.
                   </p>
                   <button onClick={() => setFormOpen(true)} className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-2xl text-sm tracking-widest uppercase font-bold hover:bg-white/20 transition-colors text-center">
                     Подать заявку на выступление <ArrowRight className="w-4 h-4" />
@@ -731,7 +760,7 @@ const ProSkillFest = () => {
                   <span className="text-xs uppercase tracking-wider" style={{ color: orangeAccent }}>Hilderstone College</span>
                   <h3 className="text-lg mt-2 mb-2">Teachers Development Course</h3>
                   <p className="text-muted-foreground text-sm normal-case leading-relaxed mb-4">
-                    Недельный онлайн-интенсив с британскими тьюторами — готовые инструменты,
+                    Недельный онлайн-интенсив с британскими тьюторами — готовые инструменты,
                     международный сертификат, живой формат.
                   </p>
                   <span className="text-sm font-semibold inline-flex items-center gap-1" style={{ color: orangeAccent }}>
@@ -745,7 +774,7 @@ const ProSkillFest = () => {
                   <span className="text-xs uppercase tracking-wider" style={{ color: orangeAccent }}>Для руководителей</span>
                   <h3 className="text-lg mt-2 mb-2">Партнерство для центров</h3>
                   <p className="text-muted-foreground text-sm normal-case leading-relaxed mb-4">
-                    Руководите языковым центром? Узнайте о партнерстве с Ассоциацией.
+                    Руководите языковым центром? Узнайте о партнерстве с Ассоциацией.
                   </p>
                   <span className="text-sm font-semibold inline-flex items-center gap-1" style={{ color: orangeAccent }}>
                     О партнерстве <ArrowRight className="w-3.5 h-3.5" />
@@ -759,7 +788,7 @@ const ProSkillFest = () => {
       <Footer variant="white" />
       <FloatingButtons arrowColor="#300000" />
       <ContactFormModal open={formOpen} onClose={() => setFormOpen(false)} program="ProSkill Fest" page="ProSkillFest" />
-      <PhotoLightbox photos={lightboxPhotos.length ? lightboxPhotos : galleryPhotos} initialIndex={lightboxIndex} open={lightboxOpen} onClose={() => setLightboxOpen(false)} />
+      <PhotoLightbox photos={galleryPhotos} initialIndex={lightboxIndex} open={lightboxOpen} onClose={() => setLightboxOpen(false)} />
     </main>
   );
 };
