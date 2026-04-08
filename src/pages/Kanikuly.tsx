@@ -413,8 +413,6 @@ const Kanikuly = () => {
           </AnimatedSection>
         </div>
       </section>
-        </div>
-      </section>
 
       {/* ── Testimonials — green carousel, all white text ── */}
       <section className="px-3 md:px-6 xl:px-10">
