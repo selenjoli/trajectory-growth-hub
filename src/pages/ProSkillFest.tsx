@@ -370,7 +370,7 @@ const ProSkillFest = () => {
 
       {/* ── FORMAT — "Как устроен день" with video ── */}
       <section className="px-3 md:px-6 xl:px-10 mt-4 relative z-10">
-        <div className="rounded-[2rem] py-20 px-6 md:px-16" style={{ backgroundColor: "#F2F2F2" }}>
+        <div className="bg-background rounded-[2rem] pt-20 pb-40 md:pb-44 lg:pb-48 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl mb-4" style={{ color: bordeaux }}>
@@ -385,17 +385,17 @@ const ProSkillFest = () => {
             {/* 3 columns: narrow photo | wide cards | narrow video */}
             <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-6 lg:gap-10 items-stretch md:h-[520px]">
               {/* Left: photo matching video aspect */}
-              <AnimatedSection className="h-full hidden md:block">
-                <div className="rounded-2xl overflow-hidden h-full">
-                  <img src={sessionImg} alt="ProSkill Fest — формат дня" className="w-full h-full object-cover" />
+              <AnimatedSection className="hidden h-full md:block">
+                <div className="h-full overflow-hidden rounded-2xl">
+                  <img src={sessionImg} alt="ProSkill Fest — формат дня" className="h-full w-full object-cover" />
                 </div>
               </AnimatedSection>
 
               {/* Center: 4 cards stacked, stretch to fill height */}
-              <div className="flex flex-col gap-4 h-full">
+              <div className="flex h-full min-h-0 flex-col gap-4">
                 {[...formatLeft, ...formatRight].map((item, i) => (
-                  <AnimatedSection key={i} delay={i * 0.08} className="flex-1">
-                    <div className="bg-card border border-border rounded-2xl p-5 h-full flex flex-col justify-center">
+                  <AnimatedSection key={i} delay={i * 0.08} className="min-h-0 flex-1">
+                    <div className="bg-card border border-border rounded-2xl p-5 h-full min-h-0 flex flex-col justify-center">
                       <h3 className="text-base mb-1.5" style={{ color: bordeaux }}>{item.title}</h3>
                       <p className="text-muted-foreground text-sm normal-case leading-relaxed">{item.text}</p>
                     </div>
@@ -404,15 +404,15 @@ const ProSkillFest = () => {
               </div>
 
               {/* Right: vertical video, compact */}
-              <div className="h-full hidden md:block">
-                <div className="relative rounded-2xl overflow-hidden bg-muted h-full" style={{ aspectRatio: "9/16" }}>
+              <div className="hidden h-full md:block">
+                <div className="relative h-full overflow-hidden rounded-2xl bg-muted" style={{ aspectRatio: "9/16" }}>
                   {formatVideo ? (
                     <iframe
                       src={formatVideo}
                       allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
                       frameBorder="0"
                       allowFullScreen
-                      className="absolute inset-0 w-full h-full"
+                      className="absolute inset-0 h-full w-full"
                     />
                   ) : (
                     <div className="text-muted-foreground text-center p-4 flex items-center justify-center h-full">
