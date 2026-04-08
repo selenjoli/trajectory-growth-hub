@@ -27,7 +27,7 @@ const leaves1 = "/assets/fest-leaves-1.png";
 
 /* ---- photo variables for easy replacement ---- */
 const aboutPhoto = "/assets/fest-about.jpg";
-const formatVideo = ""; // TODO: вставить embed URL видео для блока "Как устроен день"
+const formatVideo = "https://kinescope.io/embed/jxLjvpThVJuw5vXGiTzQft";
 const speakersPhoto = "/assets/fest-speakers-wide.jpg";
 const galleryPhoto1 = "/assets/fest-gallery-1.jpg";
 const galleryPhoto2 = "/assets/fest-gallery-2.jpg";
