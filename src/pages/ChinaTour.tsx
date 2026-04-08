@@ -236,13 +236,11 @@ const ChinaTour = () => {
         <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-6">
-                Почему Китай — это <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">что-то особенное</span>
-              </h2>
-            </AnimatedSection>
-            <AnimatedSection delay={0.1}>
               <div className="flex flex-col lg:flex-row gap-10 items-center">
                 <div className="lg:flex-1 space-y-6">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-2">
+                    Почему Китай — это <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">что-то особенное</span>
+                  </h2>
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
                     Есть страны, после которых смотришь на мир немного иначе. Китай — одна из них.
                   </p>
