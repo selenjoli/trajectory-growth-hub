@@ -613,7 +613,7 @@ const AltaiCamp = () => {
       <section className="py-20 px-3 md:px-6 xl:px-10">
         <div className="fluid-container">
           <AnimatedSection>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white mb-14 text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white mb-14">
               Как это было <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">в 2025</span>
             </h2>
           </AnimatedSection>
