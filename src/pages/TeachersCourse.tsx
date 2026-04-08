@@ -6,14 +6,14 @@ import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import ContactFormModal from "@/components/ContactFormModal";
 
-const heroBg = "/assets/hilderstone-hero.jpg";
-const collegePic = "/assets/hilderstone-college.jpg";
-const collegePicSection = "/assets/hilderstone-college-tc-section.jpg";
-const collegePicReceipt = "/assets/hilderstone-college-tc-receipt.jpg";
-const teacherPic = "/assets/hilderstone-teacher.jpg";
-const teacherPicReceipt = "/assets/hilderstone-teacher-tc-receipt.jpg";
-const certificatePic = "/assets/hilderstone-certificate.jpg";
-const lessonPic = "/assets/hilderstone-lesson.jpg";
+const heroBg = "/assets/teachers-hilderstone-hero.jpg";
+const collegePic = "/assets/teachers-hilderstone-college.jpg";
+const collegePicSection = "/assets/teachers-hilderstone-college-section.jpg";
+const collegePicReceipt = "/assets/teachers-hilderstone-college-receipt.jpg";
+const teacherPic = "/assets/teachers-hilderstone-teacher.jpg";
+const teacherPicReceipt = "/assets/teachers-hilderstone-teacher-receipt.jpg";
+const certificatePic = "/assets/teachers-hilderstone-certificate.jpg";
+const lessonPic = "/assets/teachers-hilderstone-lesson.jpg";
 
 const illustMethods = "/assets/illust-teacher-methods.png";
 const illustOnline = "/assets/illust-teacher-online.png";
