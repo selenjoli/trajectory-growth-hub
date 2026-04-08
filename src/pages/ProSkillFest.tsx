@@ -383,7 +383,7 @@ const ProSkillFest = () => {
             </AnimatedSection>
 
             {/* 3 columns: narrow photo | wide cards | narrow video */}
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-6 lg:gap-10 items-stretch" style={{ maxHeight: "520px" }}>
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-6 lg:gap-10 items-stretch md:h-[520px]">
               {/* Left: photo matching video aspect */}
               <AnimatedSection className="h-full hidden md:block">
                 <div className="rounded-2xl overflow-hidden h-full">
