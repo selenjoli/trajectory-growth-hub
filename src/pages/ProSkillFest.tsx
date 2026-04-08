@@ -382,13 +382,20 @@ const ProSkillFest = () => {
               </p>
             </AnimatedSection>
 
-            {/* lg+: 3 equal columns (2 for cards grid, 1 for video). md: 2 cols. sm: stacked */}
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] lg:grid-cols-[2fr_1fr] gap-6">
-              {/* Left: 4 cards in 2x2 grid on lg */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {/* 3 columns: photo | cards | video — with larger gap */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+              {/* Left: photo same aspect as video */}
+              <AnimatedSection>
+                <div className="rounded-2xl overflow-hidden h-full">
+                  <img src={sessionImg} alt="ProSkill Fest — формат дня" className="w-full h-full object-cover" style={{ aspectRatio: "9/16" }} />
+                </div>
+              </AnimatedSection>
+
+              {/* Center: 4 cards stacked in one column */}
+              <div className="flex flex-col gap-4 justify-center">
                 {[...formatLeft, ...formatRight].map((item, i) => (
                   <AnimatedSection key={i} delay={i * 0.08}>
-                    <div className="bg-card border border-border rounded-2xl p-6 h-full flex flex-col justify-center">
+                    <div className="bg-card border border-border rounded-2xl p-5 h-full flex flex-col justify-center">
                       <h3 className="text-base mb-1.5" style={{ color: bordeaux }}>{item.title}</h3>
                       <p className="text-muted-foreground text-sm normal-case leading-relaxed">{item.text}</p>
                     </div>
@@ -396,9 +403,9 @@ const ProSkillFest = () => {
                 ))}
               </div>
 
-              {/* Right: vertical video — natural height drives the row */}
+              {/* Right: vertical video */}
               <div className="w-full">
-                <div className="relative rounded-2xl overflow-hidden bg-muted w-full h-full" style={{ aspectRatio: "9/16" }}>
+                <div className="relative rounded-2xl overflow-hidden bg-muted w-full" style={{ aspectRatio: "9/16" }}>
                   {formatVideo ? (
                     <iframe
                       src={formatVideo}
