@@ -16,10 +16,10 @@ const teacherPicShift2 = "/assets/kids-hilderstone-teacher-shift2.jpg";
 const certificatePic = "/assets/kids-hilderstone-certificate.jpg";
 const lessonPic = "/assets/kids-hilderstone-lesson.jpg";
 const lessonPicReceipt = "/assets/kids-hilderstone-lesson-receipt.jpg";
-const illustChina = "/assets/illust-china.png";
-const illustSea = "/assets/illust-starfish.png";
-const illustAltai = "/assets/illust-altai.png";
-const illustUae = "/assets/illust-uae.svg";
+const illustChina = "/assets/kids-illust-china.png";
+const illustSea = "/assets/kids-illust-starfish.png";
+const illustAltai = "/assets/kids-illust-altai.png";
+const illustUae = "/assets/kids-illust-uae.svg";
 
 /* ---- data ---- */
 

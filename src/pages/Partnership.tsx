@@ -30,15 +30,15 @@ const yazykUspekhaLogo = "/assets/logos/yazyk-dlya-uspekha.png";
 const lingvaPlusLogo = "/assets/logos/lingva-plus.png";
 const spuLogo = "/assets/logos/spu.png";
 
-const heroImg = "/assets/partnership.jpg";
+const heroImg = "/assets/partnership-hero.jpg";
 const quoteImg = "/assets/rost-quote.jpg";
 const meetingImg = "/assets/rost-meeting.jpg";
 const collaborationImg = "/assets/rost-collaboration.jpg";
-const turizmImg = "/assets/rost-turizm.jpg";
-const razvitieImg = "/assets/rost-razvitie.jpg";
-const sotrudnichestvoImg = "/assets/rost-sotrudnichestvo.jpg";
-const obrazovanieImg = "/assets/rost-obrazovanie.jpg";
-const russiaMap = "/assets/russia-map.png";
+const turizmImg = "/assets/partnership-rost-turizm.jpg";
+const razvitieImg = "/assets/partnership-rost-razvitie.jpg";
+const sotrudnichestvoImg = "/assets/partnership-rost-sotrudnichestvo.jpg";
+const obrazovanieImg = "/assets/partnership-rost-obrazovanie.jpg";
+const russiaMap = "/assets/partnership-russia-map.png";
 
 /* ---- data ---- */
 

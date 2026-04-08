@@ -15,18 +15,18 @@ const teacherPicReceipt = "/assets/teachers-hilderstone-teacher-receipt.jpg";
 const certificatePic = "/assets/teachers-hilderstone-certificate.jpg";
 const lessonPic = "/assets/teachers-hilderstone-lesson.jpg";
 
-const illustMethods = "/assets/illust-teacher-methods.png";
-const illustOnline = "/assets/illust-teacher-online.png";
-const illustCert = "/assets/illust-teacher-cert.png";
-const illustEnergy = "/assets/illust-teacher-energy.png";
+const illustMethods = "/assets/teachers-illust-methods.png";
+const illustOnline = "/assets/teachers-illust-online.png";
+const illustCert = "/assets/teachers-illust-cert.png";
+const illustEnergy = "/assets/teachers-illust-energy.png";
 
-const outcomeTelegram = "/assets/outcome-telegram.jpg";
-const outcomeMaterials = "/assets/outcome-materials.jpg";
-const outcomeRecording = "/assets/outcome-recording.jpg";
+const outcomeTelegram = "/assets/teachers-outcome-telegram.jpg";
+const outcomeMaterials = "/assets/teachers-outcome-materials.jpg";
+const outcomeRecording = "/assets/teachers-outcome-recording.jpg";
 
-const testimonial1 = "/assets/testimonial-teacher-1.jpg";
-const testimonial2 = "/assets/testimonial-teacher-2.jpg";
-const testimonial3 = "/assets/testimonial-teacher-3.jpg";
+const testimonial1 = "/assets/teachers-testimonial-1.jpg";
+const testimonial2 = "/assets/teachers-testimonial-2.jpg";
+const testimonial3 = "/assets/teachers-testimonial-3.jpg";
 
 /* ---- data ---- */
 
