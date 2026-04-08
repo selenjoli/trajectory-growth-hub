@@ -9,21 +9,21 @@ import AnimatedSection from "@/components/AnimatedSection";
 import PhotoLightbox from "@/components/PhotoLightbox";
 import ContactFormModal from "@/components/ContactFormModal";
 
-import flowersLeft from "@/assets/fest-flowers-left.png";
-import flowersRight from "@/assets/fest-flowers-right.png";
-import heroImg from "@/assets/fest-hero.jpg";
-import networkingImg from "@/assets/fest-networking.jpg";
-import venueImg from "@/assets/fest-venue.jpg";
-import sessionImg from "@/assets/fest-session.jpg";
-import speaker1 from "@/assets/fest-speaker1.jpg";
-import speaker2 from "@/assets/fest-speaker2.jpg";
-import speaker3 from "@/assets/fest-speaker3.jpg";
-import speaker4 from "@/assets/fest-speaker4.jpg";
-import takeawayTools from "@/assets/fest-takeaway-tools.jpg";
-import takeawayRecordings from "@/assets/fest-takeaway-recordings.jpg";
-import takeawayContacts from "@/assets/fest-takeaway-contacts.jpg";
-import takeawayCert from "@/assets/fest-takeaway-cert.jpg";
-import leaves1 from "@/assets/fest-leaves-1.png";
+const flowersLeft = "/assets/fest-flowers-left.png";
+const flowersRight = "/assets/fest-flowers-right.png";
+const heroImg = "/assets/fest-hero.jpg";
+const networkingImg = "/assets/fest-networking.jpg";
+const venueImg = "/assets/fest-venue.jpg";
+const sessionImg = "/assets/fest-session.jpg";
+const speaker1 = "/assets/fest-speaker1.jpg";
+const speaker2 = "/assets/fest-speaker2.jpg";
+const speaker3 = "/assets/fest-speaker3.jpg";
+const speaker4 = "/assets/fest-speaker4.jpg";
+const takeawayTools = "/assets/fest-takeaway-tools.jpg";
+const takeawayRecordings = "/assets/fest-takeaway-recordings.jpg";
+const takeawayContacts = "/assets/fest-takeaway-contacts.jpg";
+const takeawayCert = "/assets/fest-takeaway-cert.jpg";
+const leaves1 = "/assets/fest-leaves-1.png";
 
 /* ---- colors from mockup ---- */
 const bordeaux = "#300000";

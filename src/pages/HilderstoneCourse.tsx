@@ -7,19 +7,19 @@ import AnimatedSection from "@/components/AnimatedSection";
 import PhotoLightbox from "@/components/PhotoLightbox";
 import ContactFormModal from "@/components/ContactFormModal";
 
-import heroBg from "@/assets/hilderstone-hero.jpg";
-import collegePic from "@/assets/hilderstone-college.jpg";
-import collegePicShift1 from "@/assets/hilderstone-college-hc-shift1.jpg";
-import collegePicReceipt from "@/assets/hilderstone-college-hc-receipt.jpg";
-import teacherPic from "@/assets/hilderstone-teacher.jpg";
-import teacherPicShift2 from "@/assets/hilderstone-teacher-hc-shift2.jpg";
-import certificatePic from "@/assets/hilderstone-certificate.jpg";
-import lessonPic from "@/assets/hilderstone-lesson.jpg";
-import lessonPicReceipt from "@/assets/hilderstone-lesson-hc-receipt.jpg";
-import illustChina from "@/assets/illust-china.png";
-import illustSea from "@/assets/illust-starfish.png";
-import illustAltai from "@/assets/illust-altai.png";
-import illustUae from "@/assets/illust-uae.svg";
+const heroBg = "/assets/hilderstone-hero.jpg";
+const collegePic = "/assets/hilderstone-college.jpg";
+const collegePicShift1 = "/assets/hilderstone-college-hc-shift1.jpg";
+const collegePicReceipt = "/assets/hilderstone-college-hc-receipt.jpg";
+const teacherPic = "/assets/hilderstone-teacher.jpg";
+const teacherPicShift2 = "/assets/hilderstone-teacher-hc-shift2.jpg";
+const certificatePic = "/assets/hilderstone-certificate.jpg";
+const lessonPic = "/assets/hilderstone-lesson.jpg";
+const lessonPicReceipt = "/assets/hilderstone-lesson-hc-receipt.jpg";
+const illustChina = "/assets/illust-china.png";
+const illustSea = "/assets/illust-starfish.png";
+const illustAltai = "/assets/illust-altai.png";
+const illustUae = "/assets/illust-uae.svg";
 
 /* ---- data ---- */
 

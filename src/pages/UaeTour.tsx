@@ -8,23 +8,23 @@ import AnimatedSection from "@/components/AnimatedSection";
 import PhotoLightbox from "@/components/PhotoLightbox";
 import ContactFormModal from "@/components/ContactFormModal";
 
-import heroBg from "@/assets/uae-hero.jpg";
-import uaeBeach from "@/assets/uae-beach.jpg";
-import uaeBeachWhy from "@/assets/uae-beach-why.jpg";
-import uaeAbudhabi from "@/assets/uae-abudhabi.jpg";
-import uaeAbudhabiWhy from "@/assets/uae-abudhabi-why.jpg";
-import uaeMuseum from "@/assets/uae-museum.jpg";
-import uaeMuseumWhy from "@/assets/uae-museum-why.jpg";
-import uaeMall from "@/assets/uae-mall.jpg";
-import uaeMallWhy from "@/assets/uae-mall-why.jpg";
-import uaeFerrari from "@/assets/uae-ferrari.jpg";
-import uaeYacht from "@/assets/uae-yacht.jpg";
-import uaeYachtWhy from "@/assets/uae-yacht-why.jpg";
-import uaeCampus from "@/assets/uae-campus.jpg";
-import illustChina from "@/assets/illust-china.png";
-import illustSea from "@/assets/illust-starfish.png";
-import illustAltai from "@/assets/illust-altai.png";
-import illustHilderstone from "@/assets/illust-hilderstone-uk.png";
+const heroBg = "/assets/uae-hero.jpg";
+const uaeBeach = "/assets/uae-beach.jpg";
+const uaeBeachWhy = "/assets/uae-beach-why.jpg";
+const uaeAbudhabi = "/assets/uae-abudhabi.jpg";
+const uaeAbudhabiWhy = "/assets/uae-abudhabi-why.jpg";
+const uaeMuseum = "/assets/uae-museum.jpg";
+const uaeMuseumWhy = "/assets/uae-museum-why.jpg";
+const uaeMall = "/assets/uae-mall.jpg";
+const uaeMallWhy = "/assets/uae-mall-why.jpg";
+const uaeFerrari = "/assets/uae-ferrari.jpg";
+const uaeYacht = "/assets/uae-yacht.jpg";
+const uaeYachtWhy = "/assets/uae-yacht-why.jpg";
+const uaeCampus = "/assets/uae-campus.jpg";
+const illustChina = "/assets/illust-china.png";
+const illustSea = "/assets/illust-starfish.png";
+const illustAltai = "/assets/illust-altai.png";
+const illustHilderstone = "/assets/illust-hilderstone-uk.png";
 
 /* ─── data ─── */
 
