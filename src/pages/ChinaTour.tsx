@@ -269,8 +269,8 @@ const ChinaTour = () => {
                 </div>
 
                 {/* Video */}
-                <div className="w-full lg:w-auto flex justify-center">
-                  <div className="relative w-full max-w-xs aspect-[9/16] rounded-[1.2rem] overflow-hidden shadow-2xl">
+                <div className="w-full lg:w-[320px] shrink-0 flex justify-center">
+                  <div className="relative w-full aspect-[9/16] rounded-[1.2rem] overflow-hidden shadow-2xl">
                     <iframe
                       src="https://kinescope.io/embed/jj4DD68ve6YMPbHpgVBxZw"
                       allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
