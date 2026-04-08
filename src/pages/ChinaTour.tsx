@@ -241,8 +241,8 @@ const ChinaTour = () => {
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
-              <div className="flex flex-col lg:flex-row gap-10 items-start">
-                <div className="lg:w-1/2 space-y-6">
+              <div className="flex flex-col lg:flex-row gap-10 items-center">
+                <div className="lg:flex-1 space-y-6">
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
                     Есть страны, после которых смотришь на мир немного иначе. Китай — одна из них.
                   </p>
@@ -269,7 +269,7 @@ const ChinaTour = () => {
                 </div>
 
                 {/* Video */}
-                <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
+                <div className="w-full lg:w-auto flex justify-center">
                   <div className="relative w-full max-w-xs aspect-[9/16] rounded-[1.2rem] overflow-hidden shadow-2xl">
                     <iframe
                       src="https://kinescope.io/embed/jj4DD68ve6YMPbHpgVBxZw"
