@@ -10,10 +10,17 @@ import ContactFormModal from "@/components/ContactFormModal";
 
 import heroBg from "@/assets/china-hero2.jpg";
 import beijing from "@/assets/china-beijing.jpg";
+import beijingWhy from "@/assets/china-beijing-why.jpg";
+import beijingReceipt from "@/assets/china-beijing-receipt.jpg";
 import nanjing from "@/assets/china-nanjing.jpg";
+import nanjingWhy from "@/assets/china-nanjing-why.jpg";
 import suzhou from "@/assets/china-suzhou.jpg";
+import suzhouWhy from "@/assets/china-suzhou-why.jpg";
 import shanghai from "@/assets/china-shanghai.jpg";
+import shanghaiWhy from "@/assets/china-shanghai-why.jpg";
 import hangzhou from "@/assets/china-hangzhou.jpg";
+import hangzhouWhy from "@/assets/china-hangzhou-why.jpg";
+import hangzhouReceipt from "@/assets/china-hangzhou-receipt.jpg";
 import trainImg from "@/assets/china-train.jpg";
 import calligraphyImg from "@/assets/china-calligraphy.jpg";
 import teaImg from "@/assets/china-tea.jpg";
@@ -126,7 +133,7 @@ const ChinaTour = () => {
   const [lightboxPhotos, setLightboxPhotos] = useState<string[]>([]);
   const [formOpen, setFormOpen] = useState(false);
 
-  const whyPhotos = [beijing, shanghai, suzhou, hangzhou, nanjing];
+  const whyPhotos = [beijingWhy, shanghaiWhy, suzhouWhy, hangzhouWhy, nanjingWhy];
 
   const nextSlide = useCallback(() => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -440,7 +447,7 @@ const ChinaTour = () => {
               {/* Left photo */}
               <div className="hidden lg:block flex-1">
                 <div className="rounded-[1.5rem] overflow-hidden aspect-[3/4]">
-                  <img src={beijing} alt="Фото из поездки" className="w-full h-full object-cover" />
+                  <img src={beijingReceipt} alt="Фото из поездки" className="w-full h-full object-cover" />
                 </div>
               </div>
 
@@ -480,7 +487,7 @@ const ChinaTour = () => {
               {/* Right photo */}
               <div className="hidden lg:block flex-1">
                 <div className="rounded-[1.5rem] overflow-hidden aspect-[3/4]">
-                  <img src={hangzhou} alt="Фото из поездки" className="w-full h-full object-cover" />
+                  <img src={hangzhouReceipt} alt="Фото из поездки" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>

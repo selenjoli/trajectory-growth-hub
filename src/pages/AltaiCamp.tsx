@@ -10,11 +10,22 @@ import ContactFormModal from "@/components/ContactFormModal";
 
 import heroBg from "@/assets/altai-hero.jpg";
 import altaiPatmos from "@/assets/altai-patmos.jpg";
+import altaiPatmosWhy from "@/assets/altai-patmos-why.jpg";
+import altaiPatmosSafety from "@/assets/altai-patmos-safety.jpg";
 import altaiWaterfall from "@/assets/altai-waterfall.jpg";
+import altaiWaterfallWhy from "@/assets/altai-waterfall-why.jpg";
 import altaiSwimming from "@/assets/altai-swimming.jpg";
+import altaiSwimmingWhy from "@/assets/altai-swimming-why.jpg";
+import altaiSwimmingSafety from "@/assets/altai-swimming-safety.jpg";
 import altaiCampfire from "@/assets/altai-campfire.jpg";
+import altaiCampfireWhy from "@/assets/altai-campfire-why.jpg";
+import altaiCampfireSafety from "@/assets/altai-campfire-safety.jpg";
+import altaiCampfireReceipt from "@/assets/altai-campfire-receipt.jpg";
 import altaiCottages from "@/assets/altai-cottages.jpg";
+import altaiCottagesSafety from "@/assets/altai-cottages-safety.jpg";
 import altaiWorkshop from "@/assets/altai-workshop.jpg";
+import altaiWorkshopSafety from "@/assets/altai-workshop-safety.jpg";
+import altaiWorkshopReceipt from "@/assets/altai-workshop-receipt.jpg";
 import altaiDining from "@/assets/altai-dining.jpg";
 import altaiMap from "@/assets/altai-map.png";
 import altaiMorning from "@/assets/altai-morning.png";
@@ -130,7 +141,7 @@ const AltaiCamp = () => {
   const [dayUserPaused, setDayUserPaused] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
 
-  const hookPhotos = [altaiPatmos, altaiWaterfall, altaiSwimming, altaiCampfire, altaiWorkshop];
+  const hookPhotos = [altaiPatmosWhy, altaiWaterfallWhy, altaiSwimmingWhy, altaiCampfireWhy, altaiWorkshop];
 
   const dayRef = useRef<HTMLDivElement>(null);
   const spotRef = useVisibilityPause(setSpotPaused);
@@ -551,12 +562,12 @@ const AltaiCamp = () => {
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {[
-              { image: altaiCottages, text: "Деревянные коттеджи, комнаты на 5 человек" },
+              { image: altaiCottagesSafety, text: "Деревянные коттеджи, комнаты на 5 человек" },
               { image: altaiDining, text: "5-разовое питание" },
-              { image: altaiSwimming, text: "Трансфер от аэропорта и обратно" },
-              { image: altaiWorkshop, text: "Круглосуточный медпункт" },
-              { image: altaiCampfire, text: "Сопровождающий педагог 24/7" },
-              { image: altaiPatmos, text: "Охраняемая территория" }].
+              { image: altaiSwimmingSafety, text: "Трансфер от аэропорта и обратно" },
+              { image: altaiWorkshopSafety, text: "Круглосуточный медпункт" },
+              { image: altaiCampfireSafety, text: "Сопровождающий педагог 24/7" },
+              { image: altaiPatmosSafety, text: "Охраняемая территория" }].
               map((f, i) =>
               <div key={i} className="rounded-xl overflow-hidden relative aspect-square">
                   <img src={f.image} alt={f.text} className="w-full h-full object-cover" />
@@ -577,7 +588,7 @@ const AltaiCamp = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 items-center gap-6">
               <div className="hidden lg:block">
                 <div className="rounded-[1.5rem] overflow-hidden aspect-[3/4]">
-                  <img src={altaiWorkshop} alt="Фото из лагеря" className="w-full h-full object-cover" />
+                  <img src={altaiWorkshopReceipt} alt="Фото из лагеря" className="w-full h-full object-cover" />
                 </div>
               </div>
 
@@ -621,7 +632,7 @@ const AltaiCamp = () => {
 
               <div className="hidden lg:block">
                 <div className="rounded-[1.5rem] overflow-hidden aspect-[3/4]">
-                  <img src={altaiCampfire} alt="Фото из лагеря" className="w-full h-full object-cover" />
+                  <img src={altaiCampfireReceipt} alt="Фото из лагеря" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>

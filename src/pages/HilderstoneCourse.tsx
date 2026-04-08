@@ -9,9 +9,13 @@ import ContactFormModal from "@/components/ContactFormModal";
 
 import heroBg from "@/assets/hilderstone-hero.jpg";
 import collegePic from "@/assets/hilderstone-college.jpg";
+import collegePicShift1 from "@/assets/hilderstone-college-hc-shift1.jpg";
+import collegePicReceipt from "@/assets/hilderstone-college-hc-receipt.jpg";
 import teacherPic from "@/assets/hilderstone-teacher.jpg";
+import teacherPicShift2 from "@/assets/hilderstone-teacher-hc-shift2.jpg";
 import certificatePic from "@/assets/hilderstone-certificate.jpg";
 import lessonPic from "@/assets/hilderstone-lesson.jpg";
+import lessonPicReceipt from "@/assets/hilderstone-lesson-hc-receipt.jpg";
 import illustChina from "@/assets/illust-china.png";
 import illustSea from "@/assets/illust-starfish.png";
 import illustAltai from "@/assets/illust-altai.png";
@@ -145,7 +149,7 @@ const HilderstoneCourse = () => {
               <AnimatedSection delay={0.1}>
                 <div className="rounded-[1.5rem] overflow-hidden h-full flex flex-col bg-card border border-border">
                   <div className="relative aspect-[16/9] overflow-hidden">
-                    <img src={collegePic} alt="Hilderstone College" className="w-full h-full object-cover" />
+                    <img src={collegePicShift1} alt="Hilderstone College" className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 flex items-end justify-between gap-4">
                       <h3 className="text-2xl md:text-3xl text-white">Смена&nbsp;1</h3>
@@ -171,7 +175,7 @@ const HilderstoneCourse = () => {
               <AnimatedSection delay={0.2}>
                 <div className="rounded-[1.5rem] overflow-hidden h-full flex flex-col bg-card border border-border">
                   <div className="relative aspect-[16/9] overflow-hidden">
-                    <img src={teacherPic} alt="Преподаватель Hilderstone" className="w-full h-full object-cover" />
+                    <img src={teacherPicShift2} alt="Преподаватель Hilderstone" className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 flex items-end justify-between gap-4">
                       <h3 className="text-2xl md:text-3xl text-white">Смена&nbsp;2</h3>
@@ -389,7 +393,7 @@ const HilderstoneCourse = () => {
               {/* Left photo */}
               <div className="hidden lg:block flex-1">
                 <div className="rounded-[1.5rem] overflow-hidden aspect-[3/4]">
-                  <img src={lessonPic} alt="Онлайн занятие" className="w-full h-full object-cover" />
+                  <img src={lessonPicReceipt} alt="Онлайн занятие" className="w-full h-full object-cover" />
                 </div>
               </div>
 
@@ -453,7 +457,7 @@ const HilderstoneCourse = () => {
               {/* Right photo */}
               <div className="hidden lg:block flex-1">
                 <div className="rounded-[1.5rem] overflow-hidden aspect-[3/4]">
-                  <img src={collegePic} alt="Hilderstone College" className="w-full h-full object-cover" />
+                  <img src={collegePicReceipt} alt="Hilderstone College" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>
