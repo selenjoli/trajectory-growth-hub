@@ -27,10 +27,10 @@ const teaImg = "/assets/china-tea.jpg";
 const disneyImg = "/assets/china-disney.jpg";
 const guideImg = "/assets/china-guide.jpg";
 const chinaMap = "/assets/china-map-circles.png";
-const illustUae = "/assets/illust-uae.svg";
-const illustSea = "/assets/illust-starfish.png";
-const illustAltai = "/assets/illust-altai.png";
-const illustHilderstone = "/assets/illust-hilderstone-uk.png";
+const illustUae = "/assets/china-illust-uae.svg";
+const illustSea = "/assets/china-illust-sea.png";
+const illustAltai = "/assets/china-illust-altai.png";
+const illustHilderstone = "/assets/china-illust-hilderstone-uk.png";
 
 /* ─── data ─── */
 

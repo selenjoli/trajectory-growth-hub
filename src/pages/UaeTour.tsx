@@ -21,10 +21,10 @@ const uaeFerrari = "/assets/uae-ferrari.jpg";
 const uaeYacht = "/assets/uae-yacht.jpg";
 const uaeYachtWhy = "/assets/uae-yacht-why.jpg";
 const uaeCampus = "/assets/uae-campus.jpg";
-const illustChina = "/assets/illust-china.png";
-const illustSea = "/assets/illust-starfish.png";
-const illustAltai = "/assets/illust-altai.png";
-const illustHilderstone = "/assets/illust-hilderstone-uk.png";
+const illustChina = "/assets/uae-illust-china.png";
+const illustSea = "/assets/uae-illust-sea.png";
+const illustAltai = "/assets/uae-illust-altai.png";
+const illustHilderstone = "/assets/uae-illust-hilderstone-uk.png";
 
 /* ─── data ─── */
 

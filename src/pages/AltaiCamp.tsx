@@ -32,10 +32,10 @@ const altaiMorning = "/assets/altai-morning.png";
 const altaiDay = "/assets/altai-day.png";
 const altaiEvening = "/assets/altai-evening.png";
 const altaiNight = "/assets/altai-night.png";
-const illustUae = "/assets/illust-uae.svg";
-const illustChina = "/assets/illust-china.png";
-const illustSea = "/assets/illust-sea.png";
-const illustHilderstone = "/assets/illust-hilderstone-uk.png";
+const illustUae = "/assets/altai-illust-uae.svg";
+const illustChina = "/assets/altai-illust-china.png";
+const illustSea = "/assets/altai-illust-sea.png";
+const illustHilderstone = "/assets/altai-illust-hilderstone-uk.png";
 
 /* ─── data ─── */
 

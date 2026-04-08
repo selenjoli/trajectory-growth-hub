@@ -27,10 +27,10 @@ const facilityBeach = "/assets/facility-beach.jpg";
 const facilityForest = "/assets/facility-forest.jpg";
 const facilityMedical = "/assets/facility-medical.jpg";
 const facilityGuide = "/assets/facility-guide.jpg";
-const illustUae = "/assets/illust-uae.svg";
-const illustChina = "/assets/illust-china.png";
-const illustAltai = "/assets/illust-altai.png";
-const illustHilderstone = "/assets/illust-hilderstone-uk.png";
+const illustUae = "/assets/sea-illust-uae.svg";
+const illustChina = "/assets/sea-illust-china.png";
+const illustAltai = "/assets/sea-illust-altai.png";
+const illustHilderstone = "/assets/sea-illust-hilderstone-uk.png";
 
 /* ─── data ─── */
 
