@@ -382,22 +382,22 @@ const ProSkillFest = () => {
               </p>
             </AnimatedSection>
 
-            {/* 3 columns: left items, center video, right items */}
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
-              <div className="space-y-4">
-                {formatLeft.map((item, i) => (
-                  <AnimatedSection key={i} delay={i * 0.1}>
-                    <div className="bg-card border border-border rounded-2xl p-6 h-full">
-                      <h3 className="text-lg mb-2" style={{ color: bordeaux }}>{item.title}</h3>
+            <div className="flex flex-col lg:flex-row gap-6">
+              {/* Left: all 4 cards stacked */}
+              <div className="w-full lg:flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+                {[...formatLeft, ...formatRight].map((item, i) => (
+                  <AnimatedSection key={i} delay={i * 0.08}>
+                    <div className="bg-card border border-border rounded-2xl p-5 h-full">
+                      <h3 className="text-base mb-1.5" style={{ color: bordeaux }}>{item.title}</h3>
                       <p className="text-muted-foreground text-sm normal-case leading-relaxed">{item.text}</p>
                     </div>
                   </AnimatedSection>
                 ))}
               </div>
 
-              {/* Center: video placeholder */}
-              <AnimatedSection delay={0.1}>
-                <div className="relative w-full h-[400px] rounded-2xl overflow-hidden bg-muted flex items-center justify-center">
+              {/* Right: video — same height as cards */}
+              <AnimatedSection delay={0.1} className="w-full lg:flex-1">
+                <div className="relative w-full h-full min-h-[400px] rounded-2xl overflow-hidden bg-muted">
                   {formatVideo ? (
                     <iframe
                       src={formatVideo}
@@ -407,35 +407,13 @@ const ProSkillFest = () => {
                       className="absolute inset-0 w-full h-full"
                     />
                   ) : (
-                    <div className="text-muted-foreground text-center p-4">
+                    <div className="text-muted-foreground text-center p-4 flex items-center justify-center h-full">
                       <p className="text-sm">Видео скоро появится</p>
                     </div>
                   )}
                 </div>
               </AnimatedSection>
-
-              <div className="space-y-4">
-                {formatRight.map((item, i) => (
-                  <AnimatedSection key={i} delay={i * 0.1}>
-                    <div className="bg-card border border-border rounded-2xl p-6 h-full">
-                      <h3 className="text-lg mb-2" style={{ color: bordeaux }}>{item.title}</h3>
-                      <p className="text-muted-foreground text-sm normal-case leading-relaxed">{item.text}</p>
-                    </div>
-                  </AnimatedSection>
-                ))}
-              </div>
             </div>
-
-            {/* Full-width audience photo */}
-            <AnimatedSection>
-              <div className="rounded-2xl overflow-hidden">
-                <img
-                  src={sessionImg}
-                  alt="ProSkill Fest — формат дня"
-                  className="w-full h-64 md:h-80 object-cover"
-                />
-              </div>
-            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -528,13 +506,13 @@ const ProSkillFest = () => {
                 <span className={orangeGrad}>заберёте с&nbsp;собой</span>
               </h2>
             </AnimatedSection>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
               {takeaways.map((item, i) => (
                 <AnimatedSection key={i} delay={i * 0.1}>
                   <div className="rounded-2xl overflow-hidden border border-border h-full bg-card">
-                    <img src={item.image} alt={item.title} className="w-full h-44 object-cover" />
-                    <div className="p-6">
-                      <h3 className="text-lg mb-3" style={{ color: bordeaux }}>{item.title}</h3>
+                    <img src={item.image} alt={item.title} className="w-full aspect-[4/3] object-cover" />
+                    <div className="p-5">
+                      <h3 className="text-base mb-2" style={{ color: bordeaux }}>{item.title}</h3>
                       <p className="text-muted-foreground text-sm normal-case leading-relaxed">{item.text}</p>
                     </div>
                   </div>
