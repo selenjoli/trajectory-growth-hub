@@ -310,7 +310,7 @@ const ProSkillFest = () => {
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
-              <div className="flex flex-col lg:flex-row gap-10">
+              <div className="flex flex-col lg:flex-row gap-10 items-stretch">
                 <div className="w-full lg:flex-1 space-y-6">
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
                     Учителя учатся лучше всего у других учителей. Не у авторов учебников
@@ -328,10 +328,10 @@ const ProSkillFest = () => {
                   </p>
                 </div>
 
-                {/* Single horizontal photo */}
+                {/* Single horizontal photo — stretches to match text height */}
                 <div className="w-full lg:w-1/2">
-                  <div className="rounded-2xl overflow-hidden">
-                    <img src={aboutPhoto} alt="ProSkill Fest — как всё начиналось" className="w-full h-full object-cover aspect-[4/3]" />
+                  <div className="rounded-2xl overflow-hidden h-full">
+                    <img src={aboutPhoto} alt="ProSkill Fest — как всё начиналось" className="w-full h-full object-cover" />
                   </div>
                 </div>
               </div>
@@ -382,12 +382,14 @@ const ProSkillFest = () => {
               </p>
             </AnimatedSection>
 
-            <div className="flex flex-col lg:flex-row gap-6">
-              {/* Left: all 4 cards stacked */}
-              <div className="w-full lg:flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+            {/* On lg+: 2x2 grid of cards (2 cols) + video (1 col) = 3 columns */}
+            {/* On smaller: cards column + video column */}
+            <div className="flex flex-col md:flex-row gap-6">
+              {/* Left: 4 cards in 2x2 on lg, 1 col on smaller */}
+              <div className="w-full md:flex-1 grid grid-cols-1 lg:grid-cols-2 gap-4">
                 {[...formatLeft, ...formatRight].map((item, i) => (
                   <AnimatedSection key={i} delay={i * 0.08}>
-                    <div className="bg-card border border-border rounded-2xl p-5 h-full">
+                    <div className="bg-card border border-border rounded-2xl p-5 h-full flex flex-col">
                       <h3 className="text-base mb-1.5" style={{ color: bordeaux }}>{item.title}</h3>
                       <p className="text-muted-foreground text-sm normal-case leading-relaxed">{item.text}</p>
                     </div>
@@ -395,9 +397,9 @@ const ProSkillFest = () => {
                 ))}
               </div>
 
-              {/* Right: video — same height as cards */}
-              <AnimatedSection delay={0.1} className="w-full lg:flex-1">
-                <div className="relative w-full h-full min-h-[400px] rounded-2xl overflow-hidden bg-muted">
+              {/* Right: vertical video (reels format) */}
+              <div className="w-full md:w-auto md:shrink-0">
+                <div className="relative rounded-2xl overflow-hidden bg-muted" style={{ aspectRatio: "9/16", height: "100%", maxHeight: "600px" }}>
                   {formatVideo ? (
                     <iframe
                       src={formatVideo}
@@ -412,7 +414,7 @@ const ProSkillFest = () => {
                     </div>
                   )}
                 </div>
-              </AnimatedSection>
+              </div>
             </div>
           </div>
         </div>
@@ -485,9 +487,9 @@ const ProSkillFest = () => {
                 </div>
 
                 {/* Single wide speaker photo */}
-                <div className="w-full lg:w-1/2 flex items-center">
-                  <div className="w-full rounded-2xl overflow-hidden">
-                    <img src={speakersPhoto} alt="Спикеры ProSkill Fest" className="w-full h-full object-cover aspect-[4/3]" />
+                <div className="w-full lg:w-1/2">
+                  <div className="w-full rounded-2xl overflow-hidden h-full">
+                    <img src={speakersPhoto} alt="Спикеры ProSkill Fest" className="w-full h-full object-cover" />
                   </div>
                 </div>
               </div>
