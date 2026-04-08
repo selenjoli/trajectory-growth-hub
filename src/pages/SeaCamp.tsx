@@ -270,13 +270,11 @@ const SeaCamp = () => {
         <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-6">
-                Где и&nbsp;как <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">живут дети</span>
-              </h2>
-            </AnimatedSection>
-            <AnimatedSection delay={0.1}>
               <div className="grid lg:grid-cols-2 gap-10 items-center mb-10">
-                <div>
+                <div className="space-y-6">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground">
+                    Где и&nbsp;как <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">живут дети</span>
+                  </h2>
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
                     «Морская звезда» получила звание лучшей детской здравницы на Чёрном море — и это чувствуется в деталях: новые корпуса, большая охраняемая территория, собственный пляж в субтропическом лесу.
                   </p>
@@ -287,6 +285,8 @@ const SeaCamp = () => {
                   </div>
                 </div>
               </div>
+            </AnimatedSection>
+            <AnimatedSection delay={0.1}>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {facilities.map((f, i) =>
                 <div key={i} className="rounded-xl overflow-hidden relative aspect-square">
