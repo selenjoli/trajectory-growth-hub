@@ -370,7 +370,7 @@ const ProSkillFest = () => {
 
       {/* ── FORMAT — "Как устроен день" with video ── */}
       <section className="px-3 md:px-6 xl:px-10 mt-4 relative z-10">
-        <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
+        <div className="rounded-[2rem] py-20 px-6 md:px-16" style={{ backgroundColor: "#F2F2F2" }}>
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl mb-4" style={{ color: bordeaux }}>
