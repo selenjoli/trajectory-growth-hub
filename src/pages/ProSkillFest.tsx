@@ -382,14 +382,13 @@ const ProSkillFest = () => {
               </p>
             </AnimatedSection>
 
-            {/* On lg+: 2x2 grid of cards (2 cols) + video (1 col) = 3 columns */}
-            {/* On smaller: cards column + video column */}
-            <div className="flex flex-col md:flex-row gap-6">
-              {/* Left: 4 cards in 2x2 on lg, 1 col on smaller */}
-              <div className="w-full md:flex-1 grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {/* lg+: 3 equal columns (2 for cards grid, 1 for video). md: 2 cols. sm: stacked */}
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] lg:grid-cols-[2fr_1fr] gap-6">
+              {/* Left: 4 cards in 2x2 grid on lg */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                 {[...formatLeft, ...formatRight].map((item, i) => (
                   <AnimatedSection key={i} delay={i * 0.08}>
-                    <div className="bg-card border border-border rounded-2xl p-5 h-full flex flex-col">
+                    <div className="bg-card border border-border rounded-2xl p-6 h-full flex flex-col justify-center">
                       <h3 className="text-base mb-1.5" style={{ color: bordeaux }}>{item.title}</h3>
                       <p className="text-muted-foreground text-sm normal-case leading-relaxed">{item.text}</p>
                     </div>
@@ -397,9 +396,9 @@ const ProSkillFest = () => {
                 ))}
               </div>
 
-              {/* Right: vertical video (reels format) */}
-              <div className="w-full md:w-auto md:shrink-0">
-                <div className="relative rounded-2xl overflow-hidden bg-muted" style={{ aspectRatio: "9/16", height: "100%", maxHeight: "600px" }}>
+              {/* Right: vertical video — natural height drives the row */}
+              <div className="w-full">
+                <div className="relative rounded-2xl overflow-hidden bg-muted w-full h-full" style={{ aspectRatio: "9/16" }}>
                   {formatVideo ? (
                     <iframe
                       src={formatVideo}
