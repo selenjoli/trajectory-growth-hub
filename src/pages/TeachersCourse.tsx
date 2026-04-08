@@ -8,7 +8,10 @@ import ContactFormModal from "@/components/ContactFormModal";
 
 import heroBg from "@/assets/hilderstone-hero.jpg";
 import collegePic from "@/assets/hilderstone-college.jpg";
+import collegePicSection from "@/assets/hilderstone-college-tc-section.jpg";
+import collegePicReceipt from "@/assets/hilderstone-college-tc-receipt.jpg";
 import teacherPic from "@/assets/hilderstone-teacher.jpg";
+import teacherPicReceipt from "@/assets/hilderstone-teacher-tc-receipt.jpg";
 import certificatePic from "@/assets/hilderstone-certificate.jpg";
 import lessonPic from "@/assets/hilderstone-lesson.jpg";
 
@@ -191,7 +194,7 @@ const TeachersCourse = () => {
                 </div>
                 <div className="lg:w-1/2">
                   <div className="rounded-[1.5rem] overflow-hidden shadow-2xl">
-                    <img src={collegePic} alt="Hilderstone College" className="w-full h-auto object-cover" />
+                    <img src={collegePicSection} alt="Hilderstone College" className="w-full h-auto object-cover" />
                   </div>
                 </div>
               </div>
@@ -532,7 +535,7 @@ const TeachersCourse = () => {
             <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
               <div className="hidden lg:block flex-1">
                 <div className="rounded-[1.5rem] overflow-hidden aspect-[3/4]">
-                  <img src={teacherPic} alt="Преподаватель Hilderstone" className="w-full h-full object-cover" />
+                  <img src={teacherPicReceipt} alt="Преподаватель Hilderstone" className="w-full h-full object-cover" />
                 </div>
               </div>
 
@@ -589,7 +592,7 @@ const TeachersCourse = () => {
 
               <div className="hidden lg:block flex-1">
                 <div className="rounded-[1.5rem] overflow-hidden aspect-[3/4]">
-                  <img src={collegePic} alt="Hilderstone College" className="w-full h-full object-cover" />
+                  <img src={collegePicReceipt} alt="Hilderstone College" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>

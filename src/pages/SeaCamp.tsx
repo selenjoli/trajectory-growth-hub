@@ -9,10 +9,17 @@ import ContactFormModal from "@/components/ContactFormModal";
 
 import heroBg from "@/assets/sea-hero.jpg";
 import seaEnglish from "@/assets/sea-english.jpg";
+import seaEnglishWhy from "@/assets/sea-english-why.jpg";
 import seaDance from "@/assets/sea-dance.jpg";
+import seaDanceWhy from "@/assets/sea-dance-why.jpg";
+import seaDanceReceipt from "@/assets/sea-dance-receipt.jpg";
 import seaProjects from "@/assets/sea-projects.jpg";
+import seaProjectsWhy from "@/assets/sea-projects-why.jpg";
 import seaPsychology from "@/assets/sea-psychology.jpg";
+import seaPsychologyWhy from "@/assets/sea-psychology-why.jpg";
+import seaPsychologyReceipt from "@/assets/sea-psychology-receipt.jpg";
 import seaResort from "@/assets/sea-resort.jpg";
+import seaResortSection from "@/assets/sea-resort-section.jpg";
 import seaMap from "@/assets/sea-map.png";
 import facilityRooms from "@/assets/facility-rooms.jpg";
 import facilityDining from "@/assets/facility-dining.jpg";
@@ -97,7 +104,7 @@ const SeaCamp = () => {
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [formOpen, setFormOpen] = useState(false);
 
-  const whyPhotos = [seaEnglish, seaDance, seaProjects, seaPsychology, seaResort];
+  const whyPhotos = [seaEnglishWhy, seaDanceWhy, seaProjectsWhy, seaPsychologyWhy, seaResort];
 
   const nextSlide = useCallback(() => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -304,7 +311,7 @@ const SeaCamp = () => {
                 </div>
                 <div>
                   <div className="rounded-[1.5rem] overflow-hidden aspect-[16/10]">
-                    <img src={seaResort} alt="База лагеря" className="w-full h-full object-cover" />
+                    <img src={seaResortSection} alt="База лагеря" className="w-full h-full object-cover" />
                   </div>
                 </div>
               </div>
@@ -330,7 +337,7 @@ const SeaCamp = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 items-center gap-6">
               <div className="hidden lg:block">
                 <div className="rounded-[1.5rem] overflow-hidden aspect-[3/4]">
-                  <img src={seaDance} alt="Фото из лагеря" className="w-full h-full object-cover" />
+                  <img src={seaDanceReceipt} alt="Фото из лагеря" className="w-full h-full object-cover" />
                 </div>
               </div>
 
@@ -374,7 +381,7 @@ const SeaCamp = () => {
 
               <div className="hidden lg:block">
                 <div className="rounded-[1.5rem] overflow-hidden aspect-[3/4]">
-                  <img src={seaPsychology} alt="Фото из лагеря" className="w-full h-full object-cover" />
+                  <img src={seaPsychologyReceipt} alt="Фото из лагеря" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>

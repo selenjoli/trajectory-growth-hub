@@ -10,11 +10,16 @@ import ContactFormModal from "@/components/ContactFormModal";
 
 import heroBg from "@/assets/uae-hero.jpg";
 import uaeBeach from "@/assets/uae-beach.jpg";
+import uaeBeachWhy from "@/assets/uae-beach-why.jpg";
 import uaeAbudhabi from "@/assets/uae-abudhabi.jpg";
+import uaeAbudhabiWhy from "@/assets/uae-abudhabi-why.jpg";
 import uaeMuseum from "@/assets/uae-museum.jpg";
+import uaeMuseumWhy from "@/assets/uae-museum-why.jpg";
 import uaeMall from "@/assets/uae-mall.jpg";
+import uaeMallWhy from "@/assets/uae-mall-why.jpg";
 import uaeFerrari from "@/assets/uae-ferrari.jpg";
 import uaeYacht from "@/assets/uae-yacht.jpg";
+import uaeYachtWhy from "@/assets/uae-yacht-why.jpg";
 import uaeCampus from "@/assets/uae-campus.jpg";
 import illustChina from "@/assets/illust-china.png";
 import illustSea from "@/assets/illust-starfish.png";
@@ -78,7 +83,7 @@ const UaeTour = () => {
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [formOpen, setFormOpen] = useState(false);
 
-  const whyPhotos = [uaeBeach, uaeAbudhabi, uaeMuseum, uaeMall, uaeYacht];
+  const whyPhotos = [uaeBeachWhy, uaeAbudhabiWhy, uaeMuseumWhy, uaeMallWhy, uaeYachtWhy];
 
   const nextSlide = useCallback(() => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
