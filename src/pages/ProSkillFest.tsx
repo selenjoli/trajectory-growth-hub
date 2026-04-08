@@ -758,7 +758,7 @@ const ProSkillFest = () => {
       </section>
       <Footer variant="white" />
       <FloatingButtons arrowColor="#300000" />
-      <ContactFormModal open={formOpen} onClose={() => setFormOpen(false)} program="Другое" page="ProSkillFest" />
+      <ContactFormModal open={formOpen} onClose={() => setFormOpen(false)} program="ProSkill Fest" page="ProSkillFest" />
       <PhotoLightbox photos={lightboxPhotos.length ? lightboxPhotos : galleryPhotos} initialIndex={lightboxIndex} open={lightboxOpen} onClose={() => setLightboxOpen(false)} />
     </main>
   );

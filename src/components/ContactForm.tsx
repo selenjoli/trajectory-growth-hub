@@ -162,7 +162,8 @@ const ContactForm = ({ program = "", page = "" }) => {
           <option value="Лагерь на море">Лагерь на море</option>
           <option value="Лагерь на Алтае">Лагерь на Алтае</option>
           <option value="Онлайн-практика Hilderstone">Онлайн-практика Hilderstone</option>
-          <option value="Программы для педагогов">Программы для педагогов</option>
+          <option value="Курс повышения квалификации Hilderstone">Курс повышения квалификации Hilderstone</option>
+          <option value="ProSkill Fest">ProSkill Fest</option>
           <option value="Партнёрство">Партнёрство</option>
           <option value="Другое">Другое</option>
         </select>
