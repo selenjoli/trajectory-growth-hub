@@ -126,8 +126,8 @@ const ChinaTour = () => {
   const [zoomed, setZoomed] = useState<number | null>(null);
   const [currentCity, setCurrentCity] = useState(0);
   const [cityPaused, setCityPaused] = useState(false);
-  const [whySlide, setWhySlide] = useState(0);
-  const [whyPaused, setWhyPaused] = useState(false);
+  const [gallerySlide, setGallerySlide] = useState(0);
+  const [galleryPaused, setGalleryPaused] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [lightboxPhotos, setLightboxPhotos] = useState<string[]>([]);
