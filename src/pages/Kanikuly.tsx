@@ -316,7 +316,7 @@ const Kanikuly = () => {
       <section className="section-padding">
         <div className="fluid-container">
           <AnimatedSection>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-foreground mb-10">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-10">
               То, что <span className="text-accent">важно знать</span> перед поездкой
             </h2>
             <div className="grid md:grid-cols-[1fr_auto] gap-10 md:gap-14 items-stretch">
