@@ -197,13 +197,11 @@ const SeaCamp = () => {
         <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
             <AnimatedSection>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-6">
-                Лагерь — это <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">не «сдать ребёнка на&nbsp;лето»</span>
-              </h2>
-            </AnimatedSection>
-            <AnimatedSection delay={0.1}>
               <div className="flex flex-col lg:flex-row gap-10 items-center">
-                <div className="w-full lg:w-1/2 space-y-6">
+                <div className="lg:flex-1 space-y-6">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-2">
+                    Лагерь — это <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">не «сдать ребёнка на&nbsp;лето»</span>
+                  </h2>
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
                     Многие родители слышат слово «лагерь» и представляют одно и то же: скучные мероприятия по расписанию, безликие корпуса, тихий час. Мы понимаем это ощущение.
                   </p>
