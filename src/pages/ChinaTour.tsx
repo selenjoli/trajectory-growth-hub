@@ -104,12 +104,18 @@ const included = [
   "Помощь с оформлением документов",
 ];
 
+const chinaTestimonial1 = "/assets/china-testimonial-1.jpg";
+const chinaTestimonial2 = "/assets/china-testimonial-2.jpg";
+const chinaTestimonial3 = "/assets/china-testimonial-3.jpg";
+const chinaTestimonial4 = "/assets/china-testimonial-4.jpg";
+const chinaTestimonial5 = "/assets/china-testimonial-5.jpg";
+
 const testimonials = [
-  { id: 1, image: "https://placehold.co/400x700/c9a84c/ffffff?text=Отзыв+1" },
-  { id: 2, image: "https://placehold.co/400x700/c9a84c/ffffff?text=Отзыв+2" },
-  { id: 3, image: "https://placehold.co/400x700/c9a84c/ffffff?text=Отзыв+3" },
-  { id: 4, image: "https://placehold.co/400x700/c9a84c/ffffff?text=Отзыв+4" },
-  { id: 5, image: "https://placehold.co/400x700/c9a84c/ffffff?text=Отзыв+5" },
+  { id: 1, image: chinaTestimonial1 },
+  { id: 2, image: chinaTestimonial2 },
+  { id: 3, image: chinaTestimonial3 },
+  { id: 4, image: chinaTestimonial4 },
+  { id: 5, image: chinaTestimonial5 },
 ];
 
 const otherPrograms = [

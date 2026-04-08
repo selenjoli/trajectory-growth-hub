@@ -111,10 +111,14 @@ const members: Member[] = [
   { name: "Вера Романова", school: "SPU", city: "Тамбов", logo: spuLogo },
 ];
 
+const partnershipTestimonial1 = "/assets/partnership-testimonial-1.jpg";
+const partnershipTestimonial2 = "/assets/partnership-testimonial-2.jpg";
+const partnershipTestimonial3 = "/assets/partnership-testimonial-3.jpg";
+
 const testimonials = [
-  { id: 1, image: "https://placehold.co/400x700/1a7a4a/ffffff?text=Отзыв+1" },
-  { id: 2, image: "https://placehold.co/400x700/1a7a4a/ffffff?text=Отзыв+2" },
-  { id: 3, image: "https://placehold.co/400x700/1a7a4a/ffffff?text=Отзыв+3" },
+  { id: 1, image: partnershipTestimonial1 },
+  { id: 2, image: partnershipTestimonial2 },
+  { id: 3, image: partnershipTestimonial3 },
 ];
 
 /* ---- gold gradient ---- */

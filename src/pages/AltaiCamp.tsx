@@ -93,10 +93,14 @@ const daySchedule = [
 }];
 
 
+const altaiTestimonial1 = "/assets/altai-testimonial-1.jpg";
+const altaiTestimonial2 = "/assets/altai-testimonial-2.jpg";
+const altaiTestimonial3 = "/assets/altai-testimonial-3.jpg";
+
 const testimonials = [
-{ id: 1, image: "https://placehold.co/400x700/2E8B57/ffffff?text=Отзыв+1" },
-{ id: 2, image: "https://placehold.co/400x700/2E8B57/ffffff?text=Отзыв+2" },
-{ id: 3, image: "https://placehold.co/400x700/2E8B57/ffffff?text=Отзыв+3" }];
+{ id: 1, image: altaiTestimonial1 },
+{ id: 2, image: altaiTestimonial2 },
+{ id: 3, image: altaiTestimonial3 }];
 
 
 const otherPrograms = [

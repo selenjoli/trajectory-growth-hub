@@ -23,10 +23,14 @@ const illustUae = "/assets/kids-illust-uae.svg";
 
 /* ---- data ---- */
 
+const hilderstoneTestimonial1 = "/assets/hilderstone-testimonial-1.jpg";
+const hilderstoneTestimonial2 = "/assets/hilderstone-testimonial-2.jpg";
+const hilderstoneTestimonial3 = "/assets/hilderstone-testimonial-3.jpg";
+
 const testimonials = [
-  { id: 1, image: "https://placehold.co/400x700/d4a017/ffffff?text=Отзыв+1" },
-  { id: 2, image: "https://placehold.co/400x700/d4a017/ffffff?text=Отзыв+2" },
-  { id: 3, image: "https://placehold.co/400x700/d4a017/ffffff?text=Отзыв+3" },
+  { id: 1, image: hilderstoneTestimonial1 },
+  { id: 2, image: hilderstoneTestimonial2 },
+  { id: 3, image: hilderstoneTestimonial3 },
 ];
 
 const otherPrograms = [
