@@ -6,27 +6,27 @@ import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import ContactFormModal from "@/components/ContactFormModal";
 
-import heroBg from "@/assets/hilderstone-hero.jpg";
-import collegePic from "@/assets/hilderstone-college.jpg";
-import collegePicSection from "@/assets/hilderstone-college-tc-section.jpg";
-import collegePicReceipt from "@/assets/hilderstone-college-tc-receipt.jpg";
-import teacherPic from "@/assets/hilderstone-teacher.jpg";
-import teacherPicReceipt from "@/assets/hilderstone-teacher-tc-receipt.jpg";
-import certificatePic from "@/assets/hilderstone-certificate.jpg";
-import lessonPic from "@/assets/hilderstone-lesson.jpg";
+const heroBg = "/assets/hilderstone-hero.jpg";
+const collegePic = "/assets/hilderstone-college.jpg";
+const collegePicSection = "/assets/hilderstone-college-tc-section.jpg";
+const collegePicReceipt = "/assets/hilderstone-college-tc-receipt.jpg";
+const teacherPic = "/assets/hilderstone-teacher.jpg";
+const teacherPicReceipt = "/assets/hilderstone-teacher-tc-receipt.jpg";
+const certificatePic = "/assets/hilderstone-certificate.jpg";
+const lessonPic = "/assets/hilderstone-lesson.jpg";
 
-import illustMethods from "@/assets/illust-teacher-methods.png";
-import illustOnline from "@/assets/illust-teacher-online.png";
-import illustCert from "@/assets/illust-teacher-cert.png";
-import illustEnergy from "@/assets/illust-teacher-energy.png";
+const illustMethods = "/assets/illust-teacher-methods.png";
+const illustOnline = "/assets/illust-teacher-online.png";
+const illustCert = "/assets/illust-teacher-cert.png";
+const illustEnergy = "/assets/illust-teacher-energy.png";
 
-import outcomeTelegram from "@/assets/outcome-telegram.jpg";
-import outcomeMaterials from "@/assets/outcome-materials.jpg";
-import outcomeRecording from "@/assets/outcome-recording.jpg";
+const outcomeTelegram = "/assets/outcome-telegram.jpg";
+const outcomeMaterials = "/assets/outcome-materials.jpg";
+const outcomeRecording = "/assets/outcome-recording.jpg";
 
-import testimonial1 from "@/assets/testimonial-teacher-1.jpg";
-import testimonial2 from "@/assets/testimonial-teacher-2.jpg";
-import testimonial3 from "@/assets/testimonial-teacher-3.jpg";
+const testimonial1 = "/assets/testimonial-teacher-1.jpg";
+const testimonial2 = "/assets/testimonial-teacher-2.jpg";
+const testimonial3 = "/assets/testimonial-teacher-3.jpg";
 
 /* ---- data ---- */
 

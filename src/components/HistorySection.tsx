@@ -2,15 +2,15 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import PhotoLightbox from "./PhotoLightbox";
-import meetingsImg from "@/assets/meetings.jpg";
-import kidsImg from "@/assets/kids-tour.jpg";
-import partnershipImg from "@/assets/partnership.jpg";
-import teachersImg from "@/assets/teachers-workshop.jpg";
-import russiaMap from "@/assets/russia-map.png";
-import rostRazvitie from "@/assets/rost-razvitie.jpg";
-import rostObrazovanie from "@/assets/rost-obrazovanie.jpg";
-import rostSotrudnichestvo from "@/assets/rost-sotrudnichestvo.jpg";
-import rostTurizm from "@/assets/rost-turizm.jpg";
+const meetingsImg = "/assets/meetings.jpg";
+const kidsImg = "/assets/kids-tour.jpg";
+const partnershipImg = "/assets/partnership.jpg";
+const teachersImg = "/assets/teachers-workshop.jpg";
+const russiaMap = "/assets/russia-map.png";
+const rostRazvitie = "/assets/rost-razvitie.jpg";
+const rostObrazovanie = "/assets/rost-obrazovanie.jpg";
+const rostSotrudnichestvo = "/assets/rost-sotrudnichestvo.jpg";
+const rostTurizm = "/assets/rost-turizm.jpg";
 
 const carouselImages = [meetingsImg, kidsImg, partnershipImg, teachersImg];
 

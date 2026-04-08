@@ -4,10 +4,10 @@ import Header from "@/components/Header";
 import FloatingButtons from "@/components/FloatingButtons";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
-import heroImg from "@/assets/teachers-hero.jpg";
-import courseImg from "@/assets/teachers-online-course.jpg";
-import festImg from "@/assets/teachers-festival.jpg";
-import whyImg from "@/assets/teachers-why.jpg";
+const heroImg = "/assets/teachers-hero.jpg";
+const courseImg = "/assets/teachers-online-course.jpg";
+const festImg = "/assets/teachers-festival.jpg";
+const whyImg = "/assets/teachers-why.jpg";
 
 /* ─── data ─── */
 

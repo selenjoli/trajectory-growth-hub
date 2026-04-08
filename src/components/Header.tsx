@@ -2,8 +2,8 @@ import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ContactFormModal from "./ContactFormModal";
 import { motion, AnimatePresence } from "framer-motion";
-import logoDark from "@/assets/logo-dark.svg";
-import logoLight from "@/assets/logo-light.svg";
+const logoDark = "/assets/logo-dark.svg";
+const logoLight = "/assets/logo-light.svg";
 
 interface DropdownItem {
   label: string;

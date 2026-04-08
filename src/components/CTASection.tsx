@@ -1,7 +1,7 @@
 import AnimatedSection from "./AnimatedSection";
-import ctaKids from "@/assets/cta-kids.jpg";
-import ctaTeachers from "@/assets/cta-teachers.jpg";
-import ctaPartnership from "@/assets/cta-partnership.jpg";
+const ctaKids = "/assets/cta-kids.jpg";
+const ctaTeachers = "/assets/cta-teachers.jpg";
+const ctaPartnership = "/assets/cta-partnership.jpg";
 
 const doors = [
   {

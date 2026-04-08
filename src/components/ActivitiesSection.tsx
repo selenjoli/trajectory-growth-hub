@@ -1,7 +1,7 @@
 import AnimatedSection from "./AnimatedSection";
-import kidsTour from "@/assets/kids-tour.jpg";
-import teachersWorkshop from "@/assets/teachers-workshop.jpg";
-import partnership from "@/assets/partnership.jpg";
+const kidsTour = "/assets/kids-tour.jpg";
+const teachersWorkshop = "/assets/teachers-workshop.jpg";
+const partnership = "/assets/partnership.jpg";
 
 const cards = [
   {

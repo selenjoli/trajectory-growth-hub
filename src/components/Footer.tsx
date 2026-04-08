@@ -1,4 +1,4 @@
-import logoRed from "@/assets/logo-red.svg";
+const logoRed = "/assets/logo-red.svg";
 
 interface FooterProps {
   variant?: "gray" | "white";
