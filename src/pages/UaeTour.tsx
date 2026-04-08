@@ -14,11 +14,13 @@ const uaeBeachWhy = "/assets/uae-beach-why.jpg";
 const uaeAbudhabi = "/assets/uae-abudhabi.jpg";
 const uaeAbudhabiWhy = "/assets/uae-abudhabi-why.jpg";
 const uaeMuseum = "/assets/uae-museum.jpg";
+const uaeMuseumReceipt = "/assets/uae-museum-receipt.jpg";
 const uaeMuseumWhy = "/assets/uae-museum-why.jpg";
 const uaeMall = "/assets/uae-mall.jpg";
 const uaeMallWhy = "/assets/uae-mall-why.jpg";
 const uaeFerrari = "/assets/uae-ferrari.jpg";
 const uaeYacht = "/assets/uae-yacht.jpg";
+const uaeYachtReceipt = "/assets/uae-yacht-receipt.jpg";
 const uaeYachtWhy = "/assets/uae-yacht-why.jpg";
 const uaeCampus = "/assets/uae-campus.jpg";
 const illustChina = "/assets/uae-illust-china.png";
@@ -443,7 +445,7 @@ const UaeTour = () => {
               {/* Left photo */}
               <div className="hidden lg:block flex-1">
                 <div className="rounded-[1.5rem] overflow-hidden aspect-[3/4]">
-                  <img src={uaeMuseum} alt="Музей Будущего" className="w-full h-full object-cover" />
+                  <img src={uaeMuseumReceipt} alt="Музей Будущего" className="w-full h-full object-cover" />
                 </div>
               </div>
 
@@ -482,7 +484,7 @@ const UaeTour = () => {
               {/* Right photo */}
               <div className="hidden lg:block flex-1">
                 <div className="rounded-[1.5rem] overflow-hidden aspect-[3/4]">
-                  <img src={uaeYacht} alt="Ужин на яхте" className="w-full h-full object-cover" />
+                  <img src={uaeYachtReceipt} alt="Ужин на яхте" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>
