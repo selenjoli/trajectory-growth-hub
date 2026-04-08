@@ -133,7 +133,7 @@ const ChinaTour = () => {
   const [lightboxPhotos, setLightboxPhotos] = useState<string[]>([]);
   const [formOpen, setFormOpen] = useState(false);
 
-  const whyPhotos = [beijingWhy, shanghaiWhy, suzhouWhy, hangzhouWhy, nanjingWhy];
+  const galleryPhotos = [beijingWhy, shanghaiWhy, suzhouWhy, hangzhouWhy, nanjingWhy];
 
   const nextSlide = useCallback(() => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
