@@ -377,32 +377,42 @@ const Kanikuly = () => {
         </div>
       </section>
 
-      {/* ── Why it works — no background ── */}
+      {/* ── Why it works ── */}
       <section className="section-padding">
         <div className="fluid-container">
           <AnimatedSection>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-4">
-              Почему это <span className="text-accent">работает</span>
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-3xl mb-4 font-normal normal-case leading-relaxed">
-              Когда подросток впервые решает задачу на&nbsp;английском в&nbsp;реальном разговоре с&nbsp;носителем — не&nbsp;на&nbsp;уроке, а&nbsp;в&nbsp;жизни — что-то меняется.
-            </p>
-            <p className="text-muted-foreground text-lg max-w-3xl mb-14 font-normal normal-case leading-relaxed">
-              Дети возвращаются более самостоятельными и&nbsp;открытыми. Это замечают родители, это видно по&nbsp;тому как дети говорят о&nbsp;следующей поездке — сами, без&nbsp;напоминаний.
-            </p>
-          </AnimatedSection>
+            <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+              {/* Left: title + text */}
+              <div className="flex flex-col justify-center">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-4">
+                  Почему это <span className="text-accent">работает</span>
+                </h2>
+                <p className="text-muted-foreground text-lg mb-4 font-normal normal-case leading-relaxed">
+                  Когда подросток впервые решает задачу на&nbsp;английском в&nbsp;реальном разговоре с&nbsp;носителем — не&nbsp;на&nbsp;уроке, а&nbsp;в&nbsp;жизни — что-то меняется.
+                </p>
+                <p className="text-muted-foreground text-lg font-normal normal-case leading-relaxed">
+                  Дети возвращаются более самостоятельными и&nbsp;открытыми. Это замечают родители, это видно по&nbsp;тому как дети говорят о&nbsp;следующей поездке — сами, без&nbsp;напоминаний.
+                </p>
+              </div>
 
-          <div className="grid md:grid-cols-3 gap-10">
-            {whyItems.map((w, i) => (
-              <AnimatedSection key={w.title} delay={i * 0.1}>
-                <div className="flex flex-col items-center text-center">
-                  <img src={w.image} alt={w.title} className="w-40 h-40 object-contain mb-5" />
-                  <h3 className="text-base text-foreground mb-2">{w.title}</h3>
-                  <p className="text-muted-foreground text-[15px] font-normal normal-case leading-relaxed">{w.text}</p>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
+              {/* Right: 3 cards stacked */}
+              <div className="flex flex-col gap-4">
+                {whyItems.map((w, i) => (
+                  <AnimatedSection key={w.title} delay={i * 0.1}>
+                    <div className="flex items-center gap-5 bg-muted rounded-2xl p-5">
+                      <img src={w.image} alt={w.title} className="w-20 h-20 object-contain shrink-0" />
+                      <div>
+                        <h3 className="text-base text-foreground mb-1">{w.title}</h3>
+                        <p className="text-muted-foreground text-sm font-normal normal-case leading-relaxed">{w.text}</p>
+                      </div>
+                    </div>
+                  </AnimatedSection>
+                ))}
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
         </div>
       </section>
 
