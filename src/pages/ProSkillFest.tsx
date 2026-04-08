@@ -382,19 +382,19 @@ const ProSkillFest = () => {
               </p>
             </AnimatedSection>
 
-            {/* 3 columns: photo | cards | video — with larger gap */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-              {/* Left: photo same aspect as video */}
-              <AnimatedSection>
+            {/* 3 columns: narrow photo | wide cards | narrow video */}
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-6 lg:gap-10 items-stretch" style={{ maxHeight: "520px" }}>
+              {/* Left: photo matching video aspect */}
+              <AnimatedSection className="h-full hidden md:block">
                 <div className="rounded-2xl overflow-hidden h-full">
-                  <img src={sessionImg} alt="ProSkill Fest — формат дня" className="w-full h-full object-cover" style={{ aspectRatio: "9/16" }} />
+                  <img src={sessionImg} alt="ProSkill Fest — формат дня" className="w-full h-full object-cover" />
                 </div>
               </AnimatedSection>
 
-              {/* Center: 4 cards stacked in one column */}
-              <div className="flex flex-col gap-4 justify-center">
+              {/* Center: 4 cards stacked, stretch to fill height */}
+              <div className="flex flex-col gap-4 h-full">
                 {[...formatLeft, ...formatRight].map((item, i) => (
-                  <AnimatedSection key={i} delay={i * 0.08}>
+                  <AnimatedSection key={i} delay={i * 0.08} className="flex-1">
                     <div className="bg-card border border-border rounded-2xl p-5 h-full flex flex-col justify-center">
                       <h3 className="text-base mb-1.5" style={{ color: bordeaux }}>{item.title}</h3>
                       <p className="text-muted-foreground text-sm normal-case leading-relaxed">{item.text}</p>
@@ -403,9 +403,9 @@ const ProSkillFest = () => {
                 ))}
               </div>
 
-              {/* Right: vertical video */}
-              <div className="w-full">
-                <div className="relative rounded-2xl overflow-hidden bg-muted w-full" style={{ aspectRatio: "9/16" }}>
+              {/* Right: vertical video, compact */}
+              <div className="h-full hidden md:block">
+                <div className="relative rounded-2xl overflow-hidden bg-muted h-full" style={{ aspectRatio: "9/16" }}>
                   {formatVideo ? (
                     <iframe
                       src={formatVideo}
@@ -420,6 +420,24 @@ const ProSkillFest = () => {
                     </div>
                   )}
                 </div>
+              </div>
+            </div>
+
+            {/* Mobile: photo + video side by side */}
+            <div className="grid grid-cols-2 gap-4 mt-6 md:hidden">
+              <div className="rounded-2xl overflow-hidden">
+                <img src={sessionImg} alt="ProSkill Fest" className="w-full h-full object-cover" style={{ aspectRatio: "9/16" }} />
+              </div>
+              <div className="relative rounded-2xl overflow-hidden bg-muted" style={{ aspectRatio: "9/16" }}>
+                {formatVideo && (
+                  <iframe
+                    src={formatVideo}
+                    allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
+                    frameBorder="0"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  />
+                )}
               </div>
             </div>
           </div>
