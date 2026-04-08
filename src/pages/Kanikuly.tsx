@@ -312,71 +312,6 @@ const Kanikuly = () => {
         </div>
       </section>
 
-      {/* ── FAQ + Video ── */}
-      <section className="section-padding">
-        <div className="fluid-container">
-          <AnimatedSection>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-10">
-              То, что <span className="text-accent">важно знать</span> перед поездкой
-            </h2>
-            <div className="grid md:grid-cols-[1fr_auto] gap-10 md:gap-14 items-stretch">
-              {/* Left: numbered FAQ list */}
-              <div className="flex flex-col justify-center gap-8 md:gap-10">
-                {faq.map((item, i) => (
-                  <div key={item.q} className="flex gap-5 items-start">
-                    <span className="shrink-0 w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center text-lg font-black">
-                      {i + 1}
-                    </span>
-                    <div>
-                      <h3 className="text-xl sm:text-2xl md:text-3xl text-foreground mb-2">
-                        {item.q}
-                      </h3>
-                      <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
-                        {item.a}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Right: vertical video */}
-              <div className="w-full md:w-[300px] lg:w-[340px] shrink-0">
-                <div className="relative w-full rounded-[1.5rem] overflow-hidden" style={{ paddingTop: "177.78%" }}>
-                  <iframe
-                    src="https://kinescope.io/embed/dTuLX88goeVhvaDMCyXYNu"
-                    allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
-                    frameBorder="0"
-                    allowFullScreen
-                    className="absolute inset-0 w-full h-full"
-                  />
-                </div>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ── Stats ── */}
-      <section className="section-padding section-alt">
-        <div className="fluid-container">
-          <AnimatedSection>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-14">
-              Нам <span className="text-accent">доверяют</span>
-            </h2>
-          </AnimatedSection>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((s, i) => (
-              <AnimatedSection key={s.label} delay={i * 0.1}>
-                <div className="border-t-2 border-primary pt-6">
-                  <p className="text-5xl md:text-6xl font-black text-foreground mb-3">{s.number}</p>
-                  <p className="text-sm text-muted-foreground font-normal normal-case leading-snug">{s.label}</p>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── Why it works ── */}
       <section className="section-padding">
         <div className="fluid-container">
@@ -411,6 +346,27 @@ const Kanikuly = () => {
               </div>
             </div>
           </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── Stats ── */}
+      <section className="section-padding section-alt">
+        <div className="fluid-container">
+          <AnimatedSection>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-14">
+              Нам <span className="text-accent">доверяют</span>
+            </h2>
+          </AnimatedSection>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {stats.map((s, i) => (
+              <AnimatedSection key={s.label} delay={i * 0.1}>
+                <div className="border-t-2 border-primary pt-6">
+                  <p className="text-5xl md:text-6xl font-black text-foreground mb-3">{s.number}</p>
+                  <p className="text-sm text-muted-foreground font-normal normal-case leading-snug">{s.label}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -491,6 +447,50 @@ const Kanikuly = () => {
               </AnimatedSection>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── FAQ + Video ── */}
+      <section className="section-padding">
+        <div className="fluid-container">
+          <AnimatedSection>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-10">
+              То, что <span className="text-accent">важно знать</span> перед поездкой
+            </h2>
+            <div className="grid md:grid-cols-[1fr_auto] gap-10 md:gap-14 items-stretch">
+              {/* Left: numbered FAQ list */}
+              <div className="flex flex-col justify-center gap-8 md:gap-10">
+                {faq.map((item, i) => (
+                  <div key={item.q} className="flex gap-5 items-start">
+                    <span className="shrink-0 w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center text-lg font-black">
+                      {i + 1}
+                    </span>
+                    <div>
+                      <h3 className="text-xl sm:text-2xl md:text-3xl text-foreground mb-2">
+                        {item.q}
+                      </h3>
+                      <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
+                        {item.a}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Right: vertical video */}
+              <div className="w-full md:w-[300px] lg:w-[340px] shrink-0">
+                <div className="relative w-full rounded-[1.5rem] overflow-hidden" style={{ paddingTop: "177.78%" }}>
+                  <iframe
+                    src="https://kinescope.io/embed/dTuLX88goeVhvaDMCyXYNu"
+                    allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
+                    frameBorder="0"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  />
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
