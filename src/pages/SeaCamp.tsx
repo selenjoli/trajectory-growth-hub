@@ -212,42 +212,16 @@ const SeaCamp = () => {
                   </p>
                 </div>
 
-                {/* Stacked photo carousel */}
-                <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
-                  <div
-                    className="relative w-full h-[460px]"
-                    onMouseEnter={() => setWhyPaused(true)}
-                    onMouseLeave={() => setWhyPaused(false)}>
-                    
-                    <AnimatePresence>
-                      {whyPhotos.map((photo, i) => {
-                        const offset = (i - whySlide + whyPhotos.length) % whyPhotos.length;
-                        if (offset > 3) return null;
-                        return (
-                          <motion.div
-                            key={i}
-                            initial={{ opacity: 0, scale: 0.9, y: 30 }}
-                            animate={{
-                              opacity: offset === 0 ? 1 : 0.55 - offset * 0.12,
-                              scale: 1 - offset * 0.05,
-                              y: offset * 16,
-                              x: offset * 8,
-                              zIndex: whyPhotos.length - offset,
-                              rotateZ: offset * -2
-                            }}
-                            exit={{ opacity: 0, scale: 0.9, y: -20 }}
-                            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                            className={`absolute inset-0 ${offset === 0 ? "cursor-pointer" : ""}`}
-                            onClick={() => { if (offset === 0) { setLightboxIndex(i); setLightboxOpen(true); } }}
-                          >
-                            
-                            <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl">
-                              <img src={photo} alt="Лагерь" className="w-full h-full object-cover" />
-                            </div>
-                          </motion.div>);
-
-                      })}
-                    </AnimatePresence>
+                {/* Video */}
+                <div className="w-full lg:w-[320px] shrink-0 flex justify-center">
+                  <div className="relative w-full aspect-[9/16] rounded-[1.2rem] overflow-hidden shadow-2xl">
+                    <iframe
+                      src="https://kinescope.io/embed/8kheoUGXADefyFfE6viqLV"
+                      allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
+                      frameBorder="0"
+                      allowFullScreen
+                      className="absolute inset-0 w-full h-full"
+                    />
                   </div>
                 </div>
               </div>
@@ -384,6 +358,58 @@ const SeaCamp = () => {
                   <img src={seaPsychologyReceipt} alt="Фото из лагеря" className="w-full h-full object-cover" />
                 </div>
               </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── How it was — carousel ── */}
+      <section className="py-20 px-3 md:px-6 xl:px-10">
+        <div className="fluid-container">
+          <AnimatedSection>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white mb-12">
+              Как это было <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">в&nbsp;2025</span>
+            </h2>
+          </AnimatedSection>
+          <AnimatedSection delay={0.1}>
+            <div
+              className="relative mx-auto max-w-3xl h-[400px] md:h-[500px]"
+              onMouseEnter={() => setWhyPaused(true)}
+              onMouseLeave={() => setWhyPaused(false)}
+            >
+              <AnimatePresence>
+                {whyPhotos.map((photo, i) => {
+                  const offset = (i - whySlide + whyPhotos.length) % whyPhotos.length;
+                  if (offset > 3) return null;
+                  return (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                      animate={{
+                        opacity: offset === 0 ? 1 : 0.55 - offset * 0.12,
+                        scale: 1 - offset * 0.05,
+                        y: offset * 16,
+                        x: offset * 8,
+                        zIndex: whyPhotos.length - offset,
+                        rotateZ: offset * -2,
+                      }}
+                      exit={{ opacity: 0, scale: 0.9, y: -20 }}
+                      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                      className={`absolute inset-0 ${offset === 0 ? "cursor-pointer" : ""}`}
+                      onClick={() => {
+                        if (offset === 0) {
+                          setLightboxIndex(i);
+                          setLightboxOpen(true);
+                        }
+                      }}
+                    >
+                      <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl">
+                        <img src={photo} alt="Лагерь" className="w-full h-full object-cover" />
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </AnimatePresence>
             </div>
           </AnimatedSection>
         </div>
