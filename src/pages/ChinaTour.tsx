@@ -516,7 +516,7 @@ const ChinaTour = () => {
 
             <AnimatedSection delay={0.1}>
               <div
-                className="relative mx-auto w-[320px] md:w-[380px] h-[400px] md:h-[475px]"
+                className="relative mx-auto w-[300px] md:w-[360px] h-[400px] md:h-[480px]"
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => { setIsPaused(false); setZoomed(null); }}
               >
