@@ -285,15 +285,13 @@ const AltaiCamp = () => {
       <section className="px-3 md:px-6 xl:px-10 mt-4">
         <div className="bg-background rounded-[2rem] py-20 px-6 md:px-16">
           <div className="fluid-container">
-            <AnimatedSection>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-6">
-                При чём здесь <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">АЛТАЙ
-И&nbsp;АНГЛИЙСКИЙ?</span>
-              </h2>
-            </AnimatedSection>
             <AnimatedSection delay={0.1}>
               <div className="flex flex-col lg:flex-row gap-10 items-center">
-                <div className="w-full lg:w-1/2 space-y-6">
+                <div className="lg:flex-1 space-y-6">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground">
+                    При чём здесь <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">АЛТАЙ
+И&nbsp;АНГЛИЙСКИЙ?</span>
+                  </h2>
                   <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed whitespace-pre-line">
                     Выучить английский в классе — можно. Заговорить{"\n"}по-настоящему — только когда это нужно, когда интересно, когда вокруг люди и нет времени бояться ошибиться.
                   </p>
@@ -305,41 +303,16 @@ const AltaiCamp = () => {
                   </p>
                 </div>
 
-                {/* Stacked photo carousel */}
-                <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
-                  <div className="relative w-full h-[460px]"
-                  onMouseEnter={() => setHookPaused(true)}
-                  onMouseLeave={() => setHookPaused(false)}>
-                    
-                    <AnimatePresence>
-                      {hookPhotos.map((photo, i) => {
-                        const offset = (i - hookSlide + hookPhotos.length) % hookPhotos.length;
-                        if (offset > 3) return null;
-                        return (
-                          <motion.div
-                            key={i}
-                            initial={{ opacity: 0, scale: 0.9, y: 30 }}
-                            animate={{
-                              opacity: offset === 0 ? 1 : 0.55 - offset * 0.12,
-                              scale: 1 - offset * 0.05,
-                              y: offset * 16,
-                              x: offset * 8,
-                              zIndex: hookPhotos.length - offset,
-                              rotateZ: offset * -2
-                            }}
-                            exit={{ opacity: 0, scale: 0.9, y: -20 }}
-                            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                            className={`absolute inset-0 ${offset === 0 ? "cursor-pointer" : ""}`}
-                            onClick={() => { if (offset === 0) { setLightboxIndex(i); setLightboxOpen(true); } }}
-                          >
-                            
-                            <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl">
-                              <img src={photo} alt="Алтай" className="w-full h-full object-cover" />
-                            </div>
-                          </motion.div>);
-
-                      })}
-                    </AnimatePresence>
+                {/* Video */}
+                <div className="w-full lg:w-[320px] shrink-0 flex justify-center">
+                  <div className="relative w-full aspect-[9/16] rounded-[1.2rem] overflow-hidden shadow-2xl">
+                    <iframe
+                      src="https://kinescope.io/embed/nXmStbMGVotCrQ164V5Jok"
+                      allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
+                      frameBorder="0"
+                      allowFullScreen
+                      className="absolute inset-0 w-full h-full"
+                    />
                   </div>
                 </div>
               </div>
@@ -546,17 +519,13 @@ const AltaiCamp = () => {
       {/* ── Facilities — green bg with photo cards ── */}
       <section className="section-padding overflow-hidden">
         <div className="fluid-container">
-          <AnimatedSection>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white mb-6">
-              <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">Где живут</span> и что едят дети
-            </h2>
-          </AnimatedSection>
           <AnimatedSection delay={0.1}>
             <div className="grid lg:grid-cols-2 gap-10 items-center mb-10">
-              <div>
-                <p className="text-white/85 text-base md:text-lg font-normal normal-case leading-relaxed">Уютные деревянные коттеджи у подножья гор — комнаты на 5 человек, все удобства. 5-разовое питание, трансфер от аэропорта и обратно, круглосуточный медпункт и сопровождающий педагог на всём протяжении смены.
-
-                </p>
+              <div className="space-y-6">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white">
+                  <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">Где живут</span> и что едят дети
+                </h2>
+                <p className="text-white/85 text-base md:text-lg font-normal normal-case leading-relaxed">Уютные деревянные коттеджи у подножья гор — комнаты на 5 человек, все удобства. 5-разовое питание, трансфер от аэропорта и обратно, круглосуточный медпункт и сопровождающий педагог на всём протяжении смены.</p>
               </div>
               <div>
                 <div className="rounded-[1.5rem] overflow-hidden aspect-[16/10]">
@@ -639,6 +608,52 @@ const AltaiCamp = () => {
                   <img src={altaiCampfireReceipt} alt="Фото из лагеря" className="w-full h-full object-cover" />
                 </div>
               </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── Gallery — Как это было в 2025 ── */}
+      <section className="py-20 px-3 md:px-6 xl:px-10">
+        <div className="fluid-container">
+          <AnimatedSection>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white mb-14">
+              Как это было <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">в 2025</span>
+            </h2>
+          </AnimatedSection>
+          <AnimatedSection delay={0.1}>
+            <div
+              className="relative mx-auto max-w-3xl h-[400px] md:h-[500px]"
+              onMouseEnter={() => setHookPaused(true)}
+              onMouseLeave={() => setHookPaused(false)}>
+              <AnimatePresence>
+                {hookPhotos.map((photo, i) => {
+                  const offset = (i - hookSlide + hookPhotos.length) % hookPhotos.length;
+                  if (offset > 3) return null;
+                  return (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                      animate={{
+                        opacity: offset === 0 ? 1 : 0.55 - offset * 0.12,
+                        scale: 1 - offset * 0.05,
+                        y: offset * 16,
+                        x: offset * 8,
+                        zIndex: hookPhotos.length - offset,
+                        rotateZ: offset * -2
+                      }}
+                      exit={{ opacity: 0, scale: 0.9, y: -20 }}
+                      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                      className={`absolute inset-0 ${offset === 0 ? "cursor-pointer" : ""}`}
+                      onClick={() => { if (offset === 0) { setLightboxIndex(i); setLightboxOpen(true); } }}
+                    >
+                      <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl">
+                        <img src={photo} alt="Алтай" className="w-full h-full object-cover" />
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </AnimatePresence>
             </div>
           </AnimatedSection>
         </div>

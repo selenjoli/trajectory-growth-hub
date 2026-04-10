@@ -225,7 +225,7 @@ const UaeTour = () => {
           <div className="fluid-container">
             <AnimatedSection>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-10">
-                Это не обычная <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">экскурсионная поездка</span>
+                Это <span className="bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent">не&nbsp;обычная</span> экскурсионная поездка
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>

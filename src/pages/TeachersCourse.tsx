@@ -653,7 +653,7 @@ const TeachersCourse = () => {
       </section>
       <Footer variant="white" />
       <FloatingButtons arrowColor="hsl(var(--program-teachers))" />
-      <ContactFormModal open={formOpen} onClose={() => setFormOpen(false)} program="Программы для педагогов" page="TeachersCourse" />
+      <ContactFormModal open={formOpen} onClose={() => setFormOpen(false)} program="Курс повышения квалификации Hilderstone" page="TeachersCourse" />
     </main>
   );
 };

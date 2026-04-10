@@ -318,33 +318,42 @@ const Kanikuly = () => {
         </div>
       </section>
 
-      {/* ── FAQ — alternating image blocks ── */}
-      {faq.map((item, i) => {
-        const imageFirst = i % 2 === 1;
-        return (
-          <section key={item.q} className="section-padding">
-            <div className="fluid-container">
-              <AnimatedSection delay={0.1}>
-                <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-                  <div className={imageFirst ? "md:order-2" : ""}>
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-foreground mb-6">
-                      {item.q}
-                    </h2>
-                    <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
-                      {item.a}
-                    </p>
-                  </div>
-                  <div className={imageFirst ? "md:order-1" : ""}>
-                    <div className="rounded-[2rem] overflow-hidden aspect-[4/3]">
-                      <img src={item.image} alt={item.q} className="w-full h-full object-cover" />
+      {/* ── Why it works ── */}
+      <section className="section-padding">
+        <div className="fluid-container">
+          <AnimatedSection>
+            <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+              {/* Left: title + text */}
+              <div className="flex flex-col justify-center">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-4">
+                  Почему это <span className="text-accent">работает</span>
+                </h2>
+                <p className="text-muted-foreground text-lg mb-4 font-normal normal-case leading-relaxed">
+                  Когда подросток впервые решает задачу на&nbsp;английском в&nbsp;реальном разговоре с&nbsp;носителем — не&nbsp;на&nbsp;уроке, а&nbsp;в&nbsp;жизни — что-то меняется.
+                </p>
+                <p className="text-muted-foreground text-lg font-normal normal-case leading-relaxed">
+                  Дети возвращаются более самостоятельными и&nbsp;открытыми. Это замечают родители, это видно по&nbsp;тому как дети говорят о&nbsp;следующей поездке — сами, без&nbsp;напоминаний.
+                </p>
+              </div>
+
+              {/* Right: 3 cards stacked */}
+              <div className="flex flex-col gap-4">
+                {whyItems.map((w, i) => (
+                  <AnimatedSection key={w.title} delay={i * 0.1}>
+                    <div className="flex items-center gap-5 bg-muted rounded-2xl p-5">
+                      <img src={w.image} alt={w.title} className="w-20 h-20 object-contain shrink-0" />
+                      <div>
+                        <h3 className="text-base text-foreground mb-1">{w.title}</h3>
+                        <p className="text-muted-foreground text-sm font-normal normal-case leading-relaxed">{w.text}</p>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </AnimatedSection>
+                  </AnimatedSection>
+                ))}
+              </div>
             </div>
-          </section>
-        );
-      })}
+          </AnimatedSection>
+        </div>
+      </section>
 
       {/* ── Stats ── */}
       <section className="section-padding section-alt">
@@ -360,35 +369,6 @@ const Kanikuly = () => {
                 <div className="border-t-2 border-primary pt-6">
                   <p className="text-5xl md:text-6xl font-black text-foreground mb-3">{s.number}</p>
                   <p className="text-sm text-muted-foreground font-normal normal-case leading-snug">{s.label}</p>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Why it works — no background ── */}
-      <section className="section-padding">
-        <div className="fluid-container">
-          <AnimatedSection>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-4">
-              Почему это <span className="text-accent">работает</span>
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-3xl mb-4 font-normal normal-case leading-relaxed">
-              Когда подросток впервые решает задачу на&nbsp;английском в&nbsp;реальном разговоре с&nbsp;носителем — не&nbsp;на&nbsp;уроке, а&nbsp;в&nbsp;жизни — что-то меняется.
-            </p>
-            <p className="text-muted-foreground text-lg max-w-3xl mb-14 font-normal normal-case leading-relaxed">
-              Дети возвращаются более самостоятельными и&nbsp;открытыми. Это замечают родители, это видно по&nbsp;тому как дети говорят о&nbsp;следующей поездке — сами, без&nbsp;напоминаний.
-            </p>
-          </AnimatedSection>
-
-          <div className="grid md:grid-cols-3 gap-10">
-            {whyItems.map((w, i) => (
-              <AnimatedSection key={w.title} delay={i * 0.1}>
-                <div className="flex flex-col items-center text-center">
-                  <img src={w.image} alt={w.title} className="w-40 h-40 object-contain mb-5" />
-                  <h3 className="text-base text-foreground mb-2">{w.title}</h3>
-                  <p className="text-muted-foreground text-[15px] font-normal normal-case leading-relaxed">{w.text}</p>
                 </div>
               </AnimatedSection>
             ))}
@@ -473,6 +453,50 @@ const Kanikuly = () => {
               </AnimatedSection>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── FAQ + Video ── */}
+      <section className="section-padding">
+        <div className="fluid-container">
+          <AnimatedSection>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-foreground mb-10">
+              То, что <span className="text-accent">важно знать</span> перед поездкой
+            </h2>
+            <div className="grid md:grid-cols-[1fr_auto] gap-10 md:gap-14 items-stretch">
+              {/* Left: numbered FAQ list */}
+              <div className="flex flex-col justify-center gap-8 md:gap-10">
+                {faq.map((item, i) => (
+                  <div key={item.q} className="flex gap-5 items-start">
+                    <span className="shrink-0 w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center text-lg font-black">
+                      {i + 1}
+                    </span>
+                    <div>
+                      <h3 className="text-xl sm:text-2xl md:text-3xl text-foreground mb-2">
+                        {item.q}
+                      </h3>
+                      <p className="text-muted-foreground text-base md:text-lg font-normal normal-case leading-relaxed">
+                        {item.a}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Right: vertical video */}
+              <div className="w-full md:w-[300px] lg:w-[340px] shrink-0">
+                <div className="relative w-full rounded-[1.5rem] overflow-hidden" style={{ paddingTop: "177.78%" }}>
+                  <iframe
+                    src="https://kinescope.io/embed/dTuLX88goeVhvaDMCyXYNu"
+                    allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
+                    frameBorder="0"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  />
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
