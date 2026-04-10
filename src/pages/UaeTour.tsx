@@ -59,10 +59,14 @@ const campusFeatures = [
   "Визит в реальную компанию, живой разговор с предпринимателями",
 ];
 
+const uaeTestimonial1 = "/assets/uae-testimonial-1.jpg";
+const uaeTestimonial2 = "/assets/uae-testimonial-2.jpg";
+const uaeTestimonial3 = "/assets/uae-testimonial-3.jpg";
+
 const testimonials = [
-  { id: 1, image: "https://placehold.co/400x700/862990/ffffff?text=Отзыв+1" },
-  { id: 2, image: "https://placehold.co/400x700/862990/ffffff?text=Отзыв+2" },
-  { id: 3, image: "https://placehold.co/400x700/862990/ffffff?text=Отзыв+3" },
+  { id: 1, image: uaeTestimonial1 },
+  { id: 2, image: uaeTestimonial2 },
+  { id: 3, image: uaeTestimonial3 },
 ];
 
 const otherPrograms = [

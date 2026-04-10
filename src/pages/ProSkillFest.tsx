@@ -33,6 +33,10 @@ const galleryPhoto1 = "/assets/fest-gallery-1.jpg";
 const galleryPhoto2 = "/assets/fest-gallery-2.jpg";
 const galleryPhoto3 = "/assets/fest-gallery-3.jpg";
 const galleryPhoto4 = "/assets/fest-gallery-4.jpg";
+const testimonialPhoto1 = "/assets/fest-testimonial-1.jpg";
+const testimonialPhoto2 = "/assets/fest-testimonial-2.jpg";
+const testimonialPhoto3 = "/assets/fest-testimonial-3.jpg";
+const testimonialPhoto4 = "/assets/fest-testimonial-4.jpg";
 
 /* ---- colors from mockup ---- */
 const bordeaux = "#300000";
@@ -137,10 +141,10 @@ const takeaways = [
 ];
 
 const testimonials = [
-  { id: 1, image: "https://placehold.co/400x700/F29727/ffffff?text=Отзыв+1" },
-  { id: 2, image: "https://placehold.co/400x700/F29727/ffffff?text=Отзыв+2" },
-  { id: 3, image: "https://placehold.co/400x700/F29727/ffffff?text=Отзыв+3" },
-  { id: 4, image: "https://placehold.co/400x700/F29727/ffffff?text=Отзыв+4" },
+  { id: 1, image: testimonialPhoto1 },
+  { id: 2, image: testimonialPhoto2 },
+  { id: 3, image: testimonialPhoto3 },
+  { id: 4, image: testimonialPhoto4 },
 ];
 
 const galleryPhotos = [galleryPhoto1, galleryPhoto2, galleryPhoto3, galleryPhoto4];

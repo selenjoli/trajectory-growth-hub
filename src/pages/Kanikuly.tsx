@@ -142,12 +142,18 @@ const whyItems = [
   { title: "Друзья", text: "Дружба, которая завязывается в поездке, обычно оказывается крепче школьной. Многие ребята общаются годами.", image: whyFriends },
 ];
 
+const kanikulyTestimonial1 = "/assets/kanikuly-testimonial-1.jpg";
+const kanikulyTestimonial2 = "/assets/kanikuly-testimonial-2.jpg";
+const kanikulyTestimonial3 = "/assets/kanikuly-testimonial-3.jpg";
+const kanikulyTestimonial4 = "/assets/kanikuly-testimonial-4.jpg";
+const kanikulyTestimonial5 = "/assets/kanikuly-testimonial-5.jpg";
+
 const testimonials = [
-  { id: 1, image: "https://placehold.co/400x700/1a7a4a/ffffff?text=Отзыв+1" },
-  { id: 2, image: "https://placehold.co/400x700/1a7a4a/ffffff?text=Отзыв+2" },
-  { id: 3, image: "https://placehold.co/400x700/1a7a4a/ffffff?text=Отзыв+3" },
-  { id: 4, image: "https://placehold.co/400x700/1a7a4a/ffffff?text=Отзыв+4" },
-  { id: 5, image: "https://placehold.co/400x700/1a7a4a/ffffff?text=Отзыв+5" },
+  { id: 1, image: kanikulyTestimonial1 },
+  { id: 2, image: kanikulyTestimonial2 },
+  { id: 3, image: kanikulyTestimonial3 },
+  { id: 4, image: kanikulyTestimonial4 },
+  { id: 5, image: kanikulyTestimonial5 },
 ];
 
 const safety = [

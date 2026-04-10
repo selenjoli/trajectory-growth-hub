@@ -78,12 +78,18 @@ const facilities = [
 { image: facilityGuide, text: "Сопровождающий от ассоциации 24/7" }];
 
 
+const seaTestimonial1 = "/assets/sea-testimonial-1.jpg";
+const seaTestimonial2 = "/assets/sea-testimonial-2.jpg";
+const seaTestimonial3 = "/assets/sea-testimonial-3.jpg";
+const seaTestimonial4 = "/assets/sea-testimonial-4.jpg";
+const seaTestimonial5 = "/assets/sea-testimonial-5.jpg";
+
 const testimonials = [
-{ id: 1, image: "https://placehold.co/400x700/00BBC5/ffffff?text=Отзыв+1" },
-{ id: 2, image: "https://placehold.co/400x700/00BBC5/ffffff?text=Отзыв+2" },
-{ id: 3, image: "https://placehold.co/400x700/00BBC5/ffffff?text=Отзыв+3" },
-{ id: 4, image: "https://placehold.co/400x700/00BBC5/ffffff?text=Отзыв+4" },
-{ id: 5, image: "https://placehold.co/400x700/00BBC5/ffffff?text=Отзыв+5" }];
+{ id: 1, image: seaTestimonial1 },
+{ id: 2, image: seaTestimonial2 },
+{ id: 3, image: seaTestimonial3 },
+{ id: 4, image: seaTestimonial4 },
+{ id: 5, image: seaTestimonial5 }];
 
 
 const otherPrograms = [

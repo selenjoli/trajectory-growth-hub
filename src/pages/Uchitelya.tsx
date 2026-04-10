@@ -11,18 +11,22 @@ const whyImg = "/assets/teachers-why.jpg";
 
 /* ─── data ─── */
 
+const uchitelyaTestimonial1 = "/assets/uchitelya-testimonial-1.jpg";
+const uchitelyaTestimonial2 = "/assets/uchitelya-testimonial-2.jpg";
+const uchitelyaTestimonial3 = "/assets/uchitelya-testimonial-3.jpg";
+
 const testimonials = [
   {
     id: 1,
-    image: "https://placehold.co/400x700/1a7a4a/ffffff?text=Отзыв+1",
+    image: uchitelyaTestimonial1,
   },
   {
     id: 2,
-    image: "https://placehold.co/400x700/1a7a4a/ffffff?text=Отзыв+2",
+    image: uchitelyaTestimonial2,
   },
   {
     id: 3,
-    image: "https://placehold.co/400x700/1a7a4a/ffffff?text=Отзыв+3",
+    image: uchitelyaTestimonial3,
   },
 ];
 

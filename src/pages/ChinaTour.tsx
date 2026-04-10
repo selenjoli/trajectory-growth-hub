@@ -104,12 +104,18 @@ const included = [
   "Помощь с оформлением документов",
 ];
 
+const chinaTestimonial1 = "/assets/china-testimonial-1.jpg";
+const chinaTestimonial2 = "/assets/china-testimonial-2.jpg";
+const chinaTestimonial3 = "/assets/china-testimonial-3.jpg";
+const chinaTestimonial4 = "/assets/china-testimonial-4.jpg";
+const chinaTestimonial5 = "/assets/china-testimonial-5.jpg";
+
 const testimonials = [
-  { id: 1, image: "https://placehold.co/400x700/c9a84c/ffffff?text=Отзыв+1" },
-  { id: 2, image: "https://placehold.co/400x700/c9a84c/ffffff?text=Отзыв+2" },
-  { id: 3, image: "https://placehold.co/400x700/c9a84c/ffffff?text=Отзыв+3" },
-  { id: 4, image: "https://placehold.co/400x700/c9a84c/ffffff?text=Отзыв+4" },
-  { id: 5, image: "https://placehold.co/400x700/c9a84c/ffffff?text=Отзыв+5" },
+  { id: 1, image: chinaTestimonial1 },
+  { id: 2, image: chinaTestimonial2 },
+  { id: 3, image: chinaTestimonial3 },
+  { id: 4, image: chinaTestimonial4 },
+  { id: 5, image: chinaTestimonial5 },
 ];
 
 const otherPrograms = [
@@ -266,6 +272,41 @@ const ChinaTour = () => {
                   </ul>
                 </div>
 
+                {/* Photo carousel — horizontal, fills column */}
+                <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
+                  <div
+                    className="relative w-full aspect-[3/4]"
+                    onMouseEnter={() => setWhyPaused(true)}
+                    onMouseLeave={() => setWhyPaused(false)}
+                  >
+                    <AnimatePresence>
+                      {whyPhotos.map((photo, i) => {
+                        const offset = (i - whySlide + whyPhotos.length) % whyPhotos.length;
+                        if (offset > 3) return null;
+                        return (
+                          <motion.div
+                            key={i}
+                            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                            animate={{
+                              opacity: offset === 0 ? 1 : 0.55 - offset * 0.12,
+                              scale: 1 - offset * 0.05,
+                              y: offset * 16,
+                              x: offset * 8,
+                              zIndex: whyPhotos.length - offset,
+                              rotateZ: offset * -2,
+                            }}
+                            exit={{ opacity: 0, scale: 0.9, y: -20 }}
+                            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                            className={`absolute inset-0 ${offset === 0 ? "cursor-pointer" : ""}`}
+                            onClick={() => { if (offset === 0) { setLightboxPhotos(whyPhotos); setLightboxIndex(i); setLightboxOpen(true); } }}
+                          >
+                            <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl">
+                              <img src={photo} alt="Китай" className="w-full h-full object-cover" />
+                            </div>
+                          </motion.div>
+                        );
+                      })}
+                    </AnimatePresence>
                 {/* Video */}
                 <div className="w-full lg:w-[320px] shrink-0 flex justify-center">
                   <div className="relative w-full aspect-[9/16] rounded-[1.2rem] overflow-hidden shadow-2xl">
