@@ -277,7 +277,7 @@ const ChinaTour = () => {
                 {/* Photo carousel — horizontal, fills column */}
                 <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
                   <div
-                    className="relative w-full aspect-[3/2]"
+                    className="relative w-full aspect-[3/4]"
                     onMouseEnter={() => setWhyPaused(true)}
                     onMouseLeave={() => setWhyPaused(false)}
                   >
@@ -516,7 +516,7 @@ const ChinaTour = () => {
 
             <AnimatedSection delay={0.1}>
               <div
-                className="relative mx-auto w-[300px] md:w-[360px] h-[400px] md:h-[480px]"
+                className="relative mx-auto w-[320px] md:w-[380px] h-[400px] md:h-[475px]"
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => { setIsPaused(false); setZoomed(null); }}
               >
