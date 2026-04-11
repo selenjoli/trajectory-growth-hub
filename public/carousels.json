@@ -1,20 +1,109 @@
 {
-  "china-gallery": ["china-beijing-why.jpg", "china-shanghai-why.jpg", "china-suzhou-why.jpg", "china-hangzhou-why.jpg", "china-nanjing-why.jpg"],
-  "china-testimonials": ["china-testimonial-1.jpg", "china-testimonial-2.jpg", "china-testimonial-3.jpg", "china-testimonial-4.jpg", "china-testimonial-5.jpg"],
-  "uae-why": ["uae-beach-why.jpg", "uae-abudhabi-why.jpg", "uae-museum-why.jpg", "uae-mall-why.jpg", "uae-yacht-why.jpg"],
-  "uae-testimonials": ["uae-testimonial-1.jpg", "uae-testimonial-2.jpg", "uae-testimonial-3.jpg"],
-  "altai-hook": ["altai-patmos-why.jpg", "altai-waterfall-why.jpg", "altai-swimming-why.jpg", "altai-campfire-why.jpg", "altai-workshop.jpg"],
-  "altai-testimonials": ["altai-testimonial-1.jpg", "altai-testimonial-2.jpg", "altai-testimonial-3.jpg"],
-  "sea-why": ["sea-english-why.jpg", "sea-dance-why.jpg", "sea-projects-why.jpg", "sea-psychology-why.jpg", "sea-resort.jpg"],
-  "sea-testimonials": ["sea-testimonial-1.jpg", "sea-testimonial-2.jpg", "sea-testimonial-3.jpg", "sea-testimonial-4.jpg", "sea-testimonial-5.jpg"],
-  "kanikuly-gallery": ["kanikuly-meetings.jpg", "kanikuly-kids-tour.jpg", "kanikuly-partnership.jpg", "kanikuly-teachers-workshop.jpg"],
-  "kanikuly-testimonials": ["kanikuly-testimonial-1.jpg", "kanikuly-testimonial-2.jpg", "kanikuly-testimonial-3.jpg", "kanikuly-testimonial-4.jpg", "kanikuly-testimonial-5.jpg"],
-  "hilderstone-why": ["kids-hilderstone-college.jpg", "kids-hilderstone-teacher.jpg", "kids-hilderstone-lesson.jpg"],
-  "hilderstone-testimonials": ["hilderstone-testimonial-1.jpg", "hilderstone-testimonial-2.jpg", "hilderstone-testimonial-3.jpg"],
-  "teachers-testimonials": ["teachers-testimonial-1.jpg", "teachers-testimonial-2.jpg", "teachers-testimonial-3.jpg"],
-  "partnership-gallery": ["partnership-hero.jpg", "rost-meeting.jpg", "rost-collaboration.jpg", "partnership-rost-sotrudnichestvo.jpg"],
-  "partnership-testimonials": ["partnership-testimonial-1.jpg", "partnership-testimonial-2.jpg", "partnership-testimonial-3.jpg"],
-  "uchitelya-testimonials": ["uchitelya-testimonial-1.jpg", "uchitelya-testimonial-2.jpg", "uchitelya-testimonial-3.jpg"],
-  "fest-gallery": ["fest-gallery-1.jpg", "fest-gallery-2.jpg", "fest-gallery-3.jpg", "fest-gallery-4.jpg"],
-  "fest-testimonials": ["fest-testimonial-1.jpg", "fest-testimonial-2.jpg", "fest-testimonial-3.jpg", "fest-testimonial-4.jpg"]
+    "china-gallery": [
+        "china-beijing-why.jpg",
+        "china-shanghai-why.jpg",
+        "china-suzhou-why.jpg",
+        "china-hangzhou-why.jpg",
+        "china-nanjing-why.jpg"
+    ],
+    "china-testimonials": [
+        "china-testimonial-1.jpg",
+        "china-testimonial-2.jpg",
+        "china-testimonial-3.jpg",
+        "china-testimonial-4.jpg"
+    ],
+    "uae-why": [
+        "uae-beach-why.jpg",
+        "uae-abudhabi-why.jpg",
+        "uae-museum-why.jpg",
+        "uae-mall-why.jpg",
+        "uae-yacht-why.jpg"
+    ],
+    "uae-testimonials": [
+        "uae-testimonial-1.jpg",
+        "uae-testimonial-2.jpg",
+        "uae-testimonial-3.jpg"
+    ],
+    "altai-hook": [
+        "altai-patmos-why.jpg",
+        "altai-waterfall-why.jpg",
+        "altai-swimming-why.jpg",
+        "altai-campfire-why.jpg",
+        "altai-workshop.jpg"
+    ],
+    "altai-testimonials": [
+        "altai-testimonial-1.jpg",
+        "altai-testimonial-2.jpg",
+        "altai-testimonial-3.jpg"
+    ],
+    "sea-why": [
+        "sea-english-why.jpg",
+        "sea-dance-why.jpg",
+        "sea-projects-why.jpg",
+        "sea-psychology-why.jpg",
+        "sea-resort.jpg"
+    ],
+    "sea-testimonials": [
+        "sea-testimonial-1.jpg",
+        "sea-testimonial-2.jpg",
+        "sea-testimonial-3.jpg",
+        "sea-testimonial-4.jpg",
+        "sea-testimonial-5.jpg"
+    ],
+    "kanikuly-gallery": [
+        "kanikuly-meetings.jpg",
+        "kanikuly-kids-tour.jpg",
+        "kanikuly-partnership.jpg",
+        "kanikuly-teachers-workshop.jpg"
+    ],
+    "kanikuly-testimonials": [
+        "kanikuly-testimonial-1.jpg",
+        "kanikuly-testimonial-2.jpg",
+        "kanikuly-testimonial-3.jpg",
+        "kanikuly-testimonial-4.jpg",
+        "kanikuly-testimonial-5.jpg"
+    ],
+    "hilderstone-why": [
+        "kids-hilderstone-college.jpg",
+        "kids-hilderstone-teacher.jpg",
+        "kids-hilderstone-lesson.jpg"
+    ],
+    "hilderstone-testimonials": [
+        "hilderstone-testimonial-1.jpg",
+        "hilderstone-testimonial-2.jpg",
+        "hilderstone-testimonial-3.jpg"
+    ],
+    "teachers-testimonials": [
+        "teachers-testimonial-1.jpg",
+        "teachers-testimonial-2.jpg",
+        "teachers-testimonial-3.jpg"
+    ],
+    "partnership-gallery": [
+        "partnership-hero.jpg",
+        "rost-meeting.jpg",
+        "rost-collaboration.jpg",
+        "partnership-rost-sotrudnichestvo.jpg"
+    ],
+    "partnership-testimonials": [
+        "partnership-testimonial-1.jpg",
+        "partnership-testimonial-2.jpg",
+        "partnership-testimonial-3.jpg"
+    ],
+    "uchitelya-testimonials": [
+        "uchitelya-testimonial-1.jpg",
+        "uchitelya-testimonial-2.jpg",
+        "uchitelya-testimonial-3.jpg"
+    ],
+    "fest-gallery": [
+        "fest-gallery-1.jpg",
+        "fest-gallery-2.jpg",
+        "fest-gallery-3.jpg",
+        "fest-gallery-4.jpg"
+    ],
+    "fest-testimonials": [
+        "fest-testimonial-1.jpg",
+        "fest-testimonial-2.jpg",
+        "fest-testimonial-3.jpg",
+        "fest-testimonial-4.jpg"
+    ]
 }
