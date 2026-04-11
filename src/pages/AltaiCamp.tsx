@@ -7,23 +7,24 @@ import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import PhotoLightbox from "@/components/PhotoLightbox";
 import ContactFormModal from "@/components/ContactFormModal";
+import { useCarousel } from '@/hooks/useCarousel';
 
 const heroBg = "/assets/altai-hero.jpg";
 const altaiPatmos = "/assets/altai-patmos.jpg";
-const altaiPatmosWhy = "/assets/altai-patmos-why.jpg";
+
 const altaiPatmosSafety = "/assets/altai-patmos-safety.jpg";
 const altaiWaterfall = "/assets/altai-waterfall.jpg";
-const altaiWaterfallWhy = "/assets/altai-waterfall-why.jpg";
+
 const altaiSwimming = "/assets/altai-swimming.jpg";
-const altaiSwimmingWhy = "/assets/altai-swimming-why.jpg";
+
 const altaiSwimmingSafety = "/assets/altai-swimming-safety.jpg";
 const altaiCampfire = "/assets/altai-campfire.jpg";
-const altaiCampfireWhy = "/assets/altai-campfire-why.jpg";
+
 const altaiCampfireSafety = "/assets/altai-campfire-safety.jpg";
 const altaiCampfireReceipt = "/assets/altai-campfire-receipt.jpg";
 const altaiCottages = "/assets/altai-cottages.jpg";
 const altaiCottagesSafety = "/assets/altai-cottages-safety.jpg";
-const altaiWorkshop = "/assets/altai-workshop.jpg";
+
 const altaiWorkshopSafety = "/assets/altai-workshop-safety.jpg";
 const altaiWorkshopReceipt = "/assets/altai-workshop-receipt.jpg";
 const altaiDining = "/assets/altai-dining.jpg";
@@ -93,14 +94,6 @@ const daySchedule = [
 }];
 
 
-const altaiTestimonial1 = "/assets/altai-testimonial-1.jpg";
-const altaiTestimonial2 = "/assets/altai-testimonial-2.jpg";
-const altaiTestimonial3 = "/assets/altai-testimonial-3.jpg";
-
-const testimonials = [
-{ id: 1, image: altaiTestimonial1 },
-{ id: 2, image: altaiTestimonial2 },
-{ id: 3, image: altaiTestimonial3 }];
 
 
 const otherPrograms = [
@@ -145,7 +138,8 @@ const AltaiCamp = () => {
   const [dayUserPaused, setDayUserPaused] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
 
-  const hookPhotos = [altaiPatmosWhy, altaiWaterfallWhy, altaiSwimmingWhy, altaiCampfireWhy, altaiWorkshop];
+  const hookPhotos = useCarousel('altai-hook');
+  const testimonialPhotos = useCarousel('altai-testimonials');
 
   const dayRef = useRef<HTMLDivElement>(null);
   const spotRef = useVisibilityPause(setSpotPaused);
@@ -171,17 +165,17 @@ const AltaiCamp = () => {
   }, []);
 
   const nextSlide = useCallback(() => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-  }, []);
+    setCurrentTestimonial((prev) => (prev + 1) % testimonialPhotos.length);
+  }, [testimonialPhotos.length]);
 
   useEffect(() => {
-    if (isPaused || zoomed !== null) return;
+    if (isPaused || zoomed !== null || testimonialPhotos.length === 0) return;
     const interval = setInterval(nextSlide, 3500);
     return () => clearInterval(interval);
-  }, [isPaused, zoomed, nextSlide]);
+  }, [isPaused, zoomed, nextSlide, testimonialPhotos.length]);
 
   useEffect(() => {
-    if (hookPaused) return;
+    if (hookPaused || hookPhotos.length === 0) return;
     const interval = setInterval(() => {
       setHookSlide((prev) => (prev + 1) % hookPhotos.length);
     }, 3500);
@@ -679,29 +673,29 @@ const AltaiCamp = () => {
                 onMouseLeave={() => {setIsPaused(false);setZoomed(null);}}>
                 
                 <AnimatePresence>
-                  {testimonials.map((item, i) => {
-                    const offset = (i - currentTestimonial + testimonials.length) % testimonials.length;
+                  {testimonialPhotos.map((photo, i) => {
+                    const offset = (i - currentTestimonial + testimonialPhotos.length) % testimonialPhotos.length;
                     if (offset > 4) return null;
-                    const isZoomed = zoomed === item.id;
+                    const isZoomed = zoomed === i;
                     return (
                       <motion.div
-                        key={item.id}
+                        key={i}
                         initial={{ opacity: 0, scale: 0.9, y: 30 }}
                         animate={{
                           opacity: isZoomed ? 1 : offset === 0 ? 1 : 0.55 - offset * 0.1,
                           scale: isZoomed ? 1.08 : 1 - offset * 0.045,
                           y: isZoomed ? -8 : offset * 18,
                           x: isZoomed ? 0 : offset * 10,
-                          zIndex: isZoomed ? 100 : testimonials.length - offset,
+                          zIndex: isZoomed ? 100 : testimonialPhotos.length - offset,
                           rotateZ: isZoomed ? 0 : offset * -2
                         }}
                         exit={{ opacity: 0, scale: 0.9, y: -20 }}
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         className="absolute inset-0 cursor-pointer"
-                        onClick={() => offset === 0 && setZoomed(isZoomed ? null : item.id)}>
-                        
+                        onClick={() => offset === 0 && setZoomed(isZoomed ? null : i)}>
+
                         <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl bg-background">
-                          <img src={item.image} alt={`Отзыв ${item.id}`} className="w-full h-full object-cover" />
+                          <img src={photo} alt={`Отзыв ${i + 1}`} className="w-full h-full object-cover" />
                         </div>
                       </motion.div>);
 

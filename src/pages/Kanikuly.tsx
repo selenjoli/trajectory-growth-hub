@@ -5,6 +5,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import PhotoLightbox from "@/components/PhotoLightbox";
+import { useCarousel } from "@/hooks/useCarousel";
 const heroBg = "/assets/kanikuly-hero.jpg";
 const illustChina = "/assets/kanikuly-illust-china.png";
 const illustSea = "/assets/kanikuly-illust-sea.png";
@@ -15,10 +16,6 @@ const illustH2 = "/assets/kanikuly-illust-hilderstone2.png";
 const faqSafety = "/assets/faq-safety.jpg";
 const faqResult = "/assets/faq-result.jpg";
 const faqCost = "/assets/faq-cost.jpg";
-const meetingsImg = "/assets/kanikuly-meetings.jpg";
-const kidsImg = "/assets/kanikuly-kids-tour.jpg";
-const partnershipImg = "/assets/kanikuly-partnership.jpg";
-const teachersImg = "/assets/kanikuly-teachers-workshop.jpg";
 const russiaMap = "/assets/kanikuly-russia-map.png";
 const whyConfidence = "/assets/why-confidence.png";
 const whyWorld = "/assets/why-world.png";
@@ -142,19 +139,6 @@ const whyItems = [
   { title: "Друзья", text: "Дружба, которая завязывается в поездке, обычно оказывается крепче школьной. Многие ребята общаются годами.", image: whyFriends },
 ];
 
-const kanikulyTestimonial1 = "/assets/kanikuly-testimonial-1.jpg";
-const kanikulyTestimonial2 = "/assets/kanikuly-testimonial-2.jpg";
-const kanikulyTestimonial3 = "/assets/kanikuly-testimonial-3.jpg";
-const kanikulyTestimonial4 = "/assets/kanikuly-testimonial-4.jpg";
-const kanikulyTestimonial5 = "/assets/kanikuly-testimonial-5.jpg";
-
-const testimonials = [
-  { id: 1, image: kanikulyTestimonial1 },
-  { id: 2, image: kanikulyTestimonial2 },
-  { id: 3, image: kanikulyTestimonial3 },
-  { id: 4, image: kanikulyTestimonial4 },
-  { id: 5, image: kanikulyTestimonial5 },
-];
 
 const safety = [
   { title: "Сопровождающие", text: "С каждой группой едут педагоги с опытом работы с детьми в нестандартных ситуациях.", image: safetyGuides },
@@ -164,11 +148,12 @@ const safety = [
   { title: "Документы", text: "Визы, страховки, разрешения — помогаем оформить всё.", image: safetyDocs },
 ];
 
-const carouselImages = [meetingsImg, kidsImg, partnershipImg, teachersImg];
-
 /* ─── page ─── */
 
 const Kanikuly = () => {
+  const carouselImages = useCarousel('kanikuly-gallery');
+  const testimonialPhotos = useCarousel('kanikuly-testimonials');
+
   const [currentImg, setCurrentImg] = useState(0);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -177,21 +162,22 @@ const Kanikuly = () => {
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
   useEffect(() => {
+    if (carouselImages.length === 0) return;
     const interval = setInterval(() => {
       setCurrentImg((prev) => (prev + 1) % carouselImages.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [carouselImages.length]);
 
   const nextSlide = useCallback(() => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-  }, []);
+    setCurrentTestimonial((prev) => (prev + 1) % testimonialPhotos.length);
+  }, [testimonialPhotos.length]);
 
   useEffect(() => {
-    if (isPaused || zoomed !== null) return;
+    if (isPaused || zoomed !== null || testimonialPhotos.length === 0) return;
     const interval = setInterval(nextSlide, 3500);
     return () => clearInterval(interval);
-  }, [isPaused, zoomed, nextSlide]);
+  }, [isPaused, zoomed, nextSlide, testimonialPhotos.length]);
 
   return (
     <main className="space-y-4">
@@ -396,29 +382,29 @@ const Kanikuly = () => {
                 onMouseLeave={() => { setIsPaused(false); setZoomed(null); }}
               >
                 <AnimatePresence>
-                  {testimonials.map((item, i) => {
-                    const offset = (i - currentTestimonial + testimonials.length) % testimonials.length;
+                  {testimonialPhotos.map((photo, i) => {
+                    const offset = (i - currentTestimonial + testimonialPhotos.length) % testimonialPhotos.length;
                     if (offset > 4) return null;
-                    const isZoomed = zoomed === item.id;
+                    const isZoomed = zoomed === i;
                     return (
                       <motion.div
-                        key={item.id}
+                        key={i}
                         initial={{ opacity: 0, scale: 0.9, y: 30 }}
                         animate={{
                           opacity: isZoomed ? 1 : offset === 0 ? 1 : 0.55 - offset * 0.1,
                           scale: isZoomed ? 1.08 : 1 - offset * 0.045,
                           y: isZoomed ? -8 : offset * 18,
                           x: isZoomed ? 0 : offset * 10,
-                          zIndex: isZoomed ? 100 : testimonials.length - offset,
+                          zIndex: isZoomed ? 100 : testimonialPhotos.length - offset,
                           rotateZ: isZoomed ? 0 : offset * -2,
                         }}
                         exit={{ opacity: 0, scale: 0.9, y: -20 }}
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         className="absolute inset-0 cursor-pointer"
-                        onClick={() => offset === 0 && setZoomed(isZoomed ? null : item.id)}
+                        onClick={() => offset === 0 && setZoomed(isZoomed ? null : i)}
                       >
                         <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl bg-background">
-                          <img src={item.image} alt={`Отзыв ${item.id}`} className="w-full h-full object-cover" />
+                          <img src={photo} alt={`Отзыв ${i + 1}`} className="w-full h-full object-cover" />
                         </div>
                       </motion.div>
                     );
