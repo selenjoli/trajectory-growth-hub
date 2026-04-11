@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import PhotoLightbox from "@/components/PhotoLightbox";
 import ContactFormModal from "@/components/ContactFormModal";
+import { useCarousel } from '@/hooks/useCarousel';
 const smartCookiesLogo = "/assets/logos/smart-cookies.svg";
 const pershinaPhoto = "/assets/founders/pershina.jpg";
 const akademiyaLogo = "/assets/logos/akademiya-yazykov.png";
@@ -111,15 +112,6 @@ const members: Member[] = [
   { name: "Вера Романова", school: "SPU", city: "Тамбов", logo: spuLogo },
 ];
 
-const partnershipTestimonial1 = "/assets/partnership-testimonial-1.jpg";
-const partnershipTestimonial2 = "/assets/partnership-testimonial-2.jpg";
-const partnershipTestimonial3 = "/assets/partnership-testimonial-3.jpg";
-
-const testimonials = [
-  { id: 1, image: partnershipTestimonial1 },
-  { id: 2, image: partnershipTestimonial2 },
-  { id: 3, image: partnershipTestimonial3 },
-];
 
 /* ---- gold gradient ---- */
 const gold = "bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500 bg-clip-text text-transparent";
@@ -187,21 +179,22 @@ const Partnership = () => {
   /* gallery for pain block */
   const [gallerySlide, setGallerySlide] = useState(0);
   const [galleryPaused, setGalleryPaused] = useState(false);
-  const galleryPhotos = [heroImg, meetingImg, collaborationImg, sotrudnichestvoImg];
+  const galleryPhotos = useCarousel('partnership-gallery');
+  const testimonialPhotos = useCarousel('partnership-testimonials');
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [lightboxPhotos, setLightboxPhotos] = useState<string[]>([]);
   const [formOpen, setFormOpen] = useState(false);
 
   const nextSlide = useCallback(() => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-  }, []);
+    setCurrentTestimonial((prev) => (prev + 1) % testimonialPhotos.length);
+  }, [testimonialPhotos.length]);
 
   useEffect(() => {
-    if (isPaused || zoomed !== null) return;
+    if (isPaused || zoomed !== null || testimonialPhotos.length === 0) return;
     const interval = setInterval(nextSlide, 3500);
     return () => clearInterval(interval);
-  }, [isPaused, zoomed, nextSlide]);
+  }, [isPaused, zoomed, nextSlide, testimonialPhotos.length]);
 
   useEffect(() => {
     if (galleryPaused) return;
@@ -453,29 +446,29 @@ const Partnership = () => {
                 onMouseLeave={() => { setIsPaused(false); setZoomed(null); }}
               >
                 <AnimatePresence>
-                  {testimonials.map((item, i) => {
-                    const offset = (i - currentTestimonial + testimonials.length) % testimonials.length;
+                  {testimonialPhotos.map((photo, i) => {
+                    const offset = (i - currentTestimonial + testimonialPhotos.length) % testimonialPhotos.length;
                     if (offset > 4) return null;
-                    const isZoomed = zoomed === item.id;
+                    const isZoomed = zoomed === i;
                     return (
                       <motion.div
-                        key={item.id}
+                        key={i}
                         initial={{ opacity: 0, scale: 0.9, y: 30 }}
                         animate={{
                           opacity: isZoomed ? 1 : offset === 0 ? 1 : 0.55 - offset * 0.1,
                           scale: isZoomed ? 1.08 : 1 - offset * 0.045,
                           y: isZoomed ? -8 : offset * 18,
                           x: isZoomed ? 0 : offset * 10,
-                          zIndex: isZoomed ? 100 : testimonials.length - offset,
+                          zIndex: isZoomed ? 100 : testimonialPhotos.length - offset,
                           rotateZ: isZoomed ? 0 : offset * -2,
                         }}
                         exit={{ opacity: 0, scale: 0.9, y: -20 }}
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         className="absolute inset-0 cursor-pointer"
-                        onClick={() => offset === 0 && setZoomed(isZoomed ? null : item.id)}
+                        onClick={() => offset === 0 && setZoomed(isZoomed ? null : i)}
                       >
                         <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl bg-background">
-                          <img src={item.image} alt={`Отзыв ${item.id}`} className="w-full h-full object-cover" />
+                          <img src={photo} alt={`Отзыв ${i + 1}`} className="w-full h-full object-cover" />
                         </div>
                       </motion.div>
                     );

@@ -5,6 +5,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import ContactFormModal from "@/components/ContactFormModal";
+import { useCarousel } from "@/hooks/useCarousel";
 
 const heroBg = "/assets/teachers-hilderstone-hero.jpg";
 const collegePic = "/assets/teachers-hilderstone-college.jpg";
@@ -24,17 +25,7 @@ const outcomeTelegram = "/assets/teachers-outcome-telegram.jpg";
 const outcomeMaterials = "/assets/teachers-outcome-materials.jpg";
 const outcomeRecording = "/assets/teachers-outcome-recording.jpg";
 
-const testimonial1 = "/assets/teachers-testimonial-1.jpg";
-const testimonial2 = "/assets/teachers-testimonial-2.jpg";
-const testimonial3 = "/assets/teachers-testimonial-3.jpg";
-
 /* ---- data ---- */
-
-const testimonials = [
-  { id: 1, image: testimonial1 },
-  { id: 2, image: testimonial2 },
-  { id: 3, image: testimonial3 },
-];
 
 const programDays = [
   { day: 1, title: "Language & Culture Unlocked", desc: "Как говорить с учениками о современном мире через язык. Современные медиа и культурный контекст, развитие межкультурной осознанности." },
@@ -64,20 +55,22 @@ const gold = "bg-gradient-to-r from-amber-300 via-amber-200 via-40% to-amber-500
 /* ---- page ---- */
 
 const TeachersCourse = () => {
+  const testimonialPhotos = useCarousel('teachers-testimonials');
+
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [zoomed, setZoomed] = useState<number | null>(null);
   const [formOpen, setFormOpen] = useState(false);
 
   const nextSlide = useCallback(() => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-  }, []);
+    setCurrentTestimonial((prev) => (prev + 1) % testimonialPhotos.length);
+  }, [testimonialPhotos.length]);
 
   useEffect(() => {
-    if (isPaused || zoomed !== null) return;
+    if (isPaused || zoomed !== null || testimonialPhotos.length === 0) return;
     const interval = setInterval(nextSlide, 3500);
     return () => clearInterval(interval);
-  }, [isPaused, zoomed, nextSlide]);
+  }, [isPaused, zoomed, nextSlide, testimonialPhotos.length]);
 
   return (
     <main className="bg-program-teachers">
@@ -494,29 +487,29 @@ const TeachersCourse = () => {
                 onMouseLeave={() => { setIsPaused(false); setZoomed(null); }}
               >
                 <AnimatePresence>
-                  {testimonials.map((item, i) => {
-                    const offset = (i - currentTestimonial + testimonials.length) % testimonials.length;
+                  {testimonialPhotos.map((photo, i) => {
+                    const offset = (i - currentTestimonial + testimonialPhotos.length) % testimonialPhotos.length;
                     if (offset > 4) return null;
-                    const isZoomed = zoomed === item.id;
+                    const isZoomed = zoomed === i;
                     return (
                       <motion.div
-                        key={item.id}
+                        key={i}
                         initial={{ opacity: 0, scale: 0.9, y: 30 }}
                         animate={{
                           opacity: isZoomed ? 1 : offset === 0 ? 1 : 0.55 - offset * 0.1,
                           scale: isZoomed ? 1.08 : 1 - offset * 0.045,
                           y: isZoomed ? -8 : offset * 18,
                           x: isZoomed ? 0 : offset * 10,
-                          zIndex: isZoomed ? 100 : testimonials.length - offset,
+                          zIndex: isZoomed ? 100 : testimonialPhotos.length - offset,
                           rotateZ: isZoomed ? 0 : offset * -2,
                         }}
                         exit={{ opacity: 0, scale: 0.9, y: -20 }}
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         className="absolute inset-0 cursor-pointer"
-                        onClick={() => offset === 0 && setZoomed(isZoomed ? null : item.id)}
+                        onClick={() => offset === 0 && setZoomed(isZoomed ? null : i)}
                       >
                         <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl bg-background">
-                          <img src={item.image} alt={`Отзыв ${item.id}`} className="w-full h-full object-cover" />
+                          <img src={photo} alt={`Отзыв ${i + 1}`} className="w-full h-full object-cover" />
                         </div>
                       </motion.div>
                     );

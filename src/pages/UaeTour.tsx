@@ -7,21 +7,17 @@ import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import PhotoLightbox from "@/components/PhotoLightbox";
 import ContactFormModal from "@/components/ContactFormModal";
+import { useCarousel } from "@/hooks/useCarousel";
 
 const heroBg = "/assets/uae-hero.jpg";
 const uaeBeach = "/assets/uae-beach.jpg";
-const uaeBeachWhy = "/assets/uae-beach-why.jpg";
 const uaeAbudhabi = "/assets/uae-abudhabi.jpg";
-const uaeAbudhabiWhy = "/assets/uae-abudhabi-why.jpg";
 const uaeMuseum = "/assets/uae-museum.jpg";
 const uaeMuseumReceipt = "/assets/uae-museum-receipt.jpg";
-const uaeMuseumWhy = "/assets/uae-museum-why.jpg";
 const uaeMall = "/assets/uae-mall.jpg";
-const uaeMallWhy = "/assets/uae-mall-why.jpg";
 const uaeFerrari = "/assets/uae-ferrari.jpg";
 const uaeYacht = "/assets/uae-yacht.jpg";
 const uaeYachtReceipt = "/assets/uae-yacht-receipt.jpg";
-const uaeYachtWhy = "/assets/uae-yacht-why.jpg";
 const uaeCampus = "/assets/uae-campus.jpg";
 const illustChina = "/assets/uae-illust-china.png";
 const illustSea = "/assets/uae-illust-sea.png";
@@ -59,15 +55,6 @@ const campusFeatures = [
   "Визит в реальную компанию, живой разговор с предпринимателями",
 ];
 
-const uaeTestimonial1 = "/assets/uae-testimonial-1.jpg";
-const uaeTestimonial2 = "/assets/uae-testimonial-2.jpg";
-const uaeTestimonial3 = "/assets/uae-testimonial-3.jpg";
-
-const testimonials = [
-  { id: 1, image: uaeTestimonial1 },
-  { id: 2, image: uaeTestimonial2 },
-  { id: 3, image: uaeTestimonial3 },
-];
 
 const otherPrograms = [
   { title: "Китай", illustration: illustChina, illustClass: "h-24 w-auto", dates: "3–12 июня", price: "от 165 000 ₽", href: "/kanikuly/china" },
@@ -89,14 +76,15 @@ const UaeTour = () => {
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [formOpen, setFormOpen] = useState(false);
 
-  const whyPhotos = [uaeBeachWhy, uaeAbudhabiWhy, uaeMuseumWhy, uaeMallWhy, uaeYachtWhy];
+  const whyPhotos = useCarousel("uae-why");
+  const testimonialPhotos = useCarousel("uae-testimonials");
 
   const nextSlide = useCallback(() => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-  }, []);
+    setCurrentTestimonial((prev) => (prev + 1) % testimonialPhotos.length);
+  }, [testimonialPhotos.length]);
 
   useEffect(() => {
-    if (isPaused || zoomed !== null) return;
+    if (isPaused || zoomed !== null || testimonialPhotos.length === 0) return;
     const interval = setInterval(nextSlide, 3500);
     return () => clearInterval(interval);
   }, [isPaused, zoomed, nextSlide]);
@@ -110,7 +98,7 @@ const UaeTour = () => {
   }, [dayPaused, currentDay]);
 
   useEffect(() => {
-    if (whyPaused) return;
+    if (whyPaused || whyPhotos.length === 0) return;
     const interval = setInterval(() => {
       setWhySlide((prev) => (prev + 1) % whyPhotos.length);
     }, 3500);
@@ -516,29 +504,29 @@ const UaeTour = () => {
                 onMouseLeave={() => { setIsPaused(false); setZoomed(null); }}
               >
                 <AnimatePresence>
-                  {testimonials.map((item, i) => {
-                    const offset = (i - currentTestimonial + testimonials.length) % testimonials.length;
+                  {testimonialPhotos.map((photo, i) => {
+                    const offset = (i - currentTestimonial + testimonialPhotos.length) % testimonialPhotos.length;
                     if (offset > 4) return null;
-                    const isZoomed = zoomed === item.id;
+                    const isZoomed = zoomed === i;
                     return (
                       <motion.div
-                        key={item.id}
+                        key={i}
                         initial={{ opacity: 0, scale: 0.9, y: 30 }}
                         animate={{
                           opacity: isZoomed ? 1 : offset === 0 ? 1 : 0.55 - offset * 0.1,
                           scale: isZoomed ? 1.08 : 1 - offset * 0.045,
                           y: isZoomed ? -8 : offset * 18,
                           x: isZoomed ? 0 : offset * 10,
-                          zIndex: isZoomed ? 100 : testimonials.length - offset,
+                          zIndex: isZoomed ? 100 : testimonialPhotos.length - offset,
                           rotateZ: isZoomed ? 0 : offset * -2,
                         }}
                         exit={{ opacity: 0, scale: 0.9, y: -20 }}
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         className="absolute inset-0 cursor-pointer"
-                        onClick={() => offset === 0 && setZoomed(isZoomed ? null : item.id)}
+                        onClick={() => offset === 0 && setZoomed(isZoomed ? null : i)}
                       >
                         <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl bg-background">
-                          <img src={item.image} alt={`Отзыв ${item.id}`} className="w-full h-full object-cover" />
+                          <img src={photo} alt={`Отзыв ${i + 1}`} className="w-full h-full object-cover" />
                         </div>
                       </motion.div>
                     );

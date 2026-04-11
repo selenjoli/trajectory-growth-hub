@@ -6,19 +6,20 @@ import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import PhotoLightbox from "@/components/PhotoLightbox";
 import ContactFormModal from "@/components/ContactFormModal";
+import { useCarousel } from '@/hooks/useCarousel';
 
 const heroBg = "/assets/sea-hero.jpg";
 const seaEnglish = "/assets/sea-english.jpg";
-const seaEnglishWhy = "/assets/sea-english-why.jpg";
+
 const seaDance = "/assets/sea-dance.jpg";
-const seaDanceWhy = "/assets/sea-dance-why.jpg";
+
 const seaDanceReceipt = "/assets/sea-dance-receipt.jpg";
 const seaProjects = "/assets/sea-projects.jpg";
-const seaProjectsWhy = "/assets/sea-projects-why.jpg";
+
 const seaPsychology = "/assets/sea-psychology.jpg";
-const seaPsychologyWhy = "/assets/sea-psychology-why.jpg";
+
 const seaPsychologyReceipt = "/assets/sea-psychology-receipt.jpg";
-const seaResort = "/assets/sea-resort.jpg";
+
 const seaResortSection = "/assets/sea-resort-section.jpg";
 const seaMap = "/assets/sea-map.png";
 const facilityRooms = "/assets/facility-rooms.jpg";
@@ -78,18 +79,6 @@ const facilities = [
 { image: facilityGuide, text: "Сопровождающий от ассоциации 24/7" }];
 
 
-const seaTestimonial1 = "/assets/sea-testimonial-1.jpg";
-const seaTestimonial2 = "/assets/sea-testimonial-2.jpg";
-const seaTestimonial3 = "/assets/sea-testimonial-3.jpg";
-const seaTestimonial4 = "/assets/sea-testimonial-4.jpg";
-const seaTestimonial5 = "/assets/sea-testimonial-5.jpg";
-
-const testimonials = [
-{ id: 1, image: seaTestimonial1 },
-{ id: 2, image: seaTestimonial2 },
-{ id: 3, image: seaTestimonial3 },
-{ id: 4, image: seaTestimonial4 },
-{ id: 5, image: seaTestimonial5 }];
 
 
 const otherPrograms = [
@@ -110,21 +99,22 @@ const SeaCamp = () => {
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [formOpen, setFormOpen] = useState(false);
 
-  const whyPhotos = [seaEnglishWhy, seaDanceWhy, seaProjectsWhy, seaPsychologyWhy, seaResort];
+  const whyPhotos = useCarousel('sea-why');
+  const testimonialPhotos = useCarousel('sea-testimonials');
 
   const nextSlide = useCallback(() => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-  }, []);
+    setCurrentTestimonial((prev) => (prev + 1) % testimonialPhotos.length);
+  }, [testimonialPhotos.length]);
 
   useEffect(() => {
-    if (isPaused || zoomed !== null) return;
+    if (isPaused || zoomed !== null || testimonialPhotos.length === 0) return;
     const interval = setInterval(nextSlide, 3500);
     return () => clearInterval(interval);
-  }, [isPaused, zoomed, nextSlide]);
+  }, [isPaused, zoomed, nextSlide, testimonialPhotos.length]);
 
 
   useEffect(() => {
-    if (whyPaused) return;
+    if (whyPaused || whyPhotos.length === 0) return;
     const interval = setInterval(() => {
       setWhySlide((prev) => (prev + 1) % whyPhotos.length);
     }, 3500);
@@ -439,29 +429,29 @@ const SeaCamp = () => {
                 onMouseLeave={() => {setIsPaused(false);setZoomed(null);}}>
                 
                 <AnimatePresence>
-                  {testimonials.map((item, i) => {
-                    const offset = (i - currentTestimonial + testimonials.length) % testimonials.length;
+                  {testimonialPhotos.map((photo, i) => {
+                    const offset = (i - currentTestimonial + testimonialPhotos.length) % testimonialPhotos.length;
                     if (offset > 4) return null;
-                    const isZoomed = zoomed === item.id;
+                    const isZoomed = zoomed === i;
                     return (
                       <motion.div
-                        key={item.id}
+                        key={i}
                         initial={{ opacity: 0, scale: 0.9, y: 30 }}
                         animate={{
                           opacity: isZoomed ? 1 : offset === 0 ? 1 : 0.55 - offset * 0.1,
                           scale: isZoomed ? 1.08 : 1 - offset * 0.045,
                           y: isZoomed ? -8 : offset * 18,
                           x: isZoomed ? 0 : offset * 10,
-                          zIndex: isZoomed ? 100 : testimonials.length - offset,
+                          zIndex: isZoomed ? 100 : testimonialPhotos.length - offset,
                           rotateZ: isZoomed ? 0 : offset * -2
                         }}
                         exit={{ opacity: 0, scale: 0.9, y: -20 }}
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         className="absolute inset-0 cursor-pointer"
-                        onClick={() => offset === 0 && setZoomed(isZoomed ? null : item.id)}>
-                        
+                        onClick={() => offset === 0 && setZoomed(isZoomed ? null : i)}>
+
                         <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl bg-background">
-                          <img src={item.image} alt={`Отзыв ${item.id}`} className="w-full h-full object-cover" />
+                          <img src={photo} alt={`Отзыв ${i + 1}`} className="w-full h-full object-cover" />
                         </div>
                       </motion.div>);
 

@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import PhotoLightbox from "@/components/PhotoLightbox";
 import ContactFormModal from "@/components/ContactFormModal";
+import { useCarousel } from "@/hooks/useCarousel";
 
 const heroBg = "/assets/kids-hilderstone-hero.jpg";
 const collegePic = "/assets/kids-hilderstone-college.jpg";
@@ -23,16 +24,6 @@ const illustUae = "/assets/kids-illust-uae.svg";
 
 /* ---- data ---- */
 
-const hilderstoneTestimonial1 = "/assets/hilderstone-testimonial-1.jpg";
-const hilderstoneTestimonial2 = "/assets/hilderstone-testimonial-2.jpg";
-const hilderstoneTestimonial3 = "/assets/hilderstone-testimonial-3.jpg";
-
-const testimonials = [
-  { id: 1, image: hilderstoneTestimonial1 },
-  { id: 2, image: hilderstoneTestimonial2 },
-  { id: 3, image: hilderstoneTestimonial3 },
-];
-
 const otherPrograms = [
   { title: "Китай", illustration: illustChina, dates: "3–12 июня", price: "от 165 000 руб.", href: "/kanikuly/china" },
   { title: "Море", illustration: illustSea, dates: "24 июня — 14 июля", price: "от 134 000 руб.", href: "/kanikuly/more" },
@@ -40,11 +31,12 @@ const otherPrograms = [
   { title: "Дубай", illustration: illustUae, dates: "Даты уточняются", price: "от 145 000 руб.", href: "/kanikuly/uae" },
 ];
 
-const whyPhotos = [collegePic, teacherPic, lessonPic];
-
 /* ---- page ---- */
 
 const HilderstoneCourse = () => {
+  const whyPhotos = useCarousel('hilderstone-why');
+  const testimonialPhotos = useCarousel('hilderstone-testimonials');
+
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [zoomed, setZoomed] = useState<number | null>(null);
@@ -55,22 +47,22 @@ const HilderstoneCourse = () => {
   const [formOpen, setFormOpen] = useState(false);
 
   const nextSlide = useCallback(() => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-  }, []);
+    setCurrentTestimonial((prev) => (prev + 1) % testimonialPhotos.length);
+  }, [testimonialPhotos.length]);
 
   useEffect(() => {
-    if (isPaused || zoomed !== null) return;
+    if (isPaused || zoomed !== null || testimonialPhotos.length === 0) return;
     const interval = setInterval(nextSlide, 3500);
     return () => clearInterval(interval);
-  }, [isPaused, zoomed, nextSlide]);
+  }, [isPaused, zoomed, nextSlide, testimonialPhotos.length]);
 
   useEffect(() => {
-    if (whyPaused) return;
+    if (whyPaused || whyPhotos.length === 0) return;
     const interval = setInterval(() => {
       setWhySlide((prev) => (prev + 1) % whyPhotos.length);
     }, 3500);
     return () => clearInterval(interval);
-  }, [whyPaused]);
+  }, [whyPaused, whyPhotos.length]);
 
   return (
     <main className="bg-program-online">
@@ -355,29 +347,29 @@ const HilderstoneCourse = () => {
                 onMouseLeave={() => { setIsPaused(false); setZoomed(null); }}
               >
                 <AnimatePresence>
-                  {testimonials.map((item, i) => {
-                    const offset = (i - currentTestimonial + testimonials.length) % testimonials.length;
+                  {testimonialPhotos.map((photo, i) => {
+                    const offset = (i - currentTestimonial + testimonialPhotos.length) % testimonialPhotos.length;
                     if (offset > 4) return null;
-                    const isZoomed = zoomed === item.id;
+                    const isZoomed = zoomed === i;
                     return (
                       <motion.div
-                        key={item.id}
+                        key={i}
                         initial={{ opacity: 0, scale: 0.9, y: 30 }}
                         animate={{
                           opacity: isZoomed ? 1 : offset === 0 ? 1 : 0.55 - offset * 0.1,
                           scale: isZoomed ? 1.08 : 1 - offset * 0.045,
                           y: isZoomed ? -8 : offset * 18,
                           x: isZoomed ? 0 : offset * 10,
-                          zIndex: isZoomed ? 100 : testimonials.length - offset,
+                          zIndex: isZoomed ? 100 : testimonialPhotos.length - offset,
                           rotateZ: isZoomed ? 0 : offset * -2,
                         }}
                         exit={{ opacity: 0, scale: 0.9, y: -20 }}
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         className="absolute inset-0 cursor-pointer"
-                        onClick={() => offset === 0 && setZoomed(isZoomed ? null : item.id)}
+                        onClick={() => offset === 0 && setZoomed(isZoomed ? null : i)}
                       >
                         <div className="w-full h-full rounded-[1.2rem] overflow-hidden shadow-2xl bg-background">
-                          <img src={item.image} alt={`Отзыв ${item.id}`} className="w-full h-full object-cover" />
+                          <img src={photo} alt={`Отзыв ${i + 1}`} className="w-full h-full object-cover" />
                         </div>
                       </motion.div>
                     );
