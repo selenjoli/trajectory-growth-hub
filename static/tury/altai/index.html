@@ -1,0 +1,261 @@
+<!doctype html><html lang=ru><head><meta charset=utf-8><base href="../"><meta name=description content="Лагерь на Алтае: 10–17 лет, 15 дней, лето 2027."><meta name=viewport content="width=device-width,initial-scale=1">
+<title>Лагерь на Алтае 2027 — Траектория РОСТА</title>
+<meta name="description" content="Лагерь на Алтае летом 2027: 15 дней в горах для детей 10–17 лет. Английский каждый день, походы к водопаду, костры, мастерские и друзья из разных городов.">
+<link rel="canonical" href="https://rostedu.ru/kanikuly/altai/">
+<link rel="icon" href="/favicon.ico">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Траектория РОСТА">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Лагерь на Алтае 2027 — Траектория РОСТА">
+<meta property="og:description" content="Лагерь на Алтае летом 2027: 15 дней в горах для детей 10–17 лет. Английский каждый день, походы к водопаду, костры, мастерские и друзья из разных городов.">
+<meta property="og:url" content="https://rostedu.ru/kanikuly/altai/">
+<style>
+/* Страница туров: слева живая виньетка тура (WebGL: параллакс по глубине, ветер, огни, акварельные края),
+   слева иконки туров, справа белая плашка. Смена тура — «проезд»: старая сцена уезжает вперёд и растворяется акварелью,
+   цвет фона перетекает, новая проявляется из глубины. Адрес меняется на #тур. */
+:root{--c:#C12E27;--navy:#27315D;--u:1px}
+/* заметки на всю страницу: одна кнопка снаружи (справа внизу), кнопки страницы в плашке спрятаны;
+   в режиме выбора места рамка не ловит клик — точку можно поставить и на сцене, и на плашке (Оля 03.11) */
+body.npick #page{pointer-events:none}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--c);color:var(--navy);font-family:Montserrat,system-ui,sans-serif;overflow:hidden}
+#fx{position:fixed;inset:0;width:100vw;height:100vh;display:block;pointer-events:none;z-index:1}
+/* сцена тура: видео-петля (неподвижная камера) под неподвижной акварельной маской; 1600×893 — система координат кадра */
+.world{position:fixed;inset:0;overflow:hidden;background:var(--c);transition:background-color 1.1s}
+.stage{position:absolute;bottom:-2vh;height:calc(100vh*var(--fit));aspect-ratio:1600/893;left:calc(-1*var(--ox)*100vh*var(--fit)*1600/893);background:center/100% 100% no-repeat;transform-origin:var(--vx,22%) var(--vy,80%);will-change:transform,opacity}
+.stage video{position:absolute;left:0;top:0;height:100%;object-fit:fill}
+.stage .ov{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.stage .pl canvas.haze{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;display:block}
+.stage .pl{position:absolute;left:-4%;top:-4%;width:108%;height:108%;background:center/100% 100% no-repeat;transform:translate(var(--px,0),var(--py,0));transition:transform .2s linear}
+/* маска двигается вместе с кадром — иначе на краях открывается видео */
+/* «проезд»: старая сцена уезжает вперёд к точке дороги и растворяется, новая подъезжает из глубины */
+.stage.out{animation:out 1.3s cubic-bezier(.5,0,.75,.35) forwards}
+@keyframes out{to{transform:scale(1.45);opacity:0;filter:blur(8px)}}
+.stage.in{animation:in 1.5s cubic-bezier(.2,.65,.3,1) both}
+@keyframes in{0%{transform:scale(.8);opacity:0;clip-path:circle(0% at var(--vx,22%) var(--vy,80%));filter:blur(6px)}35%{opacity:1}100%{transform:none;opacity:1;clip-path:circle(150% at var(--vx,22%) var(--vy,80%));filter:none}}
+.side{position:fixed;left:22px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:flex-start;gap:34px;z-index:4}
+/* меню разделов — круглая кнопка «⋯» в ряду туров; пункты раскрываются веером по дуге, как в Симс */
+.mw{position:relative;width:70px;height:70px}
+.mb{width:70px;height:70px;border-radius:50%;border:0;padding:0;cursor:pointer;background:#fff;display:grid;place-items:center;box-shadow:0 0 0 3px rgba(255,255,255,.55),0 10px 22px -10px rgba(0,0,0,.6);transition:transform .3s,background .3s}
+.mb svg{width:30px;height:30px;display:block;transition:transform .35s}
+.mb:hover{transform:scale(1.07)}
+.mw.open .mb{background:var(--navy)} .mw.open .mb svg{transform:rotate(90deg)} .mw.open .mb circle{fill:#fff}
+.mi{position:absolute;left:11px;top:11px;width:48px;height:48px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 10px 20px -10px rgba(0,0,0,.6);opacity:0;pointer-events:none;transform:translate(0,0) scale(.4);transition:transform .38s cubic-bezier(.3,1.4,.5,1),opacity .25s,background .25s;text-decoration:none;z-index:5}
+.mi svg{width:24px;height:24px;display:block;fill:none;stroke:var(--navy);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.mi b{position:absolute;left:calc(100% + 10px);top:50%;transform:translateY(-50%);padding:7px 12px;border-radius:999px;background:var(--navy);color:#fff;font:600 13px/1 Montserrat,system-ui,sans-serif;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
+.mi:hover{background:var(--navy)} .mi:hover svg{stroke:#fff} .mi:hover b{opacity:1}
+.mw.open .mi{opacity:1;pointer-events:auto;transform:translate(var(--x),var(--y)) scale(1)}
+.icons{display:flex;flex-direction:column;gap:16px}
+.icons>button{width:70px;height:70px;border-radius:50%;border:0;padding:0;cursor:pointer;background:center/cover no-repeat;box-shadow:0 0 0 3px rgba(255,255,255,.55),0 10px 22px -10px rgba(0,0,0,.6);opacity:.8;transition:transform .3s,opacity .3s,box-shadow .3s}
+.icons>button:hover{opacity:1;transform:scale(1.07)}
+.icons>button.on{opacity:1;transform:scale(1.14);box-shadow:0 0 0 4px #fff,0 12px 26px -10px rgba(0,0,0,.6)}
+.plate{position:fixed;top:24px;right:24px;bottom:24px;width:54vw;border-radius:28px;background:#fff;padding:0;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 30px 60px -30px rgba(0,0,0,.45);z-index:3}
+.plate>*{transition:opacity .35s,transform .45s}
+.plate.swap>*{opacity:0;transform:translateY(10px)}
+.phead{padding:clamp(22px,2.2vw,36px) clamp(24px,2.6vw,44px) 14px;border-bottom:1px solid #eee;display:grid;align-items:start}
+.phead{grid-template-columns:1fr auto;column-gap:24px}
+.phead>.tag,.phead>h1{grid-column:1}
+.phead>.tag{justify-self:start}
+.phead .vids{grid-column:2;grid-row:1/4;margin:0}
+.phead .thumb{width:84px}
+#page{flex:1;width:100%;border:0;display:block;background:#fff}
+.tag{display:inline-block;color:var(--c);font:700 12px/1 Montserrat,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;transition:color 1.1s}
+h1{margin:12px 0 4px;font:800 clamp(26px,2.3vw,40px)/1.05 Inter,system-ui,sans-serif;color:#121417}   /* чёрный, как заголовки сайта, не синий */
+.meta{grid-column:2;grid-row:1/3;align-self:end;margin:0 0 6px;color:var(--c);font:800 clamp(20px,1.8vw,30px)/1 Inter,system-ui,sans-serif;white-space:nowrap;transition:color 1.1s}
+.more{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 26px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;transition:background .3s}
+.more:hover{background:var(--c)}
+.vids{display:flex;gap:14px;margin:28px 0 0}
+.thumb{position:relative;width:140px;aspect-ratio:9/16;border-radius:16px;overflow:hidden;border:0;padding:0;cursor:pointer;background:#000}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb .pl{position:absolute;left:50%;top:50%;width:52px;height:52px;margin:-26px;border-radius:50%;background:rgba(255,255,255,.92)}
+.thumb .pl::after{content:"";position:absolute;left:20px;top:15px;border-left:17px solid var(--navy);border-block:11px solid transparent}
+.thumb.hidden{visibility:hidden}
+.hint{margin-top:30px;font-size:13px;opacity:.55;max-width:46em}
+.phone{position:fixed;left:max(110px,calc(23vw - 46vh*9/19.5));top:50%;height:92vh;aspect-ratio:9/19.5;transform:translateY(-50%);border-radius:44px;background:#111;padding:10px;box-shadow:0 40px 60px -30px rgba(0,0,0,.7);visibility:hidden;z-index:6}
+.phone video{width:100%;height:100%;object-fit:cover;border-radius:34px;display:block;background:#000}
+.phone .x{position:absolute;top:-14px;right:-14px;width:40px;height:40px;border-radius:50%;border:0;padding:0;background:#fff;cursor:pointer;display:grid;place-items:center;box-shadow:0 6px 14px -6px rgba(0,0,0,.5)}
+.phone .x svg{width:16px;height:16px;display:block}
+canvas.gen{position:fixed;inset:0;pointer-events:none;z-index:7}
+@media (max-width:760px){
+ html,body{overflow:auto}
+ .side{top:14px;left:50%;transform:translateX(-50%);align-items:center;gap:12px;width:calc(100% - 24px)}
+ .mw,.mb{width:52px;height:52px} .mi{left:6px;top:6px;width:40px;height:40px} .mi svg{width:20px;height:20px}
+ .mi b{left:50%;top:calc(100% + 6px);transform:translateX(-50%)}
+ .phead{grid-template-columns:1fr}
+ .meta{grid-column:1;grid-row:auto;justify-self:start;margin:8px 0 0}
+ .icons{flex-direction:row}
+ .icons>button{width:52px;height:52px}
+ .plate{position:relative;top:auto;right:auto;bottom:auto;width:auto;margin:66vh 12px 12px;height:85vh}
+ .stage{bottom:auto;top:70px}
+ .phone{left:50%;height:86vh;transform:translate(-50%,-50%)}
+}
+</style></head><body>
+<div class=world id=world></div><canvas id=fx></canvas>
+<div class=side>
+ <nav class=icons aria-label="Туры"><div class=mw id=mw><button class=mb id=mb aria-label="Разделы сайта" aria-expanded=false><svg viewBox="0 0 30 30"><circle cx="7" cy="15" r="2.6" fill="#27315D"/><circle cx="15" cy="15" r="2.6" fill="#27315D"/><circle cx="23" cy="15" r="2.6" fill="#27315D"/></svg></button>
+  <a class=mi href="/" aria-label="Главная"><svg viewBox="0 0 24 24"><path d="M3.5 11 12 4l8.5 7"/><path d="M6 9.5V20h4.5v-5.5h3V20H18V9.5"/></svg><b>Главная</b></a>
+  <a class=mi href="/uchitelya/" aria-label="Учителям"><svg viewBox="0 0 24 24"><path d="M2 9.5 12 5l10 4.5-10 4.5z"/><path d="M6.5 11.5v4.5c0 1.6 2.5 3 5.5 3s5.5-1.4 5.5-3v-4.5"/><path d="M22 9.5v5"/></svg><b>Учителям</b></a>
+  <a class=mi href="/partnerstvo/" aria-label="Партнёрство"><svg viewBox="0 0 24 24"><path d="m11 17 2 2a1.4 1.4 0 0 0 2-2"/><path d="m14 14 2.5 2.5a1.4 1.4 0 0 0 2-2l-3.9-3.9a2 2 0 0 0-2.8 0l-.9.9a1.4 1.4 0 0 1-2-2l2.8-2.8a3.5 3.5 0 0 1 4.2-.5l.5.3a2 2 0 0 0 1.4.3L21 6"/><path d="m21 5 1 9-2 2"/><path d="M3 5 2 14l6.5 6.5a1.4 1.4 0 0 0 2-2"/><path d="M3 6h8"/></svg><b>Партнёрство</b></a></div></nav>
+</div>
+<section class=plate id=plate>
+ <div class=phead><span class=tag id=tag></span><h1 id=title></h1><p class=meta id=meta></p>
+ </div>
+ <iframe id=page title="Программа тура" loading=eager></iframe>
+</section>
+<div class=phone id=phone><video id=vid playsinline controls></video><button class=x id=close aria-label="Закрыть"><svg viewBox="0 0 16 16"><path d="M2 2l12 12M14 2L2 14" stroke="#27315D" stroke-width="2.4" stroke-linecap="round"/></svg></button></div>
+<canvas class=gen id=gfx></canvas>
+<script>window.START = 'altai';</script>
+<script>
+const BASE = document.querySelector('base') ? document.querySelector('base').href : location.href.replace(/[^/]*$/, '');
+const SITE = '/kanikuly/';   // относительный: на зеркале ru. страница тура тоже берётся с зеркала
+const TOURS = [
+ { key: 'china', slug: 'china', bg: 'C12E27', ox: .02, sw: 956, live: 1, tag: 'Языковая поездка', title: 'Летняя академия в&nbsp;Харбине', meta: 'июль 2027', url: SITE + 'china/', video: true },
+ { key: 'altai', slug: 'altai', bg: '0C7C4C', ox: .02, sw: 956, live: 1, tag: 'Лагерь', title: 'Лагерь на&nbsp;Алтае', meta: 'лето 2027', url: SITE + 'altai/' },
+ { key: 'sea', slug: 'more', bg: '0F99A6', ox: .1, sw: 988, tag: 'Лагерь', title: 'Лагерь на&nbsp;море', meta: 'лето 2027', url: SITE + 'more/' },
+ { key: 'online', slug: 'online', bg: 'E98C22', ox: .14, sw: 988, tag: 'Онлайн', title: 'Онлайн-практика с&nbsp;Hilderstone', meta: 'лето 2027', url: SITE + 'online/' },
+];
+const hex = h => [0, 2, 4].map(i => parseInt(h.substr(i, 2), 16) / 255);
+let mx = 0, my = 0;
+(() => {
+const world = document.getElementById('world'), plate = document.getElementById('plate'), $ = id => document.getElementById(id);
+const mob = () => innerWidth < 760;
+const fill = T => { $('tag').textContent = T.tag; $('title').innerHTML = T.title; $('meta').textContent = T.meta; const fr = $('page'); fr.onload = () => { try { const d = fr.contentDocument, st = d.createElement('style');
+      st.textContent = '#load{display:none!important} .rv{opacity:1!important;transform:none!important;transition:none!important} header.top,.hero{display:none!important} #nq,#nrv{display:none!important} body{background:#fff!important} .over{margin-top:0!important}';
+      d.head.appendChild(st); window.__hookPage && window.__hookPage(d, fr.contentWindow.location.href); } catch (e) {} }; if (fr.contentWindow && fr.src) fr.contentWindow.location.replace(T.url); else fr.src = T.url;   /* replace — смена тура в рамке не засоряет историю, «назад» листает туры */ 
+  document.documentElement.style.setProperty('--c', '#' + T.bg); document.title = T.title.replace('&nbsp;', ' ') + ' — Траектория РОСТА'; };
+const stage = T => { const d = document.createElement('div'); d.className = 'stage';
+  d.style.setProperty('--fit', mob() ? .62 : .98); d.style.setProperty('--ox', mob() ? 0 : T.ox); 
+  // сцена — неподвижное фото с акварельными краями, без видео и искажений
+  d.innerHTML = `<div class=pl style="background-image:url(c/${T.key}.webp)"><canvas class=haze></canvas></div>`; haze(d.querySelector('.haze'), T); return d; };
+// акварельный край дышит: меняется только прозрачность полупрозрачной кромки картинки (её текстура и цвет те же), середина не трогается
+const NZ = (() => { const n = 64, a = new Float32Array(n * n); for (let i = 0; i < a.length; i++) a[i] = Math.random();
+  const b = new Float32Array(n * n); for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) { let s = 0; for (let dy = -2; dy <= 2; dy++) for (let dx = -2; dx <= 2; dx++) s += a[((y + dy + n) % n) * n + (x + dx + n) % n]; b[y * n + x] = s / 25; }
+  let lo = 1, hi = 0; b.forEach(v => { lo = Math.min(lo, v); hi = Math.max(hi, v); }); return { n, v: b.map(v => (v - lo) / (hi - lo)) }; })();
+function haze(cv, T) { const im = imgEl[T.key]; if (!im || !im.width) return;
+  const W = Math.min(1200, im.width), H = Math.round(W * im.height / im.width); cv.width = W; cv.height = H;
+  const g = cv.getContext('2d'); g.drawImage(im, 0, 0, W, H); const id = g.getImageData(0, 0, W, H), d = id.data;
+  const idx = [], base = []; for (let p = 0; p < W * H; p++) { const a = d[p * 4 + 3]; if (a > 2 && a < 250) { idx.push(p); base.push(a); } }
+  const I = Int32Array.from(idx), A = Uint8Array.from(base), n = NZ.n, nv = NZ.v, sc = n / 260; let last = 0;
+  const draw = now => { if (!cv.isConnected) return; requestAnimationFrame(draw); if (now - last < 50) return; last = now;
+    const t = now / 1000, ox = t * 3.2, oy = t * 2.1;
+    for (let k = 0; k < I.length; k++) { const p = I[k], x = p % W, y = (p / W) | 0;
+      const fx = x * sc + ox, fy = y * sc + oy, x0 = fx | 0, y0 = fy | 0, tx = fx - x0, ty = fy - y0, x1 = (x0 + 1) % n, y1 = (y0 + 1) % n, xa = x0 % n, ya = y0 % n;
+      const nz = (nv[ya * n + xa] * (1 - tx) + nv[ya * n + x1] * tx) * (1 - ty) + (nv[y1 * n + xa] * (1 - tx) + nv[y1 * n + x1] * tx) * ty;   // плавный шум
+      const a0 = A[k], q = a0 / 255, w = 4 * q * (1 - q);   // сильнее всего дышит середина кромки; почти прозрачное и почти плотное не трогаем
+      const v = a0 * (1 + (nz - .5) * .9 * w); d[p * 4 + 3] = v > 255 ? 255 : v < 0 ? 0 : v; }
+    g.putImageData(id, 0, 0); };
+  cv.parentElement.style.backgroundImage = 'none'; requestAnimationFrame(draw); }
+const nav = document.querySelector('.icons');
+TOURS.forEach(T => { const b = document.createElement('button'); b.style.backgroundImage = `url(c/ic-${T.key}.png)`; b.title = T.title.replace('&nbsp;', ' '); b.dataset.k = T.key; b.onclick = () => go(T.key); nav.appendChild(b); });
+let cur = null, busy = false;
+const imgs = {}, imgEl = {}; const pre = k => imgs[k] || (imgs[k] = new Promise(r => { const i = new Image(); i.onload = i.onerror = () => r(); i.src = `c/${k}.webp`; imgEl[k] = i; }));
+async function go(key) {
+  if (busy || key === cur) return; busy = true; await pre(key); busy = false; const T = TOURS.find(x => x.key === key);
+  nav.querySelectorAll(':scope>button').forEach(b => b.classList.toggle('on', b.dataset.k === key));
+  const old = world.querySelector('.stage:last-child'), st = stage(T); world.appendChild(st);
+  if (old) { busy = true; old.classList.add('out'); st.classList.add('in'); plate.classList.add('swap');
+    setTimeout(() => { fill(T); plate.classList.remove('swap'); }, 650);
+    setTimeout(() => { old.remove(); st.classList.remove('in'); busy = false; }, 1550); }
+  else fill(T);
+  const url = BASE + T.slug + '/';
+  if (location.pathname !== new URL(url, location.href).pathname) history[cur ? 'pushState' : 'replaceState']({ k: key }, '', url);
+  cur = key;
+}
+// сдвиг в целых пикселях: дробный давал шов на холсте дымки
+// глубина от мышки: маска с краями и сам кадр сдвигаются по-разному — без искажения картинки
+let tx = 0, ty = 0, moved = 0;
+addEventListener('pointermove', e => { tx = e.clientX / innerWidth * 2 - 1; ty = e.clientY / innerHeight * 2 - 1; moved = performance.now(); });
+addEventListener('deviceorientation', e => { if (e.gamma == null) return; tx = Math.max(-1, Math.min(1, e.gamma / 25)); ty = Math.max(-1, Math.min(1, (e.beta - 45) / 25)); moved = performance.now(); });
+const tick = now => { const idle = now - moved > 2500, a = now / 4000;
+  mx += ((idle ? Math.sin(a) * .35 : tx) - mx) * .06; my += ((idle ? Math.cos(a * .8) * .2 : ty) - my) * .06;
+  world.style.setProperty('--px', Math.round(-mx * 8) + 'px'); world.style.setProperty('--py', Math.round(-my * 5) + 'px'); requestAnimationFrame(tick); };
+requestAnimationFrame(tick);
+addEventListener('resize', () => world.querySelectorAll('.stage').forEach(d => { d.style.setProperty('--fit', mob() ? .62 : .98); d.style.setProperty('--ox', mob() ? 0 : TOURS.find(x => d.style.backgroundImage.includes('/' + x.key + '.')).ox); }));
+// меню разделов: веер по дуге вправо от кнопки (на телефоне — вниз)
+const mw = $('mw'), mb = $('mb');
+const fan = () => { const m = mob(), Rr = m ? 80 : 104, A = m ? [115, 80, 45] : [-70, -15, 40];   // углы подобраны, чтобы пункты не наезжали на иконки туров
+  mw.querySelectorAll('.mi').forEach((el, i) => { const a = A[i] * Math.PI / 180; el.style.setProperty('--x', (Math.cos(a) * Rr).toFixed(1) + 'px'); el.style.setProperty('--y', (Math.sin(a) * Rr).toFixed(1) + 'px'); el.style.transitionDelay = mw.classList.contains('open') ? i * 50 + 'ms' : '0ms'; }); };
+const setMenu = on => { mw.classList.toggle('open', on); mb.setAttribute('aria-expanded', on); fan(); };
+mb.onclick = e => { e.stopPropagation(); setMenu(!mw.classList.contains('open')); };
+addEventListener('click', e => { if (!mw.contains(e.target)) setMenu(false); });
+addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+addEventListener('resize', fan); fan();
+// у каждого тура свой адрес (…/china/, …/altai/, …/more/, …/online/) — отдельная страница; переключение без перезагрузки, «назад» работает
+window.__goTour = slug => { const T = TOURS.find(x => x.slug === slug); if (T) { go(T.key); return true; } return false; };
+addEventListener('popstate', () => { const T = TOURS.find(x => location.pathname.endsWith('/' + x.slug + '/')); if (T) go(T.key); });
+go(window.START || 'china');
+// остальные туры подгружаем заранее
+TOURS.forEach(T => pre(T.key));
+})();
+// осенние листья: крупные, кружатся и переворачиваются; ближние сильнее сдвигаются от мышки
+(() => {
+const fx = document.getElementById('fx'), c2 = fx.getContext('2d');
+const fsz = () => { fx.width = innerWidth; fx.height = innerHeight; }; fsz(); addEventListener('resize', fsz);
+const PI = [...Array(9)].map((_, k) => { const i = new Image(); i.src = `c/leaf${k}.webp`; return i; });
+const P = Array.from({ length: 13 }, (_, k) => ({ x: Math.random(), y: Math.random(), z: .4 + Math.random() * .8, r: Math.random() * 6.3, f: Math.random() * 6.3, s: .4 + Math.random() * .6, i: k % 9 }));
+const draw = () => { c2.clearRect(0, 0, fx.width, fx.height); const W = fx.width * .46, H = fx.height;
+  P.forEach(p => { p.y += .0008 * p.s * p.z; p.x += .0004 * p.z + Math.sin(p.y * 8 + p.r) * .0006; p.r += .008 * p.s; p.f += .03 * p.s;
+    if (p.y > 1.08 || p.x > 1.02) { p.y = -.08; p.x = Math.random() * .9; }
+    const im = PI[p.i]; if (!im.complete || !im.width) return;
+    const x = p.x * W + mx * 50 * p.z, y = p.y * H + my * 32 * p.z, z = (34 + 40 * p.z) / Math.max(im.width, im.height);
+    c2.save(); c2.translate(x, y); c2.rotate(p.r); c2.scale(z * Math.cos(p.f), z); c2.globalAlpha = .95;
+    c2.shadowColor = 'rgba(0,0,0,.25)'; c2.shadowBlur = 8 * p.z; c2.shadowOffsetY = 4 * p.z;
+    c2.drawImage(im, -im.width / 2, -im.height / 2); c2.restore(); });
+  requestAnimationFrame(draw); }; requestAnimationFrame(draw);
+})();
+// видео тура: превью на плашке ↔ телефон, переход «джинн»
+(() => {
+const phone = document.getElementById('phone'), vid = document.getElementById('vid'), fx = document.getElementById('gfx'), ctx = fx.getContext('2d');
+const dpr = Math.min(2, devicePixelRatio || 1);
+const size = () => { fx.width = innerWidth * dpr; fx.height = innerHeight * dpr; fx.style.width = innerWidth + 'px'; fx.style.height = innerHeight + 'px'; };
+size(); addEventListener('resize', size);
+function snapshot(src) { const r = phone.getBoundingClientRect(), c = document.createElement('canvas'), k = 2; c.width = r.width * k; c.height = r.height * k; const g = c.getContext('2d'); g.scale(k, k);
+  const rr = (x, y, w, h, rad) => { g.beginPath(); g.roundRect(x, y, w, h, rad); }; g.fillStyle = '#111'; rr(0, 0, r.width, r.height, 44); g.fill();
+  g.save(); rr(10, 10, r.width - 20, r.height - 20, 34); g.clip(); const sw = src.videoWidth || src.naturalWidth || 9, sh = src.videoHeight || src.naturalHeight || 16, iw = r.width - 20, ih = r.height - 20;
+  const s = Math.max(iw / sw, ih / sh); try { g.drawImage(src, 10 + (iw - sw * s) / 2, 10 + (ih - sh * s) / 2, sw * s, sh * s); } catch (e) {} g.restore(); return c; }
+const N = 90, ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+function frame(img, S, B, t) { ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, innerWidth, innerHeight);
+  const near = (S.left + S.width / 2) > (B.left + B.width / 2), lag = .55, cw = img.width / N, E = [];
+  for (let i = 0; i <= N; i++) { const u = i / N, d = near ? u : 1 - u; const pp = ease(Math.min(1, Math.max(0, t * (1 + lag) - d * lag))), vv = ease(Math.min(1, Math.max(0, t * (1 + lag * .4) - d * lag * .4)));
+    E.push([S.left + u * S.width + ((B.left + u * B.width) - (S.left + u * S.width)) * pp, S.top + (B.top - S.top) * vv, S.height + (B.height - S.height) * vv]); }
+  ctx.globalAlpha = Math.min(1, t * 6); for (let i = 0; i < N; i++) { const [x, t1, h1] = E[i], [x2, t2, h2] = E[i + 1]; ctx.drawImage(img, i * cw, 0, cw, img.height, x, (t1 + t2) / 2, Math.max(.5, x2 - x) + .8, (h1 + h2) / 2); } ctx.globalAlpha = 1; }
+let busy = false, from = null;
+function run(img, S, dir, done) { busy = true; const B = phone.getBoundingClientRect(), T = 820, t0 = performance.now();
+  const step = now => { const t = Math.min(1, (now - t0) / T); frame(img, S, B, dir > 0 ? t : 1 - t); if (t < 1) requestAnimationFrame(step); else { ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, fx.width, fx.height); busy = false; done();   /* стираем весь холст: при масштабе браузера ≠100% иначе оставались полосы */ } }; requestAnimationFrame(step); }
+// превью видео на сверстанной странице тура (в плашке): клик — не играть на месте, а «вылить» видео в телефон над сценой
+function openFrom(el, src, posterUrl) {
+  if (busy) return; const fr = document.getElementById('page').getBoundingClientRect(), r = el.getBoundingClientRect();
+  from = { left: fr.left + r.left, top: fr.top + r.top, width: r.width, height: r.height, el };
+  const pi = new Image(); pi.crossOrigin = 'anonymous';
+  const go = () => { el.style.visibility = 'hidden'; vid.src = src; vid.poster = posterUrl || ''; run(snapshot(pi), from, 1, () => { phone.style.visibility = 'visible'; el.style.visibility = ''; vid.currentTime = 0; vid.play().catch(() => {}); }); };
+  if (posterUrl) { pi.onload = go; pi.onerror = go; pi.src = posterUrl; } else go();
+}
+function hook(doc, base) {
+  const abs = u => u ? new URL(u, base).href : '';
+  // длинные рилсы (с управлением): убираем родные кнопки — нажатие по ним браузер не отдаёт странице; вся картинка — кнопка «смотреть»
+  const st = doc.createElement('style');
+  st.textContent = '.reel{position:relative;cursor:pointer;display:block}.reel video{pointer-events:none}.reel::after{content:"";position:absolute;left:50%;top:50%;width:58px;height:58px;margin:-29px;border-radius:50%;background:rgba(255,255,255,.92) url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Cpath d=%27M8 5v14l11-7z%27 fill=%27%2327315D%27/%3E%3C/svg%3E") 55% 50%/26px no-repeat;box-shadow:0 8px 20px -8px rgba(0,0,0,.5);transition:transform .2s}.reel:hover::after{transform:scale(1.1)}';
+  doc.head.appendChild(st);
+  // карточки других туров внутри страницы — открываем их отдельную страницу здесь же (свой адрес), а не только плашку
+  doc.addEventListener('click', e => { const a = e.target.closest('a[href]'); if (!a) return;
+    const m = new URL(a.getAttribute('href'), base).pathname.match(/\/(?:kanikuly|tury-d80292c3887a)\/(china|altai|more|online)\/?$/);   // и старые адреса туров, и новые
+    if (m && window.__goTour && window.__goTour(m[1])) { e.preventDefault(); e.stopPropagation(); } }, true);
+  doc.querySelectorAll('video[controls]').forEach(v => { if (v.closest('#lb')) return;   // окно-просмотрщик самой страницы не трогаем
+    v.removeAttribute('controls'); v.preload = 'metadata';
+    const box = v.closest('figure') || v.parentElement; const w = doc.createElement('span'); w.className = 'reel';
+    if (box.tagName === 'FIGURE') { box.insertBefore(w, v); w.appendChild(v); } else { v.parentNode.insertBefore(w, v); w.appendChild(v); }
+    w.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); const src = abs((v.querySelector('source') || v).getAttribute('src'));
+      if (src) openFrom(w, src, abs(v.getAttribute('poster'))); });
+  });
+}
+window.__hookPage = hook;
+const close = () => { if (busy || phone.style.visibility !== 'visible') return; const img = snapshot(vid.readyState >= 2 ? vid : new Image()); vid.pause(); phone.style.visibility = 'hidden';
+  const fr = document.getElementById('page').getBoundingClientRect(), el = from && from.el, r = el && el.isConnected ? el.getBoundingClientRect() : null;
+  const S = r ? { left: fr.left + r.left, top: fr.top + r.top, width: r.width, height: r.height } : from; if (el) el.style.visibility = 'hidden';
+  run(img, S, -1, () => { if (el) el.style.visibility = ''; }); };
+document.getElementById('close').onclick = close;
+document.querySelector('.icons').addEventListener('click', () => { if (phone.style.visibility === 'visible') { vid.pause(); phone.style.visibility = 'hidden'; } });
+})();
+</script>
+
+</body></html>
