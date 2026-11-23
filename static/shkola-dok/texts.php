@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 require __DIR__ . '/lib.php';
 
-const FOLDER = 'https://disk.yandex.ru/d/rfaQBP6LK9dwVQ';
-const TTL = 20;
+const FOLDER = '';
+const TTL = 600;
 
 ini_set('display_errors', '0');
 header('Content-Type: text/javascript; charset=utf-8');
